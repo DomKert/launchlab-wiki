@@ -1,4 +1,5 @@
 {
   "title": "Tools",
-  "pages": ["index"]
+  "icon": "Swords",
+  "pages": ["index", "think", "research", "write", "build"]
 }

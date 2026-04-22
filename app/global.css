@@ -10,3 +10,16 @@ html > body[data-scroll-locked] {
   margin-right: 0px !important;
   --removed-body-scroll-bar-size: 0px !important;
 }
+
+/* Game-motif sidebar tweaks */
+aside a,
+aside button[role='button'] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+aside a[data-active='true'] {
+  box-shadow: inset 3px 0 0 0 rgb(245 158 11);
+}

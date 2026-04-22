@@ -1,0 +1,32 @@
+---
+title: 1. Customer research
+icon: Binoculars
+description: Recipe. Day 1 morning. Perplexity scouts, Claude synthesizes.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-s">S</Badge>
+  <Badge variant="quest">DAY 1 AM</Badge>
+  <Badge variant="main-quest">RECIPE</Badge>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">COMBO</Badge></div>
+  <p>Perplexity scouts the niche. Claude synthesizes into the 4-box. One Perplexity Pro Search spent, most of Claude's daily quota saved for the synthesis steps.</p>
+</div>
+
+## Steps
+
+1. **Perplexity free.** Run one Pro Search on the niche. Example prompt: "5 to 8 currently-active competitors to a private invite-only European vintage drop brand for women 35 to 59. For each, one-line positioning and where they are weak." Save the output with citations.
+2. **Claude Project.** Paste the Perplexity output. Ask Claude to synthesize into the 4-box (Customer, Problem, Value prop, Price). See [Prompt 2 The 4-box](/docs/prompts/four-box).
+3. **Claude reviews.** Ask "which of these 4 boxes feels weakest and what would I need to know to tighten it."
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
+  <Badge variant="patch-notes">COST</Badge>
+  <span className="ml-2">1 of your 3 Perplexity Pro Searches. Saves Claude quota because Perplexity does the scraping.</span>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
+  <Badge variant="patch-notes">FALLBACK</Badge>
+  <span className="ml-2">Out of Perplexity Pro Searches? Grok DeepSearch is the B-tier scout alt for this exact job.</span>
+</div>

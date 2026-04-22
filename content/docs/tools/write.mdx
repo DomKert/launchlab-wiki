@@ -1,0 +1,37 @@
+---
+title: Write
+icon: PenLine
+description: ChatGPT and Gemini. Draft hero copy, body text, emails, captions, launch posts.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="side-quest">WRITE</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafters, not thinkers</span>
+</div>
+
+Drafting burns tokens fast. That is why you do not draft in Claude. Claude briefs the angle, the ICP, the voice. You paste the brief here, get a long draft back, then bring it to Claude for an AI-smell pass and ship.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <Badge variant="patch-notes">WATCH OUT</Badge>
+  <span className="ml-2">ChatGPT free silently drops from GPT-5 to GPT-4o-mini after 10 messages per 5-hour window. If output gets mushy, rotate to Gemini.</span>
+</div>
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">primary drafter</span></div>
+    <div className="font-sans font-semibold">ChatGPT free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Copy drafter. GPT-5 for 10 messages per 5-hour window, then silent drop to 4o-mini. Spend the GPT-5 window on hero copy and landing body.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chatgpt.com</div>
+  </a>
+  <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">rotation drafter</span></div>
+    <div className="font-sans font-semibold">Gemini free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Generous free tier, consistent quality. Primary rotation target when ChatGPT degrades. Also the best free tool for long-input prompts (captions from transcripts, multi-email sequences).</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
+  </a>
+</div>
+
+<div className="my-4 rounded-md border border-dashed border-fd-border p-4 text-sm text-fd-muted-foreground">
+  <Badge variant="patch-notes">NEXT STEP</Badge>
+  <span className="ml-2">Every draft comes back to Claude for an AI-smell pass using <a href="/docs/prompts/strip-ai-smell" className="underline">Prompt 9 Strip AI smell</a>. See the recipe at <a href="/docs/recipes/landing-copy" className="underline">Landing copy</a>.</span>
+</div>

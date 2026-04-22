@@ -1,0 +1,27 @@
+---
+title: 2. Landing copy
+icon: PenLine
+description: Recipe. Day 1 afternoon or Day 2 morning. Claude briefs, ChatGPT drafts, Claude strips AI smell.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-a">A</Badge>
+  <Badge variant="quest">DAY 1 PM</Badge>
+  <Badge variant="main-quest">RECIPE</Badge>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">COMBO</Badge></div>
+  <p>Claude briefs the structure. ChatGPT drafts the copy (it is the stronger drafter on the free tier for prose). Claude reviews for AI smell and ships the cleaned version.</p>
+</div>
+
+## Steps
+
+1. **Claude Project.** Run [Prompt 4 Landing page spec](/docs/prompts/landing-page-spec). Output is a structured spec with hero, problem, offer, how it works, social proof slot, CTA.
+2. **ChatGPT free.** Paste the spec. Ask for a full-page draft with the exact wording for each section. GPT-5 is stronger than 4o-mini for this, so spend your first 10 messages of the 5-hour window here.
+3. **Claude Project.** Paste the ChatGPT draft. Run [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) over it. Ship the cleaned version.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
+  <Badge variant="patch-notes">FALLBACK</Badge>
+  <span className="ml-2">If ChatGPT output feels mushy mid-session (silent drop to 4o-mini after 10 GPT-5 messages in 5 hours), rotate to Gemini for the draft step.</span>
+</div>

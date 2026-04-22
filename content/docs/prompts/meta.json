@@ -1,5 +1,6 @@
 {
-  "title": "Prompts",
+  "title": "Spellbook",
+  "icon": "Sparkles",
   "pages": [
     "index",
     "define-customer",

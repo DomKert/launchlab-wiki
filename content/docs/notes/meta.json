@@ -1,4 +1,5 @@
 {
   "title": "Notes",
+  "icon": "BookMarked",
   "pages": ["index", "writing-that-doesnt-sound-AI", "beat-the-free-tier"]
 }

@@ -1,5 +1,6 @@
 ---
-title: LaunchLab Wiki
+title: Start Here
+icon: Gamepad2
 description: The player guide for Tetr LaunchLab. Quests, tier lists, prompts, and the Launch Raid.
 ---
 
@@ -77,12 +78,65 @@ Squads are mandatory. Collaboration is optional. You build your own thing. Your 
 ---
 
 <div className="mb-3 flex items-center gap-2">
+  <Badge variant="main-quest">EVENTS</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">the 4 live sessions</span>
+</div>
+
+Four live sessions over the weekend. All times 7:30 PM IST (14:00 UTC, 16:00 CEST, 10:00 ET). Tetr sends the Discord and calendar invites before kickoff, you do not need to add anything yourself. Dates target May 1 to 3 pending final Tetr confirmation.
+
+<EventCard
+  title="Kickoff Preview"
+  tag="PRE-LAUNCH"
+  tagVariant="side-quest"
+  dateLabel="Thu Apr 30, 2026"
+  timeLabel="7:30 PM IST"
+  location="Discord"
+>
+  Pre-program briefing. Meet the cohort. Walk through the Wiki and what Day 1 morning looks like.
+</EventCard>
+
+<EventCard
+  title="Day 1 Build-Along"
+  tag="DAY 1 FRI"
+  tagVariant="main-quest"
+  dateLabel="Fri May 1, 2026"
+  timeLabel="7:30 to 8:30 PM IST"
+  location="Discord"
+>
+  Opening plus the 4-box exercise. Domen builds The Back Room live. Tonight's Main Quest, foundation live in your squad channel.
+</EventCard>
+
+<EventCard
+  title="Day 2 Build-Along"
+  tag="DAY 2 SAT"
+  tagVariant="main-quest"
+  dateLabel="Sat May 2, 2026"
+  timeLabel="7:30 to 8:30 PM IST"
+  location="Discord"
+>
+  Three parts. The Back Room revisit, peer spotlight on student pages, open Q&amp;A. Crickets are data.
+</EventCard>
+
+<EventCard
+  title="The Launch Raid + Demo Day"
+  tag="DAY 3 SUN"
+  tagVariant="boss"
+  dateLabel="Sun May 3, 2026"
+  timeLabel="7:30 to 9:30 PM IST"
+  location="Discord"
+>
+  Simultaneous launch. Then demo day, 10 squads by 6 minutes, peer voting, awards.
+</EventCard>
+
+---
+
+<div className="mb-3 flex items-center gap-2">
   <Badge variant="xp">START HERE</Badge>
   <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">pick your loadout</span>
 </div>
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
-  <a href="/docs/claude-project/setup" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-amber-500 hover:bg-fd-muted">
+  <a href="/docs/claude-project/setup" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2">
       <Badge variant="tier-s">S</Badge>
       <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">home base</span>
@@ -91,7 +145,7 @@ Squads are mandatory. Collaboration is optional. You build your own thing. Your 
     <p className="mt-1 text-sm text-fd-muted-foreground">Your Claude Project is your party leader, brief, and reviewer in one.</p>
   </a>
 
-  <a href="/docs/tools" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-emerald-500 hover:bg-fd-muted">
+  <a href="/docs/tools" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2">
       <Badge variant="tier-a">A</Badge>
       <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">loadout</span>
@@ -100,7 +154,7 @@ Squads are mandatory. Collaboration is optional. You build your own thing. Your 
     <p className="mt-1 text-sm text-fd-muted-foreground">S / A / B / C tier list for every tool you'll touch this weekend.</p>
   </a>
 
-  <a href="/docs/prompts" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-emerald-500 hover:bg-fd-muted">
+  <a href="/docs/prompts" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2">
       <Badge variant="tier-a">A</Badge>
       <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">spellbook</span>
@@ -109,7 +163,7 @@ Squads are mandatory. Collaboration is optional. You build your own thing. Your 
     <p className="mt-1 text-sm text-fd-muted-foreground">13 prompts. Each one has a why-this-works note so you can tweak, not just paste.</p>
   </a>
 
-  <a href="/docs/playbook" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-emerald-500 hover:bg-fd-muted">
+  <a href="/docs/playbook" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2">
       <Badge variant="tier-a">A</Badge>
       <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">quest log</span>
@@ -119,8 +173,17 @@ Squads are mandatory. Collaboration is optional. You build your own thing. Your 
   </a>
 </div>
 
+<a href="/docs/recipes" className="my-4 block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-violet-500 hover:bg-fd-muted">
+  <div className="mb-2 flex items-center gap-2">
+    <Badge variant="tier-a">A</Badge>
+    <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">combos, the crafting table</span>
+  </div>
+  <div className="font-sans text-lg font-semibold">Recipes</div>
+  <p className="mt-1 text-sm text-fd-muted-foreground">Three multi-tool combinations. Spellbook plus Loadout, worked through The Back Room as the running example.</p>
+</a>
+
 <div className="my-4 grid gap-3 sm:grid-cols-2">
-  <a href="/docs/notes/writing-that-doesnt-sound-AI" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-sky-500 hover:bg-fd-muted">
+  <a href="/docs/notes/writing-that-doesnt-sound-AI" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2">
       <Badge variant="tier-b">B</Badge>
       <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">field note</span>
@@ -129,7 +192,7 @@ Squads are mandatory. Collaboration is optional. You build your own thing. Your 
     <p className="mt-1 text-sm text-fd-muted-foreground">Banned patterns, gut checks, and why AI copy gets clocked in three seconds.</p>
   </a>
 
-  <a href="/docs/notes/beat-the-free-tier" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-sky-500 hover:bg-fd-muted">
+  <a href="/docs/notes/beat-the-free-tier" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2">
       <Badge variant="tier-b">B</Badge>
       <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">field note</span>
@@ -152,9 +215,6 @@ Squads are mandatory. Collaboration is optional. You build your own thing. Your 
   </div>
   <div className="rounded-md border border-dashed border-fd-border px-3 py-2 text-fd-muted-foreground">
     Cohort channel <Badge variant="tbd">TBD</Badge>
-  </div>
-  <div className="rounded-md border border-dashed border-fd-border px-3 py-2 text-fd-muted-foreground">
-    Google Cal invite <Badge variant="tbd">TBD</Badge>
   </div>
   <div className="rounded-md border border-dashed border-fd-border px-3 py-2 text-fd-muted-foreground">
     Discord voice rooms <Badge variant="tbd">TBD</Badge>
