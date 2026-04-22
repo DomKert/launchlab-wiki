@@ -3,18 +3,22 @@
   "icon": "Sparkles",
   "pages": [
     "index",
+    "---Think---",
     "define-customer",
     "four-box",
-    "scout-the-niche",
-    "landing-page-spec",
-    "invite-waitlist-flow",
     "name-your-thing",
-    "first-broadcast",
-    "launch-raid",
-    "strip-ai-smell",
+    "---Research---",
+    "scout-the-niche",
     "where-customer-lives",
+    "---Write---",
+    "strip-ai-smell",
+    "first-broadcast",
     "first-community-post",
     "demo-day-pitch",
-    "humanize-add-stake"
+    "humanize-add-stake",
+    "---Build & Ship---",
+    "landing-page-spec",
+    "invite-waitlist-flow",
+    "launch-raid"
   ]
 }
