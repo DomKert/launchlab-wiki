@@ -1,0 +1,54 @@
+---
+title: 5. Invite-code waitlist flow copy
+description: Execution. Day 2 morning. GPT free or Gemini free.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-a">A</Badge>
+  <Badge variant="side-quest">EXECUTION</Badge>
+  <Badge variant="quest">DAY 2 AM</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Tool: GPT free or Gemini free</span>
+</div>
+
+## Why this works
+
+Four touchpoints on the invite flow (waitlist page, confirmation, invite email, decline email) in one prompt. If you write them one at a time you'll drift out of voice. One shot keeps it consistent.
+
+## Prompt
+
+```txt
+I'm building [PRODUCT]. It's invite-only. Write the copy for my full waitlist flow in 4 blocks:
+
+Block 1. Waitlist hero (what they see before entering email)
+- Headline (6 words or fewer)
+- Subhead (one sentence on why invite-only matters here)
+- Email field placeholder text
+- Button text (2 to 4 words)
+
+Block 2. Confirmation screen (right after they submit)
+- Headline
+- One sentence on what happens next
+- One sentence on how to move up the list (share, refer, follow, whatever fits)
+
+Block 3. Invite email (sent when they make the cut)
+- Subject line (7 words or fewer)
+- Opening line
+- Middle (what the invite gets them, one paragraph, 2 to 3 sentences)
+- CTA line and link framing
+
+Block 4. Decline email (sent to people who don't make the cut, optional but write it)
+- Subject line
+- Two sentences, warm and clear
+
+Voice. Exclusive without snobby. No "valued member," no "we regret to inform." Test. Would you reply to this email as a human, or flag it as marketing?
+```
+
+## Back Room sample answer (abbreviated)
+
+> **Block 1 Waitlist hero.** Headline *By invite only.* Subhead *A private monthly release of European vintage. Curated, not hunted.* Placeholder *your email.* Button *Request an invite.*
+>
+> **Block 2 Confirmation.** Headline *You're on the list.* Next *We send invites on the 1st. Not everyone gets in. No hard feelings either way.* Move up *Forward this to one friend who actually gets it. We notice.*
+>
+> **Block 3 Invite email.** Subject *You're in for May.* Opening *Saturday, 9pm CET. 42 pieces.* Middle *You'll see the drop one hour before the general list. Everything's photographed straight, sized properly, priced EUR 90 to 280 except for 3 premium pieces. Sold is sold.* CTA *Preview the drop.*
+>
+> **Block 4 Decline email.** Subject *Not this round.* Body *We're keeping the list small to protect the quality of the drops. You're welcome to try again next month. No hard feelings either way.*

@@ -1,0 +1,66 @@
+---
+title: Set up your Claude Project
+description: 5 to 10 minutes on Day 1 morning. Manual walkthrough.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="main-quest">MAIN QUEST</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Day 1 morning, 5 to 10 min</span>
+</div>
+
+Your first move of the weekend. Do this before anything else on Day 1. Everything downstream routes through this Project.
+
+## 1. Create the Project
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-1" label="Created a free Claude account at claude.ai" />
+</div>
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-2" label="Clicked Projects, then New Project. Named it LaunchLab [your business]" />
+</div>
+
+## 2. Paste the system prompt
+
+Open [Core files](/docs/claude-project/core-files) in another tab. Copy the Meta guide block and paste it into the Project's Custom Instructions field. This is what makes the Project behave like your party leader instead of a generic chat.
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-3" label="Pasted the Meta guide as the system prompt" />
+</div>
+
+## 3. Upload the context files
+
+Four files from [Core files](/docs/claude-project/core-files) go into the Project knowledge. Click "Copy page" on the Core files page to grab the full bundle, or copy each block separately and save as .md or .txt on your machine.
+
+- Meta guide
+- Tool matrix (abridged)
+- Program overview
+- Voice guide
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-4" label="Uploaded all 4 core files to the Project knowledge" />
+</div>
+
+## 4. Start your first chat
+
+Open a new chat inside the Project. Paste [Prompt 1, Define your customer](/docs/prompts/define-customer). Fill in the business-idea placeholder. Run it.
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-5" label="Ran my first prompt inside the Project" />
+</div>
+
+## 5. Free-tier caps to keep in mind
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm font-mono">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="patch-notes">CAPS</Badge></div>
+  <ul className="list-disc space-y-1 pl-5 font-sans">
+    <li>Claude free: 30 to 100 messages per day depending on load.</li>
+    <li>5 Projects per account max. 20 files per chat. 30MB total.</li>
+    <li>No shared Project links on free tier. You rebuild the template manually from Core files.</li>
+  </ul>
+</div>
+
+<div className="my-4 flex items-center gap-2">
+  <Badge variant="achievement">ACHIEVEMENT</Badge>
+  <span className="text-sm">Home base online. Now go pick your stack at <a href="/docs/tools" className="underline">Tools</a>.</span>
+</div>

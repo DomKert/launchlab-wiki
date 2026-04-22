@@ -1,0 +1,49 @@
+---
+title: 4. Landing page spec
+description: Planning. Day 1 afternoon or Day 2 morning. Claude Project.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-s">S</Badge>
+  <Badge variant="main-quest">PLANNING</Badge>
+  <Badge variant="quest">DAY 1/2</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Tool: Claude Project</span>
+</div>
+
+## Why this works
+
+One prompt, one structured output you paste into any builder (Bolt, v0, Carrd, Framer, raw HTML). You show up with a 4-box, you leave with a spec. No bouncing between five "help me write my hero section" chats. Run once Friday evening to ship a rough WIP, again Saturday morning to polish.
+
+## Prompt
+
+```txt
+Turn my 4-box into a landing page spec I can build in [Bolt / v0 / Lovable / Artifacts / Carrd / Framer / Webflow / raw HTML, pick one and say it].
+
+Output these sections in order, with copy for each:
+1. Hero: headline (6 to 8 words), subhead (one sentence), primary CTA button text (2 to 4 words)
+2. The problem (2 short paragraphs, what breaks today without me)
+3. What I actually offer (3 bullet points, each starts with a verb)
+4. How it works (3 numbered steps, one line each)
+5. Social proof slot (what would go here when I have it, even if it's empty today)
+6. Final CTA block (one line + button text)
+
+Voice rule. Sound like a founder texting a friend, not a brochure. No corporate verbs, no colons-then-lists, no "revolutionary" / "innovative" / "unlock." If you use a word I wouldn't say out loud, rewrite it.
+
+Also give me 3 visual hints for the hero (mood, 1 to 2 color ideas, one photo style or none). Keep the spec under 500 words total.
+```
+
+## Back Room sample answer (abbreviated)
+
+> **Hero.** Headline *European vintage, by invite only.* Subhead *Monthly drops. Private list. 40 to 60 pieces, each one picked.* Button *Request an invite.*
+>
+> **The problem.** Vintage resale is flooded. Most of what's online is mediocre and it takes hours to find one good piece. Trend-chasing dealers chase volume, not taste.
+>
+> **What I actually offer.** Source locally in Europe, piece by piece. Release 40 to 60 pieces one Saturday a month. Share the list with a private, invite-only audience first.
+>
+> **How it works.** 1. Request an invite. 2. Get added to the list (or not, it's curated). 3. First Saturday of the month, the drop opens to you before anyone else.
+>
+> **Social proof slot.** Leave empty for now. After Drop 1, add 2 buyer quotes + piece count sold.
+>
+> **Final CTA.** *Next drop opens in 17 days. Request your invite now.* Button *Join the list.*
+>
+> **Visual hints.** Mood quiet, archival, museum. Colors bone white + deep oxblood. Photos single piece, neutral background, natural light, no model.

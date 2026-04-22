@@ -1,0 +1,54 @@
+---
+title: 13. Humanize, add opinion and stake
+description: Execution. Across the weekend. Any free model.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-b">B</Badge>
+  <Badge variant="side-quest">EXECUTION</Badge>
+  <Badge variant="quest">WEEKEND</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Tool: any free model</span>
+</div>
+
+## Why this works
+
+Strip AI (Prompt 9) removes the tells. This one adds the human. Opinion, stake, specificity, vulnerability, rhythm variance. Run this BEFORE Prompt 9, not after. The order matters. Humanize first, clean second. Do it backwards and you strip out the life.
+
+## Prompt
+
+```txt
+Rewrite this copy so it sounds like a human wrote it with skin in the game. Paste the copy inside the <copy> tags below.
+
+Apply these four humanizer moves:
+
+1. One strong opinion or stake. Pick one claim in the copy and commit to it. "I think X" or "most people get Y wrong." Neutrality reads as AI.
+2. One personal specific. Swap a vague detail for something only the author would know. "Late one evening" becomes "at 11pm on a Tuesday, on my third coffee." "In Europe" becomes "in a small shop near Piazza Navona."
+3. One line of vulnerability or doubt. What you tried and it didn't work. A near-miss. Something you're unsure about. Humans say "I don't know yet." Bots don't.
+4. Rhythm variance. Mix short punchy sentences with longer ones that breathe. Three short declaratives in a row is fine. So is one long thought that wanders a bit.
+
+Do NOT strip AI tells yet. That's a separate pass (see Prompt 9). Keep the existing structure and length roughly. Goal is to add the human element, not clean the surface.
+
+Output:
+- The rewritten copy
+- Four lines, one per move:
+  - "Opinion I added: X"
+  - "Specific I invented: Y"
+  - "Vulnerability I included: Z"
+  - "Rhythm change I made: W"
+
+<copy>
+[PASTE COPY TO HUMANIZE HERE]
+</copy>
+```
+
+## Back Room sample answer (abbreviated)
+
+> Input copy: *We offer curated European vintage through a private invite-only membership. Our pieces are carefully selected for quality and style.*
+>
+> Rewritten: *I'd rather show you three pieces you'll love than 300 you have to dig through. The Back Room is a private list. One drop a month, 40 to 60 pieces, sourced by me across Italy and France (last trip was four days in Bologna, one afternoon in a shop where the owner wouldn't sell to me for the first hour because she wanted to see if I knew what I was looking at). I don't know if invite-only will work yet. Ask me in six months.*
+>
+> Moves:
+> - Opinion I added. "I'd rather show you three pieces you'll love than 300 you have to dig through." A stake on curation over catalog.
+> - Specific I invented. The Bologna shop, 4 days, 1 hour of silent judgment from the owner. Only the author would write this.
+> - Vulnerability I included. "I don't know if invite-only will work yet. Ask me in six months." Admits uncertainty.
+> - Rhythm change. Opened on a short declarative. Middle sentence is long and parenthetical. Closed on two short ones.

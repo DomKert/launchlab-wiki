@@ -1,0 +1,118 @@
+---
+title: Beat the free tier
+description: Multi-tool routing plus token-efficient prompting. Extend your weekend without paying.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="side-quest">FIELD NOTE</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">free tier, 3-day runway</span>
+</div>
+
+Every tool you will touch this weekend has a rate limit. Claude free is 30 to 100 messages a day. ChatGPT silently drops to 4o-mini after 10 GPT-5 messages in 5 hours. Perplexity gives you 3 Pro Searches. Gemini Nano Banana throttles to 2 per day on spike days. Lovable is 5 credits.
+
+You beat this by routing. Not paying.
+
+---
+
+## Principle 1. One brain, many executors
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="main-quest">ROUTING</Badge>
+</div>
+
+Your Claude Project is the brain. Every other tool is an executor. The brain holds the plan and the context. Executors run single jobs.
+
+- **Copy drafting** goes to ChatGPT (or Gemini when ChatGPT degrades).
+- **Fact-check and niche research** goes to Perplexity.
+- **Hero image and logo** goes to Gemini Nano Banana or Ideogram.
+- **Long-doc summarization** goes to Gemini 2.5 Flash (1M context).
+- **Builds** go to Framer or Bolt.
+
+The brain drafts a tight brief. The executor does the heavy-lift work. The brain does a red-team read when the output comes back. This pattern stretches your Claude free-tier messages 5x further than if you use Claude as the drafter.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <Badge variant="patch-notes">RULE</Badge>
+  <span className="ml-2">If Claude is writing more than 300 words in a single reply, you are using it wrong. Route that output to ChatGPT or Gemini and bring it back for a review.</span>
+</div>
+
+---
+
+## Principle 2. Shorter prompts beat longer ones
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="main-quest">TOKEN EFFICIENCY</Badge>
+</div>
+
+2026 research consensus across Anthropic, Lakera, Thomas Wiegold, Microsoft, IBM, and Google Cloud converges on four points:
+
+1. **Attention scales quadratically with length.** Long prompts do not make models smarter. They dilute focus.
+2. **Examples beat instructions.** One filled-in sample answer beats two paragraphs of "make sure to".
+3. **Structure beats length.** Define the output contract (what you want back), not the process (how to think).
+4. **Most failures come from ambiguity.** Not from model limits.
+
+Every prompt in [the Spellbook](/docs/prompts) follows this shape: one-line intent, output contract, voice rules, one worked example. That is why they are short and run well on every free-tier model.
+
+---
+
+## Principle 3. Know when each tool degrades
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="main-quest">WATCH QUALITY</Badge>
+</div>
+
+Free tiers don't just rate-limit. They silently swap models. Stay alert for these signals.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <ul className="list-disc space-y-2 pl-5">
+    <li><span className="font-semibold">ChatGPT free.</span> Drops from GPT-5 to GPT-4o-mini after 10 messages in a 5-hour window. Symptom: output gets mushy, over-adjectivized, more AI filler. Rotate to Gemini for the rest of the window.</li>
+    <li><span className="font-semibold">Claude free.</span> Has daily message caps. Symptom: "you have reached your limit" banner. Use Gemini 2.5 Flash for the rest of the day for anything non-synthesis.</li>
+    <li><span className="font-semibold">Perplexity free.</span> 3 Pro Searches per day. Normal Search is still available and works for verification. Save Pro Searches for Day 1 morning scout work.</li>
+    <li><span className="font-semibold">Gemini Nano Banana.</span> 20 per day baseline. Throttles to 2 per day on spike days without warning. Ideogram is the predictable co-primary at 10 credits per day (roughly 40 images).</li>
+    <li><span className="font-semibold">Canva free AI.</span> 5 uses per month. Treat Canva as a templates library, not a generator.</li>
+    <li><span className="font-semibold">Bolt.new free.</span> 1M tokens per month. Do your full build in one focused 4-hour block. Iterative scaffolding across 3 days burns the budget.</li>
+  </ul>
+</div>
+
+---
+
+## Principle 4. Your Claude Project is a capacity multiplier
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="main-quest">CONTEXT</Badge>
+</div>
+
+Files inside the Project knowledge persist across every chat you open inside that Project. Upload them once on Day 1 morning (see [Set up your Claude Project](/docs/claude-project/setup)), and you get four upsides:
+
+1. Context is loaded for free. No re-pasting the tool matrix or the 4-box on every turn.
+2. Claude's quality is higher because it has the ground rules.
+3. You burn fewer messages because prompts can be shorter.
+4. Multiple chats across the weekend stay consistent. Day 2 Claude remembers what Day 1 Claude decided.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <Badge variant="patch-notes">CAP</Badge>
+  <span className="ml-2">20 files per chat, 5 Projects per account, 30MB total. Four core files fit comfortably.</span>
+</div>
+
+---
+
+## Compressor move
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="xp">PATTERN</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">the Gemini Flash sandwich</span>
+</div>
+
+When you have raw research that is too big to paste into Claude (Reddit threads, competitor pages, long transcripts):
+
+1. Paste the whole mess into Gemini 2.5 Flash. Say "summarize into a 500-word briefing. Preserve all numbers, quotes, and named sources. No filler."
+2. Copy the 500-word briefing.
+3. Paste the briefing into Claude. Now ask Claude to synthesize.
+
+You spent 0 Claude messages on compression. You saved the Claude quota for the reasoning step where it actually matters.
+
+---
+
+<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <Badge variant="achievement">GUIDING STAR</Badge>
+  <span className="ml-2">The stack is free. The skill is routing. The founder who finishes the weekend with more Claude messages left than they started with did it right.</span>
+</div>

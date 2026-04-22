@@ -1,0 +1,51 @@
+---
+title: 10. Where your customer actually lives
+description: Planning. Day 2 early morning. Claude Project.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-a">A</Badge>
+  <Badge variant="main-quest">PLANNING</Badge>
+  <Badge variant="quest">DAY 2 AM</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Tool: Claude Project</span>
+</div>
+
+## Why this works
+
+The Day 2 afternoon distribution move is where most first-time builders freeze. This prompt gives you a map of 5 to 7 specific rooms your customer is already in, ranked by fit. Then you know where to post (and where not to waste your single Saturday afternoon).
+
+## Prompt
+
+```txt
+I'm launching [PRODUCT] for [CUSTOMER SENTENCE from Prompt 1].
+
+Map 5 to 7 specific places my customer actually hangs out online or offline. Not "Twitter." Not "LinkedIn." I want subreddit names, Facebook group names, Substack newsletters, Discord servers, Product Hunt categories, Indie Hackers threads, partnership candidates (creators, adjacent brands), or IRL spots.
+
+For each place, tell me:
+- The specific name (URL or handle if you can guess it)
+- Why it's a fit (what they already discuss, how active it is, what tone they accept)
+- Best first-touch angle (post, comment on someone else's thread, DM a mod, reach out to the creator for a partnership, etc.)
+
+Rank the 5 to 7 S / A / B by fit.
+
+Rules:
+- One entry = one pinpointed destination. No handle clusters like "@x / @y / @z orbit." Pick one handle, not a cluster.
+- No catch-all group names. "Vintage Collectors group on Facebook" is not specific. "The Vintage Fashion Guild Facebook Group, roughly 40k members" is.
+- If my customer is regional (e.g., European), bias toward venues in that region, not the US analog.
+- If you're guessing at a URL, handle, or member count, say you're guessing.
+- If the best match in a slot is a category rather than a specific place, flag it and give me ONE example from that category with a note that I should hunt for more.
+```
+
+## Back Room sample answer (abbreviated)
+
+> **S tier.** r/VintageFashion (180k, weekly ID threads, tone is expert-enthusiast). Angle: post one piece from the upcoming drop with sourcing story, ask "anyone know this maker?". The community identifies mystery pieces, the post earns attention without selling.
+>
+> **S tier.** The Gentlewoman / Perfectly Imperfect reader overlap via Substack Notes. Angle: write one short Note about an obscure European label, tag Perfectly Imperfect, hope for a repost.
+>
+> **A tier.** Partnership candidates: small European interior design creators (Apartamento readers on Instagram, 5k to 20k followers). Angle: DM 5 of them offering one complimentary piece in exchange for an honest post.
+>
+> **A tier.** r/femalefashionadvice (1.2M, lean mass market but with a curated-vintage subcurrent). Angle: answer "where do I find good vintage that isn't Depop" threads with one honest recommendation.
+>
+> **B tier.** Discord servers: "Old Clothes" (3k members, trade-focused). Angle: lurk first, answer questions, mention The Back Room only when directly asked.
+>
+> Gaps in this map. No IRL touch. If you're in a European capital, flyers at one independent bookshop or cafe with aligned taste will outperform 10 subreddit posts.

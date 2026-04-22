@@ -1,13 +1,171 @@
 ---
-title: Hello World
-description: Your first document
+title: LaunchLab Wiki
+description: The player guide for Tetr LaunchLab. Quests, tier lists, prompts, and the Launch Raid.
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+<div className="mb-6 rounded-lg border border-fd-border bg-fd-card p-6 font-mono">
+  <div className="text-xs uppercase tracking-widest text-fd-muted-foreground">TETR // LAUNCHLAB</div>
+  <div className="mt-3 font-sans text-4xl font-bold sm:text-5xl">You're in. 50 of you. 3 days.</div>
+  <p className="mt-3 font-sans text-fd-muted-foreground">
+    Define a business, ship a landing page, launch it. This wiki is the player guide. Bookmark it.
+  </p>
+  <div className="mt-4 inline-flex items-center rounded-md border border-dashed border-fd-border px-3 py-2 text-xs text-fd-muted-foreground">
+    <Badge variant="loot">LOOT SLOT</Badge>
+    <span className="ml-3">3-min Domen welcome video, coming soon</span>
+  </div>
+</div>
 
-## What is Next?
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="patch-notes">PATCH NOTES</Badge>
+  <span className="text-xs text-fd-muted-foreground">v0.1, built during the Apr 22 scaffold session</span>
+</div>
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+Welcome to the player guide for the Tetr LaunchLab weekend. Quests, tier lists, prompts, and the Launch Raid all live here. Read top-to-bottom on Wednesday, come back for the tier lists on Friday morning.
+
+---
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="main-quest">MAIN QUEST</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">the one shift</span>
+</div>
+
+<blockquote className="my-4 border-l-4 border-amber-500 bg-amber-500/5 px-4 py-3 italic">
+  This program is not about building a product. It's about building distribution first. You have a website, you have it running, and then you have distribution. That is more important than the product. Stop dreaming, stop thinking, just do it in three days, get it out there.
+</blockquote>
+
+The landing page is the front door. The distribution is the weekend. Play accordingly.
+
+---
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="side-quest">PARTY RULE</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">squads</span>
+</div>
+
+Squads are mandatory. Collaboration is optional. You build your own thing. Your squad holds you accountable.
+
+---
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="quest">QUEST LOG</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">3-day arc</span>
+</div>
+
+<div className="my-4 overflow-hidden rounded-md border border-fd-border font-mono text-sm">
+  <div className="grid grid-cols-[auto_auto_1fr] gap-x-4 border-b border-fd-border bg-fd-muted/40 px-4 py-2 text-xs uppercase tracking-wider text-fd-muted-foreground">
+    <span>Day</span>
+    <span>Phase</span>
+    <span>Note</span>
+  </div>
+  <div className="grid grid-cols-[auto_auto_1fr] gap-x-4 border-b border-fd-border px-4 py-3">
+    <span className="font-bold">DAY 1 FRI</span>
+    <span>DEFINE + START BUILDING</span>
+    <span className="text-fd-muted-foreground">4-box, page scaffold, first build-along</span>
+  </div>
+  <div className="grid grid-cols-[auto_auto_1fr] gap-x-4 border-b border-fd-border px-4 py-3">
+    <span className="font-bold">DAY 2 SAT</span>
+    <span>BUILD + DISTRIBUTE + ITERATE</span>
+    <span className="text-fd-muted-foreground">crickets = data</span>
+  </div>
+  <div className="grid grid-cols-[auto_auto_1fr] gap-x-4 px-4 py-3">
+    <span className="font-bold">DAY 3 SUN</span>
+    <span>THE LAUNCH RAID</span>
+    <span className="text-fd-muted-foreground">50 of us, same minute, cohort-wide</span>
+  </div>
+</div>
+
+---
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="xp">START HERE</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">pick your loadout</span>
+</div>
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="/docs/claude-project/setup" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2">
+      <Badge variant="tier-s">S</Badge>
+      <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">home base</span>
+    </div>
+    <div className="font-sans text-lg font-semibold">Set up your brain</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Your Claude Project is your party leader, brief, and reviewer in one.</p>
+  </a>
+
+  <a href="/docs/tools" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2">
+      <Badge variant="tier-a">A</Badge>
+      <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">loadout</span>
+    </div>
+    <div className="font-sans text-lg font-semibold">Pick your stack</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">S / A / B / C tier list for every tool you'll touch this weekend.</p>
+  </a>
+
+  <a href="/docs/prompts" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2">
+      <Badge variant="tier-a">A</Badge>
+      <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">spellbook</span>
+    </div>
+    <div className="font-sans text-lg font-semibold">Copy-paste prompts</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">13 prompts. Each one has a why-this-works note so you can tweak, not just paste.</p>
+  </a>
+
+  <a href="/docs/playbook" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2">
+      <Badge variant="tier-a">A</Badge>
+      <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">quest log</span>
+    </div>
+    <div className="font-sans text-lg font-semibold">3-day playbook</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Day 1 / Day 2 / Day 3 checklists. Unlocks once curriculum scope lands.</p>
+  </a>
+</div>
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="/docs/notes/writing-that-doesnt-sound-AI" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2">
+      <Badge variant="tier-b">B</Badge>
+      <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">field note</span>
+    </div>
+    <div className="font-sans text-lg font-semibold">Writing that doesn't sound AI</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Banned patterns, gut checks, and why AI copy gets clocked in three seconds.</p>
+  </a>
+
+  <a href="/docs/notes/beat-the-free-tier" className="block rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2">
+      <Badge variant="tier-b">B</Badge>
+      <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">field note</span>
+    </div>
+    <div className="font-sans text-lg font-semibold">Beat the free tier</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Multi-tool routing plus token-efficient prompting. Extend your weekend without paying.</p>
+  </a>
+</div>
+
+---
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="patch-notes">HUD</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">cohort coordinates</span>
+</div>
+
+<div className="my-4 grid gap-3 sm:grid-cols-2 font-mono text-sm">
+  <div className="rounded-md border border-dashed border-fd-border px-3 py-2 text-fd-muted-foreground">
+    Hashtag <Badge variant="tbd">TBD</Badge>
+  </div>
+  <div className="rounded-md border border-dashed border-fd-border px-3 py-2 text-fd-muted-foreground">
+    Cohort channel <Badge variant="tbd">TBD</Badge>
+  </div>
+  <div className="rounded-md border border-dashed border-fd-border px-3 py-2 text-fd-muted-foreground">
+    Google Cal invite <Badge variant="tbd">TBD</Badge>
+  </div>
+  <div className="rounded-md border border-dashed border-fd-border px-3 py-2 text-fd-muted-foreground">
+    Discord voice rooms <Badge variant="tbd">TBD</Badge>
+  </div>
+</div>
+
+---
+
+<div className="mb-3 flex items-center gap-2">
+  <Badge variant="achievement">ACHIEVEMENT</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">first scroll</span>
+</div>
+
+<PersistentCheckbox id="seen-intro" label="Scrolled the intro" />
