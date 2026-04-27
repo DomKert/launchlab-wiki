@@ -1,7 +1,7 @@
 ---
 title: Research
 icon: Binoculars
-description: Perplexity, Grok, Gemini 2.5 Flash. Scout the niche, cite sources, compress long docs.
+description: AI scouts plus primary-data tools. Cite sources, scope keywords, read ICP voice. Day 1 morning research stack.
 ---
 
 <div className="mb-4 flex items-center gap-2">
@@ -9,7 +9,30 @@ description: Perplexity, Grok, Gemini 2.5 Flash. Scout the niche, cite sources, 
   <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">find the truth, fast</span>
 </div>
 
-These tools scout the web so Claude does not have to. Cite sources, find competitors, pull live signal, compress research dumps into briefings before they hit your Claude Project.
+These tools scout the niche so Claude does not have to. AI scouts cite sources and synthesize. Primary-data tools (keyword volumes, competitor ads, ICP voice) ground the 4-box exercise in real data. Compress everything in NotebookLM before it hits your Claude Project.
+
+## Multi-tool routing for research
+
+Claude Project plans. AI scouts (Perplexity, Grok, Gemini) cite and synthesize. Primary-data tools (Google Keyword Planner, Meta Ad Library, Reddit) supply ground truth. NotebookLM is your synthesis layer with per-source citations. Use AI to compress, not to replace.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <Badge variant="patch-notes">RULE</Badge>
+  <span className="ml-2">60-minute cap on Day 1 morning research. One keyword check, one Meta Ad Library scan, one Reddit voice read, plus NotebookLM synthesis. Longer is procrastination.</span>
+</div>
+
+## Day 1 morning flow
+
+Five concrete moves. AI compresses, you still read primary sources.
+
+1. **Keyword candidates**. Claude generates 20 from a seed term. You validate volumes in Google Keyword Planner.
+2. **Demand trend**. Confirm direction in Google Trends. Cross-check Exploding Topics if the curve looks weird.
+3. **Competitor ads**. Manual scan in Meta Ad Library. Paste 3 to 5 ad copies into Claude for a pattern summary.
+4. **Competitor traffic**. Sanity-check sizing in Similarweb (15/day cap). Falls back to Semrush at 10/day.
+5. **ICP voice**. Manual read on Reddit, Quora, X. Synthesize 5 to 10 sources in NotebookLM with citations. Audio Overview while you make coffee.
+
+Then back to your Claude Project for the 4-box.
+
+## AI scouts
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://www.perplexity.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
@@ -24,10 +47,116 @@ These tools scout the web so Claude does not have to. Cite sources, find competi
     <p className="mt-1 text-sm text-fd-muted-foreground">1M context. Dump raw research, get a 500-word briefing back, paste into Claude. Saves Claude quota.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
   </a>
+  <a href="https://notebooklm.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">research librarian</span></div>
+    <div className="font-sans font-semibold">NotebookLM free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Not a summarizer, a librarian. Curate 5 to 10 sources, ask grounded questions, get answers with per-source citations. Audio Overview for the commute. 100 notebooks, 50 sources each, 50 chats per day.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ notebooklm.google.com</div>
+  </a>
   <a href="https://grok.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">scout alt</span></div>
     <div className="font-sans font-semibold">Grok free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">Standalone grok.com works without an X account, no credit card. Caps at 10 prompts per 2 hours, tightest in the stack. DeepSearch can scout the niche if you've already burned your Perplexity Pro Searches. Also useful for live X sentiment pulse when your ICP lives on X.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ grok.com</div>
+  </a>
+</div>
+
+## Non-AI primary data
+
+Free ground-truth tools. AI cannot scout these for you, you read the volumes and ad copy yourself.
+
+### Keyword volumes
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://ads.google.com/aw/keywordplanner" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">volumes</span></div>
+    <div className="font-sans font-semibold">Google Keyword Planner</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Google's own search volume data. Free forever, needs a Google Ads account but no spend. Validates Claude-generated keyword candidates. Free volume shows as ranges (100 to 1K, 1K to 10K), directionally correct.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ ads.google.com</div>
+  </a>
+  <a href="https://neilpatel.com/ubersuggest/" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">keyword backup</span></div>
+    <div className="font-sans font-semibold">Ubersuggest free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">3 searches per day cap. Backup keyword expansion if Keyword Planner ranges feel too broad. Watch the auto-billing trap, do not store a card on signup.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ neilpatel.com/ubersuggest</div>
+  </a>
+  <a href="https://ahrefs.com/keyword-generator" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">keyword backup</span></div>
+    <div className="font-sans font-semibold">Ahrefs Keyword Generator</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Free keyword suggestions with traffic estimates. Roughly 100 searches per month. Reach for it when Keyword Planner ranges feel too broad and you want a second read.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ ahrefs.com/keyword-generator</div>
+  </a>
+</div>
+
+### Demand trend
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://trends.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">trend</span></div>
+    <div className="font-sans font-semibold">Google Trends</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Search volume over time, regional cuts, related queries. No signup. Up to 5 terms compared per region. Confirms whether your demand is growing or dying.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ trends.google.com</div>
+  </a>
+  <a href="https://explodingtopics.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">trend backup</span></div>
+    <div className="font-sans font-semibold">Exploding Topics free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Emerging trend spotter, momentum curves. 3 searches per month free. Reach for it only if Google Trends shows an unusual curve you want to verify.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ explodingtopics.com</div>
+  </a>
+</div>
+
+### Competitor ads
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">competitor ads</span></div>
+    <div className="font-sans font-semibold">Meta Ad Library</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Every ad your competitors run on Meta. No login for commercial ads. Manual scan for messaging patterns and creative rotation. Day 1 morning gold for positioning.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ facebook.com/ads/library</div>
+  </a>
+  <a href="https://ads.tiktok.com/business/creativecenter/" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">ad backup</span></div>
+    <div className="font-sans font-semibold">TikTok Creative Center</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">TikTok ad library, trend data, hashtag volume. Free, unlimited search. Reach for it when ICP is Gen Z-native and Meta Ad Library does not catch their channel.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ ads.tiktok.com/creativecenter</div>
+  </a>
+  <a href="https://adstransparency.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">ad backup</span></div>
+    <div className="font-sans font-semibold">Google Ads Transparency</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Live competitor ads on Google Search and YouTube. Free, unlimited browse. Backup for Meta Ad Library when competitor runs on Search not Social.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ adstransparency.google.com</div>
+  </a>
+</div>
+
+### Competitor traffic
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://www.similarweb.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">traffic</span></div>
+    <div className="font-sans font-semibold">Similarweb free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Top-level competitor traffic estimates, source breakdown, top pages. 15 queries per day cap. Directional only. Enough to sanity-check a competitor exists at scale.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ similarweb.com</div>
+  </a>
+  <a href="https://www.semrush.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">traffic backup</span></div>
+    <div className="font-sans font-semibold">Semrush free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">10 reports per day cap. Backup competitor domain sizing if you burn through Similarweb's 15. Same auto-billing trap, do not store a card.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ semrush.com</div>
+  </a>
+</div>
+
+### ICP voice-of-customer
+
+<div className="my-4">
+  <a href="https://www.reddit.com/search/" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">voice</span></div>
+    <div className="font-sans font-semibold">Reddit, Quora, X search</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Where ICP pain shows up unfiltered. Search competitor names or category. Read the threads.</p>
+    <ul className="mt-2 ml-5 list-disc text-sm text-fd-muted-foreground">
+      <li><strong>Reddit search</strong>, longest-form pain (reddit.com/search)</li>
+      <li><strong>Quora</strong>, question-shaped pain (quora.com)</li>
+      <li><strong>X search</strong>, live sentiment, X-native ICPs only (x.com/search)</li>
+    </ul>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ reddit.com/search</div>
   </a>
 </div>
