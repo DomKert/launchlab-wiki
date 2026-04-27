@@ -1,16 +1,81 @@
 ---
 title: Day 1, Friday
-description: Define + Start Building. Checklist coming soon.
+description: Define + Start Building. Foundation live by tonight.
 ---
 
 <div className="mb-4 flex items-center gap-2">
   <Badge variant="main-quest">DAY 1 FRI</Badge>
-  <Badge variant="tbd">COMING SOON</Badge>
+  <Badge variant="quest">QUEST LOG</Badge>
 </div>
 
-Day 1 quest checklist ships once curriculum scope locks in the parallel session.
+Today is foundation. Not polish.
 
-In the meantime:
-- Set up your brain at [Claude Project setup](/docs/claude-project/setup).
-- Pick your stack at [Tools](/docs/tools).
-- Use [Prompt 1 Define your customer](/docs/prompts/define-customer) and [Prompt 2 The 4-box](/docs/prompts/four-box) to start the morning.
+<div className="mb-3 mt-6 flex items-center gap-2">
+  <Badge variant="main-quest">MAIN QUEST</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">tonight's done state</span>
+</div>
+
+<blockquote className="my-4 border-l-4 border-amber-500 bg-amber-500/5 px-4 py-3 italic">
+  Customer named in one sentence. 4-box drafted. A page nobody loves yet, posted to your squad channel by lights-out.
+</blockquote>
+
+<div className="mb-3 mt-6 flex items-center gap-2">
+  <Badge variant="side-quest">SIDE QUESTS</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">tick as you ship</span>
+</div>
+
+<div className="my-4 grid gap-2">
+  <PersistentCheckbox id="day-1-customer" label="Customer defined in one sentence (Prompt 1)" />
+  <PersistentCheckbox id="day-1-four-box" label="4-box drafted (Prompt 2)" />
+  <PersistentCheckbox id="day-1-niche" label="Niche scouted, 1 to 2 gaps named (Prompt 3)" />
+  <PersistentCheckbox id="day-1-wip-posted" label="WIP page posted in your squad channel" />
+  <PersistentCheckbox id="day-1-circle-of-20" label="5 Circle of 20 names queued for Day 2 morning send" />
+</div>
+
+<div className="my-6 rounded-md border border-rose-500/40 bg-rose-500/5 p-4 text-sm">
+  <Badge variant="boss">ANTI-OBJECTIVES</Badge>
+  <p className="mt-2">No polishing the page. No naming the thing. No distribution posts today. No pitch deck. The trap is grinding on copy nobody has read yet.</p>
+</div>
+
+<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2">
+    <Badge variant="loot">WORKED EXAMPLE</Badge>
+    <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">The Back Room, Day 1 evening</span>
+  </div>
+  <p>Domen's Back Room page is rough but live in the squad channel. Customer sentence at the top. 4-box pasted underneath. He opens WhatsApp, messages Marija, his mother's friend in Ljubljana's design scene. "Dober dan Marija, Domen here, Alenka's son. Quick 60-second ask, no pressure." Two questions. Does the angle make sense. Does she know one person who'd be the right first-drop invite. One warm intro queued before the page is polished. That's the Day 2 morning send teed up. See Tactic 25 Circle of 20, mapped via <a href="/docs/prompts/where-customer-lives">Prompt 10</a>.</p>
+</div>
+
+<div className="mb-3 mt-8 flex items-center gap-2">
+  <Badge variant="xp">QUEST GIVERS</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">where to go for each step</span>
+</div>
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="/docs/prompts/define-customer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><Badge variant="main-quest">PLANNING</Badge></div>
+    <div className="font-sans font-semibold">1. Define your customer</div>
+    <div className="mt-2 font-mono text-xs text-emerald-600 dark:text-emerald-400">→ Claude Project</div>
+  </a>
+  <a href="/docs/prompts/four-box" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><Badge variant="main-quest">PLANNING</Badge></div>
+    <div className="font-sans font-semibold">2. The 4-box</div>
+    <div className="mt-2 font-mono text-xs text-emerald-600 dark:text-emerald-400">→ Claude Project</div>
+  </a>
+  <a href="/docs/tools/research" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><Badge variant="quest">RESEARCH</Badge></div>
+    <div className="font-sans font-semibold">Research loadout</div>
+    <div className="mt-2 font-mono text-xs text-emerald-600 dark:text-emerald-400">→ Perplexity, Trends, Reddit</div>
+  </a>
+  <a href="/docs/tools/build" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><Badge variant="boss">BUILD</Badge></div>
+    <div className="font-sans font-semibold">Build loadout</div>
+    <div className="mt-2 font-mono text-xs text-emerald-600 dark:text-emerald-400">→ Bolt, Framer, v0</div>
+  </a>
+</div>
+
+<div className="mb-3 mt-8 flex items-center gap-2">
+  <Badge variant="achievement">ACHIEVEMENT</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">end of Day 1</span>
+</div>
+
+<PersistentCheckbox id="day-1-foundation-shipped" label="Foundation shipped. Page WIP live in squad channel." />
