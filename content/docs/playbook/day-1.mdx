@@ -19,30 +19,40 @@ Today is foundation. Not polish.
   Customer named in one sentence. 4-box drafted. A page nobody loves yet, posted to your squad channel by lights-out.
 </blockquote>
 
+<PersistentCheckbox id="day-1-main-quest" label="Main Quest cleared. Foundation live." />
+
 <div className="mb-3 mt-6 flex items-center gap-2">
   <Badge variant="side-quest">SIDE QUESTS</Badge>
   <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">tick as you ship</span>
 </div>
 
 <div className="my-4 grid gap-2">
-  <PersistentCheckbox id="day-1-customer" label="Customer defined in one sentence (Prompt 1)" />
-  <PersistentCheckbox id="day-1-four-box" label="4-box drafted (Prompt 2)" />
-  <PersistentCheckbox id="day-1-niche" label="Niche scouted, 1 to 2 gaps named (Prompt 3)" />
+  <div className="flex items-stretch gap-2">
+    <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-customer" label="Customer defined in one sentence" /></div>
+    <a href="/docs/prompts/define-customer" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 1</a>
+  </div>
+  <div className="flex items-stretch gap-2">
+    <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-four-box" label="4-box drafted" /></div>
+    <a href="/docs/prompts/four-box" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 2</a>
+  </div>
+  <div className="flex items-stretch gap-2">
+    <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-niche" label="Niche scouted, 1 to 2 gaps named" /></div>
+    <a href="/docs/prompts/scout-the-niche" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 3</a>
+  </div>
+  <div className="flex items-stretch gap-2">
+    <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-page-built" label="Landing page built in Bolt, Framer, or v0" /></div>
+    <a href="/docs/prompts/landing-page-spec" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 4</a>
+  </div>
   <PersistentCheckbox id="day-1-wip-posted" label="WIP page posted in your squad channel" />
-  <PersistentCheckbox id="day-1-circle-of-20" label="5 Circle of 20 names queued for Day 2 morning send" />
+  <div className="flex items-stretch gap-2">
+    <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-circle-of-20" label="5 Circle of 20 names queued for Day 2 morning send" /></div>
+    <a href="/docs/prompts/where-customer-lives" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 10</a>
+  </div>
 </div>
 
 <div className="my-6 rounded-md border border-rose-500/40 bg-rose-500/5 p-4 text-sm">
   <Badge variant="boss">ANTI-OBJECTIVES</Badge>
   <p className="mt-2">No polishing the page. No naming the thing. No distribution posts today. No pitch deck. The trap is grinding on copy nobody has read yet.</p>
-</div>
-
-<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <div className="mb-2 flex items-center gap-2">
-    <Badge variant="loot">WORKED EXAMPLE</Badge>
-    <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">The Back Room, Day 1 evening</span>
-  </div>
-  <p>Domen's Back Room page is rough but live in the squad channel. Customer sentence at the top. 4-box pasted underneath. He opens WhatsApp, messages Marija, his mother's friend in Ljubljana's design scene. "Dober dan Marija, Domen here, Alenka's son. Quick 60-second ask, no pressure." Two questions. Does the angle make sense. Does she know one person who'd be the right first-drop invite. One warm intro queued before the page is polished. That's the Day 2 morning send teed up. See Tactic 25 Circle of 20, mapped via <a href="/docs/prompts/where-customer-lives">Prompt 10</a>.</p>
 </div>
 
 <div className="mb-3 mt-8 flex items-center gap-2">
