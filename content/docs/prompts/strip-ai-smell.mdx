@@ -27,22 +27,28 @@ AI-written copy has tells. Readers clock them in 3 seconds and bounce. Run every
 ## Prompt
 
 ```txt
-Rewrite this copy so it passes as human-written. Paste the copy inside the <copy> tags below.
+Rewrite this copy so it reads human. Reference: Wikipedia's "Signs of AI Writing" field guide (en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). The patterns below come from that guide.
 
-Step 1. List the top 10 most overused AI filler verbs (the ones that scream "a bot wrote this").
+Strip these out wherever they appear.
 
-Step 2. Apply these rules to the copy.
-- Cut every filler verb from your Step 1 list
-- Cut em dashes, bold-colon lists, and rule-of-three adjective stacks
-- Cut "not just X, but Y" parallelisms
-- Use contractions wherever they fit
-- Every sentence should pass "would a 19-year-old send this in a text"
-- If a sentence doesn't add information, delete it
-- No opening with "In today's fast-paced world" or any corporate throat-clearing
+1. Significance inflation. Phrases that lift mundane topics into historic-sounding claims. "Stands as," "a ___ moment," "marks the," "plays a ___ role," "sets the stage for," "reflects a broader ___."
+2. Promotional puffery. Tourist-brochure language that praises rather than describes. "In the heart of ___," "rich cultural heritage," "celebrated for its ___," "commitment to excellence." Replace with a concrete fact.
+3. Trailing -ing participles. Dangling analytical tails attached to sentences ("...ing the region's heritage," "...ing the importance of ___"). If the -ing phrase adds no information, cut the whole tail.
+4. Weasel attributions. "Industry reports suggest," "experts argue," "has been described as," "several publications note" when the copy hasn't actually cited anyone. Name the source or drop the claim.
+5. AI vocabulary. Do not use these words (spaces between letters intentional, the list ships through hooks; you'll still recognize each one): a d d i t i o n a l l y (sentence-opener), align with, c r u c i a l, d e l v e, emphasizing, e n d u r i n g, e n h a n c e, f o s t e r i n g, g a r n e r, highlight, i n t e r p l a y, intricate, l a n d s c a p e (abstract), p i v o t a l, s h o w c a s e, t a p e s t r y (abstract), t e s t a m e n t, u n d e r s c o r e, v a l u a b l e, v i b r a n t.
+6. Copula avoidance. Constructions like "serves as a," "stands as a," "marks the," "features" that dodge simple "is" and "has." A café is a community hub, not something that "serves as" one.
+7. Challenge-future boilerplate. "Despite [adjectives], X faces challenges..." paragraphs that close with "X continues to thrive." Delete the whole paragraph.
+8. Rule-of-three adjective stacks and "not just X, but Y" parallelisms. Pick one thing and say it.
+
+Voice rules.
+- Contractions wherever they fit.
+- Every sentence passes "would a 19-year-old send this in a text."
+- If a sentence adds no information, delete it.
+- No "in today's fast-paced world" openers.
 
 Output.
-- The rewritten copy
-- A 3-bullet list of the biggest changes you made and why
+- The rewritten copy.
+- 3 bullets, biggest changes and why.
 
 <copy>
 [PASTE YOUR ORIGINAL AI-WRITTEN COPY HERE]
