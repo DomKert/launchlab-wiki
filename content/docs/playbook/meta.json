@@ -1,5 +1,5 @@
 {
   "title": "The Playbook",
   "icon": "ScrollText",
-  "pages": ["index", "day-1", "day-2", "day-3"]
+  "pages": ["index", "day-1", "day-2", "day-3", "distribution"]
 }

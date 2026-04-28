@@ -1,16 +1,95 @@
 ---
 title: Day 2, Saturday
-description: Build + Distribute + Iterate. Checklist coming soon.
+description: Build + Distribute + Iterate. The monster day.
 ---
 
 <div className="mb-4 flex items-center gap-2">
   <Badge variant="main-quest">DAY 2 SAT</Badge>
-  <Badge variant="tbd">COMING SOON</Badge>
 </div>
 
-Day 2 quest checklist ships once curriculum scope locks in the parallel session.
+<div className="my-4 inline-flex items-center rounded-md border border-dashed border-fd-border px-3 py-2 text-xs text-fd-muted-foreground">
+  <Badge variant="loot">LOOT SLOT</Badge>
+  <span className="ml-3">5-min Domen runs Day 2 distribution live, coming soon</span>
+</div>
 
-In the meantime:
-- Finish the page. Deploy live.
-- Use [Prompt 10 Where your customer actually lives](/docs/prompts/where-customer-lives) and [Prompt 11 First community post](/docs/prompts/first-community-post) for the afternoon distribution push.
-- Remember: crickets are data.
+Yesterday was foundation. Today is distribution. Two jobs. Ship it live. Get it in front of strangers.
+
+<blockquote className="my-4 border-l-4 border-amber-500 bg-amber-500/5 px-4 py-3 italic">
+  A live page in #launches, posted to 2 to 3 rooms where your customer actually lives, with one signal in hand to act on tomorrow.
+</blockquote>
+
+<div className="my-6">
+  <PersistentCheckbox id="day-2-ship" label="1. Ship it live" />
+  <div className="mt-2 grid gap-2 pl-6">
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-page-polished" label="Page polished from WIP to live" /></div>
+      <a href="/docs/prompts/landing-page-spec" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 4</a>
+    </div>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-page-deployed" label="Page deployed (Bolt, Framer, v0, Carrd)" /></div>
+      <a href="/docs/tools/build" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Build stack</a>
+    </div>
+    <PersistentCheckbox id="day-2-launches-posted" label="Page link posted in #launches by lunch" />
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-ai-stripped" label="Page reads human, AI smell stripped" /></div>
+      <a href="/docs/prompts/strip-ai-smell" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 9</a>
+    </div>
+  </div>
+</div>
+
+<div className="my-6">
+  <PersistentCheckbox id="day-2-distribute" label="2. Distribute and read signal" />
+  <div className="mt-2 grid gap-2 pl-6">
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-distribution-map" label="Distribution map drafted, 5 to 7 specific rooms" /></div>
+      <a href="/docs/prompts/where-customer-lives" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 10</a>
+    </div>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-broadcast" label="First broadcast sent to your warm list" /></div>
+      <a href="/docs/prompts/first-broadcast" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 7</a>
+    </div>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-community-post" label="Community post live in 2 to 3 rooms" /></div>
+      <a href="/docs/prompts/first-community-post" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 11</a>
+    </div>
+    <PersistentCheckbox id="day-2-peer-boost" label="3 Cross-Cohort Peer Boost swaps set" />
+    <PersistentCheckbox id="day-2-signal-logged" label="Signal logged, one sentence per room" />
+  </div>
+</div>
+
+<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4">
+  <div className="mb-2 flex items-center gap-2">
+    <Badge variant="quest">HOW TO KNOW IT WORKED</Badge>
+  </div>
+  <p>Posted. Heard back. Or didn't. Three patterns to read.</p>
+  <p className="mt-2">Crickets. Zero replies, zero clicks. Crickets are data, not failure. Different angle tomorrow.</p>
+  <p className="mt-2">Clicks no comments. The room saw it. Hook needs sharpening.</p>
+  <p className="mt-2">Comments. Real engagement. Reply within the hour. This is the room you keep using on Day 3.</p>
+</div>
+
+<a href="/docs/playbook/distribution" className="my-6 block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+  <div className="mb-2 flex items-center gap-2">
+    <Badge variant="tier-a">A</Badge>
+    <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">channel-clustered playbook</span>
+  </div>
+  <div className="font-sans text-lg font-semibold">Distribution</div>
+  <p className="mt-1 text-sm text-fd-muted-foreground">Pick 2 to 3 tactics mapped to your business shape, not all 31.</p>
+</a>
+
+<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4">
+  <div className="mb-2 flex items-center gap-2">
+    <Badge variant="side-quest">HUMANIZE BEFORE STRIP</Badge>
+  </div>
+  <p>Order matters. Run Prompt 13 first to add opinion and stake. Then Prompt 9 to strip the AI tells. Reverse the order and you strip out the life.</p>
+  <div className="mt-3 flex flex-wrap gap-2">
+    <a href="/docs/prompts/humanize-add-stake" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 py-1 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 13</a>
+    <a href="/docs/prompts/strip-ai-smell" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 py-1 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 9</a>
+  </div>
+</div>
+
+<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4">
+  <div className="mb-2 flex items-center gap-2">
+    <Badge variant="tbd">DON'T DO</Badge>
+  </div>
+  <p>No rebuilding the page after lunch. No chasing 5 channels. No apologizing for crickets. No "innovative" anywhere.</p>
+</div>
