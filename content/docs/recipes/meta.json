@@ -1,5 +1,5 @@
 {
   "title": "Recipes",
   "icon": "FlaskConical",
-  "pages": ["index", "customer-research", "landing-copy", "distribution-visual"]
+  "pages": ["index", "customer-research", "landing-copy", "distribution-visual", "parallel-scout"]
 }
