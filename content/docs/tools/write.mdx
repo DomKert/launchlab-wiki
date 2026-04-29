@@ -17,21 +17,21 @@ Drafting burns tokens fast. That is why you do not draft in Claude. Claude brief
 </div>
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
-  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">primary drafter</span></div>
+  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">primary drafter</span></div>
     <div className="font-sans font-semibold">ChatGPT free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">Copy drafter. GPT-5.3 for 10 messages per 5-hour window, then silent drop to GPT-5.3-mini. Spend the GPT-5.3 window on hero copy and landing body.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chatgpt.com</div>
   </a>
-  <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">rotation drafter</span></div>
-    <div className="font-sans font-semibold">Gemini free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Generous free tier, consistent quality. Primary rotation target when ChatGPT degrades. Also the best free tool for long-input prompts (captions from transcripts, multi-email sequences).</p>
+  <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">fallback drafter</span></div>
+    <div className="font-sans font-semibold">Gemini 2.5 Flash free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Primary role is 1M-context compression (see <a href="/docs/tools/research" className="underline">Research</a>), but it doubles as a fallback drafter when ChatGPT degrades after the 10-message window.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
   </a>
 </div>
 
 <div className="my-4 rounded-md border border-dashed border-fd-border p-4 text-sm text-fd-muted-foreground">
   <Badge variant="patch-notes">NEXT STEP</Badge>
-  <span className="ml-2">Every draft comes back to Claude for an AI-smell pass using <a href="/docs/prompts/strip-ai-smell" className="underline">Prompt 9 Strip AI smell</a>. See the recipe at <a href="/docs/recipes/landing-copy" className="underline">Landing copy</a>.</span>
+  <span className="ml-2">Every draft comes back to Claude for a final review pass. The AI-smell strip (<a href="/docs/prompts/strip-ai-smell" className="underline">Prompt 9</a>) and humanize pass (<a href="/docs/prompts/humanize-add-stake" className="underline">Prompt 13</a>) both run in ChatGPT, not Claude.</span>
 </div>

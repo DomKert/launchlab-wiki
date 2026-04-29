@@ -13,11 +13,11 @@ These tools scout the niche so Claude does not have to. AI scouts cite sources a
 
 ## Multi-tool routing for research
 
-Claude Project plans. AI scouts (Perplexity, Grok, Gemini) cite and synthesize. Primary-data tools (Google Keyword Planner, Meta Ad Library, Reddit) supply ground truth. NotebookLM is your synthesis layer with per-source citations. Use AI to compress, not to replace.
+Claude Project plans. Perplexity scouts and cites. Gemini 2.5 Flash compresses long inputs into 500-word briefings. Grok covers live X sentiment. Primary-data tools (Google Keyword Planner, Meta Ad Library, Reddit) supply ground truth. Use AI to compress, not to replace.
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <Badge variant="patch-notes">RULE</Badge>
-  <span className="ml-2">60-minute cap on Day 1 morning research. One keyword check, one Meta Ad Library scan, one Reddit voice read, plus NotebookLM synthesis. Longer is procrastination.</span>
+  <span className="ml-2">60-minute cap on Day 1 morning research. One keyword check, one Meta Ad Library scan, one Reddit voice read, plus a Gemini Flash compression pass. Longer is procrastination.</span>
 </div>
 
 ## Day 1 morning flow
@@ -26,9 +26,9 @@ Five concrete moves. AI compresses, you still read primary sources.
 
 1. **Keyword candidates**. Claude generates 20 from a seed term. You validate volumes in Google Keyword Planner.
 2. **Demand trend**. Confirm direction in Google Trends. Cross-check Exploding Topics if the curve looks weird.
-3. **Competitor ads**. Manual scan in Meta Ad Library. Paste 3 to 5 ad copies into Claude for a pattern summary.
+3. **Competitor ads**. Manual scan in Meta Ad Library. Paste 3 to 5 ad copies into Gemini Flash for a pattern summary, then bring the briefing to Claude.
 4. **Competitor traffic**. Sanity-check sizing in Similarweb (15/day cap). Falls back to Semrush at 10/day.
-5. **ICP voice**. Manual read on Reddit, Quora, X. Synthesize 5 to 10 sources in NotebookLM with citations. Audio Overview while you make coffee.
+5. **ICP voice**. Manual read on Reddit, Quora, X. Dump the raw quotes into Gemini Flash, get a 500-word voice briefing, paste into Claude.
 
 Then back to your Claude Project for the 4-box.
 
@@ -43,27 +43,15 @@ Then back to your Claude Project for the 4-box.
   </a>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">compressor</span></div>
-    <div className="font-sans font-semibold">Gemini 2.5 Flash</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">1M context. Dump raw research, get a 500-word briefing back, paste into Claude. Saves Claude quota.</p>
+    <div className="font-sans font-semibold">Gemini 2.5 Flash free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">1M context compressor. Dump raw research, get a 500-word briefing back, paste into Claude. Saves Claude quota.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
   </a>
-  <a href="https://notebooklm.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">research librarian</span></div>
-    <div className="font-sans font-semibold">NotebookLM free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Not a summarizer, a librarian. Curate 5 to 10 sources, ask grounded questions, get answers with per-source citations. Audio Overview for the commute. 100 notebooks, 50 sources each, 50 chats per day.</p>
-    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ notebooklm.google.com</div>
-  </a>
   <a href="https://grok.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">scout alt</span></div>
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">x-native</span></div>
     <div className="font-sans font-semibold">Grok free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Standalone grok.com works without an X account, no credit card. Caps at 10 prompts per 2 hours, tightest in the stack. DeepSearch can scout the niche if you've already burned your Perplexity Pro Searches. Also useful for live X sentiment pulse when your ICP lives on X.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Standalone grok.com, no X account, no card. 10 prompts per 2 hours. Use for live X sentiment when ICP is X-native, or DeepSearch as a Perplexity quota fallback.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ grok.com</div>
-  </a>
-  <a href="https://kimi.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">long context</span></div>
-    <div className="font-sans font-semibold">Kimi free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">2M context window. Reach for it when you need to dump big public research (long PDFs, multi-source forum scrapes) and synthesize. Public content only. Conversations stored in China. Never paste your own ICP, pitch, customer notes, or anything you would not tweet.</p>
-    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ kimi.com</div>
   </a>
 </div>
 
