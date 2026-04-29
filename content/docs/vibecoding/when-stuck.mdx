@@ -1,0 +1,69 @@
+---
+title: When stuck
+icon: LifeBuoy
+description: The 2-fix rule. The debug discipline. The graduation path to local dev when tokens run out.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="tier-a">A</Badge>
+  <Badge variant="patch-notes">RECOVERY</Badge>
+</div>
+
+Two scenarios. Bolt is looping on a bug, or you've burned through your token budget. Different fixes for each.
+
+## Scenario 1: Bolt is looping on the same bug
+
+You've prompted "fix it" twice. The bug is still there or now there's a new one. **Stop prompting.**
+
+The 3-step debug discipline.
+
+### Read the code
+
+Open the file the bug is in. Read the lines around where the issue surfaces. Most of the time the bug is right there in plain English (a wrong variable name, a missing await, a comparison against the wrong type).
+
+### Find the actual line
+
+Get the file path and line number. Example: "Bug in `src/app/page.tsx`, line 42, the form's `onSubmit` is calling `handleSubmit()` but should call `handleSignup()`."
+
+### Write one specific prompt
+
+Include file, line, what's wrong, what should happen. "In `src/app/page.tsx` line 42, replace `handleSubmit()` with `handleSignup()`. Don't touch anything else." Bolt fixes it in one shot.
+
+The reason this works: Bolt's general fix prompts get general guesses. Specific prompts with line numbers get specific edits.
+
+## Scenario 2: You've burned through your token budget
+
+Either you hit your self-set project budget, the daily 300K cap, or the monthly 1M cap. The project isn't done yet.
+
+Two paths.
+
+### Path A: Ship what you have
+
+Live and ugly beats stuck and perfect. If the page renders, the form submits, and the URL works, ship it. Polish on Day 2 with tokens that have reset overnight.
+
+### Path B: Export to local
+
+Bolt can export your project as a zip. Open it locally with [Cursor](https://cursor.sh) or [Claude Code](https://claude.com/claude-code). Both let you keep iterating with AI assistance, but the cost model changes.
+
+- **Cursor.** Subscription-based ($20/mo for Pro). No per-prompt cost. Free tier exists for limited use.
+- **Claude Code.** $20/mo Pro plan, or pay-as-you-go via API. CLI-based, runs in your terminal.
+
+You'll need.
+
+1. A Bolt project export (zip from Bolt's UI).
+2. Node.js installed locally.
+3. `npm install` in the project root.
+4. Push to GitHub, deploy to Vercel or Netlify (both free) for hosting.
+
+The mental shift: Bolt is the prototyper. Local plus Cursor is the iterator. You don't outgrow AI tools, you graduate from a managed environment to one you control.
+
+## When neither path works
+
+If the page is broken beyond shipping AND you can't afford more tokens AND you don't have time to set up local: rebuild on [Carrd](https://carrd.co). Free tier, 10 min, no AI involved. Your spec is already written. Drop it in. Ship it.
+
+This is the genuine last resort, but it's better than not shipping at all. Day 1's pass criteria is a live link. Carrd gives you that in 10 min.
+
+## Sources
+
+- [Anatomy of a great AI coding prompt (Vibe Coder Blog)](https://blog.vibecoder.me/anatomy-of-a-great-ai-coding-prompt)
+- [Migrating from Bolt to local (Vibe Coder Blog)](https://blog.vibecoder.me/migrating-from-bolt-to-local-development)

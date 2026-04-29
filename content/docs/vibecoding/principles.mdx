@@ -1,0 +1,43 @@
+---
+title: The 6 principles
+icon: List
+description: Plan first. Big first prompt, small follow-ups. Discussion mode for thinking. Edit code or use Version History instead of re-prompting. Stop after 2 fix attempts. Tell Bolt what NOT to touch.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="tier-s">S</Badge>
+  <Badge variant="main-quest">VIBECODING</Badge>
+</div>
+
+Six rules that separate a 30-min Bolt session from a 4-hour token-burning slog. Read once. Re-read every time you sit down to build.
+
+## 1. Plan in free chat before you prompt Bolt
+
+Open Bolt with a finished spec, never with a vague idea. 10 min in Claude or ChatGPT (free) writing a clear spec saves 40 to 50 percent of your token spend vs. diving in. The wiki already does this with [Prompt 4 Landing page spec](/docs/prompts/landing-page-spec). Use it. Don't skip it.
+
+## 2. First prompt is big, follow-ups are one change at a time
+
+Paste the entire spec into your first prompt. Let Bolt scaffold the whole page in one shot. After that, every follow-up is exactly one tweak. "Fix the hero alignment" beats "fix the hero, add dark mode, change the font." Bolt fumbles the multi-change ask and you spend more fixing the result than you would have on three clean asks.
+
+## 3. Discussion mode for thinking, Build mode for code
+
+Bolt has a Discussion (or Plan) mode that costs far fewer tokens than Build mode. Use it to debate "should this be one section or two?" or "what's the cleanest way to handle the form submit?" Switch to Build only for the actual code edit. Thinking out loud in Build mode is the most expensive thing you can do.
+
+## 4. Edit code or use Version History instead of re-prompting tweaks
+
+Bolt's Version History is a free undo. If you don't like a change, restore the previous state instead of prompting "go back." For small CSS or copy edits, change the code directly in Bolt's editor panel. Zero tokens. Rule of thumb: if a tweak takes one prompt to describe but five seconds to type, type it.
+
+## 5. After 2 fix attempts on the same bug, STOP and debug yourself
+
+This is where the cost spiral starts. Vague fix prompt, wrong guess, "still not working," another wrong guess, five prompts deep and the project is more broken than when you started. The fix: read the actual code. Find the line. Write one specific prompt. "The auth check on line 23 of `auth.ts` compares the raw password instead of the hashed version. Replace it with `bcrypt.compare()`." Resolves in one prompt what "fix it please" takes five to fail at.
+
+## 6. Tell Bolt what NOT to touch
+
+The biggest difference between prompting Claude and prompting Bolt: Claude generates fresh text, Bolt edits a living codebase. If you don't say "keep the colors, keep the layout, ONLY change the headline font," Bolt may re-architect things that were already working. Use the keep / change / add pattern. "Keep the layout and colors. Change the headline font to bolder. Add a subtitle below."
+
+## Sources
+
+- [Maximize Token Efficiency (Bolt Support)](https://support.bolt.new/docs/maximizing-token-efficiency)
+- [Prompt Effectively (Bolt Support)](https://support.bolt.new/docs/prompting-effectively)
+- [Bolt token tips (Vibe Coder Blog)](https://blog.vibecoder.me/bolt-new-tips-getting-most-from-tokens)
+- [Five principles of great prompting (Lovable Academy)](https://academy.lovable.app/academy/prompting)

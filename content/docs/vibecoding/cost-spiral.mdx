@@ -1,0 +1,61 @@
+---
+title: The cost spiral
+icon: AlertTriangle
+description: The antipattern that burns 1M tokens in one afternoon. The pattern, the numbers, the prompt-budget rule.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="tier-s">S</Badge>
+  <Badge variant="boss">WARNING</Badge>
+</div>
+
+<div className="my-6 rounded-lg border-2 border-amber-500/40 bg-amber-500/5 p-6">
+  <div className="font-mono text-xs uppercase tracking-widest text-amber-600 dark:text-amber-400">DANGER</div>
+  <p className="mt-2 font-sans text-lg">A vague start plus rapid-fire fix prompts can burn 1M tokens in one afternoon. One Bolt user reports spending $500+ on tokens just fixing bugs the AI introduced.</p>
+</div>
+
+## The pattern
+
+It looks like this.
+
+1. Vague initial prompt. "Build me a landing page for my fitness app."
+2. Bolt guesses at the structure, copy, design, all of it.
+3. The result is wrong. You prompt: "fix the hero, it's ugly."
+4. Bolt guesses again. Still wrong.
+5. "It's still not working." Bolt rewrites things you didn't ask it to.
+6. By prompt 5, you have a project worse than where you started, and you've burned 200K+ tokens.
+
+The free tier is 1M tokens per month, capped at 300K per day. One user reports that 1 to 2 prompts can cost 1M tokens once a project gets complex enough.
+
+## Why it happens
+
+Each Bolt prompt re-reads the entire project context. As the project grows, every prompt costs more. Vague prompts force Bolt to make guesses, and those guesses introduce new code that has to be fixed by more prompts. Each fix ratchets the cost upward.
+
+## The fix
+
+Three rules, in order of importance.
+
+### Set a token budget per project
+
+"I'll spend no more than 300K tokens on the landing page." Hit the budget, stop prompting, ship what you have or migrate to local. The sunk cost fallacy is real, and "just one more prompt" is how 1M tokens become 5M.
+
+### Plan before prompting
+
+A 10-min planning session in free Claude or ChatGPT cuts token spend 40 to 50 percent. The [landing page spec prompt](/docs/prompts/landing-page-spec) is exactly this. Don't skip it.
+
+### Read the code before re-prompting
+
+Once you've sent 2 fix prompts that didn't work, stop. Open the code, find the actual bug, write one specific prompt with file and line numbers. See [Principle 5](/docs/vibecoding/principles) for the discipline.
+
+## When you've already burned through your budget
+
+You have two options.
+
+1. **Ship what you have.** Live and ugly beats stuck and perfect.
+2. **Export to local** and keep iterating with [Cursor](https://cursor.sh) or [Claude Code](https://claude.com/claude-code), where there's no per-prompt cost. See [When stuck](/docs/vibecoding/when-stuck) for the migration path.
+
+## Sources
+
+- [Bolt token tips (Vibe Coder Blog)](https://blog.vibecoder.me/bolt-new-tips-getting-most-from-tokens)
+- [Tokens (Bolt Support)](https://support.bolt.new/tokens)
+- [Bolt Pricing 2026 (Zite)](https://www.zite.com/blog/bolt-ai-pricing)

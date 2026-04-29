@@ -1,0 +1,68 @@
+---
+title: Spec to live page
+icon: Workflow
+description: The actual sequence. Paste the spec, get the scaffold, tweak via code edits, publish in one click.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="tier-a">A</Badge>
+  <Badge variant="main-quest">VIBECODING</Badge>
+</div>
+
+End to end, from finished spec to live URL. Roughly 60 to 90 min on Day 1 PM if you respect the [6 principles](/docs/vibecoding/principles).
+
+<div className="my-4 inline-flex items-center rounded-md border border-dashed border-fd-border px-3 py-2 text-xs text-fd-muted-foreground">
+  <Badge variant="loot">LOOT SLOT</Badge>
+  <span className="ml-3">10-min Domen vibe-codes a landing page live in Bolt, coming soon</span>
+</div>
+
+## Before you start
+
+Open these in tabs.
+
+1. Your finished landing-page spec from [Prompt 4](/docs/prompts/landing-page-spec). Section 7 visual direction included.
+2. Your `4-box.md`, `customer.md`, `one-liner.md` from your Claude Project, in case Bolt needs more context.
+3. [bolt.new](https://bolt.new), signed in.
+4. Free Claude or ChatGPT in another tab for thinking and planning prompts that don't burn Bolt tokens.
+
+## The 5-step sequence
+
+### 1. First prompt. Paste the entire spec.
+
+One message. The whole spec from Prompt 4. Don't summarize, don't paraphrase. Bolt scaffolds the page based on what you give it, so give it everything.
+
+Add at the top of the spec: "Build this as a single-page Next.js + Tailwind app. Mobile-responsive. Deploy-ready." Without this, Bolt may pick a heavier stack.
+
+### 2. Review the scaffold
+
+You'll get a working page in 60 to 90 seconds. Don't prompt yet. Read it. Click around. Check what's actually wrong vs. what just needs a tweak.
+
+### 3. Tweak via code edits, not prompts
+
+For copy edits, hero image swaps, color tweaks, padding changes: open the file, edit the line, save. Zero tokens.
+
+For one-line code changes (rename a variable, change a className): same. Edit directly.
+
+### 4. Re-prompt only for restructures
+
+If you need a new section, a different layout, or a feature that touches multiple files, prompt Bolt. One change per prompt. Use the keep / change / add pattern from [Principle 6](/docs/vibecoding/principles).
+
+### 5. Publish
+
+Bolt's Publish button is one click. Your URL ends in `.bolt.host` (or you can connect a custom domain on a paid plan). For free tier, the bolt.host subdomain is fine for the weekend launch.
+
+Drop the URL in #launches before tonight's check-in.
+
+## What good looks like
+
+A 60-min build. One initial prompt. 3 to 5 follow-up prompts max. The rest is code edits. Token budget under 200K. Live URL in #launches by Friday night.
+
+## What bad looks like
+
+A 4-hour build. 30+ prompts. Every fix breaks two other things. Token budget gone before the page is even live. Migration to local on Day 2 instead of Day 1.
+
+## Next
+
+If you hit a wall: [When stuck](/docs/vibecoding/when-stuck).
+
+If you're rolling: keep going. Day 1 ends with a live URL.

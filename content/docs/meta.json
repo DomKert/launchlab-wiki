@@ -1,5 +1,5 @@
 {
   "title": "LaunchLab Wiki",
   "icon": "Gamepad2",
-  "pages": ["index", "claude-project", "playbook", "tools", "recipes", "prompts", "notes"]
+  "pages": ["index", "claude-project", "playbook", "tools", "vibecoding", "recipes", "prompts", "notes"]
 }
