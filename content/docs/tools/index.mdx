@@ -1,58 +1,146 @@
 ---
 title: Tools
 icon: Swords
-description: Free-tier loadout split by job. Think, Research, Write, Build & Ship.
+description: Free-tier loadout. Planning, executing, India regional, avoid list, quota traps.
 ---
 
 <div className="mb-4 flex items-center gap-2">
   <Badge variant="main-quest">LOADOUT</Badge>
-  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">free tier, 3-day runway</span>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">free tier only</span>
 </div>
 
-## Multi-tool routing comes first
+You'll hit a rate limit on every tool this weekend. The workaround is routing, not paying. Plan in your Claude Project, hand each job to the right tool, bring the output back to Claude for review.
 
-Claude thinks. Perplexity and Grok research. ChatGPT and Gemini write. Everything else builds and ships.
-
-You will hit a rate limit on every tool this weekend. The workaround is routing, not paying. Plan in Claude (your Project), hand the right job to the right tool, bring the output back to Claude for review.
-
-<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <Badge variant="patch-notes">RULE</Badge>
-  <span className="ml-2">Claude free is 30 to 100 messages per day. Use it for thinking and reviews, not for drafting full pages. The other buckets are where long outputs come from.</span>
-</div>
-
-<div className="my-4 rounded-md border border-dashed border-fd-border p-4 text-sm text-fd-muted-foreground">
-  <Badge variant="loot">SIGNUP LINKS</Badge>
-  <span className="ml-2">Each tool card on the subpages below is a link to that tool's signup or home page. Click to open in a new tab.</span>
-</div>
-
-## Pick a category
+## Planning, your brain
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
-  <a href="/docs/tools/think" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="main-quest">THINK</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">the brain</span></div>
-    <div className="font-sans text-lg font-semibold">Think</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Claude Project. Planning, synthesis, reviews. Your home base for the weekend.</p>
+  <a href="https://claude.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">party leader</span></div>
+    <div className="font-sans font-semibold">Claude free + Project</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Planning, synthesis, reviewing outputs.</p>
   </a>
-  <a href="/docs/tools/research" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="quest">RESEARCH</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">find the truth</span></div>
-    <div className="font-sans text-lg font-semibold">Research</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Perplexity, Grok, Gemini 2.5 Flash. Scout the niche, cite sources, compress long docs.</p>
+  <a href="https://www.perplexity.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">scout</span></div>
+    <div className="font-sans font-semibold">Perplexity free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">3 Pro Searches per day. Scout the niche, verify facts, cite sources. Use on Day 1 morning, save the rest for Day 2.</p>
   </a>
-  <a href="/docs/tools/write" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="side-quest">WRITE</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafters</span></div>
-    <div className="font-sans text-lg font-semibold">Write</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">ChatGPT, Gemini. Draft hero copy, body text, emails, captions, launch posts.</p>
+  <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">compressor</span></div>
+    <div className="font-sans font-semibold">Gemini 2.5 Flash free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">1M context compressor. Dump raw research, get a 500-word briefing back, paste into Claude. Saves Claude quota.</p>
   </a>
-  <a href="/docs/tools/build" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="boss">BUILD &amp; SHIP</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">the shippers</span></div>
-    <div className="font-sans text-lg font-semibold">Build &amp; Ship</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Framer, Bolt, Tally, Canva, Nano Banana, Ideogram, Dub.co, Carrd, OpusClip, Lovable.</p>
+  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafter</span></div>
+    <div className="font-sans font-semibold">ChatGPT free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Copy drafter. GPT-5.3 for first 10 messages per 5-hour window, then silently drops to GPT-5.3-mini. Rotate to Gemini when quality degrades.</p>
   </a>
+  <a href="https://grok.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">x-native</span></div>
+    <div className="font-sans font-semibold">Grok free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Standalone grok.com, no X account, no card. 10 prompts per 2 hours. Use for live X sentiment when ICP is X-native, or DeepSearch as a Perplexity quota fallback.</p>
+  </a>
+</div>
+
+## Executing, where work ships from
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://www.framer.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">landing</span></div>
+    <div className="font-sans font-semibold">Framer free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">No-code landing page. 1000 visitors per month, SSL, subdomain hosting.</p>
+  </a>
+  <a href="https://tally.so" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">capture</span></div>
+    <div className="font-sans font-semibold">Tally free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Waitlist forms. Unlimited submissions under 50K per month.</p>
+  </a>
+  <a href="https://bolt.new" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">vibe-code</span></div>
+    <div className="font-sans font-semibold">Bolt.new free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Vibe-coded page. 1M tokens per month. Do your full build in one 4-hour block.</p>
+  </a>
+  <a href="https://www.canva.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">design</span></div>
+    <div className="font-sans font-semibold">Canva free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Templates only. AI image generation is 50 LIFETIME, not monthly. Route image work through gpt-image-2, Nano Banana, or Ideogram.</p>
+  </a>
+  <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">image workhorse</span></div>
+    <div className="font-sans font-semibold">Gemini Nano Banana Standard</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Workhorse image. Gemini 2.5 Flash Image. 100 per day.</p>
+  </a>
+  <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">hero shot</span></div>
+    <div className="font-sans font-semibold">Gemini Nano Banana Pro</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Hero shot upgrade only. Gemini 3 Pro Image. 2 per day.</p>
+  </a>
+  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">multilingual hero</span></div>
+    <div className="font-sans font-semibold">gpt-image-2 (in ChatGPT)</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">2 to 3 per day. Native reasoning, web grounding. Only OpenAI image model that renders dense text in Hindi, Bengali, Japanese, Korean, Chinese. Pair with Nano Banana for iteration.</p>
+  </a>
+  <a href="https://ideogram.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">image alt</span></div>
+    <div className="font-sans font-semibold">Ideogram free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Hero image alt. 10 credits per day, roughly 40 images.</p>
+  </a>
+  <a href="https://dub.co" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">attribution</span></div>
+    <div className="font-sans font-semibold">Dub.co free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">25 short links per month. Track which post converted.</p>
+  </a>
+  <a href="https://www.capcut.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">launch reel</span></div>
+    <div className="font-sans font-semibold">CapCut free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Hand-assembled launch reels from multiple sources. Different job than OpusClip.</p>
+  </a>
+  <a href="https://carrd.co" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">escape hatch</span></div>
+    <div className="font-sans font-semibold">Carrd free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">10-minute escape hatch. Single-page only.</p>
+  </a>
+  <a href="https://lovable.dev" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">vibe-code alt</span></div>
+    <div className="font-sans font-semibold">Lovable free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">5 credits per day. Roughly 2 to 3 prompts.</p>
+  </a>
+  <a href="https://www.opus.pro" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">launch reel auto</span></div>
+    <div className="font-sans font-semibold">OpusClip free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">60 minutes per month for auto-cut clips from one screen recording.</p>
+  </a>
+</div>
+
+## India regional unlock
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">UNLOCK</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">+91 SIM holders only</span></div>
+  <div className="font-sans font-semibold">ChatGPT Go free 12 months</div>
+  <p className="mt-1 text-fd-muted-foreground">Verifies via UPI or card with a small refunded charge. Unlocks GPT-5.3 Instant, image gen, file uploads, extended memory. Auto-renews at ₹399/month after 12 months unless cancelled. Set a phone reminder for month 11.</p>
+</div>
+
+## Avoid
+
+<div className="my-4 rounded-md border border-dashed border-fd-border p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="tbd">SKIP</Badge></div>
+  <p className="text-fd-muted-foreground">Webflow (learning curve), Wix, v0.dev (credits die in hours), Replit Agent (trial expires), Typeform free (10 responses max), Beehiiv and Substack on Day 1 (week-2 tools), Cursor and Windsurf (code-first).</p>
+</div>
+
+## Free-tier traps
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="patch-notes">QUOTA WATCH</Badge></div>
+  <ul className="ml-5 list-disc space-y-1 text-fd-muted-foreground">
+    <li>ChatGPT silently downgrades after 10 messages per 5-hour window. Watch the output quality.</li>
+    <li>Canva AI is 50 LIFETIME image generations.</li>
+    <li>Nano Banana Standard is 100 per day, Pro is 2 per day for hero shots only.</li>
+    <li>Perplexity is 3 Pro Searches per day. Route accordingly.</li>
+  </ul>
 </div>
 
 ---
 
 <div className="my-6 rounded-md border border-dashed border-fd-border p-4 text-sm text-fd-muted-foreground">
-  <Badge variant="patch-notes">WORKFLOWS</Badge>
-  <span className="ml-2">Three worked multi-tool recipes for Back Room live in <a href="/docs/recipes" className="underline">Recipes</a>. Short combinations, not essays.</span>
+  <Badge variant="patch-notes">DEEPER</Badge>
+  <span className="ml-2">Sub-pages drill into each bucket: <a href="/docs/tools/think" className="underline">Think</a>, <a href="/docs/tools/research" className="underline">Research</a> (with non-AI primary-data tools like Keyword Planner and Meta Ad Library), <a href="/docs/tools/write" className="underline">Write</a>, <a href="/docs/tools/build" className="underline">Build &amp; Ship</a>.</span>
 </div>
