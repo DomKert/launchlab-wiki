@@ -25,41 +25,26 @@ Today is foundation. Don't over polish, ship and then iterate. Three jobs. Defin
 
 <div className="my-6">
   <PersistentCheckbox id="day-1-research" label="1. Define the business" />
-  <div className="mt-2 grid gap-3 pl-6">
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-customer" label="Customer defined in one sentence" /></div>
-        <a href="/docs/prompts/define-customer" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 1</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">One person, sharp enough you could draw their face. No "everyone," no "anyone who wants..."</p>
+  <div className="mt-2 grid gap-2 pl-6">
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-customer" label="Customer defined in one sentence" /></div>
+      <a href="/docs/prompts/define-customer" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 1</a>
     </div>
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-niche" label="Niche scouted, 1 to 2 gaps named" /></div>
-        <a href="/docs/prompts/scout-the-niche" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 3</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">Map who's already serving that customer. The gap is where you actually have a shot this weekend.</p>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-niche" label="Niche scouted, 1 to 2 gaps named" /></div>
+      <a href="/docs/prompts/scout-the-niche" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 3</a>
     </div>
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-primary-data" label="Primary-data check (keywords, ads, Reddit voice)" /></div>
-        <a href="/docs/tools/research" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Research stack</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">Don't trust the AI map alone. Pull keyword volumes, scroll competitor ads, read Reddit threads in their actual voice.</p>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-primary-data" label="Primary-data check (keywords, ads, Reddit voice)" /></div>
+      <a href="/docs/tools/research" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Research stack</a>
     </div>
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-research-brief" label="Compile research-brief.md + add to Claude Project files" /></div>
-        <a href="/docs/recipes/parallel-scout" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Recipe 4</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">Stitch the three scout outputs in NotebookLM, compress in Gemini, drop the brief into Project Files. Every chat now shares the same context.</p>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-research-brief" label="Compile research-brief.md + add to Claude Project files" /></div>
+      <a href="/docs/recipes/parallel-scout" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Recipe 4</a>
     </div>
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-four-box" label="4-box drafted (synthesizes the research above)" /></div>
-        <a href="/docs/prompts/four-box" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 2</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">Customer, problem, value prop, price. The shape every page block and broadcast pulls from for the rest of the weekend.</p>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-four-box" label="4-box drafted (synthesizes the research above)" /></div>
+      <a href="/docs/prompts/four-box" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 2</a>
     </div>
   </div>
 </div>
@@ -106,38 +91,23 @@ Today is foundation. Don't over polish, ship and then iterate. Three jobs. Defin
 
 <div className="my-6">
   <PersistentCheckbox id="day-1-build" label="3. Build and ship the page" />
-  <div className="mt-2 grid gap-3 pl-6">
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-copy" label="Page copy drafted from your 4-box" /></div>
-        <a href="/docs/prompts/landing-page-spec" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 4</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">Hero, sub-hero, 3-line value prop, FAQ, single CTA. Pulled from your 4-box, not your imagination.</p>
+  <div className="mt-2 grid gap-2 pl-6">
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-copy" label="Page copy drafted from your 4-box" /></div>
+      <a href="/docs/prompts/landing-page-spec" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 4</a>
     </div>
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-page-built" label="Landing page built in Framer, Bolt, or Carrd" /></div>
-        <a href="/docs/tools/build" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Build stack</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">Pick the builder you'll actually finish in. Pretty doesn't matter tonight, live does.</p>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-page-built" label="Landing page built in Framer, Bolt, or Carrd" /></div>
+      <a href="/docs/tools/build" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Build stack</a>
     </div>
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-ai-stripped" label="Page reads human, AI smell stripped" /></div>
-        <a href="/docs/prompts/strip-ai-smell" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 9</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">Run Prompt 9 on every block. Three-second human test: would a real person actually write this?</p>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-ai-stripped" label="Page reads human, AI smell stripped" /></div>
+      <a href="/docs/prompts/strip-ai-smell" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 9</a>
     </div>
-    <div>
-      <PersistentCheckbox id="day-1-page-shipped" label="Live link posted in #launches by tonight" />
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">Ugly and live beats pretty and draft. Drop the URL in the channel, screenshot the page, post the proof.</p>
-    </div>
-    <div>
-      <div className="flex items-stretch gap-2">
-        <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-circle-of-20" label="Circle of 20 list drafted for tomorrow's send" /></div>
-        <a href="/docs/playbook/distribution#25-circle-of-20" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Circle of 20</a>
-      </div>
-      <p className="mt-1 pl-7 text-xs text-fd-muted-foreground">20 names from your phone who'd actually open it tomorrow. Ranked by warmth, not by reach.</p>
+    <PersistentCheckbox id="day-1-page-shipped" label="Live link posted in #launches by tonight" />
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-circle-of-20" label="Circle of 20 list drafted for tomorrow's send" /></div>
+      <a href="/docs/playbook/distribution#25-circle-of-20" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Circle of 20</a>
     </div>
   </div>
 </div>
