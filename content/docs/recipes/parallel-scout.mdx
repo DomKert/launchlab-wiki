@@ -1,7 +1,7 @@
 ---
 title: 4. Parallel scout
 icon: Telescope
-description: Recipe. Day 1 morning. Run the same scout query through multiple AIs, fold the outputs into one cited brief, paste once into Claude.
+description: Recipe. Day 1 morning. Run the same scout query through multiple AIs, synthesize in Gemini, paste once into Claude.
 ---
 
 <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -12,30 +12,34 @@ description: Recipe. Day 1 morning. Run the same scout query through multiple AI
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">COMBO</Badge></div>
-  <p>Three AI scouts run the same query. NotebookLM stitches the outputs together with citations. Gemini compresses the synthesis. Claude Project receives one tight brief. Different angles in, one cohesive view out.</p>
+  <p>Three AI scouts run the same query. Gemini reads all three, synthesizes the learnings, and surfaces the contradictions in one 500-word brief. Claude Project receives that brief. Different angles in, one cohesive view out.</p>
 </div>
 
 ## Why parallel beats single
 
-One AI scout gives you one angle. Three give you the contradictions, the gaps, and the consensus. The contradictions are the most useful part because that is where weak claims expose themselves. NotebookLM and Gemini collapse the noise so Claude does not have to.
+One AI scout gives you one angle. Three give you the contradictions, the gaps, and the consensus. The contradictions are the most useful part because that's where weak claims expose themselves. Gemini's 1M context window collapses all three outputs into one brief so Claude doesn't have to.
 
 ## Steps
 
 1. **Perplexity free.** Run the scout query once. Save the output with citations. Spend 1 of your 3 daily Pro Searches.
-2. **Grok free** (DeepSearch on grok.com). Same query, different angle. Grok pulls live X sentiment that Perplexity does not see.
+2. **Grok free** (DeepSearch on grok.com). Same query, different angle. Grok pulls live X sentiment that Perplexity doesn't see.
 3. **Gemini free** (Deep Research mode if available, otherwise standard chat with grounding on). Same query a third time. Gemini reaches further into long-tail academic and trade sources.
-4. **NotebookLM free.** New notebook. Drop all 3 scout outputs in as sources (paste as text or upload as .txt). Ask grounded questions like "what 3 patterns show up across all three scouts" and "where do these scouts disagree". Citations show which source said what.
-5. **Gemini free.** Paste the NotebookLM synthesis. Ask for a 500-word briefing that cuts redundancy and keeps the contradictions. 1M context handles all the source dumps if you also paste the raw scout outputs as backup.
-6. **Claude Project.** Upload the compressed briefing as a Project knowledge file. Now [Prompt 2 The 4-box](/docs/prompts/four-box) and [Prompt 4 Landing page spec](/docs/prompts/landing-page-spec) have rich context to work from across every chat.
+4. **Gemini free** (new chat). Paste all 3 scout outputs in one message. Ask for a 500-word brief that synthesizes the shared learnings, surfaces where the three scouts disagree, and keeps the contradictions explicit. 1M context handles the full raw dumps in one shot.
+5. **Claude Project.** Upload the brief as a Project knowledge file (`research-brief.md`). Now [Prompt 2 The 4-box](/docs/prompts/four-box) and [Prompt 4 Landing page spec](/docs/prompts/landing-page-spec) have rich context to work from across every chat.
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
   <Badge variant="patch-notes">TIME</Badge>
-  <span className="ml-2">5 min per scout, 10 min in NotebookLM, 5 min in Gemini, 2 min upload to Claude. Roughly 30 min total. Do it once on Day 1 morning.</span>
+  <span className="ml-2">5 min per scout, 5 min Gemini synthesis, 2 min upload to Claude. Roughly 20 min total. Do it once on Day 1 morning.</span>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
+  <Badge variant="patch-notes">BONUS RIGOR</Badge>
+  <span className="ml-2">Want grounded citations before you trust the synthesis? Drop the 3 scout outputs into a <a href="https://notebooklm.google.com" target="_blank" rel="noreferrer" className="underline hover:text-emerald-600">NotebookLM</a> notebook as sources. Ask "where do these three scouts disagree?" and the citations show you which source made which claim. Then paste the NotebookLM synthesis into Step 4 instead of the raw outputs. Optional, manual, useful when stakes are high.</span>
 </div>
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
   <Badge variant="patch-notes">FALLBACK</Badge>
-  <span className="ml-2">If you only have time for 2 scouts, drop Grok unless your ICP is X-native. Perplexity plus Gemini covers the breadth. Skip NotebookLM only if you trust one scout enough to upload its raw output to Claude directly.</span>
+  <span className="ml-2">If you only have time for 2 scouts, drop Grok unless your ICP is X-native. Perplexity plus Gemini covers the breadth.</span>
 </div>
 
 ## Where else to fan out
