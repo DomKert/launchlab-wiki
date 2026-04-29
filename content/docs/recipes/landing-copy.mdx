@@ -1,7 +1,7 @@
 ---
 title: 2. Landing copy
 icon: PenLine
-description: Recipe. Day 1 afternoon or Day 2 morning. Claude briefs, ChatGPT drafts, Claude strips AI smell.
+description: Recipe. Day 1 afternoon or Day 2 morning. Claude briefs, ChatGPT drafts and strips, Claude reviews.
 ---
 
 <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -12,14 +12,15 @@ description: Recipe. Day 1 afternoon or Day 2 morning. Claude briefs, ChatGPT dr
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">COMBO</Badge></div>
-  <p>Claude briefs the structure. ChatGPT drafts the copy (it is the stronger drafter on the free tier for prose). Claude reviews for AI smell and ships the cleaned version.</p>
+  <p>Claude briefs the structure. ChatGPT drafts the copy and runs the AI-smell strip in the same window (stronger drafter on the free tier for prose, and Claude's brain quota stays free for review). Claude does the final read and you ship.</p>
 </div>
 
 ## Steps
 
 1. **Claude Project.** Run [Prompt 4 Landing page spec](/docs/prompts/landing-page-spec). Output is a structured spec with hero, problem, offer, how it works, social proof slot, CTA.
 2. **ChatGPT free.** Paste the spec. Ask for a full-page draft with the exact wording for each section. GPT-5.3 is stronger than GPT-5.3-mini for this, so spend your first 10 messages of the 5-hour window here.
-3. **Claude Project.** Paste the ChatGPT draft. Run [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) over it. Ship the cleaned version.
+3. **ChatGPT free.** Same window. Run [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) on the draft. Spend the GPT-5.3 messages before they drop to mini.
+4. **Claude Project.** Final read. If it sounds human in 3 seconds, ship.
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
   <Badge variant="patch-notes">FALLBACK</Badge>
