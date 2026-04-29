@@ -14,31 +14,23 @@ const OUT_DIR = path.join(OUT_PARENT, 'launchlab-pack');
 const OUT_ZIP = path.join(OUT_PARENT, 'launchlab-project-pack.zip');
 const WIKI_BASE = 'https://launchlab-wiki.netlify.app';
 
+// Meta guide intentionally excluded. It's pasted as the Custom Instructions
+// system prompt in Step 2, not uploaded as a knowledge file.
 const FILES = [
-  { heading: '## 1. Meta guide', filename: 'meta-guide.md' },
   { heading: '## 2. Tool matrix (abridged)', filename: 'tool-matrix.md' },
   { heading: '## 3. Program overview', filename: 'program-overview.md' },
   { heading: '## 4. Day checklist', filename: 'day-checklist.md' },
   { heading: '## 5. Voice guide', filename: 'voice-guide.md' },
 ];
 
-const README = `LaunchLab Claude Project Pack
-==============================
+const README = `LaunchLab Claude Project Knowledge Pack
+========================================
 
-This pack contains 6 files for setting up your Claude Project on Day 1 morning.
+5 knowledge files for your Claude Project. Drag all 5 into Files + on your Project.
 
-Setup:
-1. Create a new Claude Project at claude.ai (Projects, then New Project).
-2. Open meta-guide.md, copy the contents, paste into the Project's Custom Instructions field.
-3. Upload all 6 files (meta-guide.md, tool-matrix.md, program-overview.md, day-checklist.md, voice-guide.md, prompt-index.md) as knowledge files via Files +, Add text content (or drag and drop).
-4. Open a new chat, turn on Adaptive Thinking, run Prompt 1 from the wiki.
-
-prompt-index.md is a lean reference of all 14 prompts (name, description, URL). Lets Claude route you to the right prompt without you needing to know the name. Full prompt text stays in the wiki.
+The Meta guide (system prompt) is NOT in this pack. Copy it directly from the wiki at /docs/claude-project/core-files and paste into the Project's Custom Instructions field.
 
 Full walkthrough: https://launchlab-wiki.netlify.app/docs/claude-project/setup
-Wiki: https://launchlab-wiki.netlify.app
-
-This pack is auto-regenerated on every wiki build, so it stays in sync with the source.
 `;
 
 function parseFrontmatter(mdx) {
