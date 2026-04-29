@@ -9,6 +9,7 @@ const ROOT = path.resolve(SCRIPT_DIR, '..');
 const SOURCE = path.join(ROOT, 'content/docs/claude-project/core-files.mdx');
 const PROMPTS_DIR = path.join(ROOT, 'content/docs/prompts');
 const PROMPTS_META = path.join(PROMPTS_DIR, 'meta.json');
+const DISTRIBUTION_SOURCE = path.join(ROOT, 'content/docs/playbook/distribution/index.mdx');
 const OUT_PARENT = path.join(ROOT, 'public/files');
 const OUT_DIR = path.join(OUT_PARENT, 'launchlab-pack');
 const OUT_ZIP = path.join(OUT_PARENT, 'launchlab-project-pack.zip');
@@ -26,7 +27,7 @@ const FILES = [
 const README = `LaunchLab Claude Project Knowledge Pack
 ========================================
 
-5 knowledge files for your Claude Project. Drag all 5 into Files + on your Project.
+6 knowledge files for your Claude Project. Drag all 6 into Files + on your Project.
 
 The Meta guide (system prompt) is NOT in this pack. Copy it directly from the wiki at /docs/claude-project/core-files and paste into the Project's Custom Instructions field.
 
@@ -42,6 +43,34 @@ function parseFrontmatter(mdx) {
     if (m) out[m[1]] = m[2].replace(/^["']|["']$/g, '');
   }
   return out;
+}
+
+function stripJsx(mdx) {
+  return mdx
+    .replace(/^---[\s\S]+?---\n/, '')
+    .replace(/{`[^`]*`}/g, '')
+    .replace(/{['"][^'"]*['"]}/g, '')
+    .replace(/<\/?[A-Za-z][^>]*\/?>/g, '')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+async function buildDistributionDoctrine() {
+  const mdx = await fs.readFile(DISTRIBUTION_SOURCE, 'utf8');
+  const fm = parseFrontmatter(mdx);
+  const body = stripJsx(mdx);
+  const header = [
+    `# ${fm.title || 'Distribution'}`,
+    '',
+    fm.description || '',
+    '',
+    `Source: ${WIKI_BASE}/docs/playbook/distribution`,
+    '',
+    '---',
+    '',
+  ].join('\n');
+  return header + body + '\n';
 }
 
 async function buildPromptIndex() {
@@ -107,6 +136,10 @@ async function main() {
   const promptIndex = await buildPromptIndex();
   await fs.writeFile(path.join(OUT_DIR, 'prompt-index.md'), promptIndex, 'utf8');
   console.log(`  prompt-index.md (${promptIndex.length} chars)`);
+
+  const distribution = await buildDistributionDoctrine();
+  await fs.writeFile(path.join(OUT_DIR, 'distribution.md'), distribution, 'utf8');
+  console.log(`  distribution.md (${distribution.length} chars)`);
 
   await fs.writeFile(path.join(OUT_DIR, 'README.txt'), README, 'utf8');
 
