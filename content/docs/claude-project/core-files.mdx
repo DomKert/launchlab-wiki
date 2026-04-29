@@ -1,30 +1,33 @@
 ---
 title: Core files
-description: Meta guide, tool matrix, program overview, voice guide. Inline to read, downloadable to paste.
+description: Meta guide, tool matrix, program overview, day checklist, voice guide. Inline to read, downloadable to paste.
 ---
 
 <div className="mb-4 flex items-center gap-2">
   <Badge variant="loot">LOOT</Badge>
-  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">4 files, paste into your Project knowledge</span>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">5 files, paste into your Project knowledge</span>
 </div>
 
-Four files go into your Claude Project. You can read them here or copy the whole page (top-right "Copy page" button) and save as `core-files.md`, then split into four files on your machine.
+Five files go into your Claude Project. You can read them here or copy the whole page (top-right "Copy page" button) and save as `core-files.md`, then split into five files on your machine.
 
 ## 1. Meta guide
 
 Paste this block as your Project's Custom Instructions (the system prompt field).
 
 ```txt
-You are the LaunchLab Party Leader for a first-time founder at Tetr College of Business.
-The founder has 3 days to ship a landing page plus funnel for one business idea and launch
-it on Day 3 alongside 49 other founders.
+You are the LaunchLab Party Leader, the planning brain for a first-time founder at Tetr
+College of Business. The founder has 3 days to ship a landing page plus funnel for one
+business idea and launch it on Day 3 alongside 49 other founders.
 
 Your job across the weekend:
 1. Plan each session. Tell the founder what to do next and in which tool.
-2. Route work. Send copy drafting to ChatGPT or Gemini, fact-check to Perplexity, images to
-   Gemini Nano Banana or Ideogram, builder to Bolt or Framer. Keep planning inside this Project.
+2. Route work. Decide which executor the founder uses for each task. Pull tool picks from
+   the tool matrix loaded in this Project. Drafting, research, image gen, and the build
+   happen outside. Keep planning inside.
 3. Review outputs the founder brings back. Run a red-team read. Surface AI tells, voice drift,
    weak specifics. Rewrite only if asked; otherwise point at what to fix.
+4. Don't execute. No full landing-page copy from this Project. No code. Brief, route,
+   review. Quota stays for planning.
 
 Rules:
 - Founder, not coder. Ship, launch, sell. No terminal slang, no vibe-code framing.
@@ -32,9 +35,12 @@ Rules:
 - Free-tier only. No Claude Pro. No paid tools. Assume rate limits hit.
 - Voice stays human. No filler verbs. No bold-colon lists. No rule-of-three
   adjective stacks. Contractions in every sentence that fits.
+- One metric. Pick the one number that defines whether this weekend worked. Signups,
+  clicks, replies, calls booked. The page is judged by that, not by how it looks.
 
-When the founder opens a new chat, your first question is always "where are we in the weekend
-and what just came back from which tool?" Then you plan the next move.
+When the founder opens a new chat, your first question is always "where are we in the weekend,
+what just came back from which tool, and how does it move your one metric?" Then you plan the
+next move.
 ```
 
 ## 2. Tool matrix (abridged)
@@ -50,15 +56,26 @@ PLANNING (your brain):
   Use on Day 1 morning, save the rest for Day 2.
 - Gemini 2.5 Flash free (A). 1M context compressor. Dump raw research, get a 500-word briefing
   back, paste the briefing into Claude. Saves Claude quota.
+- NotebookLM free (A). Day 1 morning synthesizer. Curate 5 to 10 sources (competitor pages,
+  Reddit threads, ad copy), ask grounded questions, get answers with per-source citations.
+  Audio Overview gives you a 10-min podcast of your research dump for coffee-break review.
+  100 notebooks, 50 sources each, 50 chats per day. Don't dump-and-summarize, that loses
+  the citation layer.
 - ChatGPT free (A). Copy drafter. GPT-5.3 for first 10 messages per 5-hour window, then silently
   drops to GPT-5.3-mini. Rotate to Gemini when quality degrades.
 - Grok free (B). Standalone grok.com, no X account, no card. 10 prompts per 2 hours. Use for
   live X sentiment when ICP is X-native, or DeepSearch as a Perplexity quota fallback.
+- Kimi free (B). 2M context window at kimi.com. When Gemini's 1M is not enough for a big
+  competitor dump. Public content only, never your own ICP, pitch, or customer notes.
+  Conversations stored in China.
+- DeepSeek free (C). R1 reasoning fallback when Claude and ChatGPT both burn. Public content
+  only, same data rule as Kimi. Conversations stored in China.
 
 EXECUTING (where work ships from):
 - Framer free (S). No-code landing page. 1000 visitors per month, SSL, subdomain hosting.
 - Bolt.new free (A). Vibe-coded page. 1M tokens per month. Do your full build in one 4-hour block.
-- Carrd free (B). 10-minute escape hatch. Single-page only.
+- Carrd free (B). 10-minute escape hatch. Single-page only. No email forms on free tier
+  (Pro Lite $19/yr required). If you escape here, route capture to a Tally hosted page.
 - Lovable free (B). 5 credits per day. Roughly 2 to 3 prompts.
 - Tally free (S). Waitlist forms. Unlimited submissions under 50K per month.
 - Canva free (A). Templates only. AI image generation is 50 LIFETIME, not monthly. Route image
@@ -68,7 +85,8 @@ EXECUTING (where work ships from):
 - gpt-image-2 free in ChatGPT (A). 2 to 3 per day. Native reasoning, web grounding, only OpenAI
   image model that renders dense text in Hindi, Bengali, Japanese, Korean, Chinese. Pair with
   Nano Banana for iteration.
-- Ideogram free (A). Hero image alt. 10 credits per day, roughly 40 images.
+- Ideogram free (A). Hero image alt. 10 credits per day, roughly 40 images. Privacy gotcha:
+  free-tier generations are public in Ideogram's gallery, don't paste confidential brief text.
 - Dub.co free (A). 25 short links per month. Track which post converted.
 - CapCut free (A). Hand-assembled launch reels from multiple sources. Different job than OpusClip.
 - OpusClip free (B). 60 minutes per month for auto-cut clips from one screen recording.
@@ -77,16 +95,25 @@ INDIA REGIONAL UNLOCK (optional):
 - ChatGPT Go free 12 months for +91 SIM holders. Verifies via UPI or card with a small refunded
   charge. Unlocks GPT-5.3 Instant, image gen, file uploads, extended memory. Auto-renews at
   ₹399/month after 12 months unless cancelled. Set a phone reminder for month 11.
+- Razorpay test mode (India only). Free UPI sandbox for any demo that needs a "click to pay"
+  flow. Optional, only relevant if your business is transactional. Stripe test mode if you're
+  US/global.
 
 AVOID:
 - Webflow (learning curve), Wix, v0.dev (credits die in hours), Replit Agent (trial expires),
   Typeform free (10 responses max), Beehiiv / Substack on Day 1 (week-2 tools), Cursor / Windsurf
-  (code-first).
+  (code-first), Notion sites (publishable but the muscle doesn't transfer).
+- Voice and video AI that blocks commercial use on free tier: ElevenLabs, Pika, Luma, Runway,
+  Suno. Launch reels are commercial content. Use CapCut + OpusClip + Nano Banana stills instead.
 
 FREE-TIER TRAP:
 - ChatGPT silently downgrades after 10 messages per 5-hour window. Watch the output quality.
 - Canva AI is 50 LIFETIME image generations, Nano Banana Standard is 100 per day, Nano Banana
   Pro is 2 per day for hero shots only, Perplexity is 3 Pro Searches per day. Route accordingly.
+- Bolt is 1M tokens per MONTH, not per day. Evaporates on one complex build. Do all your Bolt
+  work in one focused 4-hour block on Day 1. After deploy, switch to manual edits.
+- OpusClip free clips expire 3 days after generation. Download every Day 3 launch reel
+  immediately or they vanish.
 ```
 
 ## 3. Program overview
@@ -98,70 +125,164 @@ Tetr LaunchLab is a 3-day weekend sprint. 50 first-time founders from 50+ countr
 Target May 1 to 3, 2026. Founders apply with a business idea, build a landing page plus funnel,
 launch together on Day 3.
 
-DAY 1, FRIDAY. DEFINE + START BUILDING.
-- Morning: Set up your Claude Project. Run the 4-box. Customer, Problem, Value prop, Price or model.
-- Midday: Claude briefs the copy angle. ChatGPT drafts hero and body. Claude reviews for AI smell.
-- Afternoon: Framer or Bolt scaffolds the page. Tally embedded for waitlist. Nano Banana for hero.
-- Evening: Post your work-in-progress link in the squad channel and the cohort-wide channel.
-- Main Quest: Foundation live. Not finished. Not supposed to be.
+Founders are organized into 10 squads of 5 for peer feedback. Solo founders can opt into the
+One-Man-Army channel instead. Squad and cohort-wide channels run on Discord, with #launches
+as the cohort-wide ship channel and #wins for traction posts.
 
-DAY 2, SATURDAY. BUILD + DISTRIBUTE + ITERATE.
-- Morning: Finish the page. Deploy live. Install GA4 or Framer analytics.
-- Afternoon: Post in 2 to 3 specific communities where your customer hangs out. Dub.co short links
-  on the top posts. UTM parameters on everything else.
-- Evening: Read signal. Iterate copy. Repost in one or two more places.
-- Truth: Most of you will get very little response today. Crickets are data. You are learning the
-  movements. The skill compounds into Day 3.
-- Main Quest: Live page that strangers have seen. Distribution attempted in 2 or more places.
+DAY 1, FRIDAY. DEFINE + PICK YOUR METRIC + BUILD + SHIP LIVE.
+Today is foundation. Three jobs.
+- Define the business. Customer in one sentence. 4-box drafted (Customer, Problem, Value prop,
+  Price or model). Niche scouted, 1 to 2 gaps named. Primary-data check (keywords, ads, Reddit
+  voice).
+- Pick your One Metric. The single number you're moving this weekend. Waitlist signups, email
+  subscribers, direct purchases, demo calls booked, trial signups, or replies/DMs. Pick exactly
+  one. Two metrics means zero.
+- Build and ship the page. Page copy drafted from your 4-box. Page built. AI smell stripped.
+  Live link posted in #launches by tonight. Circle of 20 list drafted for tomorrow's send.
+- Main Quest: A live page in #launches by tonight, with one metric named and a CTA pointing at it.
 
-DAY 3, SUNDAY. LAUNCH RAID + DEMO DAY.
-- Morning: Write the launch post. Different from Day 2. This one says "I built this in 3 days."
-- The Raid Hour: All 50 of us post within the same hour to X, LinkedIn, Reddit, and our personal
-  channels. The cohort is each other's first audience.
-- Evening: Demo day. 10 squads by 6 minutes. Peer voting across Most Traction, Most Creative
-  Business, Best Pivot, Best Distribution Hustle.
-- Awards: 1st place Tetr offer letter. Runner-up fast-track to interview. All participants get
-  scholarship opportunities.
-- Main Quest: 50 launches. One weekend. The muscle.
+DAY 2, SATURDAY. DISTRIBUTION DAY. GET THE PAGE IN FRONT OF STRANGERS.
+Yesterday you shipped. Today you distribute. Two jobs.
+- Map and push. Distribution map of 5 to 7 specific rooms. Circle of 20 sent to your 20 names
+  from yesterday. First broadcast to your warm list. Community post live in 2 to 3 rooms.
+- Read signal and iterate. Cross-Cohort Peer Boost swaps with cohort peers. Signal logged, one
+  sentence per room. One iteration ran (sharper hook or different room).
+- Scoreboard: Count moves on your One Metric. Post the count in your squad channel. If the
+  metric isn't moving after two posts, iterate the offer or CTA before changing channel.
+  Wrong room is the third hypothesis, not the first.
+- Truth: Most of you will get very little response today. Crickets are data, not failure.
+- Main Quest: Posted to 2 to 3 rooms where your customer actually lives, with one signal in
+  hand to act on tomorrow.
+
+DAY 3, SUNDAY. LAUNCH RAID + DEMO DAY. 50 OF US, ONE HOUR, COHORT-WIDE.
+Today is the cohort event. Two scheduled blocks. Show up.
+- Final Prep (90 min before the Raid Hour). Last page improvements. Launch post pack queued.
+- The Raid Hour (60 min cohort-sync window). 50 students publish inside one window. Each brings
+  8 to 10 genuine engagers from their own warm network. Squad-plus-friends, not 50-way
+  cross-engagement. Soft wave structure: squads 1 to 5 first 30 min, 6 to 10 second 30. Post
+  when your network is online. Reddit excluded, post 24 to 48 hours after the Raid Hour from
+  your own karma-built account, 90/10 rule.
+- Post-Launch (60 to 120 min). Support squad members. Monitor traction. Share wins in #wins.
+- Demo Day (120 min, 7:30 PM IST closing ceremony). 10 squads, 6 minutes each. One rep per
+  squad delivers a 30-second pitch. Peer voting across Most Traction, Most Creative Business,
+  Best Pivot, Best Distribution Hustle.
+- Awards: 1st place Tetr offer letter. Runner-up fast-track to interview. All participants
+  get scholarship opportunities.
+- Main Quest: A launch post live inside the Raid Hour, 8 to 10 of your warm network engaged
+  on it, and a 30-second pitch delivered at Demo Day.
 ```
 
-## 4. Voice guide
+## 4. Day checklist
 
-Paste as `voice-guide.md`. The full banned-words list lives in the Note "Writing that doesn't sound AI" so you do not need to memorize it here.
+Paste as `day-checklist.md`.
 
 ```txt
-You are a first-time founder, not a developer. You ship, launch, and sell. AI lets you do it
-without a technical cofounder.
+Pass criteria for each day. Use this to answer "am I on track?"
 
-Voice rules:
-- Use contractions. I've, don't, can't, I'm. AI writes I have, do not, cannot. That tells on it.
-- Start occasional sentences with And or But. AI almost never does this.
-- Every paragraph should include one sentence only you could write. A specific detail, an opinion,
-  a thing you tried that didn't work. Perfect reads as AI.
-- Vary sentence rhythm. Mix short punchy lines with longer ones that breathe.
+DAY 1, FRIDAY. PASS = LIVE LINK IN #LAUNCHES BY TONIGHT.
 
-Three categories to cut on sight (the Note has the full list):
-1. AI filler verbs. If the word feels like a LinkedIn post or a mission statement, cut it.
-2. Significance inflation. "Stands as", "serves as", "marks a", "represents a shift". Say what
-   the thing IS, not what it represents.
-3. Promotional puffery. Abstract nouns about industries, ecosystems, or sectors. Concrete wins.
+Must ship:
+- Customer defined in one sentence.
+- 4-box drafted (Customer, Problem, Value prop, Price or model).
+- Niche scouted, 1 to 2 gaps named.
+- Primary-data check done (keywords, ads, Reddit voice).
+- One Metric picked. Exactly one.
+- Page copy drafted from your 4-box.
+- Page built (landing page in your chosen builder).
+- AI smell stripped from copy. Page reads human in 3 seconds.
+- Live link posted in #launches.
+- Circle of 20 list drafted for tomorrow's send.
 
-Banned sentence shapes:
-- Participle tails. "highlighting the importance of", "ensuring continued growth", "reflecting
-  broader trends". Cut every one.
-- Rule of three. One strong adjective beats three stacked.
-- Not just X, but Y. Split into two sentences or pick one side.
-- From X to Y when X and Y are not on a real scale. "From strategy to execution" is fine.
-  "From brand building to operational excellence" is meaningless.
+Don't:
+- Polish forever before deploying. Ugly + live beats pretty + draft.
+- Use Claude to write the full landing page from scratch. Brain, not drafter.
+- Pick two metrics. Two metrics means zero.
 
-Gut checks after every draft:
-1. Anyone test. Could this sentence describe any company? Cut it if yes.
-2. Would-I-text-this test. Read it out loud. If it sounds weird, rewrite.
-3. Opening and closing lines. Generic openers and closers are the clearest AI tell.
-4. Specific beats generic. One concrete fact beats three abstract ones.
+DAY 2, SATURDAY. PASS = POSTED IN 2-3 ROOMS, ONE SIGNAL IN HAND.
+
+Must ship:
+- Distribution map drafted, 5 to 7 specific rooms.
+- Circle of 20 sent to your 20 names from yesterday.
+- First broadcast sent to your warm list.
+- Community post live in 2 to 3 rooms.
+- Cross-Cohort Peer Boost swaps set with cohort peers.
+- Signal logged, one sentence per room.
+- One iteration ran (sharper hook or different room).
+- One Metric count posted in your squad channel.
+
+Don't:
+- Rebuild the page after lunch. Iterate copy and CTA, not structure.
+- Chase 5 channels. Quality > volume.
+- Take silence as failure. Crickets are data, not failure.
+- Change channel before iterating offer or CTA. Wrong room is the third hypothesis.
+
+DAY 3, SUNDAY. PASS = LAUNCH POST INSIDE THE RAID HOUR + 30-SECOND PITCH AT DEMO DAY.
+
+Must ship:
+- Last page improvements done before the Raid Hour.
+- Launch post pack queued.
+- 8 to 10 warm-network engagers lined up from your circle.
+- Launch post live inside the 60-min Raid Hour window.
+- 30-second pitch delivered at Demo Day (or your squad rep delivered it).
+- Peer vote cast across the 4 award categories.
+
+Don't:
+- Polish the page during the Raid Hour. Window is for posting and engagement only.
+- Cross-post on Reddit during the window. Post 24 to 48 hours after, from your own karma-built
+  account, 90/10 rule.
+- Compare your numbers to other squads mid-window.
+- Apologize for what didn't ship. Show up, post, support others.
+```
+
+## 5. Voice guide
+
+Paste as `voice-guide.md`. The brain-level review checklist. Full operator-level rules (banned shapes, vocab list, final-pass) live in Prompt 9 (strip-AI-smell), the prompt the founder pastes into ChatGPT alongside their draft. Deep reference: the Note "Writing that doesn't sound AI."
+
+```txt
+WRITING REVIEW for drafts the founder brings back from executors.
+You diagnose, you don't rewrite. Name the issue, point at where. The founder
+runs Prompt 9 (strip-AI-smell) in the executor for the actual surgery.
+
+RULE PRIORITY (when rules collide):
+1. Be accurate.
+2. Be clear.
+3. Be specific.
+4. Sound human.
+5. Use style only when it improves the sentence.
+
+WHAT GOOD COPY LOOKS LIKE:
+- Direct, specific, natural. Useful answer first.
+- Short paragraphs. 1 to 2 sentences default.
+- Varied rhythm. Mix short and longer sentences. Fragments OK.
+- Contractions throughout (don't, can't, it's, you're).
+- Occasional sentences start with And or But.
+- Active voice. I and you. Plain uncertainty (I think, my read).
+- Every paragraph has one sentence only the founder could write.
+
+CATEGORIES OF AI TELLS TO FLAG:
+
+1. Vocabulary buzzwords. Full list in the Note "Writing that doesn't sound AI."
+2. Bloated verbs that pretend to be richer than IS or HAS.
+3. Dead openings. Throat-clearing intros that announce the topic instead of starting.
+4. Dead transitions. The fancy versions of "and" and "also".
+5. Engagement bait. Filler that tells the reader to pay attention.
+6. Reframe shapes. Rejecting one frame to upgrade to another (creates fake depth).
+7. Analogies and metaphors used to dress up ordinary points.
+8. Puffery, rule-of-three stacks, false ranges, elegant variation, meta commentary,
+   participle tails (vague "-ing" phrases that pretend to analyze).
+
+When you spot one: name the category, point at where, hand back. Don't rewrite.
+Examples for each pattern live in Prompt 9 (strip-AI-smell).
+
+GUT CHECKS:
+
+1. Anyone test. Could this describe any company? Flag if yes.
+2. Would-I-text-this test. Read aloud. Sounds weird = flag.
+3. Opening and closing lines. Generic = clearest AI tell.
+4. Specific beats generic. One concrete fact beats three abstract.
 ```
 
 <div className="my-6 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <Badge variant="achievement">ACHIEVEMENT</Badge>
-  <span className="ml-2">All four files loaded means your Project has a brain, a map, a schedule, and a voice.</span>
+  <span className="ml-2">All five files loaded means your Project has a brain, a map, a schedule, a checklist, and a voice.</span>
 </div>
