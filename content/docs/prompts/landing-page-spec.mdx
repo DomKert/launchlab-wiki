@@ -25,16 +25,12 @@ One prompt, one structured output you paste into any builder (Bolt, v0, Carrd, F
 
 ## Before you run this
 
-Claude needs your 4-box in the Project before this prompt lands. Either pasted into the chat above, or saved as a Project knowledge file (cleaner since it persists across chats):
-
-1. **4-box** from [Prompt 2 The 4-box](/docs/prompts/four-box) (Customer, Problem, Value prop, Price)
-
-Skip it and the spec comes back generic.
+Claude needs `4-box.md` in the Project before this prompt lands. [Prompt 2 The 4-box](/docs/prompts/four-box) prints it as a code block at the end of its output, ready to drop into Files +, Add text content. Skip it and the spec comes back generic.
 
 ## Prompt
 
 ```txt
-Turn the 4-box from this Project (chat or knowledge files) into a landing page spec I can build in [Bolt / v0 / Lovable / Artifacts / Carrd / Framer / Webflow / raw HTML, pick one and say it].
+Read 4-box.md from this Project (or the chat above if I haven't saved it yet). Turn it into a landing page spec I can build in [Bolt / v0 / Lovable / Artifacts / Carrd / Framer / Webflow / raw HTML, pick one and say it].
 
 Output these sections in order, with copy for each:
 1. Hero: headline (6 to 8 words), subhead (one sentence), primary CTA button text (2 to 4 words)
