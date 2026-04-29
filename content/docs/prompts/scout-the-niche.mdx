@@ -10,19 +10,20 @@ description: Execution. Day 1 afternoon. Perplexity free.
 </div>
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
-  <a href="https://www.perplexity.ai" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Perplexity free</a>
-  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Alternatives</div>
-  <div className="mt-1 flex flex-wrap gap-3">
-    <a href="https://grok.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Grok DeepSearch (quota fallback)</a>
-    <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Gemini 2.5 Flash (Google Search grounded)</a>
-    <a href="https://claude.ai" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Claude web search</a>
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOLS</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">run in parallel</span></div>
+  <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+    <a href="https://www.perplexity.ai" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Perplexity free</a>
+    <span className="font-mono text-xs text-fd-muted-foreground">+</span>
+    <a href="https://grok.com" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Grok DeepSearch</a>
+    <span className="font-mono text-xs text-fd-muted-foreground">+</span>
+    <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Gemini 2.5 Flash</a>
   </div>
+  <div className="mt-3 text-xs text-fd-muted-foreground">Same prompt, three tabs. Each engine indexes the web differently, so three lists merge into a fuller map than any one alone. Stitch them with NotebookLM per <a href="/docs/recipes/parallel-scout" className="underline hover:text-emerald-600">Recipe 4 Parallel scout</a>.</div>
 </div>
 
 ## Why this works
 
-Perplexity is faster than Claude for live web research and cites sources. You want a map of who's already serving your customer, not a wall of text. 500 words in, 2 gaps out.
+You want a map of who's already serving your customer, not one engine's slice of it. Run the same prompt across Perplexity, Grok, and Gemini in parallel tabs. Each indexes the web differently, so the three lists together cover ground no single tool sees. 500 words per tool in, 2 gaps out after merging via Recipe 4.
 
 ## Prompt
 
