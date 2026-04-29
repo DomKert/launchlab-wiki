@@ -1,7 +1,7 @@
 ---
 title: Read First
 icon: Swords
-description: Free-tier loadout. Planning, executing, India regional, avoid list, quota traps.
+description: Free-tier loadout. Think, Research, Write, Build & Ship, plus India regional, avoid list, and quota traps.
 ---
 
 <div className="mb-4 flex items-center gap-2">
@@ -16,14 +16,19 @@ You'll hit a rate limit on every tool this weekend. The workaround is routing, n
   <p>Don't pick one tool per job and stop. Run the same scout query through 2 to 3 AIs (Perplexity, Grok, Gemini) and let NotebookLM stitch the outputs into one cited brief. Prototype the same page in 2 builders (Bolt and Framer) and ship the one that feels right. Different tools surface different angles. Fold the outputs together, paste the synthesis back into Claude as a Project knowledge file. The full fan-out-and-compare pattern lives in <a href="/docs/recipes/parallel-scout" className="underline">Recipe 4 Parallel scout</a>.</p>
 </div>
 
-## Planning, your brain
+## Think, your brain
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://claude.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">party leader</span></div>
     <div className="font-sans font-semibold">Claude free + Project</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Planning, synthesis, reviewing outputs.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Planning, synthesis, reviewing outputs. Turn on Adaptive Thinking in the model picker, every chat in this Project leans on reasoning.</p>
   </a>
+</div>
+
+## Research
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://www.perplexity.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">scout</span></div>
     <div className="font-sans font-semibold">Perplexity free</div>
@@ -32,17 +37,12 @@ You'll hit a rate limit on every tool this weekend. The workaround is routing, n
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">compressor</span></div>
     <div className="font-sans font-semibold">Gemini 2.5 Flash free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">1M context compressor. Dump raw research, get a 500-word briefing back, paste into Claude. Saves Claude quota.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">1M context compressor. Dump raw research, get a 500-word briefing back, paste into Claude. Saves Claude quota. Doubles as drafter when ChatGPT degrades, see Write below.</p>
   </a>
   <a href="https://notebooklm.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">research librarian</span></div>
     <div className="font-sans font-semibold">NotebookLM free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">Day 1 morning synthesizer. Curate 5 to 10 sources, ask grounded questions, get answers with per-source citations. Audio Overview gives you a 10-min podcast of your research dump. 100 notebooks, 50 sources each, 50 chats per day.</p>
-  </a>
-  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafter</span></div>
-    <div className="font-sans font-semibold">ChatGPT free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Copy drafter. GPT-5.3 for first 10 messages per 5-hour window, then silently drops to GPT-5.3-mini. Rotate to Gemini when quality degrades.</p>
   </a>
   <a href="https://grok.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">x-native</span></div>
@@ -61,7 +61,19 @@ You'll hit a rate limit on every tool this weekend. The workaround is routing, n
   </a>
 </div>
 
-## Executing, where work ships from
+Plus primary-data tools (no AI, real numbers): Google Keyword Planner, Google Trends, Meta Ad Library, Similarweb, Reddit/Quora/X search. Full breakdown on the [Research](/docs/tools/research) sub-page.
+
+## Write
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafter</span></div>
+    <div className="font-sans font-semibold">ChatGPT free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Copy drafter. GPT-5.3 for first 10 messages per 5-hour window, then silently drops to GPT-5.3-mini. Rotate to Gemini (in Research above) when quality degrades.</p>
+  </a>
+</div>
+
+## Build & Ship
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://www.framer.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
