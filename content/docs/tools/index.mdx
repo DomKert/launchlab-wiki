@@ -29,6 +29,11 @@ You'll hit a rate limit on every tool this weekend. The workaround is routing, n
     <div className="font-sans font-semibold">Gemini 2.5 Flash free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">1M context compressor. Dump raw research, get a 500-word briefing back, paste into Claude. Saves Claude quota.</p>
   </a>
+  <a href="https://notebooklm.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">research librarian</span></div>
+    <div className="font-sans font-semibold">NotebookLM free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Day 1 morning synthesizer. Curate 5 to 10 sources, ask grounded questions, get answers with per-source citations. Audio Overview gives you a 10-min podcast of your research dump. 100 notebooks, 50 sources each, 50 chats per day.</p>
+  </a>
   <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafter</span></div>
     <div className="font-sans font-semibold">ChatGPT free</div>
@@ -38,6 +43,16 @@ You'll hit a rate limit on every tool this weekend. The workaround is routing, n
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">x-native</span></div>
     <div className="font-sans font-semibold">Grok free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">Standalone grok.com, no X account, no card. 10 prompts per 2 hours. Use for live X sentiment when ICP is X-native, or DeepSearch as a Perplexity quota fallback.</p>
+  </a>
+  <a href="https://kimi.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">long context</span></div>
+    <div className="font-sans font-semibold">Kimi free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">2M context window. When Gemini's 1M is not enough for a big competitor dump. Public content only, never your own ICP, pitch, or customer notes. Conversations stored in China.</p>
+  </a>
+  <a href="https://chat.deepseek.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-zinc-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-c">C</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">reasoning fallback</span></div>
+    <div className="font-sans font-semibold">DeepSeek free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">R1 reasoning fallback when Claude and ChatGPT both burn. Public content only, same data rule as Kimi. Conversations stored in China.</p>
   </a>
 </div>
 
@@ -113,17 +128,27 @@ You'll hit a rate limit on every tool this weekend. The workaround is routing, n
 
 ## India regional unlock
 
-<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">UNLOCK</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">+91 SIM holders only</span></div>
-  <div className="font-sans font-semibold">ChatGPT Go free 12 months</div>
-  <p className="mt-1 text-fd-muted-foreground">Verifies via UPI or card with a small refunded charge. Unlocks GPT-5.3 Instant, image gen, file uploads, extended memory. Auto-renews at ₹399/month after 12 months unless cancelled. Set a phone reminder for month 11.</p>
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="loot">UNLOCK</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">+91 SIM holders only</span></div>
+    <div className="font-sans font-semibold">ChatGPT Go free 12 months</div>
+    <p className="mt-1 text-fd-muted-foreground">Verifies via UPI or card with a small refunded charge. Unlocks GPT-5.3 Instant, image gen, file uploads, extended memory. Auto-renews at ₹399/month after 12 months unless cancelled. Set a phone reminder for month 11.</p>
+  </div>
+  <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="loot">UNLOCK</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">transactional demos</span></div>
+    <div className="font-sans font-semibold">Razorpay test mode</div>
+    <p className="mt-1 text-fd-muted-foreground">Free UPI sandbox for any demo that needs a "click to pay" flow. India only. Optional, only relevant if your business is transactional. Stripe test mode if you're US/global.</p>
+  </div>
 </div>
 
 ## Avoid
 
 <div className="my-4 rounded-md border border-dashed border-fd-border p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="tbd">SKIP</Badge></div>
-  <p className="text-fd-muted-foreground">Webflow (learning curve), Wix, v0.dev (credits die in hours), Replit Agent (trial expires), Typeform free (10 responses max), Beehiiv and Substack on Day 1 (week-2 tools), Cursor and Windsurf (code-first).</p>
+  <ul className="ml-5 mt-2 list-disc space-y-1 text-fd-muted-foreground">
+    <li>Webflow (learning curve), Wix, v0.dev (credits die in hours), Replit Agent (trial expires), Typeform free (10 responses max), Beehiiv and Substack on Day 1 (week-2 tools), Cursor and Windsurf (code-first), Notion sites (publishable but the muscle doesn't transfer).</li>
+    <li>Voice and video AI that blocks commercial use on free tier: ElevenLabs, Pika, Luma, Runway, Suno. Launch reels are commercial content. Use CapCut + OpusClip + Nano Banana stills instead.</li>
+  </ul>
 </div>
 
 ## Free-tier traps
@@ -132,9 +157,9 @@ You'll hit a rate limit on every tool this weekend. The workaround is routing, n
   <div className="mb-2 flex items-center gap-2"><Badge variant="patch-notes">QUOTA WATCH</Badge></div>
   <ul className="ml-5 list-disc space-y-1 text-fd-muted-foreground">
     <li>ChatGPT silently downgrades after 10 messages per 5-hour window. Watch the output quality.</li>
-    <li>Canva AI is 50 LIFETIME image generations.</li>
-    <li>Nano Banana Standard is 100 per day, Pro is 2 per day for hero shots only.</li>
-    <li>Perplexity is 3 Pro Searches per day. Route accordingly.</li>
+    <li>Canva AI is 50 LIFETIME image generations. Nano Banana Standard is 100 per day, Pro is 2 per day for hero shots only. Perplexity is 3 Pro Searches per day. Route accordingly.</li>
+    <li>Bolt is 1M tokens per MONTH, not per day. Evaporates on one complex build. Do all your Bolt work in one focused 4-hour block on Day 1. After deploy, switch to manual edits.</li>
+    <li>OpusClip free clips expire 3 days after generation. Download every Day 3 launch reel immediately or they vanish.</li>
   </ul>
 </div>
 
