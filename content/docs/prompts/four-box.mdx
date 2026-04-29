@@ -23,10 +23,19 @@ description: Planning. Day 1 afternoon. Claude Project.
 
 Your landing page, waitlist, pitch, and first broadcast all pull from the 4-box. Fill it once, well, and the rest of the weekend is just restating it in different shapes.
 
+## Before you run this
+
+Claude needs two pieces of context in the Project before this prompt lands. Either pasted into the chat above, or saved as a Project knowledge file (cleaner since it persists across chats):
+
+1. **Customer sentence** from [Prompt 1 Define your customer](/docs/prompts/define-customer)
+2. **Compressed research brief** from [Prompt 3 Scout the niche](/docs/prompts/scout-the-niche) plus [Prompt 10 Where customer lives](/docs/prompts/where-customer-lives), run through Gemini for compression (1M context)
+
+Skip these and Claude fills the boxes off vibes.
+
 ## Prompt
 
 ```txt
-Fill the 4-box for my business using everything you know from our chat so far.
+Fill the 4-box for my business using my customer sentence and research brief from this Project (chat or knowledge files).
 
 Boxes:
 - Customer (the sharper edge, not all customers)
