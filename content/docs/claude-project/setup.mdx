@@ -77,6 +77,29 @@ Paste [Prompt 1, Define your customer](/docs/prompts/define-customer). Fill in t
   </ul>
 </div>
 
+## 6. What goes in Project knowledge (and what doesn't)
+
+Project knowledge has limits (20 files per chat, 30MB total on free tier). Be deliberate about what gets in.
+
+**Add as you build.** Four artifacts each S-tier prompt prints as a code block ready to save.
+
+- `one-liner.md` from [Prompt 1 Define your customer](/docs/prompts/define-customer)
+- `customer.md` from [Prompt 1 Define your customer](/docs/prompts/define-customer)
+- `research-brief.md` from [Recipe 4 Parallel scout](/docs/recipes/parallel-scout)
+- `4-box.md` from [Prompt 2 The 4-box](/docs/prompts/four-box)
+
+Every downstream prompt reads from these four. Add them via Files +, Add text content as you build.
+
+**Don't dump the wiki itself.** The full wiki is 40 to 80K tokens. As a knowledge file it dilutes Claude's focus and may bust free-tier limits. Keep the wiki as a tab open instead. When you run a prompt from the Spellbook, the prompt itself carries the context Claude needs.
+
+### If you really want the wiki as context
+
+Three paths, cheapest first.
+
+- **Single page on demand.** Each wiki page has a "Copy Markdown" button at the top. Copy, paste, done.
+- **Whole wiki as one file.** [`/llms.txt`](/llms.txt) is the entire wiki as plain text, designed for AI tools. Tight on Free Projects, fine on Pro.
+- **Repo with version history.** `git clone https://github.com/DomKert/launchlab-wiki.git`. Useful for Cursor, Codex, and Claude Code users who want every page locally.
+
 <div className="my-4 flex items-center gap-2">
   <Badge variant="achievement">ACHIEVEMENT</Badge>
   <span className="text-sm">Home base online. Now go pick your stack at <a href="/docs/tools" className="underline">Tools</a>.</span>
