@@ -11,6 +11,9 @@
 /build
 *.tsbuildinfo
 
+# generated downloadable assets (rebuilt by scripts/build-project-pack.mjs on every build)
+/public/files/
+
 # misc
 .DS_Store
 *.pem
