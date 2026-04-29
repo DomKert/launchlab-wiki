@@ -35,20 +35,27 @@ Open [Core files](/docs/claude-project/core-files) in another tab. Copy the Meta
 
 ## 3. Upload the context files
 
-Four files from [Core files](/docs/claude-project/core-files) go into the Project knowledge. Click "Copy page" on the Core files page to grab the full bundle, or copy each block separately and save as .md or .txt on your machine.
+Five files from [Core files](/docs/claude-project/core-files) go into the Project knowledge. Click "Copy page" on the Core files page to grab the full bundle, or copy each block separately and save as .md or .txt on your machine.
 
 - Meta guide
 - Tool matrix (abridged)
 - Program overview
+- Day checklist
 - Voice guide
 
 <div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <PersistentCheckbox id="setup-step-4" label="Uploaded all 4 core files to the Project knowledge" />
+  <PersistentCheckbox id="setup-step-4" label="Uploaded all 5 core files to the Project knowledge" />
 </div>
 
 ## 4. Start your first chat
 
-Open a new chat inside the Project. Paste [Prompt 1, Define your customer](/docs/prompts/define-customer). Fill in the business-idea placeholder. Run it.
+Open a new chat inside the Project. In the model picker at the top, turn on Adaptive Thinking. The Project's whole job is synthesis and review, both improve with extended reasoning, and free-tier Sonnet 4.6 supports it.
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-thinking" label="Turned on Adaptive Thinking in the model picker" />
+</div>
+
+Paste [Prompt 1, Define your customer](/docs/prompts/define-customer). Fill in the business-idea placeholder. Run it.
 
 <div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <PersistentCheckbox id="setup-step-5" label="Ran my first prompt inside the Project" />
