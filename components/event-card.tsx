@@ -4,8 +4,8 @@ type EventCardProps = {
   title: string;
   tag: string;
   tagVariant?: 'quest' | 'main-quest' | 'side-quest' | 'boss' | 'loot';
-  dateLabel: string;
-  timeLabel: string;
+  dateLabel?: string;
+  timeLabel?: string;
   location?: string;
   children?: ReactNode;
 };
@@ -36,8 +36,12 @@ export function EventCard({
         >
           {tag}
         </span>
-        <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">{dateLabel}</span>
-        <span className="font-mono text-xs text-fd-muted-foreground">{timeLabel}</span>
+        {dateLabel ? (
+          <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">{dateLabel}</span>
+        ) : null}
+        {timeLabel ? (
+          <span className="font-mono text-xs text-fd-muted-foreground">{timeLabel}</span>
+        ) : null}
         {location ? (
           <span className="font-mono text-xs text-fd-muted-foreground">· {location}</span>
         ) : null}
