@@ -1,0 +1,40 @@
+---
+title: Beyond the landing page
+icon: ArrowRight
+description: Preorders, checkout, single-product e-com, SaaS-lite. Minimum tool pointers when the landing-plus-waitlist default doesn't fit your shape.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="tier-b">B</Badge>
+  <Badge variant="patch-notes">EXTENSION</Badge>
+</div>
+
+The default weekend ends with a live landing page and a waitlist. That's the right discipline for 72 hours. But some shapes (preorders, single-product e-com, SaaS-lite) genuinely need more than a form. Below is the minimum tool to plug in for each shape, not a full tutorial. Most students should not try to build the full product. Capture intent now, build the rest after.
+
+## Preorder or one-off checkout
+
+[Stripe Payment Link](https://stripe.com/payments/payment-links). 5 min to create, paste the link as your CTA on the landing page. Money goes to Stripe, you keep the page in Bolt or Framer.
+
+Use this when you have one thing to sell, you want to take payment now, and you don't need a full cart.
+
+## Single-product e-com (live now)
+
+Same as preorder, but the product ships immediately rather than later. Stripe Payment Link still works. [Lemon Squeezy](https://lemonsqueezy.com) is the alternative for digital products (courses, downloads, software) since it handles tax compliance globally.
+
+Use this when you have one product live and shippable. Don't try to build a multi-product store this weekend.
+
+## Waitlist with later invite
+
+Tally form embed plus Mailchimp or Resend for the eventual broadcast. Both already in the [Build stack](/docs/tools/build). Captures email, lets you broadcast when invites go out.
+
+Use this when the product isn't live yet but you want a list to notify when it is. Default for invite-only brands like Back Room.
+
+## SaaS-lite (signup + dashboard)
+
+[Supabase](https://supabase.com) for auth and database. Plug it into Bolt's scaffold. Free tier handles 50K monthly users plus 500MB DB.
+
+Use this when you're genuinely building a tool people log into. Real but ambitious. If you don't already know what an auth flow looks like, default to landing plus waitlist instead.
+
+## The framing
+
+Three days isn't enough to build a real product. It's enough to build the storefront and capture buyers. The page is the storefront. The Stripe Payment Link is the till. Everything else is a Day 4+ problem.
