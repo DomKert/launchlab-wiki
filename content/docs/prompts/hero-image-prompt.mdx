@@ -1,0 +1,108 @@
+---
+title: 18. Hero image prompt
+description: Execution. Day 1 PM. Run in Claude Project. Synthesizes an image-gen prompt for Gemini Nano Banana or gpt-image-2.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-a">A</Badge>
+  <Badge variant="side-quest">EXECUTION</Badge>
+  <Badge variant="quest">DAY 1 PM</Badge>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
+  <a href="https://claude.ai" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Claude Project</a>
+  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Output goes to (Claude recommends one)</div>
+  <div className="mt-1 flex flex-wrap gap-3">
+    <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Gemini Nano Banana</a>
+    <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ gpt-image-2</a>
+    <a href="https://ideogram.ai" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Ideogram</a>
+  </div>
+</div>
+
+## Why this works
+
+Image-gen prompts have a lot of moving parts (mood, palette, photo style, composition, subject, what to avoid) and most of those values are already in your style spec from [Prompt 16](/docs/prompts/visual-direction). Filling them in by hand means risking a mismatch with the rest of your visual direction.
+
+Claude reads your Project knowledge, pulls mood / palette / style from `style-spec.md`, asks for the missing pieces (niche framing, subject choice, composition tweaks), then outputs the image-gen prompt as one code block. It also tells you which image tool to paste it into based on whether you need text in the image or just the hero shot.
+
+This runs in Claude Project, not Gemini. The OUTPUT goes to the image tool.
+
+## Before you run this
+
+Two things ready in your Project knowledge or available to paste:
+
+1. Style spec from [Prompt 16](/docs/prompts/visual-direction). Saved as `style-spec.md` in Project knowledge, or be ready to paste the code block.
+
+2. Your 4-box from [Prompt 2](/docs/prompts/four-box). Already in Project knowledge if you saved it there.
+
+If style-spec is missing, Claude will stop and route you to Prompt 16 first.
+
+## Prompt
+
+Run this in your Claude Project chat. Claude walks you through 4 to 6 inputs, then outputs the image-gen prompt as one code block plus a tool recommendation.
+
+```txt
+I want a hero image for my landing page. Read my Project knowledge (4-box.md, style-spec.md from Prompt 16) and synthesize a single image-generation prompt I'll paste into Gemini Nano Banana or gpt-image-2.
+
+Walk me through these inputs one at a time, in order. Pull from Project knowledge first if the answer is already there.
+
+1. Niche or product framing. One short phrase, e.g. "rare Italian knitwear curation" or "B2B legal AI for solo lawyers". Pull from 4-box if it's there.
+2. Mood. 3 adjectives. Pull from style-spec.
+3. Palette. 3 hex codes. Pull from style-spec.
+4. Photo style. Editorial still life / lifestyle scene / abstract texture / product close-up / type-only with color blocks. Ask if not in style-spec.
+5. Composition. Default is wide aspect (16:9 or 21:9) with 30% negative space on the right for headline overlay. Confirm or override.
+6. Subject. Object-only (no people), one model figure, lifestyle group, or no subject (abstract texture only).
+
+If style-spec is missing, STOP. Tell me to run Prompt 16 first. Don't fabricate a palette or mood.
+
+When you have all six, output the final image-gen prompt as ONE code block. Use this exact structure with my values substituted:
+
+---
+
+Hero image for a [niche] landing page.
+
+Mood: [3 adjectives]
+Palette: [hex codes]
+Style: [photo style]
+Composition: [composition spec]
+Subject: [subject choice]
+
+No text in the image. No SaaS-marketing cliches (laptops, abstract gradients with floating UI cards, people pointing at screens). [Add "no model faces" if subject is object-only or abstract.] Treat it like the cover image of an editorial magazine for [niche], not a stock-photo site.
+
+Generate 4 variations.
+
+---
+
+After the code block, recommend which tool to run it in:
+- Gemini Nano Banana Standard (100/day): default workhorse for iteration
+- Gemini Nano Banana Pro (2/day): save for the one final hero shot
+- gpt-image-2 in ChatGPT (2-3/day): best when I need text-in-image, especially Hindi / Bengali / Japanese / Korean / Chinese
+- Ideogram (10 credits/day): most predictable text-in-image rendering
+
+Pick one based on whether my hero needs text in the image. If no text, route me to Nano Banana Standard. If text needed, route to gpt-image-2 or Ideogram.
+
+Voice rule: don't fabricate niche details, don't guess at palette, don't add subjects I haven't approved. If I'm vague, ask one focused question and stop.
+```
+
+## After Claude outputs the image prompt
+
+1. Open the recommended tool ([Gemini](https://gemini.google.com), [ChatGPT](https://chatgpt.com), or [Ideogram](https://ideogram.ai)).
+2. Paste the code block.
+3. Generate 4 variations.
+4. Pick the one that fits, save the URL or download the file.
+5. The URL goes into your next chat with Claude when you run [Prompt 17 Bolt build](/docs/prompts/bolt-build).
+
+If none of the 4 variations work, change ONE input (subject, composition, or photo style) and re-run. Don't pile new adjectives on. See [Prompting AI tools](/docs/notes/prompting-ai-tools) on what never works.
+
+## What good looks like
+
+One Claude chat, 4 to 6 turns, image-gen prompt in one code block. One Gemini run, 4 variations, pick one in under 5 minutes. URL saved, ready for Prompt 17.
+
+## What bad looks like
+
+Skipping the synthesizer and writing the image prompt by hand, getting a generic stock-photo result, then burning 5 Nano Banana runs trying to fix it with adjective piles. The fix is upstream: tighten the style spec or change the photo-style input, don't pile descriptors.
+
+## Next
+
+Hero image URL in hand, run [Prompt 17 Bolt build](/docs/prompts/bolt-build). Claude will ask for the URL when synthesizing the Bolt prompt.
