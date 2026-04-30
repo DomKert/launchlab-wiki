@@ -22,90 +22,35 @@ description: Execution. Day 1 PM. Run in Claude Project. Synthesizes an image-ge
 
 ## Why this works
 
-Image-gen prompts have a lot of moving parts (mood, palette, photo style, composition, subject, what to avoid) and getting any of them wrong produces SaaS-marketing slop (laptops, abstract gradients with floating UI cards, people pointing at screens). Filling the prompt by hand means risking a mismatch.
+You don't need to spec a hero image like a creative director. Your 4-box already says who the customer is, what the offer is, and what voice the brand has. Claude reads it, makes the calls (mood, palette, photo style, composition), and outputs one image-gen prompt you paste into Nano Banana. If there's a real fork like "people or no people," Claude asks one question and stops.
 
-Claude walks you through the inputs one at a time using the picker vocab below, asks for the niche-specific pieces (subject choice, composition tweaks), then outputs the image-gen prompt as one code block. It also tells you which image tool to paste it into based on whether you need text in the image or just the hero shot.
+The prompt below is short on purpose. No mood adjective banks, no hex pickers, no curated palettes. Those create decisions where there shouldn't be any.
 
 This runs in Claude Project, not Gemini. The OUTPUT goes to the image tool.
 
 ## Before you run this
-
-One thing ready in your Project knowledge or available to paste.
 
 <div className="my-4">
   <PersistentCheckbox id="hero-prereq-1" label="Have your 4-box ready (in Project knowledge or pasteable)" />
   <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">From <a href="/docs/prompts/four-box" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 2</a>. Already in Project knowledge if you saved it there.</p>
 </div>
 
-Style direction (mood + palette + photo style) gets picked inside this chat from the vocab below. No external style file needed.
-
-## Pick your image direction
-
-Glance at the vocab below before pasting. Claude will ask you to pick during the chat. 30 seconds of skim.
-
-#### Mood adjectives (pick 3)
-
-warm, refined, calm, raw, technical, editorial, austere, considered, weighty, soft, sharp, lush, urgent, playful, confident, premium, rebellious, quiet, generous, energetic.
-
-#### Palette (pick 3 hex codes)
-
-Easiest: pick a reference page, use Chrome DevTools color picker (open DevTools, click any element, color picker icon next to color values) or any web color picker browser extension to grab 3 hex codes from the reference. One background, one ink (text color), one accent.
-
-Or pick from these 5 curated palettes:
-
-1. `#F7F4ED` cream + `#1A1410` charcoal + `#C46A2B` terracotta. Editorial warm.
-2. `#F8F8F6` off-white + `#0F0F0F` near-black + `#2D5BFF` cobalt. Minimalist tech.
-3. `#EFEAE0` bone + `#1A1A1A` ink + `#6F8B6E` sage. Calm refined.
-4. `#0A0A0A` black + `#F2F0EA` warm white + `#C7E04E` chartreuse. Brutalist modern.
-5. `#F1ECDF` cream + `#3B2818` chocolate + `#D4A24A` soft gold. Luxe heritage.
-
-#### Photo style (pick ONE)
-
-`editorial still life`, `lifestyle scene`, `abstract texture`, `product close-up`, or `type-only with color blocks`.
-
 ## Prompt
 
-Run this in your Claude Project chat. Claude walks you through 4 to 6 inputs, then outputs the image-gen prompt as one code block plus a tool recommendation.
-
 ```txt
-I want a hero image for my landing page. Read my Project knowledge (4-box.md) and synthesize a single image-generation prompt I'll paste into Gemini Nano Banana or gpt-image-2.
+I want a hero image for my landing page. Read 4-box.md from this Project and synthesize a single image-gen prompt I can paste into Gemini Nano Banana or gpt-image-2.
 
-Walk me through these inputs one at a time, in order. Pull from Project knowledge first if the answer is already there.
+Pick mood, palette, photo style, and composition yourself based on what fits the niche. The 4-box has the customer, the offer, and the voice; that's enough to design from. Don't ask me about hex codes or photo-style names.
 
-1. Niche or product framing. One short phrase, e.g. "rare Italian knitwear curation" or "B2B legal AI for solo lawyers". Pull from 4-box if it's there.
-2. Mood. 3 adjectives from this bank: warm, refined, calm, raw, technical, editorial, austere, considered, weighty, soft, sharp, lush, urgent, playful, confident, premium, rebellious, quiet, generous, energetic.
-3. Palette. 3 hex codes (background + ink + accent). Either picked from a reference page using a color picker, or one of the 5 curated palettes (warm editorial / minimalist tech / calm refined / brutalist modern / luxe heritage). Help me pick if I'm stuck.
-4. Photo style. ONE of: editorial still life, lifestyle scene, abstract texture, product close-up, or type-only with color blocks.
-5. Composition. Default is wide aspect (16:9 or 21:9) with 30% negative space on the right for headline overlay. Confirm or override.
-6. Subject. Object-only (no people), one model figure, lifestyle group, or no subject (abstract texture only).
+Ask me ONE question only if there's a real fork. The usual one is "people in the frame, or object-only?" If the answer is obvious from the 4-box, skip the question and decide.
 
-If a value is genuinely unclear, ask one focused question per turn. Don't fabricate a palette or mood.
+Avoid SaaS-marketing slop: no laptops, no abstract gradients with floating UI cards, no people pointing at screens. Treat it like the cover of an editorial magazine for the niche, not a stock-photo site.
 
-When you have all six, output the final image-gen prompt as ONE code block. Use this exact structure with my values substituted:
+Output the final image-gen prompt as ONE code block. Then tell me which tool to paste it into:
+- Gemini Nano Banana Standard (100/day): default, no text in image
+- gpt-image-2 in ChatGPT or Ideogram: when the hero needs text in the image
 
----
-
-Hero image for a [niche] landing page.
-
-Mood: [3 adjectives]
-Palette: [hex codes]
-Style: [photo style]
-Composition: [composition spec]
-Subject: [subject choice]
-
-No text in the image. No SaaS-marketing cliches (laptops, abstract gradients with floating UI cards, people pointing at screens). [Add "no model faces" if subject is object-only or abstract.] Treat it like the cover image of an editorial magazine for [niche], not a stock-photo site.
-
----
-
-After the code block, recommend which tool to run it in:
-- Gemini Nano Banana Standard (100/day): default workhorse for iteration
-- Gemini Nano Banana Pro (2/day): save for the one final hero shot
-- gpt-image-2 in ChatGPT (2-3/day): best when I need text-in-image, especially Hindi / Bengali / Japanese / Korean / Chinese
-- Ideogram (10 credits/day): most predictable text-in-image rendering
-
-Pick one based on whether my hero needs text in the image. If no text, route me to Nano Banana Standard. If text needed, route to gpt-image-2 or Ideogram.
-
-Voice rule: don't fabricate niche details, don't guess at palette, don't add subjects I haven't approved. If I'm vague, ask one focused question and stop.
+If the first generation misses, change ONE input and re-run. Don't pile adjectives.
 ```
 
 ## After Claude outputs the image prompt
@@ -154,7 +99,7 @@ For a hero shot you'll live with, generating 2 to 3 options and having Claude cr
 
 ## What good looks like
 
-One Claude chat, 4 to 6 turns, image-gen prompt in one code block. One Gemini run, image in hand under 5 minutes. File saved to disk, ready to attach when you run Prompt 17.
+One Claude chat, 1 to 2 turns, image-gen prompt in one code block. One Gemini run, image in hand under 5 minutes. File saved to disk, ready to attach when you run Prompt 17.
 
 ## What bad looks like
 
