@@ -90,8 +90,10 @@ After the spec code block, give me one sentence explaining the choice. No image 
 
 ## Save the output
 
-Copy the spec code block. You'll paste it into [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build) under the Brand section. The 3 screenshots also get attached to your Bolt prompt, so keep them in a folder you can find.
+Save the spec code block as `style-spec.md` in your Claude Project knowledge (Files +, Add text content). Both [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) and [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build) read it from there automatically when they synthesize your next prompts. No manual pasting between steps.
+
+Keep the 3 reference screenshots in a folder you can find. They get attached to Bolt later, after Claude assembles the Bolt prompt in Prompt 17.
 
 ## Next
 
-[Prompt 17 Bolt build prompt](/docs/prompts/bolt-build) wraps the cleaned copy + this style spec + screenshots into a single Bolt-ready first message.
+If you want an AI-generated hero image, run [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) next. Otherwise jump to [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build) which synthesizes your Bolt-ready first message in Claude Project.
