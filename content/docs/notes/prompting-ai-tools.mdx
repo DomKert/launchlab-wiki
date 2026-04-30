@@ -1,0 +1,133 @@
+---
+title: Prompting AI tools
+description: Universal rules + tool flavor map. The how-to-prompt layer underneath every Spellbook prompt.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="side-quest">FIELD NOTE</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">prompt discipline</span>
+</div>
+
+The [Spellbook](/docs/prompts) ships 17 canonical prompts. Each one is tested, voice-tuned, and shaped so the next prompt in the chain still works. This note is the layer underneath: the universal rules that apply when you go off-Spellbook, plus the tool-specific flavor that decides which AI to reach for.
+
+If a Spellbook prompt covers your job, use it verbatim. This note is for everything else.
+
+---
+
+## The 6 universal rules
+
+### 1. One chat = one job
+
+Don't reuse a draft chat for editing. Fresh chats catch more. The AI inherits its own bias from the previous turns and stops noticing the words it just used. Run [Prompt 4 landing spec](/docs/prompts/landing-page-spec) in one chat, then open a NEW chat for [Prompt 9 strip](/docs/prompts/strip-ai-smell). Same for copy iterations, research synthesis, anything where you want a fresh read.
+
+### 2. References beat descriptions
+
+For visual work, 3 screenshots will out-direct 100 adjectives. For copy, a sample paragraph in the voice you want will out-direct "write punchy". For research, a competitor URL will out-direct "find similar companies". Always upload, always paste, always link. Description-only briefs produce generic output every time.
+
+### 3. Output contract before prose
+
+Tell the AI the exact shape of what you want before you tell it what to do. "Output 5 bullets, 8 words each, in a code block I can paste." Vague briefs get vague output. The Spellbook prompts all have output contracts baked in. When you write your own, lead with the shape.
+
+### 4. Voice rules upfront
+
+Lead with what NOT to write. "No corporate verbs, no colons-then-lists, no marketing buzzwords" works harder than "write conversationally". Banning specific words and patterns gives the AI something concrete to filter against. See [Writing that doesn't sound AI](/docs/notes/writing-that-doesnt-sound-AI) for the full ban list.
+
+### 5. Hero-first, sections after
+
+In Bolt and any visual builder, never ask for the whole page in one prompt. Build the hero, approve it, then add ONE section per follow-up referencing the established hero style. The full pattern lives in [Prompt 17 Bolt build](/docs/prompts/bolt-build).
+
+### 6. One concern per follow-up
+
+Never stack changes. "Change the hero color, add a new section, fix the CTA" produces a mess where you can't tell what changed. Each prompt does ONE thing. The keep / change / add pattern is in [Vibecoding Principle 6](/docs/vibecoding/principles).
+
+---
+
+## The tool flavor map
+
+Pick the right tool for the job. The free tiers stack to cover almost everything in the weekend.
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">copy + image</span></div>
+    <div className="font-sans font-semibold">ChatGPT (GPT-4o, free)</div>
+    <p className="mt-1 text-fd-muted-foreground">Punchier consumer copy than Claude. Vision works for design extraction. gpt-image-2 for hero images, especially multilingual heroes (Hindi, Bengali, Japanese, Korean, Chinese render cleanly). Don't use for deep planning, that's Claude's job.</p>
+  </div>
+  <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">brain</span></div>
+    <div className="font-sans font-semibold">Claude (Project + free)</div>
+    <p className="mt-1 text-fd-muted-foreground">Planning, sparring, persistent weekend context. Vision is more design-confident than GPT for extracting style specs. Save Project quota for thinking work. Don't use for punchy consumer copy, it leans measured and explanatory.</p>
+  </div>
+  <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">long context + image</span></div>
+    <div className="font-sans font-semibold">Gemini (free)</div>
+    <p className="mt-1 text-fd-muted-foreground">1M token context for compressing long research dumps. Nano Banana Standard (100/day) for image iteration, Nano Banana Pro (2/day) for the one hero shot. Don't use for copy, the voice is generic.</p>
+  </div>
+  <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">research</span></div>
+    <div className="font-sans font-semibold">Perplexity (free)</div>
+    <p className="mt-1 text-fd-muted-foreground">Web-grounded answers with citations. Fast for verifying claims and finding sources. Sonar for quick lookups. Don't use for opinion or analysis, it just summarizes what's online.</p>
+  </div>
+  <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">build</span></div>
+    <div className="font-sans font-semibold">Bolt.new (free)</div>
+    <p className="mt-1 text-fd-muted-foreground">Vibe-coding. Accepts image attachments via paperclip (10MB, free tier). Pre-loaded Design Systems picker on bolt.new homepage scopes the project. 10 vibe keywords as prompt vocabulary (brutalism / glassmorphism / etc.). Code-edit beats prompt for small changes.</p>
+  </div>
+  <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">build alt</span></div>
+    <div className="font-sans font-semibold">Lovable (free)</div>
+    <p className="mt-1 text-fd-muted-foreground">5 daily credits, 30 monthly cap. Roughly 2 to 3 prompts per day. Backup if Bolt's free token budget runs out. Image upload supported in chat.</p>
+  </div>
+</div>
+
+For the full tool catalogue see [Tools](/docs/tools). For the token-budget routing strategy see [Beat the free tier](/docs/notes/beat-the-free-tier).
+
+---
+
+## What never works
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="boss">DON'T</Badge></div>
+  <ul className="ml-4 list-disc space-y-2">
+    <li>Adjective piles ("modern, clean, sleek, premium, friendly"). Pick ONE vibe keyword and ONE palette. Stop.</li>
+    <li>Whole-page-in-one-prompt. Generic SaaS scaffold every time.</li>
+    <li>Reused chats. Context drift kills accuracy.</li>
+    <li>Description-only visual prompts. No screenshot, no signal.</li>
+    <li>"Make it better" follow-ups. The AI doesn't know what better means without a vector.</li>
+    <li>Stacked changes in one prompt. You won't be able to tell what changed.</li>
+  </ul>
+</div>
+
+---
+
+## When to stop and restart
+
+Three prompts produce the same wrong output. Look upstream. Your brief is wrong, not the AI. Open a new chat with a tighter brief, or step back to the upstream Spellbook prompt that feeds this one.
+
+You've spent 30+ minutes on one prompt. Scrap it. Either pull a Spellbook prompt or rewrite from scratch. Time-on-prompt past 30 minutes means the spec is unclear or the tool is wrong for this job.
+
+You're in Bolt and your token budget is bleeding. Escalate down the ladder before prompting again:
+
+1. Direct code edit in the file panel (zero tokens)
+2. One-line prompt
+3. Multi-line prompt
+4. Fresh chat or new project
+
+---
+
+## Use the Spellbook verbatim
+
+The 17 numbered prompts in the [Spellbook](/docs/prompts) are tested for downstream compatibility. Output shapes, voice rules, and bracketed placeholders are designed so the next prompt in the chain still works.
+
+Don't rewrite, condense, or "improve" them. Replace the bracketed placeholders ([CUSTOMER SENTENCE], [PASTE 4-box.md], etc.) with your actual content. Run the prompt as written.
+
+Ad-hoc rewrites break the chain. Wrong output shapes, em dashes that the strip-AI-smell hook flags, missing fields the next prompt expects. The Spellbook is short on purpose. If you find yourself rewriting one, you probably want a different prompt, not a "better" version of this one.
+
+---
+
+## See also
+
+- [Writing that doesn't sound AI](/docs/notes/writing-that-doesnt-sound-AI). Voice tells, banned word list, sentence patterns.
+- [Beat the free tier](/docs/notes/beat-the-free-tier). Multi-tool routing for the weekend's token economy.
+- [Vibecoding principles](/docs/vibecoding/principles). The 6 build-time rules for Bolt and friends.
+- [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell). The surgical voice pass.
+- [Prompt 13 Humanize](/docs/prompts/humanize-add-stake). Opinion-and-stake injection.
