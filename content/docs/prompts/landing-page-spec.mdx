@@ -1,20 +1,19 @@
 ---
 title: 4. Landing page spec
-description: Planning. Day 1 afternoon or Day 2 morning. Claude Project.
+description: Execution. Day 1 afternoon or Day 2 morning. ChatGPT free.
 ---
 
 <div className="mb-4 flex flex-wrap items-center gap-2">
   <Badge variant="tier-s">S</Badge>
-  <Badge variant="main-quest">PLANNING</Badge>
+  <Badge variant="side-quest">EXECUTION</Badge>
   <Badge variant="quest">DAY 1/2</Badge>
 </div>
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
-  <a href="https://claude.ai" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Claude Project</a>
+  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ ChatGPT free</a>
   <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Alternatives</div>
   <div className="mt-1 flex flex-wrap gap-3">
-    <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ ChatGPT free</a>
     <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Gemini free</a>
   </div>
 </div>
@@ -23,14 +22,22 @@ description: Planning. Day 1 afternoon or Day 2 morning. Claude Project.
 
 One prompt, one structured output you paste into any builder (Bolt, v0, Carrd, Framer, raw HTML). You show up with a 4-box, you leave with a spec. No bouncing between five "help me write my hero section" chats. Run once Friday evening to ship a rough WIP, again Saturday morning to polish.
 
+## Why ChatGPT not Claude
+
+This prompt drafts hero headlines, button text, and pitch copy. That's copy work, and ChatGPT writes punchier consumer copy by default than Claude (which leans measured and explanatory). Your Claude Project keeps its quota for planning and review. Save Claude for the edit pass after ChatGPT drafts.
+
 ## Before you run this
 
-Claude needs `4-box.md` in the Project before this prompt lands. [Prompt 2 The 4-box](/docs/prompts/four-box) prints it as a code block at the end of its output, ready to drop into Files +, Add text content. Skip it and the spec comes back generic.
+You need `4-box.md` ready to paste. [Prompt 2 The 4-box](/docs/prompts/four-box) prints it as a code block at the end of its output. Copy that block into the placeholder below.
 
 ## Prompt
 
 ```txt
-Read 4-box.md from this Project (or the chat above if I haven't saved it yet). Turn it into a landing page spec I can build in [Bolt / v0 / Lovable / Artifacts / Carrd / Framer / Webflow / raw HTML, pick one and say it].
+Here's my 4-box:
+
+[PASTE 4-box.md content here]
+
+Turn it into a landing page spec I can build in [Bolt / v0 / Lovable / Artifacts / Carrd / Framer / Webflow / raw HTML, pick one and say it].
 
 Output these sections in order, with copy for each:
 1. Hero: headline (6 to 8 words), subhead (one sentence), primary CTA button text (2 to 4 words)
@@ -40,7 +47,11 @@ Output these sections in order, with copy for each:
 5. Social proof slot (what would go here when I have it, even if it's empty today)
 6. Final CTA block (one line + button text)
 
-Voice rule. Sound like a founder texting a friend, not a brochure. No corporate verbs, no colons-then-lists, no "revolutionary" / "innovative" / "unlock." If you use a word I wouldn't say out loud, rewrite it.
+Voice rule. Sound like a founder texting a friend, not a brochure. No corporate verbs, no colons-then-lists, no marketing buzzwords. If you use a word I wouldn't say out loud at a coffee shop, rewrite it.
 
 Also give me 3 visual hints for the hero (mood, 1 to 2 color ideas, one photo style or none). Keep the spec under 500 words total.
 ```
+
+## Next: edit pass in Claude
+
+After ChatGPT outputs the spec, paste it back into your Claude Project and ask "red-team this draft against the voice guide and 4-box. Don't rewrite, just flag what to fix." Claude reads `voice-guide.md` and `4-box.md` from your Project knowledge and points at weak hero headlines, generic problem copy, vague offer bullets, dead transitions, AI tells. Take the flags back to ChatGPT and run [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) on the draft. Then build with the clean copy.
