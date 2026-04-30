@@ -24,7 +24,7 @@ One prompt, one structured output you paste into any builder (Bolt, v0, Carrd, F
 
 ## Why ChatGPT not Claude
 
-This prompt drafts hero headlines, button text, and pitch copy. That's copy work, and ChatGPT writes punchier consumer copy by default than Claude (which leans measured and explanatory). Your Claude Project keeps its quota for planning and review. Save Claude for the edit pass after ChatGPT drafts.
+This prompt drafts hero headlines, button text, and pitch copy. That's copy work, and ChatGPT writes punchier consumer copy by default than Claude (which leans measured and explanatory). Your Claude Project keeps its quota for planning. The Project chat already produced your customer.md, one-liner.md, 4-box.md and reviewed your research; let it sit while ChatGPT does the copy lift.
 
 ## Before you run this
 
@@ -52,6 +52,6 @@ Voice rule. Sound like a founder texting a friend, not a brochure. No corporate 
 Also give me 3 visual hints for the hero (mood, 1 to 2 color ideas, one photo style or none). Keep the spec under 500 words total.
 ```
 
-## Next: edit pass in Claude
+## Next: strip AI smell
 
-After ChatGPT outputs the spec, paste it back into your Claude Project and ask "red-team this draft against the voice guide and 4-box. Don't rewrite, just flag what to fix." Claude reads `voice-guide.md` and `4-box.md` from your Project knowledge and points at weak hero headlines, generic problem copy, vague offer bullets, dead transitions, AI tells. Take the flags back to ChatGPT and run [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) on the draft. Then build with the clean copy.
+Open a fresh ChatGPT chat (don't reuse the drafting one, fresh context catches more) and run [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) on the spec. That's the surgical pass: banned words, dead transitions, sentence shapes that read as AI. After the strip, you build with clean copy. Don't humanize this output. [Prompt 13 Humanize](/docs/prompts/humanize-add-stake) is for social posts and broadcasts where readers are buying you, not for landing copy where readers are buying the thing.
