@@ -135,6 +135,25 @@ Voice rule: don't fabricate niche details, don't guess at palette, don't add sub
 
 If the image misses, change ONE input (subject, composition, or photo style) and re-run. Don't pile new adjectives on. See [Prompting AI tools](/docs/notes/prompting-ai-tools) on what never works.
 
+## Multi-option flow (when you want options to pick from)
+
+For a hero shot you'll live with, generating 2 to 3 options and having Claude critique against the brief beats one-shot generation. Costs more credits but the picked option is usually meaningfully better.
+
+<div className="my-4 space-y-3">
+  <div>
+    <PersistentCheckbox id="hero-multi-1" label="Step 1. Generate 2 to 3 options from the same prompt" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Same prompt, multiple runs in Nano Banana Standard (or fan out across Nano Banana + Ideogram if you want different model angles). Save all of them.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="hero-multi-2" label="Step 2. Bring all options back to Claude Project, ask for a critique" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Attach the images to the same Claude chat where you synthesized the prompt. Ask: "Critique these against the brief I gave you. Which one matches the mood and composition cleanest? Which fails and why?" Claude has the brief context already, so the critique is grounded.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="hero-multi-3" label="Step 3. Pick the winner, archive the rest" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Trust Claude's pick unless you have a strong gut reason to override. The losers archive into a folder; some become Day 2 distribution image candidates.</p>
+  </div>
+</div>
+
 ## What good looks like
 
 One Claude chat, 4 to 6 turns, image-gen prompt in one code block. One Gemini run, image in hand under 5 minutes. File saved to disk, ready to attach when you run Prompt 17.

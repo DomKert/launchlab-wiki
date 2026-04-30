@@ -1,6 +1,6 @@
 ---
 title: 15. Synthesize the parallel scout
-description: Execution. Day 1 morning. Gemini free. Step 4 of Recipe 4.
+description: Execution. Day 1 morning. Run 3 AI scouts in parallel, synthesize in Gemini, paste once into Claude.
 ---
 
 <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -12,7 +12,53 @@ description: Execution. Day 1 morning. Gemini free. Step 4 of Recipe 4.
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Gemini 2.5 Flash (new chat)</a>
-  <div className="mt-3 text-xs text-fd-muted-foreground">Use a fresh chat, not the tab you ran the scout in. 1M context handles all 3 raw scout outputs in one shot. Output goes into your Claude Project as <code>research-brief.md</code>. Recipe context: <a href="/docs/recipes/parallel-scout" className="underline hover:text-emerald-600">Recipe 4 Parallel scout</a>.</div>
+  <div className="mt-3 text-xs text-fd-muted-foreground">Use a fresh chat, not the tab you ran the scout in. 1M context handles all 3 raw scout outputs in one shot. Output goes into your Claude Project as <code>research-brief.md</code>.</div>
+</div>
+
+## Why parallel beats single
+
+One AI scout gives you one angle. Three give you the contradictions, the gaps, and the consensus. Contradictions are the most useful part because that's where weak claims expose themselves. Gemini's 1M context window collapses all three outputs into one brief so Claude doesn't have to.
+
+## Run the 3 scouts first
+
+This synthesizer prompt is step 4 of a 5-step flow. Run the upstream scouts before pasting Gemini's prompt below.
+
+<div className="my-4 space-y-3">
+  <div>
+    <PersistentCheckbox id="parallel-scout-1" label="Step 1. Perplexity free, run the scout query once" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Spend 1 of your 3 daily Pro Searches at <a href="https://www.perplexity.ai" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">perplexity.ai</a>. Save the output with citations. See <a href="/docs/prompts/scout-the-niche" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 3 Scout the niche</a> for the exact query shape.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="parallel-scout-2" label="Step 2. Grok free (DeepSearch), same query, different angle" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Run at <a href="https://grok.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">grok.com</a> with DeepSearch on. Grok pulls live X sentiment that Perplexity doesn't see. Save the output.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="parallel-scout-3" label="Step 3. Gemini free, same query a third time" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Use Deep Research mode if available, otherwise standard chat with grounding on. Gemini reaches further into long-tail academic and trade sources. Save the output.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="parallel-scout-4" label="Step 4. Run this synthesizer prompt below in a new Gemini chat" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Use a fresh Gemini tab, not the one you ran the third scout in. The synthesizer needs to read all 3 outputs side by side without contamination.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="parallel-scout-5" label="Step 5. Upload the brief to Claude Project as research-brief.md" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Files +, Add text content. Now <a href="/docs/prompts/four-box" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 2 The 4-box</a> and <a href="/docs/prompts/landing-page-spec" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 4 Landing page spec</a> read from this file across every chat.</p>
+  </div>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
+  <Badge variant="patch-notes">TIME</Badge>
+  <span className="ml-2">5 min per scout, 5 min Gemini synthesis, 2 min upload to Claude. Roughly 20 min total. Do it once on Day 1 morning.</span>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
+  <Badge variant="patch-notes">BONUS RIGOR</Badge>
+  <span className="ml-2">Want grounded citations before you trust the synthesis? Drop the 3 scout outputs into a <a href="https://notebooklm.google.com" target="_blank" rel="noreferrer" className="underline hover:text-emerald-600">NotebookLM</a> notebook as sources. Ask "where do these three scouts disagree?" and the citations show you which source made which claim. Then paste the NotebookLM synthesis into Step 4 instead of the raw outputs. Optional, manual, useful when stakes are high.</span>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
+  <Badge variant="patch-notes">FALLBACK</Badge>
+  <span className="ml-2">If you only have time for 2 scouts, drop Grok unless your ICP is X-native. Perplexity plus Gemini covers the breadth.</span>
 </div>
 
 ## Why this works
@@ -49,3 +95,13 @@ Rules:
 ```
 
 After Gemini outputs the brief, save the response as `research-brief.md` and upload it to your Claude Project knowledge (Files +). Every downstream prompt (the 4-box, landing-page spec, room scout) reads from this file.
+
+## Where else to fan out
+
+The same fan-out-and-compare pattern works on more than research.
+
+- **Landing builder bake-off.** Same spec into 2 builders (Bolt and Framer, or Bolt and Lovable). Ship the one you like the look of, archive the other for ideas.
+- **Hero image generation.** Same image brief into 2 generators (Nano Banana and Ideogram). Pick the one that lands the wordmark cleanest. See [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) for the multi-option flow.
+- **Caption draft.** Same image and post intent into ChatGPT and Gemini side by side. Stitch the strongest sentences from each, run [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) on the merged version.
+
+The synthesis is the unlock. One tool gives you one shape. Several give you the choice.
