@@ -30,9 +30,12 @@ This runs in Claude Project, not Gemini. The OUTPUT goes to the image tool.
 
 ## Before you run this
 
-One thing ready in your Project knowledge or available to paste:
+One thing ready in your Project knowledge or available to paste.
 
-1. Your 4-box from [Prompt 2](/docs/prompts/four-box). Already in Project knowledge if you saved it there.
+<div className="my-4">
+  <PersistentCheckbox id="hero-prereq-1" label="Your 4-box ready (in Project knowledge or pasteable)" />
+  <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">From <a href="/docs/prompts/four-box" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 2</a>. Already in Project knowledge if you saved it there.</p>
+</div>
 
 Style direction (mood + palette + photo style) gets picked inside this chat from the vocab below. No external style file needed.
 
@@ -107,11 +110,28 @@ Voice rule: don't fabricate niche details, don't guess at palette, don't add sub
 
 ## After Claude outputs the image prompt
 
-1. Open the recommended tool ([Gemini](https://gemini.google.com), [ChatGPT](https://chatgpt.com), or [Ideogram](https://ideogram.ai)).
-2. Paste the code block.
-3. Generate the image.
-4. If it lands, download the file to disk. Save it inside the same folder you'll use for your landing page (so it sits next to `index.html`).
-5. When you run [Prompt 17 Build prompt](/docs/prompts/bolt-build), tell the synthesizer chat you have a hero image file ready. For Path A (ChatGPT), you'll reference it as a relative path in the HTML. For Path C (Bolt), you'll attach it via the paperclip.
+<div className="my-4 space-y-3">
+  <div>
+    <PersistentCheckbox id="hero-after-1" label="Step 1. Open the recommended image tool" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground"><a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Gemini</a>, <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">ChatGPT</a>, or <a href="https://ideogram.ai" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Ideogram</a>. Claude will tell you which based on whether your hero needs text in the image.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="hero-after-2" label="Step 2. Paste the image-gen code block as a single message" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">One message, no follow-up commentary. Let the tool generate.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="hero-after-3" label="Step 3. Generate the image" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">If it misses, change ONE input (subject, composition, or photo style) and re-run. Don't pile new adjectives on. See <a href="/docs/notes/prompting-ai-tools" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompting AI tools</a> on what never works.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="hero-after-4" label="Step 4. Download the image and save it next to your index.html" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Save the file inside the same folder you'll use for your landing page (so it sits next to <code>index.html</code> when you build the page in Prompt 17).</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="hero-after-5" label="Step 5. Hand off to Prompt 17" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">When you run <a href="/docs/prompts/bolt-build" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 17 Build prompt</a>, tell the synthesizer chat you have a hero image file ready. For Path A (ChatGPT), you'll reference it as a relative path in the HTML. For Path C (Bolt), you'll attach it via the paperclip.</p>
+  </div>
+</div>
 
 If the image misses, change ONE input (subject, composition, or photo style) and re-run. Don't pile new adjectives on. See [Prompting AI tools](/docs/notes/prompting-ai-tools) on what never works.
 

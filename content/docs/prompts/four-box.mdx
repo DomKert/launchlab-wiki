@@ -25,10 +25,18 @@ Your landing page, waitlist, pitch, and first broadcast all pull from the 4-box.
 
 ## Before you run this
 
-Claude needs two pieces of context in the Project before this prompt lands. Either pasted into the chat above, or saved as a Project knowledge file (cleaner since it persists across chats):
+Claude needs two pieces of context in the Project before this prompt lands. Either pasted into the chat above, or saved as a Project knowledge file (cleaner since it persists across chats).
 
-1. **Customer sentence** from [Prompt 1 Define your customer](/docs/prompts/define-customer)
-2. **Compressed research brief** from [Prompt 3 Scout the niche](/docs/prompts/scout-the-niche) and your primary-data check (keyword volumes, competitor ads, Reddit voice), run through Gemini for compression (1M context). Prompt 10 Where customer lives is separate, that's a Day 2 distribution-mapping step.
+<div className="my-4 space-y-3">
+  <div>
+    <PersistentCheckbox id="four-box-prereq-1" label="Customer sentence ready" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">From <a href="/docs/prompts/define-customer" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 1 Define your customer</a>.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="four-box-prereq-2" label="Compressed research brief ready" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">From <a href="/docs/prompts/scout-the-niche" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 3 Scout the niche</a> plus your primary-data check (keyword volumes, competitor ads, Reddit voice), run through Gemini for compression (1M context). Prompt 10 Where customer lives is separate; that's a Day 2 distribution-mapping step.</p>
+  </div>
+</div>
 
 Skip these and Claude fills the boxes off vibes.
 

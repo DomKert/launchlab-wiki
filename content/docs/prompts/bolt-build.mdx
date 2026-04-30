@@ -34,13 +34,22 @@ This runs in Claude Project. The OUTPUT goes to ChatGPT (Path A) or Bolt (Path C
 
 ## Before you run this
 
-Three things ready in your Project knowledge or available to paste:
+Three things ready in your Project knowledge or available to paste. Tick each as you confirm.
 
-1. Cleaned section-by-section copy from [Prompt 4](/docs/prompts/landing-page-spec) → [Prompt 9](/docs/prompts/strip-ai-smell). Save as `bolt-copy.md` in Project knowledge or be ready to paste. ALL sections of the page (hero + each subsequent section per OMTM shape), not just hero.
-
-2. CTA destination set up. [Tally form](https://tally.so) URL for waitlist, [Cal.com](https://cal.com) URL for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto: for 1:1.
-
-3. Hero image plan decided. Either an image file saved to disk (from [Prompt 18](/docs/prompts/hero-image-prompt) → [Gemini Nano Banana](https://gemini.google.com), [gpt-image-2](https://chatgpt.com), or [Unsplash](https://unsplash.com) download), or "use a placeholder for now", or "no image, type-only".
+<div className="my-4 space-y-3">
+  <div>
+    <PersistentCheckbox id="bolt-build-prereq-1" label="Cleaned section-by-section copy ready (saved as bolt-copy.md or pasteable)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">From <a href="/docs/prompts/landing-page-spec" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 4</a> through <a href="/docs/prompts/strip-ai-smell" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 9</a>. Save as <code>bolt-copy.md</code> in Project knowledge or be ready to paste. ALL sections of the page (hero + each subsequent section per OMTM shape), not just hero.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="bolt-build-prereq-2" label="CTA destination URL ready (Tally / Cal.com / Stripe / mailto)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground"><a href="https://tally.so" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Tally form</a> URL for waitlist, <a href="https://cal.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Cal.com</a> URL for demos, <a href="https://stripe.com/payments/payment-links" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Stripe Payment Link</a> for e-com, mailto: for 1:1.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="bolt-build-prereq-3" label="Hero image plan decided (file saved to disk, placeholder, or none)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Either an image file saved to disk (from <a href="/docs/prompts/hero-image-prompt" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 18</a> via <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Gemini Nano Banana</a>, <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">gpt-image-2</a>, or <a href="https://unsplash.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Unsplash</a> download), or "use a placeholder for now", or "no image, type-only".</p>
+  </div>
+</div>
 
 If any of these are missing, Claude will stop and tell you which to do first.
 
@@ -50,11 +59,20 @@ Two ways. Reference screenshot is the strong path. Vibe vocab is the fallback if
 
 ### Primary path. Pick a reference page
 
-1. Browse [saaslandingpage.com](https://saaslandingpage.com), [lapa.ninja](https://lapa.ninja), or [landingfolio.com](https://landingfolio.com/inspiration/landing-page/saas). Find one page whose feel you'd be happy with for your own page.
-2. Open the page in Chrome. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows) inside Chrome DevTools (open with `Cmd+Option+I`). Type "screenshot". Two useful commands appear:
-   - "Capture full size screenshot" gives you the whole page.
-   - "Capture node screenshot" gives you just the element you have selected in the inspector. Use this for hero-only.
-3. Save the PNG. You'll attach it to ChatGPT later, alongside the master prompt.
+<div className="my-4 space-y-3">
+  <div>
+    <PersistentCheckbox id="ref-path-1" label="Step 1. Find a reference page whose feel you'd be happy with" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Browse <a href="https://saaslandingpage.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">saaslandingpage.com</a>, <a href="https://lapa.ninja" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">lapa.ninja</a>, or <a href="https://landingfolio.com/inspiration/landing-page/saas" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">landingfolio.com</a>. Pick one page you'd be happy if your page felt like.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="ref-path-2" label="Step 2. Capture the screenshot via Chrome DevTools" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Open the page in Chrome. Open DevTools with <code>Cmd+Option+I</code> (Mac) or <code>Ctrl+Shift+I</code> (Windows). Then press <code>Cmd+Shift+P</code> (Mac) or <code>Ctrl+Shift+P</code> (Windows) and type "screenshot". Two useful commands appear: "Capture full size screenshot" gives you the whole page; "Capture node screenshot" gives you just the element you have selected in the inspector (use this for hero-only).</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="ref-path-3" label="Step 3. Save the PNG to disk" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">You'll attach it to ChatGPT later, alongside the master prompt (Path A) or to your first Bolt message (Path C).</p>
+  </div>
+</div>
 
 This is stronger than any text description because words like "minimalist" or "warm" mean different things to different ChatGPT runs. A specific screenshot can't be misinterpreted. Realistic output is a 70 to 80 percent replica of the visual feel, then chat iteration closes the rest.
 
