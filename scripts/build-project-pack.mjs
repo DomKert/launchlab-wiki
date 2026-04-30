@@ -66,31 +66,43 @@ async function buildDistributionDoctrine() {
 async function buildPromptIndex() {
   const meta = JSON.parse(await fs.readFile(PROMPTS_META, 'utf8'));
   const lines = [
-    'LaunchLab Spellbook Index',
-    '==========================',
+    'LaunchLab Spellbook (canonical prompt text)',
+    '===========================================',
     '',
-    '15 prompts you will use across the weekend, grouped by category. The full prompt text lives at the wiki URL. This index helps Claude route you to the right prompt when you are not sure what to ask for next.',
+    '15 prompts you will use across the weekend, grouped by category. Full prompt text is embedded below each entry. Use these blocks verbatim. Do NOT improvise. Replace bracketed placeholders ([ONE-LINE DESCRIPTION], [CUSTOMER SENTENCE from Prompt 1], etc.) with the founder\'s actual one-liner.md and customer.md content from Project knowledge.',
     '',
   ];
 
-  let currentCategory = null;
   for (const slug of meta.pages) {
     if (slug === 'index') continue;
     const categoryMatch = slug.match(/^---(.+?)---$/);
     if (categoryMatch) {
-      currentCategory = categoryMatch[1].trim().toUpperCase();
+      const category = categoryMatch[1].trim().toUpperCase();
       lines.push('');
-      lines.push(currentCategory);
-      lines.push('-'.repeat(currentCategory.length));
+      lines.push(category);
+      lines.push('-'.repeat(category.length));
       continue;
     }
     const file = path.join(PROMPTS_DIR, `${slug}.mdx`);
     const mdx = await fs.readFile(file, 'utf8');
     const fm = parseFrontmatter(mdx);
+    const promptMatch = mdx.match(/```txt\n([\s\S]+?)\n```/);
+    const promptBody = promptMatch ? promptMatch[1] : '';
+
     lines.push('');
-    lines.push(`- ${fm.title || slug}`);
-    if (fm.description) lines.push(`  ${fm.description}`);
-    lines.push(`  ${WIKI_BASE}/docs/prompts/${slug}`);
+    lines.push(`### ${fm.title || slug}`);
+    if (fm.description) lines.push(fm.description);
+    lines.push(`Wiki: ${WIKI_BASE}/docs/prompts/${slug}`);
+    if (promptBody) {
+      lines.push('');
+      lines.push('PROMPT (verbatim):');
+      lines.push('```');
+      lines.push(promptBody);
+      lines.push('```');
+    } else {
+      lines.push('');
+      lines.push('(No txt code block found in source; see the wiki URL above.)');
+    }
   }
   lines.push('');
   return lines.join('\n');
