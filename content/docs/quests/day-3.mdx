@@ -46,7 +46,7 @@ description: Raid Hour + Demo Day. 50 of us, one hour, cohort-wide.
       <Badge variant="achievement">DEMO DAY</Badge>
       <span className="font-mono text-xs text-fd-muted-foreground">7:30 PM IST Sun · 120 min · closing ceremony</span>
     </div>
-    <p>10 squads. 6 minutes each. Peer voting. Awards.</p>
+    <p>10 squad walkthroughs by squad captains. 6 min each. Peer voting. Awards.</p>
   </div>
 </div>
 
@@ -61,7 +61,7 @@ description: Raid Hour + Demo Day. 50 of us, one hour, cohort-wide.
       <a href="/docs/prompts/launch-raid" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 8</a>
     </div>
     <div className="flex items-stretch gap-2">
-      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-3-pitch-drafted" label="Draft, edit, and practice Demo Day 30-second pitch 3 times on camera" /></div>
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-3-pitch-drafted" label="Send your 30-sec project pitch to your squad captain" /></div>
       <a href="/docs/prompts/demo-day-pitch" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 12</a>
     </div>
     <div className="flex items-stretch gap-2">
@@ -116,12 +116,18 @@ Reddit excluded. Post there 24 to 48h after the Raid Hour from your own karma-bu
 
 ## Demo Day
 
-Max 10 squads, 6 minutes each. One rep presents the squad's business and traction.
+10 squad captains walk through their squad's 5 projects. 6 min per squad. You don't pitch live; your captain presents your project alongside the other 4 in the squad. The 30-sec pitch you sent in Final Prep is what they work from.
+
+<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4">
+  <div className="mb-2 flex items-center gap-2">
+    <Badge variant="quest">SQUAD CAPTAINS</Badge>
+  </div>
+  <p>Collect your squad's 5 pitches before Demo Day. Stitch into a 6-min walkthrough. Lead with the squad's highest-traction project.</p>
+</div>
 
 <div className="my-6">
-  <PersistentCheckbox id="day-3-demo-day" label="3. Pitch at Demo Day, 7:30 PM IST" />
+  <PersistentCheckbox id="day-3-demo-day" label="3. Show up at Demo Day, 7:30 PM IST" />
   <div className="mt-2 grid gap-2 pl-6">
-    <PersistentCheckbox id="day-3-pitch-delivered" label="Deliver pitch live (under 45 sec, no apologies, lead with strongest)" />
     <PersistentCheckbox id="day-3-voted-peers" label="Vote in 3+ peer demos across the 4 voting categories" />
     <PersistentCheckbox id="day-3-cohort-totals-noted" label="Note cohort scoreboard rolled-up totals for your records" />
   </div>
