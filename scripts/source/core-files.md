@@ -214,56 +214,71 @@ Pass criteria for each day. Use this to answer "am I on track?"
 DAY 1, FRIDAY. PASS = LIVE LINK IN #LAUNCHES BY TONIGHT.
 
 Must ship:
-- Customer defined in one sentence.
-- Niche scouted via Parallel Scout (Perplexity + Grok + Gemini, synthesized in Gemini),
-  1 to 2 gaps named.
-- Primary-data check done (keywords, ads, Reddit voice).
-- research-brief.md stitched and uploaded to Claude Project.
-- 4-box drafted (Customer, Problem, Value prop, Price or model).
-- One Metric picked. Exactly one.
-- Page copy drafted from your 4-box.
-- Page built (landing page in your chosen builder).
-- AI smell stripped from copy. Page reads human in 3 seconds.
+- Customer defined in one sentence (Prompt 1).
+- Niche scouted via Parallel Scout (Perplexity + Grok + Gemini, synthesized in a fresh
+  Gemini chat with Prompt 15), 1 to 2 gaps named.
+- research-brief.md uploaded to Claude Project knowledge.
+- 4-box drafted (Customer, Problem, Value prop, Price or model) (Prompt 2).
+- Primary-data check done (keywords, ads, Reddit voice). Optional.
+- One Metric picked. Exactly one (Prompt 14).
+- Page copy drafted from your 4-box (Prompt 4 in ChatGPT).
+- AI smell stripped from copy (Prompt 9, fresh ChatGPT chat).
+- CTA destination set up (Tally / Cal.com / Stripe Payment Link / mailto).
+- Hero image generated, placeholder picked, or image skipped (Prompt 18).
+- Build path picked (ChatGPT + Netlify Drop / Carrd / Framer / Bolt).
+- Loom hit record before the build prompt synthesis (the chat itself is tomorrow's
+  content material).
+- Build prompt synthesized in Claude Project chat (Prompt 17). Skip if Path B.
+- Landing page built and shipped live (single page, button-link CTAs, no iframes).
+- Vanity URL set + per-channel Dub.co tracking links created.
 - Live link posted in #launches.
 - Circle of 20 list drafted for tomorrow's send.
 
 Don't:
 - Polish forever before deploying. Ugly + live beats pretty + draft.
-- Use Claude to write the full landing page from scratch. Brain, not drafter.
+- Hand the full landing-page draft to Claude. Drafting belongs in ChatGPT or Gemini.
 - Pick two metrics. Two metrics means zero.
 
 DAY 2, SATURDAY. PASS = POSTED IN 2-3 ROOMS, ONE SIGNAL IN HAND.
 
 Must ship:
-- Distribution map drafted, 5 to 7 specific rooms.
-- Circle of 20 sent to your 20 names from yesterday.
-- First broadcast sent to your warm list.
-- Community post live in 2 to 3 rooms.
-- Cross-Cohort Peer Boost swaps set with cohort peers.
-- Signal logged, one sentence per room.
-- One iteration ran (sharper hook or different room).
+- Business type identified (E-com / SaaS / Marketplace / Creator / Consumer App / Service).
+- 4 to 6 plays picked from the distribution playbook for your business type, run today.
+- Always-on plays running: Circle of 20 sent, Cross-Cohort Peer Boost swaps with 3 cohort
+  peers, Build-in-Public Loom recorded.
+- Content shipped from yesterday's build (process Reel / LinkedIn build-update / X post /
+  IG Story or WhatsApp Status).
+- Signal logged per room. One sentence each.
+- One iteration run (sharper hook or different room).
 - One Metric count posted in your squad channel.
 
 Don't:
 - Rebuild the page after lunch. Iterate copy and CTA, not structure.
-- Chase 5 channels. Quality > volume.
-- Take silence as failure. Crickets are data, not failure.
+- Chase 5 channels. Quality over volume.
+- Take silence as failure. Crickets are data.
 - Change channel before iterating offer or CTA. Wrong room is the third hypothesis.
+- Save content for Sunday's launch hour. Sunday is the spike, today is the baseline.
 
 DAY 3, SUNDAY. PASS = LAUNCH POST INSIDE THE RAID HOUR + 30-SECOND PITCH AT DEMO DAY.
 
 Must ship:
-- Last page improvements done before the Raid Hour.
-- Launch post pack queued.
-- 8 to 10 warm-network engagers lined up from your circle.
-- Launch post live inside the 60-min Raid Hour window.
+- Last page improvements done before the Raid Hour. Tweaks only, no rebuild.
+- Launch post pack drafted and queued across X, LinkedIn, IG, and personal channel
+  (Prompt 8).
+- Demo Day 30-second pitch drafted, edited, and practiced 3 times on camera (Prompt 12).
+- Per-channel Dub.co tracking links created for every Raid Hour post.
+- 8 to 10 warm-network engagers lined up from your own circle.
+- Launch post live inside the 60-min Raid Hour window across X, LinkedIn, IG, and
+  personal channel.
+- First comments and DMs replied to in the first 30 min.
+- Squad channel scoreboard line posted (one-liner with metric move).
 - 30-second pitch delivered at Demo Day (or your squad rep delivered it).
-- Peer vote cast across the 4 award categories.
+- Peer vote cast across the award categories.
 
 Don't:
-- Polish the page during the Raid Hour. Window is for posting and engagement only.
-- Cross-post on Reddit during the window. Post 24 to 48 hours after, from your own karma-built
-  account, 90/10 rule.
+- Rebuild the page during the Raid Hour. Window is for posting and engagement only.
+- Cross-post on Reddit during the window. Post 24 to 48 hours after, from your own
+  karma-built account, 90/10 rule.
 - Compare your numbers to other squads mid-window.
 - Apologize for what didn't ship. Show up, post, support others.
 ```
