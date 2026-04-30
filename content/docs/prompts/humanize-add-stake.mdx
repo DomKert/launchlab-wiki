@@ -55,3 +55,28 @@ Output:
 [PASTE COPY TO HUMANIZE HERE]
 </copy>
 ```
+
+## After Claude outputs the rewrite
+
+<div className="my-4 space-y-3">
+  <div>
+    <PersistentCheckbox id="humanize-after-1" label="Step 1. Read the rewritten copy alongside the 4 lines explaining what changed" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">The four lines tell you what opinion was added, what specific was invented, what vulnerability was included, what rhythm change was made. Read those first so you know what to verify.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="humanize-after-2" label="Step 2. Verify the opinion sounds like YOUR voice, not a generic founder" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Claude often adds a stake that's plausible but isn't actually yours. Replace it with something you actually believe. If you don't believe it, the reader won't either.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="humanize-after-3" label="Step 3. Verify the personal specific is true (not invented)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Claude will fabricate detail like "at 11pm on a Tuesday." If it's not true for you, swap it for one that is. Faking specifics is worse than leaving the copy vague.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="humanize-after-4" label="Step 4. Pass the result through Prompt 9 Strip AI smell" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Humanize first, strip second. Now that the copy has stake and specifics, run <a href="/docs/prompts/strip-ai-smell" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 9</a> to clean the residual AI tells without losing the human element you just added.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="humanize-after-5" label="Step 5. Save the cleaned version where it belongs" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Broadcast email goes into your draft. Community post or DM goes into the platform. Demo Day pitch script goes into your phone notes for practice.</p>
+  </div>
+</div>
