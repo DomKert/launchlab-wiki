@@ -28,7 +28,7 @@ description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a build-too
 
 The build prompt has a lot of moving parts: project name, all section copy, vibe keyword, mood, type, CTA destination, hero image plan. Filling it into a static template by hand means missing something.
 
-Claude reads your Project knowledge (4-box, customer, one-liner, OMTM, plus bolt-copy.md if saved) and walks you through the missing pieces one at a time. Style direction (vibe keyword + mood + Google Fonts pairing) gets picked inside this chat from the reference vocab below. If you're missing a prereq (no Tally form, no cleaned copy), Claude stops and routes you back. Then it outputs the final build prompt as one code block.
+Claude reads your Project knowledge (4-box, customer, one-liner, OMTM, plus landing-copy.md if saved) and walks you through the missing pieces one at a time. Style direction (vibe keyword + mood + Google Fonts pairing) gets picked inside this chat from the reference vocab below. If you're missing a prereq (no Tally form, no cleaned copy), Claude stops and routes you back. Then it outputs the final build prompt as one code block.
 
 This runs in Claude Project. The OUTPUT goes to ChatGPT (Path A) or Bolt (Path C).
 
@@ -38,8 +38,8 @@ Three things ready in your Project knowledge or available to paste. Tick each as
 
 <div className="my-4 space-y-3">
   <div>
-    <PersistentCheckbox id="bolt-build-prereq-1" label="Have cleaned section-by-section copy ready (saved as bolt-copy.md or pasteable)" />
-    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">From <a href="/docs/prompts/landing-page-spec" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 4</a> through <a href="/docs/prompts/strip-ai-smell" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 9</a>. Save as <code>bolt-copy.md</code> in Project knowledge or be ready to paste. ALL sections of the page (hero + each subsequent section per OMTM shape), not just hero.</p>
+    <PersistentCheckbox id="bolt-build-prereq-1" label="Have cleaned section-by-section copy ready (saved as landing-copy.md or pasteable)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">From <a href="/docs/prompts/landing-page-spec" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 4</a> through <a href="/docs/prompts/strip-ai-smell" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 9</a>. Save as <code>landing-copy.md</code> in Project knowledge or be ready to paste. ALL sections of the page (hero + each subsequent section per OMTM shape), not just hero.</p>
   </div>
   <div>
     <PersistentCheckbox id="bolt-build-prereq-2" label="Set up CTA destination URL (Tally / Cal.com / Stripe / mailto)" />
@@ -108,7 +108,7 @@ warm, refined, calm, raw, technical, editorial, austere, considered, weighty, so
 Run this in your Claude Project chat. Claude walks you through 5 inputs one at a time, then outputs the final build prompt as one code block.
 
 ```txt
-I'm ready to build my landing page. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus bolt-copy.md if I've saved it) and synthesize the single build prompt I'll paste as the first message in either ChatGPT (Path A, default) or Bolt (Path C).
+I'm ready to build my landing page. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus landing-copy.md if I've saved it) and synthesize the single build prompt I'll paste as the first message in either ChatGPT (Path A, default) or Bolt (Path C).
 
 The prompt MUST do three things to survive free tier limits and produce clean output:
 1. Ask for a single-file static HTML landing page (one index.html only, Tailwind via CDN script tag in the head, Google Fonts via link tag, custom CSS in a style block, no Next.js, no Vite, no framework, no separate config files)
@@ -145,7 +145,7 @@ Type: headlines in [Google Font from the founder's pairing], body in [Google Fon
 Pick a palette and detailed type sizing that match the vibe keyword and mood. Default to a clean off-white or warm cream background with high-contrast charcoal or near-black type. Use ONE accent color for the primary CTA only. No saturated full-page background colors. No alternating section backgrounds. Generous whitespace, type-driven layout.
 
 Section copy (use verbatim, don't rewrite or improvise)
-[Substitute every cleaned section from bolt-copy.md, in order, with section labels per OMTM shape.]
+[Substitute every cleaned section from landing-copy.md, in order, with section labels per OMTM shape.]
 
 CTA wiring (use button-links, NOT iframes)
 Primary CTA button text: [paste from cleaned hero copy]
