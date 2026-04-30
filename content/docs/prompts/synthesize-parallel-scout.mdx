@@ -41,8 +41,8 @@ This synthesizer prompt is step 4 of a 5-step flow. Run the upstream scouts befo
     <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Use a fresh Gemini tab, not the one you ran the third scout in. The synthesizer needs to read all 3 outputs side by side without contamination.</p>
   </div>
   <div>
-    <PersistentCheckbox id="parallel-scout-5" label="Step 5. Upload the brief to Claude Project as research-brief.md" />
-    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Files +, Add text content. Now <a href="/docs/prompts/four-box" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 2 The 4-box</a> and <a href="/docs/prompts/landing-page-spec" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 4 Landing page spec</a> read from this file across every chat.</p>
+    <PersistentCheckbox id="parallel-scout-5" label="Step 5. Upload the brief, then open a new chat in your Claude Project" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Files +, Add text content. Then close this Gemini synthesis chat and open a fresh chat inside your Claude Project for the next prompt. <a href="/docs/prompts/four-box" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 2 The 4-box</a> and <a href="/docs/prompts/landing-page-spec" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 4 Landing page spec</a> read research-brief.md automatically. Don't paste the brief back into the chat that produced it; that chat is dragging 3 raw scout outputs forward and the next prompt doesn't need them.</p>
   </div>
 </div>
 
@@ -94,7 +94,7 @@ Rules:
 [ATTACH research-dump.md OR PASTE 3 SCOUT OUTPUTS BELOW]
 ```
 
-After Gemini outputs the brief, save the response as `research-brief.md` and upload it to your Claude Project knowledge (Files +). Every downstream prompt (the 4-box, landing-page spec, room scout) reads from this file.
+After Gemini outputs the brief, save the response as `research-brief.md` and upload it to your Claude Project knowledge (Files +). Then open a fresh chat inside your Claude Project for the next prompt. Don't paste the brief back into the synthesis chat; that chat is carrying 3 raw scout outputs the 4-box doesn't need. Every downstream prompt (the 4-box, landing-page spec, room scout) reads from research-brief.md automatically once it's a knowledge file.
 
 ## Where else to fan out
 
