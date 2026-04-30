@@ -27,28 +27,32 @@ Open these in tabs.
 
 ## The 6-step sequence
 
-### 1. Pre-build setup. Plan mode + attach hero image only.
+### 1. Pre-build setup. Skip Plan mode, attach hero image only.
 
 Skip the Design System dropdown on the bolt.new homepage. Those are Next.js component libraries (Shadcn, Material UI, etc.) and we're asking Bolt for a single static HTML file, not a Next.js project. Picking one wastes the slot.
 
-Turn on Plan mode using the toggle next to the Build now button. Plan mode makes Bolt write the build plan first that you review and edit before code generates. Cheapest place to catch bad assumptions, especially the "did Bolt understand single-file HTML, or is it about to scaffold Next.js" check.
+Skip Plan mode too. Bolt's docs flag Plan mode as a token-saver for complex builds, but for single-file static HTML it's the opposite. Bolt auto-scaffolds a Vite template the moment you arrive at bolt.new, and Plan mode reads that whole Vite tree as context before generating the plan. A single Plan generation can burn 250K+ of the 300K daily cap before any code is built. The assembled prompt from [Prompt 17](/docs/prompts/bolt-build) already contains the plan; Plan mode just adds an expensive turn that re-ingests the scaffold.
 
 Click the paperclip and attach only your hero image file from Prompt 18, if you generated one (10MB limit, free tier). Don't attach the 3 reference screenshots; the style spec in Prompt 17 already captures the visual direction and image attachments cost tokens on every Bolt message.
 
-### 2. First prompt. Paste the assembled prompt from Prompt 17.
+### 2. First prompt. Paste the assembled prompt from Prompt 17, click Build.
 
-One message. The full assembled prompt that Claude synthesized in [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build). Don't summarize, don't paraphrase, don't fill in placeholders by hand. Claude already did that. The prompt asks Bolt for the WHOLE page (all sections from your cleaned copy) as one `index.html` file, not hero-only.
+One message. The full assembled prompt that Claude synthesized in [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build). Don't summarize, don't paraphrase, don't fill in placeholders by hand. Claude already did that.
 
-Bolt writes the plan in 30 to 60 seconds. Review it. Two checks before clicking Build:
+The prompt opens with a "FIRST INSTRUCTION" block that tells Bolt to delete every file in the project except index.html before doing anything else. That handles the auto-scaffolded Vite tree.
 
-1. Plan says "one HTML file" or "index.html only" and NOT "Next.js project", "Vite app", "tailwind.config.ts", or any separate config files.
-2. Plan covers ALL sections from your cleaned copy, not just the hero.
+Click **Build now** directly. Don't toggle Plan. Wait 60 to 120 seconds for the page to scaffold.
 
-If either fails, edit the plan inline and tell Bolt: "Single index.html only, Tailwind via CDN, build all sections in one go." Then click Build.
+### 3. Review the scaffold AND the file sidebar
 
-### 3. Review the scaffold
+You'll get a full working page in 60 to 120 seconds. Don't prompt yet. Two things to check:
 
-You'll get a full working page in 60 to 120 seconds. Don't prompt yet. Read it top to bottom. Click around. Check what's actually wrong vs. what just needs a tweak.
+1. **The preview pane**. Does the page render? Does it look anything like the vibe?
+2. **The file sidebar**. Does the project contain ONLY `index.html`? If you see `package.json`, `vite.config.js`, `main.js`, or any `src/` folder, the scaffold-strip didn't fully take.
+
+If you see extra files, send one follow-up prompt: "Delete every file in the project except index.html. The project must contain exactly one file." Don't iterate on the page until the file tree is clean, otherwise every follow-up will keep re-syncing the Vite tree.
+
+After the file tree is clean, read the page top to bottom. Click around. Decide what's actually wrong vs. what just needs a tweak.
 
 ### 4. Tweak via code edits, not prompts
 
@@ -74,7 +78,7 @@ A 60-min build. One initial prompt that scaffolds the whole page in one go. 1 to
 
 ## What bad looks like
 
-A 4-hour build. 30+ prompts. Every fix breaks two other things. Token budget gone before the page is even live. Letting Bolt scaffold Next.js + Tailwind config + layout files instead of catching it in Plan mode and forcing single-file HTML.
+A 4-hour build. 30+ prompts. Every fix breaks two other things. Token budget gone before the page is even live. Toggling Plan mode on (it reads the auto-scaffolded Vite tree and burns 200K+ tokens before any code runs). Letting the Vite scaffold persist after the first build and re-ingesting it on every follow-up.
 
 ## When you hit the wall
 
