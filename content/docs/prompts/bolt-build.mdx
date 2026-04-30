@@ -12,52 +12,49 @@ description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a build-too
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
   <a href="https://claude.ai" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Claude Project</a>
-  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Output goes to (you pick the path on bolt.new homepage)</div>
+  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Output goes to</div>
   <div className="mt-1 flex flex-wrap gap-3">
     <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Path A: ChatGPT free + Netlify Drop (default)</a>
     <a href="https://bolt.new" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Path C: Bolt (advanced)</a>
   </div>
 </div>
 
-<div className="my-4 rounded-md border border-amber-500 bg-fd-card p-4 text-sm">
-  <div className="mb-2 flex items-center gap-2"><Badge variant="patch-notes">WHICH PATH</Badge></div>
-  <p className="text-fd-muted-foreground">Default is Path A (ChatGPT free). Better output, no token cliff, simpler. Path C (Bolt) is for students who specifically want the AI iteration loop with a preview pane and accept the 300K daily token cap. Path B exists too for zero-AI builds; see [Pick your build path](/docs/playbook/build-paths). The synthesizer below outputs a prompt that works in both ChatGPT and Bolt; only the destination changes.</p>
-</div>
+## The flow
 
-## Why this works
+Get prereqs ready → paste the meta-prompt below in Claude → Claude walks you through 5 inputs one at a time → Claude outputs your assembled build prompt as one code block → paste that into ChatGPT (Path A) or Bolt (Path C) → live URL.
 
-The build prompt has a lot of moving parts: project name, all section copy, vibe keyword, mood, type, CTA destination, hero image plan. Filling it into a static template by hand means missing something.
+Path A is the default. Path C trades simpler iteration for a live preview pane plus a 300K daily token cap. Path B (zero AI, Carrd or Framer) skips this prompt entirely; see [Pick your build path](/docs/playbook/build-paths).
 
-Claude reads your Project knowledge (4-box, customer, one-liner, OMTM, plus landing-copy.md if saved) and walks you through the missing pieces one at a time. Style direction (vibe keyword + mood + Google Fonts pairing) gets picked inside this chat from the reference vocab below. If you're missing a prereq (no Tally form, no cleaned copy), Claude stops and routes you back. Then it outputs the final build prompt as one code block.
+## Step 1. Get prereqs ready
 
-This runs in Claude Project. The OUTPUT goes to ChatGPT (Path A) or Bolt (Path C).
-
-## Before you run this
-
-Three things ready in your Project knowledge or available to paste. Tick each as you confirm.
+Four things ready before you paste. Tick each.
 
 <div className="my-4 space-y-3">
   <div>
-    <PersistentCheckbox id="bolt-build-prereq-1" label="Have cleaned section-by-section copy ready (saved as landing-copy.md or pasteable)" />
+    <PersistentCheckbox id="bolt-build-prereq-1" label="Cleaned section-by-section copy (saved as landing-copy.md or pasteable)" />
     <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">From <a href="/docs/prompts/landing-page-spec" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 4</a> through <a href="/docs/prompts/strip-ai-smell" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 9</a>. Save as <code>landing-copy.md</code> in Project knowledge or be ready to paste. ALL sections of the page (hero + each subsequent section per OMTM shape), not just hero.</p>
   </div>
   <div>
-    <PersistentCheckbox id="bolt-build-prereq-2" label="Set up CTA destination URL (Tally / Cal.com / Stripe / mailto)" />
+    <PersistentCheckbox id="bolt-build-prereq-2" label="CTA destination URL (Tally / Cal.com / Stripe / mailto)" />
     <p className="ml-7 mt-1 text-sm text-fd-muted-foreground"><a href="https://tally.so" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Tally form</a> URL for waitlist, <a href="https://cal.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Cal.com</a> URL for demos, <a href="https://stripe.com/payments/payment-links" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Stripe Payment Link</a> for e-com, mailto: for 1:1.</p>
   </div>
   <div>
-    <PersistentCheckbox id="bolt-build-prereq-3" label="Decide hero image plan (file saved to disk, placeholder, or none)" />
-    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Either an image file saved to disk (from <a href="/docs/prompts/hero-image-prompt" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 18</a> via <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Gemini Nano Banana</a>, <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">gpt-image-2</a>, or <a href="https://unsplash.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Unsplash</a> download), or "use a placeholder for now", or "no image, type-only".</p>
+    <PersistentCheckbox id="bolt-build-prereq-3" label="Hero image plan (file on disk, placeholder, or none)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Either an image file already saved to disk, or "use a placeholder for now", or "no image, type-only". Need to make one? Run <a href="/docs/prompts/hero-image-prompt" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 18 Hero image prompt</a> first, then come back. The image gets saved next to <code>index.html</code> for Path A, attached via paperclip for Path C.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="bolt-build-prereq-4" label="Style direction picked (reference screenshot OR vibe vocab)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Two ways to pick. The reference screenshot is the strong path; vibe vocab is the fallback if you can't find a page you like. <a href="#style-direction-details" className="text-emerald-600 hover:underline dark:text-emerald-400">Details below</a>.</p>
   </div>
 </div>
 
-If any of these are missing, Claude will stop and tell you which to do first.
+If any of these are missing, Claude will stop and route you back when you run the prompt.
 
-## Pick your style direction
+### Style direction details
 
-Two ways. Reference screenshot is the strong path. Vibe vocab is the fallback if you can't find a reference page.
+Reference screenshot is the strong path. Vibe vocab is the fallback if you can't find a reference page you like.
 
-### Primary path. Pick a reference page
+#### Primary path. Reference page screenshot
 
 <div className="my-4 space-y-3">
   <div>
@@ -70,19 +67,19 @@ Two ways. Reference screenshot is the strong path. Vibe vocab is the fallback if
   </div>
   <div>
     <PersistentCheckbox id="ref-path-3" label="Step 3. Save the PNG to disk" />
-    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">You'll attach it to ChatGPT later, alongside the master prompt (Path A) or to your first Bolt message (Path C).</p>
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">You'll attach it to ChatGPT alongside the assembled prompt (Path A) or to your first Bolt message (Path C).</p>
   </div>
 </div>
 
-This is stronger than any text description because words like "minimalist" or "warm" mean different things to different ChatGPT runs. A specific screenshot can't be misinterpreted. Realistic output is a 70 to 80 percent replica of the visual feel, then chat iteration closes the rest.
+A specific screenshot can't be misinterpreted the way "minimalist" or "warm" can be. Realistic output is a 70 to 80 percent replica of the visual feel; chat iteration closes the rest.
 
 If you want stronger signal, capture two screenshots: one of the hero section, one of a content section that shows their type rhythm and decorative moves (rules, drop caps, bullet styling). Don't go past two; ChatGPT processes single sections more accurately than tall full-page images.
 
-### Fallback. Vibe vocab + mood + fonts
+#### Fallback. Vibe vocab + mood + fonts
 
-If you can't find a reference page you like, give Claude these three picks instead and skip the screenshot.
+If you can't find a reference page you like, give Claude these three picks and skip the screenshot.
 
-#### Vibe keyword (pick ONE based on your shape)
+Vibe keyword. Pick ONE based on your shape.
 
 - Waitlist → `brutalism` or `hyper-minimalism`
 - Demo or B2B → `glassmorphism` or `material-design`
@@ -91,11 +88,11 @@ If you can't find a reference page you like, give Claude these three picks inste
 - SaaS-trial → `glassmorphism` or `material-design`
 - 1:1-bespoke → `hyper-minimalism` or `editorial`
 
-#### Mood adjectives (pick 3)
+Mood adjectives. Pick 3 from this bank.
 
 warm, refined, calm, raw, technical, editorial, austere, considered, weighty, soft, sharp, lush, urgent, playful, confident, premium, rebellious, quiet, generous, energetic.
 
-#### Google Fonts pairing (pick ONE)
+Google Fonts pairing. Pick ONE.
 
 1. `Inter` (UI) plus `Spectral` (display). Modern editorial.
 2. `Manrope` (UI) plus `Fraunces` (display). Warm refined.
@@ -103,9 +100,9 @@ warm, refined, calm, raw, technical, editorial, austere, considered, weighty, so
 4. `Inter` (UI) plus `Instrument Serif` (display). Editorial luxe.
 5. `Space Grotesk` (UI) plus `JetBrains Mono` (mono). Brutalist tech.
 
-## Prompt
+## Step 2. Run the prompt in Claude
 
-Run this in your Claude Project chat. Claude walks you through 5 inputs one at a time, then outputs the final build prompt as one code block.
+Paste this in your Claude Project chat. Claude reads your Project knowledge (4-box, customer, one-liner, OMTM, plus landing-copy.md if saved), walks you through 5 inputs one at a time, and outputs the final build prompt as one code block.
 
 ```txt
 I'm ready to build my landing page. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus landing-copy.md if I've saved it) and synthesize the single build prompt I'll paste as the first message in either ChatGPT (Path A, default) or Bolt (Path C).
@@ -180,11 +177,15 @@ Build the full landing page in one go. All sections, one file. Strip the scaffol
 Voice rules for the assembled prompt: don't add anything that's not in my Project knowledge or that I haven't given you. No fabricated stats, no extra sections, no improvised copy, no testimonials. If a value is missing, ask for it instead of guessing.
 ```
 
-## Path A. ChatGPT free + Netlify Drop (default, recommended)
+## Step 3. Build the page
 
-Best for most students. Better output than Bolt for static landing pages, zero token cliff.
+Pick your destination. Path A is the default; only switch to Path C if you specifically want the live preview pane.
 
-Tick each step as you do it. Persistent across reloads.
+### Path A. ChatGPT free + Netlify Drop (default, recommended)
+
+Best for most students. Better output than Bolt for static landing pages, zero token cliff. Tick each step.
+
+#### Build & deploy
 
 <div className="my-4 space-y-4">
   <div>
@@ -207,6 +208,11 @@ Tick each step as you do it. Persistent across reloads.
     <PersistentCheckbox id="path-a-5" label="Step 5. Sign up for free Netlify, drag your folder onto netlify.com/drop" />
     <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Sign up for a free <a href="https://app.netlify.com/signup" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Netlify</a> account. Drag your folder onto <a href="https://app.netlify.com/drop" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">app.netlify.com/drop</a>. The whole folder deploys, image included. You get a live URL like <code>https://your-site-abc123.netlify.app</code>. Without a Netlify account, anonymous Drop URLs disappear after a few hours; signing up locks the URL.</p>
   </div>
+</div>
+
+#### After deploy
+
+<div className="my-4 space-y-4">
   <div>
     <PersistentCheckbox id="path-a-6" label="Step 6. Rename the Netlify subdomain to your brand (e.g. back-room.netlify.app)" />
     <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">In your Netlify dashboard, open the site, go to Site settings → General → Change site name, set it to your brand (e.g. <code>back-room</code>). The URL becomes <code>back-room.netlify.app</code>. Free, 30 seconds, no extra service.</p>
@@ -215,6 +221,11 @@ Tick each step as you do it. Persistent across reloads.
     <PersistentCheckbox id="path-a-7" label="Step 7. Create per-channel Dub.co tracking links pointing at your Netlify URL" />
     <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Make a free <a href="https://dub.co" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Dub.co</a> account and create one short link per distribution channel pointing at your Netlify URL. So <code>dub.sh/back-room-tw</code> for Twitter, <code>dub.sh/back-room-rd</code> for Reddit, <code>dub.sh/back-room-dm</code> for cold DMs, etc. Dub.co free tier gives you 25 short links per month with per-link click analytics, so when traffic comes in you'll know which channel actually drove it. This is your OMTM tracking, not vanity.</p>
   </div>
+</div>
+
+#### Iterate
+
+<div className="my-4 space-y-4">
   <div>
     <PersistentCheckbox id="path-a-8" label="Step 8. Iterate via the same ChatGPT chat, re-drag the folder to redeploy" />
     <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Paste the current HTML back into the ChatGPT chat with "change X", get patched HTML back, save over <code>index.html</code>, drag the folder onto Netlify Drop again. Each drag deploys a fresh version.</p>
@@ -223,44 +234,40 @@ Tick each step as you do it. Persistent across reloads.
 
 Trade-off: no live preview while editing, no AI iteration UI in the same place. But for a static landing page where the spec is locked, ChatGPT generates working HTML first try in 99% of cases. Most iteration is small text or color tweaks anyway.
 
-## Path C. Bolt (advanced, only if you want the AI iteration loop)
+### Path C. Bolt (advanced, only if you want the AI iteration loop)
 
 Best for students who specifically want the AI iteration UI with live preview pane. Comes with the 300K daily token cap risk.
 
-### Don't toggle Plan mode
+#### Build
+
+Paste Claude's assembled prompt as your first message and click **Build now** directly. (Don't toggle Plan mode, see below.) Wait 60 to 120 seconds.
+
+After scaffold, check the file sidebar. If it shows ONLY `index.html`, you're good. If you see `package.json`, `vite.config.js`, etc., send one follow-up: "Delete every file in the project except index.html. The project must contain exactly one file."
+
+For copy edits, color tweaks, padding, image swaps, individual section content: open `index.html`, edit the line, save. Zero tokens. Most refinement happens here.
+
+If you have a hero image file from Prompt 18, click the paperclip icon and attach it (10MB limit, free tier). That's the only image that needs to be in Bolt because it becomes content embedded in the HTML.
+
+#### Don't toggle Plan mode
 
 Bolt's docs say Plan mode saves tokens, which is true for complex multi-file builds. For single-file static HTML it's the opposite. Bolt auto-scaffolds a Vite template the moment you arrive at bolt.new, and Plan mode reads that whole Vite tree as context. A single Plan generation can cost 250K tokens before any code is built. The assembled prompt above already contains the plan.
 
-Click **Build now** directly. Don't toggle Plan.
-
-### Skip the Design System dropdown
+#### Skip the Design System dropdown
 
 Those are Next.js component libraries (Shadcn, Material UI, etc.) and we're asking for single static HTML. Picking one wastes the slot.
 
-### Attachments in Path C
+#### Reference screenshots cost tokens on every message in Bolt
 
-Click the paperclip icon and attach your hero image file from Prompt 18 if you generated one (10MB limit, free tier). That's the only image that needs to be in Bolt because it becomes content embedded in the HTML.
-
-Reference screenshots are a different story in Bolt. Bolt re-charges input tokens for attached images on EVERY follow-up message you send, not just the first one. Across 10 to 20 iterations that drains the 300K daily cap fast. Two options if you have a reference screenshot:
+Bolt re-charges input tokens for attached images on EVERY follow-up message you send, not just the first one. Across 10 to 20 iterations that drains the 300K daily cap fast. Two options if you have a reference screenshot:
 
 - Attach it to your FIRST build message only, then iterate without it. Works if you keep iterations under 10.
 - Skip the screenshot and use the vibe vocab fallback for Path C.
 
 If you want heavy reference-screenshot use, switch to Path A. Free ChatGPT has no equivalent per-message image cost.
 
-### Paste and run
+#### If you hit the daily cap
 
-Paste Claude's assembled prompt as your first message and click Build. Wait 60 to 120 seconds.
-
-After scaffold, check the file sidebar. If it shows ONLY `index.html`, you're good. If you see `package.json`, `vite.config.js`, etc., send one follow-up: "Delete every file in the project except index.html. The project must contain exactly one file."
-
-For copy edits, color tweaks, padding, image swaps, individual section content: open `index.html`, edit the line, save. Zero tokens. Most refinement happens here.
-
-If you hit the daily cap, migrate to [Cursor](https://cursor.sh) free tier: copy `index.html` and your hero image into a fresh Cursor project, paste the latest prompt that worked into Cursor's chat, keep iterating. The hero comes with you.
-
-## Need a hero image first?
-
-Use [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) to synthesize the image-gen prompt in Claude (same pattern as this one), then paste into Gemini Nano Banana, gpt-image-2, or Ideogram. Download the image file to disk. For Path A: save next to your index.html. For Path C: attach via paperclip.
+Migrate to [Cursor](https://cursor.sh) free tier: copy `index.html` and your hero image into a fresh Cursor project, paste the latest prompt that worked into Cursor's chat, keep iterating. The hero comes with you.
 
 ## What good looks like
 
