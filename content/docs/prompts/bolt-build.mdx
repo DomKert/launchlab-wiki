@@ -166,14 +166,42 @@ Voice rules for the assembled prompt: don't add anything that's not in my Projec
 
 Best for most students. Better output than Bolt for static landing pages, zero token cliff.
 
-1. Open [free ChatGPT](https://chatgpt.com). Paste Claude's assembled prompt as a single message. If you picked the reference-screenshot path under style direction, attach your reference PNG to that same message via the paperclip icon. ChatGPT outputs the full HTML in a code block (60 to 90 seconds).
-2. Make a folder on your desktop (e.g. `my-landing/`). This whole folder is what deploys to Netlify in one drag, so anything inside it (HTML, image) will be live.
-3. Copy the HTML from ChatGPT's code block. Save it inside your folder as `index.html`. Any text editor works ([VS Code free](https://code.visualstudio.com/) is the easiest, TextEdit on Mac and Notepad on Windows also work).
-4. If you have a hero image file from [Prompt 18](/docs/prompts/hero-image-prompt), drop it into the same folder next to `index.html`. Then in the SAME ChatGPT chat where you got the HTML, say: "I saved the hero image as `hero.jpg` in the same folder. Update the `<img src=...>` to match." ChatGPT outputs the patched HTML. Copy it and overwrite `index.html`. No text editor needed for this step.
-5. Sign up for a free [Netlify](https://app.netlify.com/signup) account. Drag your folder onto [app.netlify.com/drop](https://app.netlify.com/drop). The whole folder deploys, image included. You get a live URL like `https://your-site-abc123.netlify.app`. Without a Netlify account, anonymous Drop URLs disappear after a few hours; signing up locks the URL.
-6. Rename the auto-generated subdomain so the URL doesn't look random. In your Netlify dashboard, open the site, go to Site settings → General → Change site name, set it to your brand (e.g. `back-room`). The URL becomes `back-room.netlify.app`. Free, 30 seconds, no extra service.
-7. Make a free [Dub.co](https://dub.co) account and create one short link per distribution channel pointing at your Netlify URL. So `dub.sh/back-room-tw` for Twitter, `dub.sh/back-room-rd` for Reddit, `dub.sh/back-room-dm` for cold DMs, etc. Dub.co free tier gives you 25 short links per month with per-link click analytics, so when traffic comes in you'll know which channel actually drove it. This is your OMTM tracking, not vanity.
-8. To iterate: paste the current HTML back into the ChatGPT chat with "change X", get patched HTML back, save over `index.html`, drag the folder onto Netlify Drop again. Each drag deploys a fresh version.
+Tick each step as you do it. Persistent across reloads.
+
+<div className="my-4 space-y-4">
+  <div>
+    <PersistentCheckbox id="path-a-1" label="Step 1. Paste the assembled prompt into free ChatGPT (attach reference screenshot if you picked one)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Open <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">free ChatGPT</a>. Paste Claude's assembled prompt as a single message. If you picked the reference-screenshot path under style direction, attach your reference PNG to that same message via the paperclip icon. ChatGPT outputs the full HTML in a code block (60 to 90 seconds).</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="path-a-2" label="Step 2. Make a deployment folder on your desktop" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">A new folder, e.g. <code>my-landing/</code>. This whole folder is what deploys to Netlify in one drag, so anything inside it (HTML, image) will be live.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="path-a-3" label="Step 3. Copy ChatGPT's HTML and save as index.html in your folder" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Copy the HTML from ChatGPT's code block. Save it inside your folder as <code>index.html</code>. Any text editor works (<a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">VS Code free</a> is the easiest, TextEdit on Mac and Notepad on Windows also work).</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="path-a-4" label="Step 4. Drop hero image into folder, then update the <img src> via the same ChatGPT chat" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">If you have a hero image file from <a href="/docs/prompts/hero-image-prompt" className="text-emerald-600 hover:underline dark:text-emerald-400">Prompt 18</a>, drop it into the same folder next to <code>index.html</code>. Then in the SAME ChatGPT chat where you got the HTML, say: "I saved the hero image as hero.jpg in the same folder. Update the <code>{`<img src=...>`}</code> to match." ChatGPT outputs the patched HTML. Copy it and overwrite <code>index.html</code>. No text editor needed for this step.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="path-a-5" label="Step 5. Sign up for free Netlify, drag your folder onto netlify.com/drop" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Sign up for a free <a href="https://app.netlify.com/signup" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Netlify</a> account. Drag your folder onto <a href="https://app.netlify.com/drop" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">app.netlify.com/drop</a>. The whole folder deploys, image included. You get a live URL like <code>https://your-site-abc123.netlify.app</code>. Without a Netlify account, anonymous Drop URLs disappear after a few hours; signing up locks the URL.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="path-a-6" label="Step 6. Rename the Netlify subdomain to your brand (e.g. back-room.netlify.app)" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">In your Netlify dashboard, open the site, go to Site settings → General → Change site name, set it to your brand (e.g. <code>back-room</code>). The URL becomes <code>back-room.netlify.app</code>. Free, 30 seconds, no extra service.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="path-a-7" label="Step 7. Create per-channel Dub.co tracking links pointing at your Netlify URL" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Make a free <a href="https://dub.co" target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline dark:text-emerald-400">Dub.co</a> account and create one short link per distribution channel pointing at your Netlify URL. So <code>dub.sh/back-room-tw</code> for Twitter, <code>dub.sh/back-room-rd</code> for Reddit, <code>dub.sh/back-room-dm</code> for cold DMs, etc. Dub.co free tier gives you 25 short links per month with per-link click analytics, so when traffic comes in you'll know which channel actually drove it. This is your OMTM tracking, not vanity.</p>
+  </div>
+  <div>
+    <PersistentCheckbox id="path-a-8" label="Step 8. Iterate via the same ChatGPT chat, re-drag the folder to redeploy" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Paste the current HTML back into the ChatGPT chat with "change X", get patched HTML back, save over <code>index.html</code>, drag the folder onto Netlify Drop again. Each drag deploys a fresh version.</p>
+  </div>
+</div>
 
 Trade-off: no live preview while editing, no AI iteration UI in the same place. But for a static landing page where the spec is locked, ChatGPT generates working HTML first try in 99% of cases. Most iteration is small text or color tweaks anyway.
 
