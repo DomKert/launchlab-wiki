@@ -20,7 +20,7 @@ description: Execution. Day 1 afternoon or Day 2 morning. ChatGPT free.
 
 ## Why this works
 
-One prompt, one structured output you paste into any builder (Bolt, v0, Carrd, Framer, raw HTML). You show up with a 4-box, you leave with a spec. No bouncing between five "help me write my hero section" chats. Run once Friday evening to ship a rough WIP, again Saturday morning to polish.
+One prompt, one structured output you paste into any builder. The structure bends around your One Metric (waitlist signup, demo booking, email capture, paid checkout, etc.) instead of forcing every page through the same generic hero / problem / offer / social proof template. A waitlist page shouldn't have a "how it works" section. A demo page shouldn't have a price block. Run once Friday evening for a rough WIP, again Saturday morning to polish.
 
 ## Why ChatGPT not Claude
 
@@ -28,28 +28,72 @@ This prompt drafts hero headlines, button text, and pitch copy. That's copy work
 
 ## Before you run this
 
-You need `4-box.md` ready to paste. [Prompt 2 The 4-box](/docs/prompts/four-box) prints it as a code block at the end of its output. Copy that block into the placeholder below.
+You need two things ready to paste:
+
+1. `4-box.md` from [Prompt 2 The 4-box](/docs/prompts/four-box). Copy its code block.
+2. The metric from [Prompt 14 Pick your One Metric](/docs/prompts/pick-your-metric). Without the metric, this prompt picks a generic structure and your page won't bend around what you're actually trying to drive.
 
 ## Prompt
 
 ```txt
-Here's my 4-box:
+Here's my 4-box and my One Metric:
 
 [PASTE 4-box.md content here]
 
-Turn it into a landing page spec I can build in [Bolt / v0 / Lovable / Artifacts / Carrd / Framer / Webflow / raw HTML, pick one and say it].
+[PASTE OMTM (the metric, why-this-one, and target number from Prompt 14)]
 
-Output these sections in order, with copy for each:
-1. Hero: headline (6 to 8 words), subhead (one sentence), primary CTA button text (2 to 4 words)
-2. The problem (2 short paragraphs, what breaks today without me)
-3. What I actually offer (3 bullet points, each starts with a verb)
-4. How it works (3 numbered steps, one line each)
-5. Social proof slot (what would go here when I have it, even if it's empty today)
-6. Final CTA block (one line + button text)
+Builder: [Bolt / v0 / Lovable / Carrd / Framer / raw HTML, pick one and say it]
+
+The page bends around the One Metric. The CTA, the sections, and what each section says all change by shape. Pick the structure below that matches my metric and use that one. Don't blend two structures. If my metric doesn't match any cleanly, tell me which is closest and adapt it.
+
+WAITLIST (invite-only, drop-based, beta, early access)
+1. Hero. Headline 6 to 8 words. Subhead one sentence on what kind of access. CTA "Join the waitlist" or "Get on the list"
+2. Why this list exists (2 short paragraphs on the curation logic, what makes it scarce or selective)
+3. What you get when admitted (3 bullets: cadence, format, exclusivity)
+4. Final CTA block (waitlist form, one line on what happens next)
+Skip "How it works." They're not buying yet, they're applying.
+
+E-COM (shop open, money in)
+1. Hero. Headline. Subhead. CTA "Shop the drop" or "Buy"
+2. Why buy (3 bullets on why this product is worth it, not a spec list)
+3. Logistics (shipping, returns, what arrives in the box)
+4. Social proof slot (reviews, press, tags)
+5. Final CTA (price + buy button)
+
+DEMO (B2B service, agency, consulting, higher ticket)
+1. Hero. Headline. Subhead. CTA "Book 30 min" or "Get on a call"
+2. The problem (2 short paragraphs, the workflow that's broken without you)
+3. What you do (3 bullets, each starts with a verb)
+4. Proof slot (logos, case study line, "worked with X")
+5. Final CTA (calendar embed line + button text)
+
+TRIAL (SaaS, freemium tool)
+1. Hero. Headline. Subhead. CTA "Start free"
+2. The problem (one paragraph)
+3. Three things it does (3 bullets, each phrased as a one-liner outcome not a feature name)
+4. Workflow slot (screenshot, GIF, or "imagine doing X" line)
+5. Pricing teaser (free tier line + paid hook)
+6. Final CTA (signup form, "no credit card" line)
+
+NEWSLETTER (email subscribers from cold)
+1. Hero. Headline (what readers get). Subhead (cadence + voice). CTA "Subscribe"
+2. What's inside (3 bullets, sample topics or a sample issue link)
+3. Who runs it (one short paragraph in your voice)
+4. Quiet anchor slot (subscriber count if real, or "started [date], no spam" if not)
+5. Final CTA (email field)
+
+1:1 BESPOKE (custom outreach, hand-built sales)
+1. Hero. Headline. Subhead. CTA "DM me" or "Get on a call"
+2. The problem (specific to your ICP, sharp not generic)
+3. What working with you looks like (3 bullets, the actual experience not a deliverable list)
+4. Past clients or proof slot
+5. Final CTA (DM, calendar link, or email)
+
+Output the full landing page copy under the chosen structure. Each section has finished copy I can paste straight into the builder, no "[insert here]" placeholders for things you could write.
 
 Voice rule. Sound like a founder texting a friend, not a brochure. No corporate verbs, no colons-then-lists, no marketing buzzwords. If you use a word I wouldn't say out loud at a coffee shop, rewrite it.
 
-Also give me 3 visual hints for the hero (mood, 1 to 2 color ideas, one photo style or none). Keep the spec under 500 words total.
+Also give me 3 visual hints for the hero (mood, 1 to 2 color ideas, one photo style or none). Keep the spec under 600 words total.
 ```
 
 ## Next: strip AI smell
