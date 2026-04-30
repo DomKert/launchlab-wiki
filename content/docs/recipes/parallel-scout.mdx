@@ -24,7 +24,7 @@ One AI scout gives you one angle. Three give you the contradictions, the gaps, a
 1. **Perplexity free.** Run the scout query once. Save the output with citations. Spend 1 of your 3 daily Pro Searches.
 2. **Grok free** (DeepSearch on grok.com). Same query, different angle. Grok pulls live X sentiment that Perplexity doesn't see.
 3. **Gemini free** (Deep Research mode if available, otherwise standard chat with grounding on). Same query a third time. Gemini reaches further into long-tail academic and trade sources.
-4. **Gemini free** (new chat). Paste all 3 scout outputs in one message. Ask for a 500-word brief that synthesizes the shared learnings, surfaces where the three scouts disagree, and keeps the contradictions explicit. 1M context handles the full raw dumps in one shot.
+4. **Gemini free** (new chat). Run [Prompt 15 Synthesize the parallel scout](/docs/prompts/synthesize-parallel-scout) with all 3 scout outputs pasted in. Output is a 500-word brief that surfaces shared learnings, contradictions across the 3 scouts, and 1 to 2 gaps. 1M context handles the full raw dumps in one shot.
 5. **Claude Project.** Upload the brief as a Project knowledge file (`research-brief.md`). Now [Prompt 2 The 4-box](/docs/prompts/four-box) and [Prompt 4 Landing page spec](/docs/prompts/landing-page-spec) have rich context to work from across every chat.
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">

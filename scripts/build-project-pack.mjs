@@ -69,7 +69,7 @@ async function buildPromptIndex() {
     'LaunchLab Spellbook Index',
     '==========================',
     '',
-    '14 prompts you will use across the weekend, grouped by category. The full prompt text lives at the wiki URL. This index helps Claude route you to the right prompt when you are not sure what to ask for next.',
+    '15 prompts you will use across the weekend, grouped by category. The full prompt text lives at the wiki URL. This index helps Claude route you to the right prompt when you are not sure what to ask for next.',
     '',
   ];
 

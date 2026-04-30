@@ -1,0 +1,52 @@
+---
+title: 15. Synthesize the parallel scout
+description: Execution. Day 1 morning. Gemini free. Step 4 of Recipe 4.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-a">A</Badge>
+  <Badge variant="side-quest">EXECUTION</Badge>
+  <Badge variant="quest">DAY 1 AM</Badge>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
+  <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Gemini 2.5 Flash (new chat)</a>
+  <div className="mt-3 text-xs text-fd-muted-foreground">Use a fresh chat, not the tab you ran the scout in. 1M context handles all 3 raw scout outputs in one shot. Output goes into your Claude Project as <code>research-brief.md</code>. Recipe context: <a href="/docs/recipes/parallel-scout" className="underline hover:text-emerald-600">Recipe 4 Parallel scout</a>.</div>
+</div>
+
+## Why this works
+
+You ran 3 scouts in parallel (Perplexity, Grok, Gemini) and you have 3 raw outputs sitting in 3 tabs. This prompt collapses them into one 500-word brief you upload to your Claude Project as `research-brief.md`. Forcing the synthesis to surface contradictions across the 3 sources is the whole point. Averaging the 3 outputs is what loses the signal. Disagreement is where weak claims expose themselves.
+
+## Prompt
+
+```txt
+I ran the same niche scout query through 3 AI tools in parallel (Perplexity, Grok DeepSearch, Gemini). Below are the 3 raw outputs.
+
+Synthesize them into a single brief I'll upload to my Claude Project as research-brief.md. Output exactly these 3 sections, nothing else:
+
+1. COMPETITOR MAP. 5 to 8 entries, deduped across the 3 sources. For each: name, one-line positioning, who they target, one weakness, URL.
+
+2. CONTRADICTIONS. Where do the 3 scouts disagree on facts, who's a real player, or what counts as a gap? Quote the disagreement directly. Don't smooth it over. If they all agree, say "no contradictions found" and move on.
+
+3. GAPS I COULD WIN. The 1 to 2 gaps in this market I could actually win as a first-time builder shipping in 3 days. For each: one sentence on the gap, evidence from at least 2 of the 3 scouts that supports it.
+
+Rules:
+- Keep the entire brief under 500 words.
+- No introduction, no closing, no sign-off. Plain markdown headings only.
+- If a scout output is missing or empty, ignore that source and proceed with the others.
+
+Here are the 3 scouts:
+
+--- PERPLEXITY ---
+[PASTE PERPLEXITY OUTPUT]
+
+--- GROK ---
+[PASTE GROK OUTPUT]
+
+--- GEMINI ---
+[PASTE GEMINI OUTPUT]
+```
+
+After Gemini outputs the brief, save the response as `research-brief.md` and upload it to your Claude Project knowledge (Files +). Every downstream prompt (the 4-box, landing-page spec, room scout) reads from this file.
