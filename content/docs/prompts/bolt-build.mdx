@@ -1,6 +1,6 @@
 ---
 title: 17. Bolt build prompt
-description: Execution. Day 1 PM. Paste into Bolt as the first message.
+description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a Bolt-ready first message.
 ---
 
 <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -11,70 +11,84 @@ description: Execution. Day 1 PM. Paste into Bolt as the first message.
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
-  <a href="https://bolt.new" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Bolt.new free</a>
-  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Pairs with</div>
+  <a href="https://claude.ai" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Claude Project</a>
+  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Output goes to</div>
   <div className="mt-1 flex flex-wrap gap-3">
-    <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Gemini Nano Banana (hero gen)</a>
-    <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ gpt-image-2 (hero gen)</a>
+    <a href="https://bolt.new" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Bolt.new (the assembled prompt + screenshots)</a>
   </div>
 </div>
 
 ## Why this works
 
-Cleaned copy alone gets you a generic SaaS scaffold every time. The brand block, vibe keyword, and reference screenshots are what make Bolt produce a distinctive page.
+The Bolt prompt has a lot of moving parts: project name, palette, type, vibe keyword, hero copy, CTA destination, hero image plan, plus 3 reference screenshots to attach. Filling all of that into a static template by hand means missing one and hitting a wall mid-paste.
 
-This is the actual first message you paste into Bolt. Hero-first, then sections one at a time. One concern per follow-up prompt. Don't ask Bolt to build the whole page in one shot, and don't stack changes.
+Claude reads your Project knowledge (4-box, customer, one-liner, OMTM) and walks you through the missing pieces one at a time. If you're missing a prereq (no style spec, no Tally form, no headline yet), Claude stops and routes you back to the right Spellbook prompt or tool. Then it outputs the final Bolt prompt as one code block you copy straight into Bolt.
+
+This runs in Claude Project, not Bolt. The OUTPUT goes to Bolt.
 
 ## Before you run this
 
-Five things ready, in order:
+Five things ready in your Project knowledge or available to paste:
 
-1. Cleaned section-by-section copy from [Prompt 4](/docs/prompts/landing-page-spec) → [Prompt 9](/docs/prompts/strip-ai-smell).
+1. Cleaned section-by-section copy from [Prompt 4](/docs/prompts/landing-page-spec) → [Prompt 9](/docs/prompts/strip-ai-smell). Save as `cleaned-copy.md` in Project knowledge or be ready to paste.
 
-2. Style spec from [Prompt 16](/docs/prompts/visual-direction): palette hex codes, type pairing, radius, shadow, spacing, vibe keyword, 3 mood adjectives.
+2. Style spec from [Prompt 16](/docs/prompts/visual-direction). Save as `style-spec.md` or be ready to paste.
 
-3. The 3 reference screenshots you fed Prompt 16. You'll attach the same 3 to Bolt.
+3. CTA destination set up. [Tally form](https://tally.so) for waitlist, [Cal.com](https://cal.com) for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto: for 1:1. You need the actual URL or email.
 
-4. Your CTA destination set up separately. [Tally](https://tally.so) form for waitlist, [Cal.com](https://cal.com) for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto for 1:1.
+4. Hero image plan decided. Either a URL from [Gemini Nano Banana](https://gemini.google.com) or [gpt-image-2](https://chatgpt.com), or "use a placeholder for now", or "type-only, no image."
 
-5. Pre-loaded Design System picked on the [bolt.new](https://bolt.new) homepage card before the first prompt. Match your shape: waitlist or e-com indie pages, B2B for demo, editorial for newsletter. Custom design systems need Team plan, the pre-loaded ones are free.
+5. The 3 reference screenshots from Prompt 16 saved to a folder you can find. You'll attach them to Bolt after Claude assembles the prompt.
 
-If you want an AI-gen hero image, run the Gemini prompt at the bottom of this page first and save the URL.
+If any of these are missing, Claude will stop and tell you which to do first.
 
-## The Bolt prompt
+## Prompt
 
-Paste this as your first message in Bolt, with the 3 reference screenshots attached via the paperclip icon (10MB limit, free tier).
+Run this in your Claude Project chat. Claude walks you through 6 inputs one at a time, then outputs the final Bolt prompt as one code block.
 
 ```txt
-[Attach 3 reference screenshots via the paperclip]
+I'm ready to build my landing page in Bolt. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus cleaned-copy.md and style-spec.md if I've saved them) and synthesize the single Bolt build prompt I'll paste as Bolt's first message.
+
+Walk me through these inputs one at a time, in order. Don't ask all at once. Pull from Project knowledge first if the answer is already there. Only ask when the file isn't saved.
+
+1. Project name (the brand or product name as it appears on the site)
+2. Cleaned hero copy from Prompt 9: headline, subhead, CTA button text
+3. Style spec from Prompt 16: palette hex codes, type pairing, radius, shadow, spacing, vibe keyword, 3 mood adjectives
+4. CTA destination URL: Tally form for waitlist, Cal.com link for demo, Stripe Payment Link for e-com, mailto: for 1:1
+5. Hero image plan: paste a URL from Gemini Nano Banana or gpt-image-2 or Unsplash, OR say "placeholder", OR say "no image"
+6. Confirm I have 3 reference screenshots saved to a folder ready to attach to Bolt
+
+If I'm missing a prereq (no style spec because I haven't run Prompt 16, no CTA URL because I haven't set up Tally, no headline because Prompt 9 isn't done), STOP. Tell me which Spellbook prompt or tool I need to complete first. Don't fabricate values, don't move on without them.
+
+When you have all six, output the final Bolt build prompt as ONE code block I can copy and paste. Use this exact structure with my values substituted:
+
+---
+
+[I will attach 3 reference screenshots via the paperclip in Bolt]
 
 Build the HERO SECTION ONLY of a single-page landing page for [PROJECT NAME] as a Next.js + Tailwind app. Mobile-first, deploy-ready. Don't build the rest of the page yet, I'll add sections one at a time after I approve the hero.
 
-Vibe keyword
-[Paste from Prompt 16, one of: brutalism / glassmorphism / claymorphism / hyper-minimalism / flat-design / material-design / skeuomorphism / retro-vaporwave]
+Vibe keyword: [vibe keyword from style spec]
 
 Brand
 Palette: bg [hex], ink [hex], accent [hex], muted [hex]. Use bg as page background, ink for primary text, accent for ONE primary CTA only.
-Type: headings in [Inter / Geist / Fraunces / Söhne / IBM Plex Sans], body in [same list]. [one sentence on weight/contrast from style spec]
-Radius: cards and buttons [px], images [px].
-Shadows: [none / 1px solid border / soft glow / hard offset / Tailwind shadow-sm / shadow-md / shadow-lg].
-Spacing: section vertical padding [px], max content width [px].
-Mood: [3 adjectives from style spec, e.g. "rebellious, obsessive, editorial"].
+Type: headings in [font], body in [font]. [one sentence on weight and contrast from style spec]
+Radius: cards and buttons [px], images [px]
+Shadows: [from style spec]
+Spacing: section vertical padding [px], max content width [px]
+Mood: [3 adjectives from style spec]
 
 Reference vibes
-The 3 attached screenshots are pages whose FEEL I want to match. Don't copy their content, copy their visual rhythm, density, type contrast, and color logic.
+3 attached screenshots are pages whose FEEL I want to match. Don't copy their content. Copy their visual rhythm, density, type contrast, and color logic.
 
 Hero copy (use verbatim, don't rewrite)
-Headline: [paste headline from Prompt 9 cleaned copy]
-Subhead: [paste subhead]
-CTA button text: [paste CTA text]
-CTA destination: button posts to [Tally form URL / Cal.com link / Stripe Payment Link / mailto:]
+Headline: [headline]
+Subhead: [subhead]
+CTA button text: [CTA text]
+CTA destination: button posts to [URL or mailto:]
 
 Hero image
-[Pick ONE of these three and delete the other two]
-- Hero image URL: [paste from Gemini Nano Banana / gpt-image-2 / Unsplash]
-- Use a placeholder.com gradient sized 1600x900 for now, I'll swap later
-- No image. Type-only hero with a strong color block on the right 30%.
+[Write the founder's choice as ONE line: a URL line, OR a placeholder line, OR a "type-only hero with strong color block on the right 30%" line. Delete the other options.]
 
 Constraints
 - No corporate stock photo people
@@ -84,21 +98,29 @@ Constraints
 - Single page, no nav
 
 Build the hero only. Stop after.
+
+---
+
+Voice rules for the assembled prompt: don't add anything that's not in my Project knowledge or that I haven't explicitly given you. No fabricated stats, no extra sections, no improvised copy. If I haven't given you a value, ask for it instead of guessing.
 ```
 
-## After Bolt scaffolds the hero
+## After Claude outputs the Bolt prompt
 
-Don't prompt yet. Read the hero. Click around, check what's wrong vs what just needs a tweak.
+1. Open [bolt.new](https://bolt.new). Pick a pre-loaded Design System on the homepage card before you start (free tier supports the pre-loaded ones, custom design systems need Team plan).
+2. Click the paperclip and attach your 3 reference screenshots (10MB limit, free tier).
+3. Paste Claude's assembled prompt as your first message.
+4. Wait 60 to 90 seconds for the hero scaffold.
+5. Don't prompt yet. Read it, click around, decide what's actually wrong vs what just needs a tweak.
 
-For copy edits, color tweaks, padding changes, hero image swaps: open the file, edit the line, save. Zero tokens.
+For copy edits, color tweaks, padding, hero image swaps: open the file, edit the line, save. Zero tokens.
 
-For one new section at a time (problem block, what-you-offer, CTA, social proof): one prompt per section, referencing the established hero style. "Add the next section using the same palette, type, and radius as the hero. Section content: [paste cleaned copy from Prompt 9]."
+For new sections (problem block, what-you-offer, CTA, social proof): one prompt per section, referencing the established hero style. "Add the next section using the same palette, type, and radius as the hero. Section content: [paste cleaned copy from Prompt 9]."
 
-Full vibecoding loop: [vibecoding workflow](/docs/vibecoding/workflow).
+Full vibecoding loop and the keep / change / add pattern: [vibecoding workflow](/docs/vibecoding/workflow).
 
 ## Need a hero image first?
 
-Run this in [Gemini Nano Banana Standard](https://gemini.google.com) or [gpt-image-2 in ChatGPT](https://chatgpt.com) before the Bolt prompt. Save the URL, drop it into the Hero image block above.
+Run this in [Gemini Nano Banana Standard](https://gemini.google.com) or [gpt-image-2 in ChatGPT](https://chatgpt.com) before you start the Claude synthesizer chat. Save the URL.
 
 ```txt
 Hero image for a [niche, e.g. "rare Italian knitwear curation"] landing page.
@@ -115,11 +137,13 @@ Generate 4 variations.
 
 ## What good looks like
 
-One Bolt prompt, hero scaffold in 90 seconds. 3 to 5 follow-up prompts max for the rest of the page. The rest is direct code edits per [vibecoding workflow](/docs/vibecoding/workflow). Live URL in #launches by Friday night, token budget under 200K.
+One Claude Project chat session, 5 to 6 turns, final assembled Bolt prompt in one code block. Paste into Bolt with screenshots attached, hero scaffold in 90 seconds. 3 to 5 follow-up Bolt prompts max for the rest of the page. The rest is direct code edits per [vibecoding workflow](/docs/vibecoding/workflow). Live URL in #launches by Friday night, token budget under 200K.
 
 ## What bad looks like
 
-Whole-page prompt, generic SaaS scaffold, 30 prompts trying to fix it, token budget gone before the page is live. The fix is upstream, not in Bolt. Get Prompts 4, 9, and 16 right before the first paste.
+Skipping the synthesizer chat and trying to fill the Bolt template by hand. You miss a placeholder, paste broken syntax, Bolt scaffolds something off, and you spend 30 prompts trying to fix what should have been one prompt.
+
+Or showing up to the synthesizer with no style spec, no Tally form, no cleaned copy. The chat ends in turn 1 telling you to do upstream work first. Bring the prereqs, then run this.
 
 ## Next
 
