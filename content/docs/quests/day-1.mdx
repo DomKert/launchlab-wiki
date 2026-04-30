@@ -38,7 +38,10 @@ Today is foundation. Don't over polish, ship and then iterate. Three jobs. Defin
 </div>
 
 <div className="my-6">
-  <PersistentCheckbox id="day-1-metric" label="2. Pick your One Metric" />
+  <div className="flex items-stretch gap-2">
+    <div className="min-w-0 flex-1"><PersistentCheckbox id="day-1-metric" label="2. Pick your One Metric" /></div>
+    <a href="/docs/prompts/pick-your-metric" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 14</a>
+  </div>
   <div className="mt-2 pl-6">
     <p>The single number you're moving this weekend.</p>
 
@@ -68,23 +71,8 @@ Today is foundation. Don't over polish, ship and then iterate. Three jobs. Defin
         <p className="mt-0.5 text-xs text-fd-muted-foreground">Custom 1:1 outreach.</p>
       </div>
     </div>
-
-    <p className="mt-3 font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">→ Prompt 14, paste this in your Claude Project chat</p>
   </div>
 </div>
-
-```txt
-Read my 4-box from this Project (4-box.md, or the chat above if I haven't saved it yet). I'm running TETR LaunchLab this weekend. Pick the one number I'm moving by Sunday night.
-
-Output:
-- The metric name in 2 to 4 words
-- Why this one for my shape (2 sentences max)
-- A target number that means "this worked" by Sunday (one number, no ranges)
-
-Rules. Pick exactly one. If two metrics seem to compete (sales vs signups, followers vs subscribers), tell me which one is upstream and pick that. The metric has to be countable in real time on Sunday.
-
-If my 4-box is too vague to pick from, ask me one question and stop. Don't guess.
-```
 
 <div className="my-6">
   <PersistentCheckbox id="day-1-build" label="3. Build and ship the page" />
