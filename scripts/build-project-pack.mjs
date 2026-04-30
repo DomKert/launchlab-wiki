@@ -24,16 +24,6 @@ const FILES = [
   { heading: '## 5. Voice guide', filename: 'voice-guide.md' },
 ];
 
-const README = `LaunchLab Claude Project Knowledge Pack
-========================================
-
-6 knowledge files for your Claude Project. Drag all 6 into Files + on your Project.
-
-The Meta guide (system prompt) is NOT in this pack. Copy it directly from the wiki at /docs/claude-project/core-files and paste into the Project's Custom Instructions field.
-
-Full walkthrough: https://launchlab-wiki.netlify.app/docs/claude-project/setup
-`;
-
 function parseFrontmatter(mdx) {
   const match = mdx.match(/^---\n([\s\S]+?)\n---/);
   if (!match) return {};
@@ -140,8 +130,6 @@ async function main() {
   const distribution = await buildDistributionDoctrine();
   await fs.writeFile(path.join(OUT_DIR, 'distribution.md'), distribution, 'utf8');
   console.log(`  distribution.md (${distribution.length} chars)`);
-
-  await fs.writeFile(path.join(OUT_DIR, 'README.txt'), README, 'utf8');
 
   await fs.rm(OUT_ZIP, { force: true });
   execSync(
