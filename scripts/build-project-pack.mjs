@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, '..');
-const SOURCE = path.join(ROOT, 'content/docs/claude-project/core-files.mdx');
+const SOURCE = path.join(ROOT, 'scripts/source/core-files.md');
 const PROMPTS_DIR = path.join(ROOT, 'content/docs/prompts');
 const PROMPTS_META = path.join(PROMPTS_DIR, 'meta.json');
 const DISTRIBUTION_SOURCE = path.join(ROOT, 'content/docs/playbook/distribution/index.mdx');
@@ -120,7 +120,7 @@ async function main() {
 
     const startIdx = source.indexOf(heading);
     if (startIdx === -1) {
-      throw new Error(`Heading not found in core-files.mdx: ${heading}`);
+      throw new Error(`Heading not found in scripts/source/core-files.md: ${heading}`);
     }
     const endIdx = nextHeading ? source.indexOf(nextHeading) : source.length;
     const section = source.slice(startIdx, endIdx);

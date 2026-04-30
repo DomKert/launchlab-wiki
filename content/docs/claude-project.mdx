@@ -1,0 +1,148 @@
+---
+title: Claude Project
+description: Your home base for the weekend. Spin up the Project, paste the Meta guide as the system prompt, upload the six context files.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="main-quest">HOME BASE</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Day 1 morning, 5 to 10 min</span>
+</div>
+
+Your Claude Project is the party leader. It holds your system prompt, six knowledge files, your business brief, and anything else you upload across the weekend (research briefs, draft outputs, screenshots). Chat memory persists across every chat in the Project. It plans your day, suggests which tool to use for what, and reviews the output when you bring it back.
+
+Free-tier Claude supports Projects. You get up to 5 Projects per account with up to 20 files per chat and a 30MB total. This is all you need for the weekend. It's important you use Claude as the "Brain" and not the execution as you will otherwise quickly hit its free limits. If you want to power up you can always pay the $20 pro subscription.
+
+<Video src="https://pub-74b8da28349b401c9aa3ad27925941be.r2.dev/launchlab-zoom-2026-04-30.mp4" title="Claude Project setup walkthrough" />
+
+Your first move of the weekend. Do this before anything else on Day 1. Everything downstream routes through this Project.
+
+## 1. Create the Project
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-1" label="Created a free Claude account at claude.ai" />
+</div>
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-2" label="Clicked Projects, then New Project. Named it LaunchLab [your business]" />
+</div>
+
+## 2. Paste the system prompt
+
+Copy the Meta guide below and paste it into the Project's Custom Instructions field. This is what makes the Project behave like your party leader instead of a generic chat.
+
+```txt
+You are the LaunchLab Party Leader, the planning brain for a first-time founder at Tetr
+College of Business. The founder has 3 days to ship a landing page plus funnel for one
+business idea and launch it on Day 3 alongside 49 other founders.
+
+Your job across the weekend:
+1. Plan each session. Tell the founder what to do next and in which tool.
+2. Route work. Decide which executor the founder uses for each task. Pull tool picks from
+   the tool matrix loaded in this Project. Drafting, research, image gen, and the build
+   happen outside. Keep planning inside.
+3. Review outputs the founder brings back. Run a red-team read. Surface AI tells, voice drift,
+   weak specifics. Rewrite only if asked; otherwise point at what to fix.
+4. Don't execute. No full landing-page copy from this Project. No code. Brief, route,
+   review. Quota stays for planning.
+
+Rules:
+- Founder, not coder. Ship, launch, sell. No terminal slang, no vibe-code framing.
+- Distribution-first. The page is the front door. Distribution is the weekend.
+- Free-tier only. No Claude Pro. No paid tools. Assume rate limits hit.
+- Voice stays human. No filler verbs. No bold-colon lists. No rule-of-three
+  adjective stacks. Contractions in every sentence that fits.
+- One metric. Pick the one number that defines whether this weekend worked. Signups,
+  clicks, replies, calls booked. The page is judged by that, not by how it looks.
+- Recipes beat single tools. Day 1 niche scouting routes through Parallel Scout
+  (Perplexity + Grok + Gemini in 3 parallel tabs running Prompt 3, then a 4th fresh
+  Gemini chat running Prompt 15 to synthesize all 3 raw outputs into a 500-word
+  research-brief.md). Only the finished research-brief.md comes back to this Project
+  as a knowledge file (Files +). Never hand the founder a single-tool scout prompt
+  for niche research. Never offer to stitch, synthesize, compress, or pull gaps from
+  raw scout outputs inside this chat. That's Prompt 15's job in a Gemini tab, not
+  yours.
+- Use Spellbook prompts verbatim. The 17 numbered prompts live in prompt-index.md
+  with full canonical text embedded under each entry. When the founder asks for a
+  prompt or you need to route them to one, output the PROMPT block from
+  prompt-index.md unchanged. Replace bracketed placeholders
+  ([ONE-LINE DESCRIPTION], [CUSTOMER SENTENCE from Prompt 1], etc.) with the
+  founder's actual one-liner.md and customer.md content. Never rewrite, condense,
+  or "improve" a Spellbook prompt. The prompts are tested for downstream
+  compatibility with the next prompt in the chain; ad-hoc rewrites break it (wrong
+  output shape, em dashes that strip-AI-smell flags, missing fields the next prompt expects).
+
+When the founder opens a new chat, your first question is always "where are we in the weekend,
+what just came back from which tool, and how does it move your one metric?" Then you plan the
+next move.
+```
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-3" label="Pasted the Meta guide as the system prompt" />
+</div>
+
+## 3. Upload the context files
+
+Download the project pack, unzip, drag all 6 files into Files + on your Project.
+
+<a href="/files/launchlab-project-pack.zip" download className="my-3 inline-flex items-center gap-2 rounded-md border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 font-mono text-sm font-semibold text-emerald-600 no-underline transition hover:bg-emerald-500/20 dark:text-emerald-400">
+  ↓ Download launchlab-project-pack.zip
+</a>
+
+Files in the pack: `tool-matrix.md`, `program-overview.md`, `day-checklist.md`, `voice-guide.md`, `prompt-index.md` (lean reference of all 17 prompts), `distribution.md` (Day 2 PM doctrine: Circle of 20, room ranking, posting voice). The Meta guide is NOT in the zip on purpose. It's the system prompt (Step 2), not a knowledge file.
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-4" label="Uploaded all 6 core files to the Project knowledge" />
+</div>
+
+## 4. Start your first chat
+
+Open a new chat inside the Project. In the model picker at the top, turn on Adaptive Thinking. The Project's whole job is synthesis and review, both improve with extended reasoning, and free-tier Sonnet 4.6 supports it.
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-thinking" label="Turned on Adaptive Thinking in the model picker" />
+</div>
+
+Paste [Prompt 1, Define your customer](/docs/prompts/define-customer). Fill in the business-idea placeholder. Run it.
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="setup-step-5" label="Ran my first prompt inside the Project" />
+</div>
+
+## 5. Free-tier caps to keep in mind
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm font-mono">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="patch-notes">CAPS</Badge></div>
+  <ul className="list-disc space-y-1 pl-5 font-sans">
+    <li>Claude free: 30 to 100 messages per day depending on load.</li>
+    <li>5 Projects per account max. 20 files per chat. 30MB total.</li>
+    <li>No shared Project links on free tier. You rebuild the template manually from the project pack.</li>
+  </ul>
+</div>
+
+## 6. What goes in Project knowledge (and what doesn't)
+
+Project knowledge has limits (20 files per chat, 30MB total on free tier). Be deliberate about what gets in.
+
+**Add as you build.** Four artifacts each S-tier prompt prints as a code block ready to save.
+
+- `one-liner.md` from [Prompt 1 Define your customer](/docs/prompts/define-customer)
+- `customer.md` from [Prompt 1 Define your customer](/docs/prompts/define-customer)
+- `research-brief.md` from [Prompt 15 Synthesize the parallel scout](/docs/prompts/synthesize-parallel-scout)
+- `4-box.md` from [Prompt 2 The 4-box](/docs/prompts/four-box)
+
+Every downstream prompt reads from these four. Add them via Files +, Add text content as you build.
+
+**Don't dump the wiki itself.** The full wiki is 40 to 80K tokens. As a knowledge file it dilutes Claude's focus and may bust free-tier limits. Keep the wiki as a tab open instead. When you run a prompt from the Spellbook, the prompt itself carries the context Claude needs.
+
+### If you really want the wiki as context
+
+Three paths, cheapest first.
+
+- **Single page on demand.** Each wiki page has a "Copy Markdown" button at the top. Copy, paste, done.
+- **Whole wiki as one file.** [`/llms.txt`](/llms.txt) is the entire wiki as plain text, designed for AI tools. Tight on Free Projects, fine on Pro.
+- **Repo with version history.** `git clone https://github.com/DomKert/launchlab-wiki.git`. Useful for Cursor, Codex, and Claude Code users who want every page locally.
+
+<div className="my-4 flex items-center gap-2">
+  <Badge variant="achievement">ACHIEVEMENT</Badge>
+  <span className="text-sm">Home base online. Now go pick your stack at <a href="/docs/tools" className="underline">Tools</a>.</span>
+</div>
