@@ -10,139 +10,334 @@ description: Free-tier loadout. Think, Research, Write, Build & Ship, plus India
 
 You'll hit a rate limit on every tool this weekend. The workaround is routing, not paying. Plan in your Claude Project, hand each job to the right tool, bring the output back to Claude for review.
 
+<div className="sticky top-2 z-10 my-4 flex flex-wrap gap-2 rounded-md border border-fd-border bg-fd-background/95 p-3 backdrop-blur">
+  <a href="#think" className="rounded-md border border-fd-border bg-fd-card px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">Think</a>
+  <a href="#research" className="rounded-md border border-fd-border bg-fd-card px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">Research</a>
+  <a href="#write" className="rounded-md border border-fd-border bg-fd-card px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">Write</a>
+  <a href="#build" className="rounded-md border border-fd-border bg-fd-card px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">Build &amp; Ship</a>
+  <a href="#india" className="rounded-md border border-fd-border bg-fd-card px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">India unlock</a>
+  <a href="#avoid" className="rounded-md border border-fd-border bg-fd-card px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">Avoid</a>
+  <a href="#traps" className="rounded-md border border-fd-border bg-fd-card px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">Quota traps</a>
+</div>
+
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">USE SEVERAL</Badge></div>
   <p>Don't pick one tool per job and stop. Run the same scout query through 2 to 3 AIs (Perplexity, Grok, Gemini) and let NotebookLM stitch the outputs into one cited brief. Prototype the same page in 2 builders (Bolt and Framer) and ship the one that feels right. Different tools surface different angles. Fold the outputs together, paste the synthesis back into Claude as a Project knowledge file. The full fan-out-and-compare pattern lives in <a href="/docs/recipes/parallel-scout" className="underline">Recipe 4 Parallel scout</a>.</p>
 </div>
 
-## Think, your brain
+## Think
+
+The Claude Project holds your context, plans each session, and reviews outputs from every other tool. Everything else routes through it. If you haven't set it up yet, start at [Claude Project setup](/docs/claude-project/setup).
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <Badge variant="patch-notes">RULE</Badge>
+  <span className="ml-2">Spend Claude on thinking and reviews, not on drafting full pages or generating images. Drafting lives in Write below; image generation lives in Build &amp; Ship.</span>
+</div>
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://claude.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">party leader</span></div>
     <div className="font-sans font-semibold">Claude free + Project</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Planning, synthesis, reviewing outputs. Turn on Adaptive Thinking in the model picker, every chat in this Project leans on reasoning.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Planning, synthesis, reviewing outputs. Turn on Adaptive Thinking in the model picker, every chat in this Project leans on reasoning. 5 Projects max, 20 files per chat, 30MB total knowledge.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ claude.ai</div>
   </a>
 </div>
 
 ## Research
 
+AI scouts (Perplexity, Grok, Gemini) cite and synthesize. Primary-data tools (Google Keyword Planner, Meta Ad Library, Reddit) supply ground truth. NotebookLM is your synthesis layer with per-source citations. Use AI to compress, not to replace.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <Badge variant="patch-notes">RULE</Badge>
+  <span className="ml-2">60-minute cap on Day 1 morning research. One keyword check, one Meta Ad Library scan, one Reddit voice read, plus NotebookLM synthesis. Longer is procrastination.</span>
+</div>
+
+### Day 1 morning flow
+
+Five concrete moves. AI compresses, you still read primary sources.
+
+1. **Keyword candidates**. Claude generates 20 from a seed term. You validate volumes in Google Keyword Planner.
+2. **Demand trend**. Confirm direction in Google Trends. Cross-check Exploding Topics if the curve looks weird.
+3. **Competitor ads**. Manual scan in Meta Ad Library. Paste 3 to 5 ad copies into Claude for a pattern summary.
+4. **Competitor traffic**. Sanity-check sizing in Similarweb (15/day cap). Falls back to Semrush at 10/day.
+5. **ICP voice**. Manual read on Reddit, Quora, X. Synthesize 5 to 10 sources in NotebookLM with citations. Audio Overview while you make coffee.
+
+Then back to your Claude Project for the 4-box.
+
+### AI scouts
+
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://www.perplexity.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">scout</span></div>
     <div className="font-sans font-semibold">Perplexity free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">3 Pro Searches per day. Scout the niche, verify facts, cite sources. Use on Day 1 morning, save the rest for Day 2.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Scout the niche. Cite sources inline. 3 Pro Searches per day. Spend them Day 1 morning.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ perplexity.ai</div>
   </a>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">compressor</span></div>
     <div className="font-sans font-semibold">Gemini 2.5 Flash free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">1M context compressor. Dump raw research, get a 500-word briefing back, paste into Claude. Saves Claude quota. Doubles as drafter when ChatGPT degrades, see Write below.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
   </a>
   <a href="https://notebooklm.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">research librarian</span></div>
     <div className="font-sans font-semibold">NotebookLM free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">Day 1 morning synthesizer. Curate 5 to 10 sources, ask grounded questions, get answers with per-source citations. Audio Overview gives you a 10-min podcast of your research dump. 100 notebooks, 50 sources each, 50 chats per day.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ notebooklm.google.com</div>
   </a>
   <a href="https://grok.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">x-native</span></div>
     <div className="font-sans font-semibold">Grok free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">Standalone grok.com, no X account, no card. 10 prompts per 2 hours. Use for live X sentiment when ICP is X-native, or DeepSearch as a Perplexity quota fallback.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ grok.com</div>
   </a>
   <a href="https://kimi.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">long context</span></div>
     <div className="font-sans font-semibold">Kimi free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">2M context window. When Gemini's 1M is not enough for a big competitor dump. Public content only, never your own ICP, pitch, or customer notes. Conversations stored in China.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ kimi.com</div>
   </a>
   <a href="https://chat.deepseek.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-zinc-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-c">C</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">reasoning fallback</span></div>
     <div className="font-sans font-semibold">DeepSeek free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">R1 reasoning fallback when Claude and ChatGPT both burn. Public content only, same data rule as Kimi. Conversations stored in China.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chat.deepseek.com</div>
   </a>
 </div>
 
-Plus primary-data tools (no AI, real numbers): Google Keyword Planner, Google Trends, Meta Ad Library, Similarweb, Reddit/Quora/X search. Full breakdown on the [Research](/docs/tools/research) sub-page.
+### Non-AI primary data
+
+Free ground-truth tools. AI cannot scout these for you, you read the volumes and ad copy yourself.
+
+#### Keyword volumes
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://ads.google.com/aw/keywordplanner" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">volumes</span></div>
+    <div className="font-sans font-semibold">Google Keyword Planner</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Google's own search volume data. Free forever, needs a Google Ads account but no spend. Validates Claude-generated keyword candidates. Free volume shows as ranges (100 to 1K, 1K to 10K), directionally correct.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ ads.google.com</div>
+  </a>
+  <a href="https://neilpatel.com/ubersuggest/" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">keyword backup</span></div>
+    <div className="font-sans font-semibold">Ubersuggest free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">3 searches per day cap. Backup keyword expansion if Keyword Planner ranges feel too broad. Watch the auto-billing trap, do not store a card on signup.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ neilpatel.com/ubersuggest</div>
+  </a>
+  <a href="https://ahrefs.com/keyword-generator" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">keyword backup</span></div>
+    <div className="font-sans font-semibold">Ahrefs Keyword Generator</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Free keyword suggestions with traffic estimates. Roughly 100 searches per month. Reach for it when Keyword Planner ranges feel too broad and you want a second read.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ ahrefs.com/keyword-generator</div>
+  </a>
+</div>
+
+#### Demand trend
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://trends.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">trend</span></div>
+    <div className="font-sans font-semibold">Google Trends</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Search volume over time, regional cuts, related queries. No signup. Up to 5 terms compared per region. Confirms whether your demand is growing or dying.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ trends.google.com</div>
+  </a>
+  <a href="https://explodingtopics.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">trend backup</span></div>
+    <div className="font-sans font-semibold">Exploding Topics free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Emerging trend spotter, momentum curves. 3 searches per month free. Reach for it only if Google Trends shows an unusual curve you want to verify.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ explodingtopics.com</div>
+  </a>
+</div>
+
+#### Competitor ads
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">competitor ads</span></div>
+    <div className="font-sans font-semibold">Meta Ad Library</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Every ad your competitors run on Meta. No login for commercial ads. Manual scan for messaging patterns and creative rotation. Day 1 morning gold for positioning.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ facebook.com/ads/library</div>
+  </a>
+  <a href="https://ads.tiktok.com/business/creativecenter/" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">ad backup</span></div>
+    <div className="font-sans font-semibold">TikTok Creative Center</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">TikTok ad library, trend data, hashtag volume. Free, unlimited search. Reach for it when ICP is Gen Z-native and Meta Ad Library does not catch their channel.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ ads.tiktok.com/creativecenter</div>
+  </a>
+  <a href="https://adstransparency.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">ad backup</span></div>
+    <div className="font-sans font-semibold">Google Ads Transparency</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Live competitor ads on Google Search and YouTube. Free, unlimited browse. Backup for Meta Ad Library when competitor runs on Search not Social.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ adstransparency.google.com</div>
+  </a>
+</div>
+
+#### Competitor traffic
+
+<div className="my-4 grid gap-3 sm:grid-cols-2">
+  <a href="https://www.similarweb.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">traffic</span></div>
+    <div className="font-sans font-semibold">Similarweb free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Top-level competitor traffic estimates, source breakdown, top pages. 15 queries per day cap. Directional only. Enough to sanity-check a competitor exists at scale.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ similarweb.com</div>
+  </a>
+  <a href="https://www.semrush.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">traffic backup</span></div>
+    <div className="font-sans font-semibold">Semrush free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">10 reports per day cap. Backup competitor domain sizing if you burn through Similarweb's 15. Same auto-billing trap, do not store a card.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ semrush.com</div>
+  </a>
+</div>
+
+#### ICP voice-of-customer
+
+<div className="my-4">
+  <a href="https://www.reddit.com/search/" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">voice</span></div>
+    <div className="font-sans font-semibold">Reddit, Quora, X search</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Where ICP pain shows up unfiltered. Search competitor names or category. Read the threads.</p>
+    <ul className="mt-2 ml-5 list-disc text-sm text-fd-muted-foreground">
+      <li><strong>Reddit search</strong>, longest-form pain (reddit.com/search)</li>
+      <li><strong>Quora</strong>, question-shaped pain (quora.com)</li>
+      <li><strong>X search</strong>, live sentiment, X-native ICPs only (x.com/search)</li>
+    </ul>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ reddit.com/search</div>
+  </a>
+</div>
 
 ## Write
 
+Drafting burns tokens fast. Don't draft in Claude. Claude briefs the angle, the ICP, the voice. You paste the brief into ChatGPT or Gemini, get a long draft back, then bring it to Claude for an AI-smell pass and ship.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <Badge variant="patch-notes">WATCH OUT</Badge>
+  <span className="ml-2">ChatGPT free silently drops from GPT-5.3 to GPT-5.3-mini after 10 messages per 5-hour window. If output gets mushy, rotate to Gemini.</span>
+</div>
+
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafter</span></div>
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary drafter</span></div>
     <div className="font-sans font-semibold">ChatGPT free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Copy drafter. GPT-5.3 for first 10 messages per 5-hour window, then silently drops to GPT-5.3-mini. Rotate to Gemini (in Research above) when quality degrades.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Copy drafter. GPT-5.3 for 10 messages per 5-hour window, then silent drop to GPT-5.3-mini. Spend the GPT-5.3 window on hero copy and landing body.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chatgpt.com</div>
+  </a>
+  <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">fallback drafter</span></div>
+    <div className="font-sans font-semibold">Gemini 2.5 Flash free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Primary role is 1M-context compression (see Research above), but it doubles as a fallback drafter when ChatGPT degrades after the 10-message window.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
   </a>
 </div>
 
-## Build & Ship
+<div className="my-4 rounded-md border border-dashed border-fd-border p-4 text-sm text-fd-muted-foreground">
+  <Badge variant="patch-notes">NEXT STEP</Badge>
+  <span className="ml-2">Every draft comes back to Claude for a final review pass. The AI-smell strip (<a href="/docs/prompts/strip-ai-smell" className="underline">Prompt 9</a>) and humanize pass (<a href="/docs/prompts/humanize-add-stake" className="underline">Prompt 13</a>) both run in ChatGPT, not Claude.</span>
+</div>
+
+## Build
+
+These tools take a brief and produce a live artifact. Landing pages, forms, hero images, social graphics, short links, launch reels. Pick one per job. Don't switch mid-build.
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://www.framer.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">landing</span></div>
     <div className="font-sans font-semibold">Framer free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">No-code landing page. 1000 visitors per month, SSL, subdomain hosting.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">No-code landing page. 1000 visitors per month, SSL, subdomain hosting, CMS. Best no-code pick for this weekend.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ framer.com</div>
   </a>
   <a href="https://tally.so" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">capture</span></div>
     <div className="font-sans font-semibold">Tally free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Waitlist forms. Unlimited submissions under 50K per month.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Waitlist and intake forms. Unlimited submissions under 50K per month fair use. Embeds in Framer or Carrd.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ tally.so</div>
   </a>
   <a href="https://bolt.new" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">vibe-code</span></div>
     <div className="font-sans font-semibold">Bolt.new free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Vibe-coded page. 1M tokens per month. Do your full build in one 4-hour block.</p>
-  </a>
-  <a href="https://www.canva.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">design</span></div>
-    <div className="font-sans font-semibold">Canva free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Templates only. AI image generation is 50 LIFETIME, not monthly. Route image work through gpt-image-2, Nano Banana, or Ideogram.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">1M tokens per month. Do your full build in one 4-hour block. Once deployed, switch to manual edits.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ bolt.new</div>
   </a>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">image workhorse</span></div>
     <div className="font-sans font-semibold">Gemini Nano Banana Standard</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Workhorse image. Gemini 2.5 Flash Image. 100 per day.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Gemini 2.5 Flash Image. 100 per day. Workhorse for product shots, social tiles, and iteration. Use this first.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
   </a>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">hero shot</span></div>
     <div className="font-sans font-semibold">Gemini Nano Banana Pro</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Hero shot upgrade only. Gemini 3 Pro Image. 2 per day.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Gemini 3 Pro Image. 2 per day. Save for the single hero on the landing page, not iteration. Standard does the rest.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
   </a>
   <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">multilingual hero</span></div>
-    <div className="font-sans font-semibold">gpt-image-2 (in ChatGPT)</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">2 to 3 per day. Native reasoning, web grounding. Only OpenAI image model that renders dense text in Hindi, Bengali, Japanese, Korean, Chinese. Pair with Nano Banana for iteration.</p>
+    <div className="font-sans font-semibold">gpt-image-2 (free in ChatGPT)</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">2 to 3 per day. Native reasoning, web grounding. Only OpenAI image model that renders dense text in Hindi, Bengali, Japanese, Korean, Chinese cleanly. Pair with Nano Banana for iteration.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chatgpt.com</div>
   </a>
   <a href="https://ideogram.ai" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">image alt</span></div>
     <div className="font-sans font-semibold">Ideogram free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Hero image alt. 10 credits per day, roughly 40 images.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">10 credits per day, roughly 40 images. More predictable than Nano Banana when text-in-image matters. Reach for it when Gemini struggles with the brand wordmark.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ ideogram.ai</div>
   </a>
-  <a href="https://dub.co" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">attribution</span></div>
-    <div className="font-sans font-semibold">Dub.co free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">25 short links per month. Track which post converted.</p>
+  <a href="https://www.canva.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">design</span></div>
+    <div className="font-sans font-semibold">Canva free (templates only)</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Templates for social posts and launch graphics. AI image generation capped at 50 LIFETIME, treat as templates only. Route image work through gpt-image-2, Nano Banana, or Ideogram.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ canva.com</div>
   </a>
   <a href="https://www.capcut.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">launch reel</span></div>
     <div className="font-sans font-semibold">CapCut free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Hand-assembled launch reels from multiple sources. Different job than OpusClip.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Hand-assembled launch reels from multiple sources (screen recordings, product shots, B-roll). Different job than OpusClip, which auto-cuts one screen recording.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ capcut.com</div>
+  </a>
+  <a href="https://dub.co" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">attribution</span></div>
+    <div className="font-sans font-semibold">Dub.co free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">25 short links per month with click analytics. UTM parameters on everything else cover the rest free forever.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ dub.co</div>
   </a>
   <a href="https://carrd.co" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">escape hatch</span></div>
     <div className="font-sans font-semibold">Carrd free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">10-minute escape hatch. Single-page only.</p>
-  </a>
-  <a href="https://lovable.dev" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">vibe-code alt</span></div>
-    <div className="font-sans font-semibold">Lovable free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">5 credits per day. Roughly 2 to 3 prompts.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">10-minute one-pager. 3 sites on carrd.co. Use if Framer feels too heavy.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ carrd.co</div>
   </a>
   <a href="https://www.opus.pro" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">launch reel auto</span></div>
     <div className="font-sans font-semibold">OpusClip free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">60 minutes per month for auto-cut clips from one screen recording.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">60 minutes per month. 15 to 60 second launch clips from a screen recording. Skip if your launch post is text plus image.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ opus.pro</div>
+  </a>
+  <a href="https://lovable.dev" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">vibe-code alt</span></div>
+    <div className="font-sans font-semibold">Lovable free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">5 credits per day, 30 per month cap. Roughly 2 to 3 prompts per day. Mid-tier if you want chat-driven React and Supabase.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ lovable.dev</div>
+  </a>
+  <a href="https://stripe.com/payments/payment-links" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">checkout</span></div>
+    <div className="font-sans font-semibold">Stripe Payment Link</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">5-min hosted checkout. Paste the link as your CTA when you want to take preorders or sell one-off products. Free to set up, per-transaction fee on sales.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ stripe.com</div>
+  </a>
+  <a href="https://lemonsqueezy.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">digital checkout</span></div>
+    <div className="font-sans font-semibold">Lemon Squeezy</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Hosted checkout for digital products (courses, downloads, software). Handles global tax compliance out of the box. Per-transaction fee on sales.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ lemonsqueezy.com</div>
+  </a>
+  <a href="https://supabase.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">auth + db</span></div>
+    <div className="font-sans font-semibold">Supabase free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Auth and Postgres database for SaaS-lite builds. 50K monthly active users plus 500MB on free tier. Plug into Bolt's scaffold when you need real signup and a dashboard.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ supabase.com</div>
   </a>
 </div>
 
-## India regional unlock
+## India
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <div className="rounded-md border border-fd-border bg-fd-card p-4 text-sm">
@@ -167,7 +362,7 @@ Plus primary-data tools (no AI, real numbers): Google Keyword Planner, Google Tr
   </ul>
 </div>
 
-## Free-tier traps
+## Traps
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="patch-notes">QUOTA WATCH</Badge></div>
@@ -177,11 +372,4 @@ Plus primary-data tools (no AI, real numbers): Google Keyword Planner, Google Tr
     <li>Bolt is 1M tokens per MONTH, not per day. Evaporates on one complex build. Do all your Bolt work in one focused 4-hour block on Day 1. After deploy, switch to manual edits.</li>
     <li>OpusClip free clips expire 3 days after generation. Download every Day 3 launch reel immediately or they vanish.</li>
   </ul>
-</div>
-
----
-
-<div className="my-6 rounded-md border border-dashed border-fd-border p-4 text-sm text-fd-muted-foreground">
-  <Badge variant="patch-notes">DEEPER</Badge>
-  <span className="ml-2">Sub-pages drill into each bucket: <a href="/docs/tools/think" className="underline">Think</a>, <a href="/docs/tools/research" className="underline">Research</a> (with non-AI primary-data tools like Keyword Planner and Meta Ad Library), <a href="/docs/tools/write" className="underline">Write</a>, <a href="/docs/tools/build" className="underline">Build &amp; Ship</a>.</span>
 </div>
