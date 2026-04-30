@@ -143,42 +143,6 @@ async function main() {
   await fs.writeFile(path.join(OUT_DIR, 'distribution.md'), distribution, 'utf8');
   console.log(`  distribution.md (${distribution.length} chars)`);
 
-  // Single-file merged context for ChatGPT Project (5-file knowledge cap on free tier).
-  // Same content as the 6 individual files, concatenated under H1 section headers so the
-  // founder can upload one file and still leave 4 slots for artifacts (customer.md,
-  // research-brief.md, 4-box.md, landing-copy.md).
-  const sectionFiles = [
-    { title: 'Tool matrix', filename: 'tool-matrix.md' },
-    { title: 'Program overview', filename: 'program-overview.md' },
-    { title: 'Day checklist', filename: 'day-checklist.md' },
-    { title: 'Voice guide', filename: 'voice-guide.md' },
-    { title: 'Prompt index (canonical Spellbook)', filename: 'prompt-index.md' },
-    { title: 'Distribution doctrine', filename: 'distribution.md' },
-  ];
-  const mergedParts = [
-    '# LaunchLab context (merged single-file pack)',
-    '',
-    'Same content as the 6-file Claude pack, merged into one file so it fits inside ChatGPT Projects (5-file cap on free tier). Upload this once and leave 4 slots free for the artifacts you produce across the weekend (customer.md, research-brief.md, 4-box.md, landing-copy.md).',
-    '',
-    'Source: ' + WIKI_BASE + '/docs/claude-project',
-    '',
-    '---',
-    '',
-  ];
-  for (const { title, filename } of sectionFiles) {
-    const body = await fs.readFile(path.join(OUT_DIR, filename), 'utf8');
-    mergedParts.push(`# ${title}`);
-    mergedParts.push('');
-    mergedParts.push(body.trim());
-    mergedParts.push('');
-    mergedParts.push('---');
-    mergedParts.push('');
-  }
-  const merged = mergedParts.join('\n');
-  const MERGED_OUT = path.join(OUT_PARENT, 'launchlab-context.md');
-  await fs.writeFile(MERGED_OUT, merged, 'utf8');
-  console.log(`  launchlab-context.md (${merged.length} chars, ChatGPT single-file pack)`);
-
   await fs.rm(OUT_ZIP, { force: true });
   execSync(
     `cd "${OUT_PARENT}" && zip -rq launchlab-project-pack.zip launchlab-pack`,
