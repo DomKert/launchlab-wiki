@@ -1,6 +1,6 @@
 ---
-title: 17. Bolt build prompt
-description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a Bolt-ready first message for a single-file HTML landing page.
+title: 17. Build prompt
+description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a build-tool-ready first message for ChatGPT (Path A, default) or Bolt (Path C, advanced).
 ---
 
 <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -12,189 +12,179 @@ description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a Bolt-read
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
   <a href="https://claude.ai" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Claude Project</a>
-  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Output goes to (pick one)</div>
+  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Output goes to (you pick the path on bolt.new homepage)</div>
   <div className="mt-1 flex flex-wrap gap-3">
-    <a href="https://bolt.new" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Bolt.new (with iteration loop)</a>
-    <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ ChatGPT free + Netlify Drop (no token cost)</a>
+    <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Path A: ChatGPT free + Netlify Drop (default)</a>
+    <a href="https://bolt.new" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Path C: Bolt (advanced)</a>
   </div>
 </div>
 
 <div className="my-4 rounded-md border border-amber-500 bg-fd-card p-4 text-sm">
-  <div className="mb-2 flex items-center gap-2"><Badge variant="boss">TOKEN ECONOMY (read this first)</Badge></div>
-  <p className="text-fd-muted-foreground">Bolt's free tier is 300K tokens per day. Bolt re-reads the entire project file tree on every message AND auto-scaffolds a Vite template by default. The Vite scaffold (10+ files) gets ingested as context every time, including by Plan mode. A single Plan generation on the default Vite scaffold can burn 250K+ tokens before any code is even built. Three fixes baked into this prompt:</p>
-  <ol className="ml-5 mt-2 list-decimal space-y-1 text-fd-muted-foreground">
-    <li>Ask for a SINGLE static HTML file (one index.html, Tailwind via CDN, no framework, no separate config files)</li>
-    <li>Build the WHOLE page in one prompt instead of hero-then-sections (re-sync cost doesn't scale with page length on a single file)</li>
-    <li>SKIP Plan mode and click Build directly. The assembled prompt below contains the plan; Plan mode just adds a turn that re-ingests the auto-scaffolded Vite tree.</li>
-  </ol>
+  <div className="mb-2 flex items-center gap-2"><Badge variant="patch-notes">WHICH PATH</Badge></div>
+  <p className="text-fd-muted-foreground">Default is Path A (ChatGPT free). Better output, no token cliff, simpler. Path C (Bolt) is for students who specifically want the AI iteration loop with a preview pane and accept the 300K daily token cap. Path B exists too for zero-AI builds; see [Pick your build path](/docs/playbook/build-paths). The synthesizer below outputs a prompt that works in both ChatGPT and Bolt; only the destination changes.</p>
 </div>
 
 ## Why this works
 
-The Bolt prompt has a lot of moving parts: project name, palette, type, vibe keyword, all section copy, CTA destination, hero image plan. Filling all of that into a static template by hand means missing something and hitting a wall mid-paste.
+The build prompt has a lot of moving parts: project name, all section copy, vibe keyword, mood, type, CTA destination, hero image plan. Filling it into a static template by hand means missing something.
 
-Claude reads your Project knowledge (4-box, customer, one-liner, OMTM, plus bolt-copy.md and style-spec.md if saved) and walks you through the missing pieces one at a time. If you're missing a prereq (no style spec, no Tally form, no cleaned copy yet), Claude stops and routes you back to the right Spellbook prompt or tool. Then it outputs the final Bolt prompt as one code block you paste straight into Bolt.
+Claude reads your Project knowledge (4-box, customer, one-liner, OMTM, plus bolt-copy.md and style-spec.md if saved) and walks you through the missing pieces one at a time. If you're missing a prereq (no style spec, no Tally form, no cleaned copy), Claude stops and routes you back. Then it outputs the final build prompt as one code block.
 
-This runs in Claude Project, not Bolt. The OUTPUT goes to Bolt (or ChatGPT, see Path B below) and asks for the whole landing page as one `index.html` file so the free tier survives the sprint.
+This runs in Claude Project. The OUTPUT goes to ChatGPT (Path A) or Bolt (Path C).
 
 ## Before you run this
 
 Five things ready in your Project knowledge or available to paste:
 
-1. Cleaned section-by-section copy from [Prompt 4](/docs/prompts/landing-page-spec) → [Prompt 9](/docs/prompts/strip-ai-smell). Save as `bolt-copy.md` in Project knowledge or be ready to paste. This includes ALL sections of the page (hero, problem, what-you-offer, social proof, final CTA, etc., per the OMTM shape) not just the hero.
+1. Cleaned section-by-section copy from [Prompt 4](/docs/prompts/landing-page-spec) → [Prompt 9](/docs/prompts/strip-ai-smell). Save as `bolt-copy.md` in Project knowledge or be ready to paste. ALL sections of the page (hero + each subsequent section per OMTM shape), not just hero.
 
-2. Style spec from [Prompt 16](/docs/prompts/visual-direction). Save as `style-spec.md` or be ready to paste.
+2. Style spec from [Prompt 16](/docs/prompts/visual-direction). Save as `style-spec.md`. The simplified spec is just vibe keyword + 3 mood adjectives + Google Fonts pairing. No palette hex codes (we dropped that since it produces muddy output).
 
-3. CTA destination set up. [Tally form](https://tally.so) for waitlist, [Cal.com](https://cal.com) for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto: for 1:1. You need the actual URL or email.
+3. CTA destination set up. [Tally form](https://tally.so) URL for waitlist, [Cal.com](https://cal.com) URL for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto: for 1:1.
 
-4. Hero image plan decided. Either an image file saved to disk (from [Gemini Nano Banana](https://gemini.google.com), [gpt-image-2](https://chatgpt.com), or [Unsplash](https://unsplash.com) download), or "use a placeholder for now", or "type-only, no image". The hero image is the ONLY file that attaches to Bolt.
+4. Hero image plan decided. Either an image file saved to disk (from [Gemini Nano Banana](https://gemini.google.com), [gpt-image-2](https://chatgpt.com), or [Unsplash](https://unsplash.com) download), or "use a placeholder for now", or "no image, type-only".
 
-5. (Optional, fallback only) The 3 reference screenshots from Prompt 16 saved in a folder. You won't attach these to Bolt by default. The style spec in input 2 is already the compressed text version, and image attachments cost Bolt tokens on every message.
+5. (Optional, fallback only) The 3 reference screenshots from Prompt 16 saved in a folder. Won't get attached to the build tool by default; vibe keyword in input 2 is the compressed version.
 
 If any of inputs 1 to 4 are missing, Claude will stop and tell you which to do first.
 
 ## Prompt
 
-Run this in your Claude Project chat. Claude walks you through 5 inputs one at a time, then outputs the final Bolt prompt as one code block.
+Run this in your Claude Project chat. Claude walks you through 5 inputs one at a time, then outputs the final build prompt as one code block.
 
 ```txt
-I'm ready to build my landing page. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus bolt-copy.md and style-spec.md if I've saved them) and synthesize the single build prompt I'll paste as the first message in Bolt OR ChatGPT.
+I'm ready to build my landing page. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus bolt-copy.md and style-spec.md if I've saved them) and synthesize the single build prompt I'll paste as the first message in either ChatGPT (Path A, default) or Bolt (Path C).
 
-The prompt MUST do three things to survive free tier token caps:
+The prompt MUST do three things to survive free tier limits and produce clean output:
 1. Ask for a single-file static HTML landing page (one index.html only, Tailwind via CDN script tag in the head, Google Fonts via link tag, custom CSS in a style block, no Next.js, no Vite, no framework, no separate config files)
-2. Ask for the WHOLE page in one shot (all sections from my cleaned copy, not just the hero)
-3. Open with an aggressive "delete everything except index.html" instruction so any default Vite scaffold gets stripped before generation
+2. Ask for the WHOLE page in one shot (all sections from my cleaned copy)
+3. Use button-links for forms (Tally / Cal.com / Stripe), NOT iframes or embeds. Embeds break too often.
 
 Walk me through these inputs one at a time, in order. Don't ask all at once. Pull from Project knowledge first if the answer is already there.
 
 1. Project name (the brand or product name as it appears on the site)
 2. Cleaned section-by-section copy from Prompt 9 (ALL sections, not just hero): hero headline + subhead + CTA, plus every subsequent section's content per the OMTM shape (problem block, what-you-offer, social proof slot, final CTA, etc.)
-3. Style spec from Prompt 16: palette hex codes, type pairing (Google Fonts names), radius, shadow, spacing, vibe keyword, 3 mood adjectives
+3. Style spec from Prompt 16: vibe keyword + 3 mood adjectives + Google Fonts pairing. NO palette hex codes (the build tool picks its own).
 4. CTA destination URL: Tally form for waitlist, Cal.com link for demo, Stripe Payment Link for e-com, mailto: for 1:1
-5. Hero image plan: confirm I have a hero image file saved to disk (from Gemini Nano Banana, gpt-image-2, Unsplash, or my own), OR say "placeholder", OR say "no image". The file attaches to Bolt directly, no URL needed.
+5. Hero image plan: confirm I have a hero image file saved to disk, OR say "placeholder", OR say "no image"
 
-If I'm missing a prereq (no style spec because I haven't run Prompt 16, no CTA URL because I haven't set up Tally, no cleaned copy because Prompt 9 isn't done), STOP. Tell me which Spellbook prompt or tool I need to complete first. Don't fabricate values, don't move on without them.
+If I'm missing a prereq (no style spec, no CTA URL, no cleaned copy), STOP. Tell me which Spellbook prompt or tool I need to complete first. Don't fabricate values.
 
 When you have all five, output the final build prompt as ONE code block I can copy and paste. Use this exact structure with my values substituted:
 
 ---
 
-[I will attach the hero image file via the paperclip in Bolt, if I have one. No reference screenshots attached; the style spec below carries the visual direction.]
+[For Bolt path only: I will attach the hero image file via the paperclip if I have one. For ChatGPT path: I'll save the image alongside the index.html locally.]
 
-FIRST INSTRUCTION (token discipline): This project must contain exactly ONE file when you finish: index.html. No package.json, no vite.config.js, no main.js, no src/ folder, no public/ folder, no tsconfig.json, no node_modules. If your starting state has any of those files, your FIRST action is to delete every file in the project except index.html (or create index.html if it doesn't exist). The deliverable is one file. Do not scaffold a framework. Do not add a build step. Do not install dependencies.
+FIRST INSTRUCTION (token discipline, applies if you scaffold by default): This project must be exactly ONE file: index.html. No package.json, no vite.config.js, no main.js, no src/ folder, no public/ folder, no tsconfig.json, no node_modules. If your starting state has any of those files, your FIRST action is to delete every file except index.html (or create index.html if it doesn't exist). Don't scaffold a framework. Don't add a build step.
 
-Now build the FULL landing page for [PROJECT NAME] inside that single index.html. Mobile-first. Tailwind via CDN script tag in the head, Google Fonts via link tag in the head, custom CSS in one style block in the head. Build all sections in one go.
+Build the FULL landing page for [PROJECT NAME] inside that single index.html. Mobile-first. Tailwind via CDN script tag in the head, Google Fonts via link tag in the head, custom CSS in one style block in the head. Build all sections in one go.
 
+Style direction (light spec, let your defaults breathe)
 Vibe keyword: [vibe keyword from style spec]
+Mood: [3 mood adjectives from style spec]
+Type: headlines in [Google Font from spec], body in [Google Font from spec]. [one sentence on weight and contrast from spec]
 
-Brand
-Palette: bg [hex], ink [hex], accent [hex], muted [hex]. Use bg as page background, ink for primary text, accent for ONE primary CTA only.
-Type: headings in [Google Font name from style spec], body in [Google Font name]. [one sentence on weight and contrast from style spec]
-Radius: cards and buttons [px], images [px]
-Shadows: [from style spec]
-Spacing: section vertical padding [px], max content width [px]
-Mood: [3 adjectives from style spec]
+Pick a palette and detailed type sizing that match the vibe keyword and mood. Default to a clean off-white or warm cream background with high-contrast charcoal or near-black type. Use ONE accent color for the primary CTA only. No saturated full-page background colors. No alternating section backgrounds. Generous whitespace, type-driven layout.
 
 Section copy (use verbatim, don't rewrite or improvise)
-[Substitute every cleaned section from bolt-copy.md, in order, with section labels. Hero (headline / subhead / CTA), then each subsequent section per the OMTM shape.]
+[Substitute every cleaned section from bolt-copy.md, in order, with section labels per OMTM shape.]
 
-CTA wiring
+CTA wiring (use button-links, NOT iframes)
 Primary CTA button text: [paste from cleaned hero copy]
-Primary CTA destination: [URL or mailto:]
-[If form-based (waitlist Tally form, demo Cal.com), embed inline in the final CTA section, not a popup. Otherwise button-link to the URL.]
+Primary CTA destination: [Tally URL / Cal.com URL / Stripe URL / mailto:]
+The hero CTA button and the final-section CTA button BOTH link directly to this URL with target="_blank" rel="noopener noreferrer". Do not embed forms via iframe. Do not use anchor scroll to an in-page form. Just two button-links to the same destination URL.
 
 Hero image
-[Founder choice as ONE line: "I've attached the hero image file via the paperclip. Embed it in the hero, full-bleed or right-aligned per the vibe." OR "Use a placeholder.com gradient sized 1600x900 for the hero, I'll swap later." OR "No image. Type-only hero with a strong color block on the right 30%."]
+[Founder choice as ONE line: "I've attached the hero image file. Embed it in the hero, full-bleed or right-aligned per the vibe." OR "Use a placeholder.com gradient sized 1600x900 for the hero, I'll swap later." OR "No image. Type-only hero with generous whitespace, no decorative blocks, no gradients."]
 
 Stack constraints (repeat for emphasis)
 - ONE file: index.html. Nothing else.
 - Tailwind: <script src="https://cdn.tailwindcss.com"></script> in head
-- Google Fonts: standard <link> tag in head pointing to fonts.googleapis.com
-- Custom palette: extend Tailwind via the inline tailwind.config object inside a <script> block (not a separate file)
+- Google Fonts: standard <link> tag in head
+- Custom palette (if you extend Tailwind): inline tailwind.config object inside a <script> block, not a separate file
 - Custom CSS: inline <style> block, only if Tailwind utilities aren't enough
-- No build step, no npm, no node_modules
+- No build step, no npm
 
 Constraints
 - No corporate stock photo people
 - No "Trusted by 10,000+" social proof I haven't given you
 - No floating UI cards
+- No gradient hero blocks
+- No saturated full-page background colors
+- No iframe embeds for forms (always button-link)
 - Mobile must look right first, desktop second
 - Single page, no nav, no separate routes
 
-Build the full landing page in one go. All sections, one file. Strip the scaffold first, then build.
+Build the full landing page in one go. All sections, one file. Strip the scaffold first if needed, then build.
 
 ---
 
-Voice rules for the assembled prompt: don't add anything that's not in my Project knowledge or that I haven't explicitly given you. No fabricated stats, no extra sections, no improvised copy, no testimonials. If I haven't given you a value, ask for it instead of guessing.
+Voice rules for the assembled prompt: don't add anything that's not in my Project knowledge or that I haven't given you. No fabricated stats, no extra sections, no improvised copy, no testimonials. If a value is missing, ask for it instead of guessing.
 ```
 
-## Path A. Bolt (with iteration loop)
+## Path A. ChatGPT free + Netlify Drop (default, recommended)
 
-Use this if you want a live preview pane and AI-driven iteration after the first build.
+Best for most students. Better output than Bolt for static landing pages, zero token cliff.
+
+1. Open [free ChatGPT](https://chatgpt.com). Paste Claude's assembled prompt as a single message.
+2. ChatGPT outputs the full HTML in a code block (60 to 90 seconds). Click the copy button at the top of the code block.
+3. Save the HTML locally as `index.html` in any folder. Use any text editor (TextEdit on Mac, Notepad on Windows, or [VS Code free](https://code.visualstudio.com/)).
+4. If you have a hero image file from Prompt 18, save it in the SAME folder as `index.html` and reference it in the HTML as `<img src="hero.jpg">` (or whatever you named it). Edit the HTML to point at the local filename if ChatGPT used a placeholder.
+5. Sign up for a free [Netlify](https://app.netlify.com/signup) account. Drag your folder onto [app.netlify.com/drop](https://app.netlify.com/drop). Free, instant URL, signing up means the deploy persists. Without an account, anonymous Netlify Drop URLs disappear after a few hours.
+6. To iterate: edit `index.html` in your text editor (or paste the current HTML into a fresh ChatGPT chat with "change X please"), drag onto Netlify Drop again to deploy a fresh version.
+
+Trade-off: no live preview while editing, no AI iteration UI in the same place. But for a static landing page where the spec is locked, ChatGPT generates working HTML first try in 99% of cases. Most iteration is small text/color tweaks anyway.
+
+## Path C. Bolt (advanced, only if you want the AI iteration loop)
+
+Best for students who specifically want the AI iteration UI with live preview pane. Comes with the 300K daily token cap risk.
 
 ### Don't toggle Plan mode
 
-Bolt's docs say Plan mode saves tokens, which is true for complex multi-file builds. For single-file static HTML it's the opposite. Bolt auto-scaffolds a default Vite template the moment you arrive at bolt.new, and Plan mode reads that whole Vite tree as context to generate the plan. A single Plan generation can cost 250K+ tokens before any code is even built. The assembled prompt above already contains the plan, so adding Plan mode just doubles the work.
+Bolt's docs say Plan mode saves tokens, which is true for complex multi-file builds. For single-file static HTML it's the opposite. Bolt auto-scaffolds a Vite template the moment you arrive at bolt.new, and Plan mode reads that whole Vite tree as context. A single Plan generation can cost 250K tokens before any code is built. The assembled prompt above already contains the plan.
 
 Click **Build now** directly. Don't toggle Plan.
 
 ### Skip the Design System dropdown
 
-Those are Next.js component libraries (Shadcn, Material UI, etc.) and we're asking for a single static HTML file. Picking one wastes the slot.
+Those are Next.js component libraries (Shadcn, Material UI, etc.) and we're asking for single static HTML. Picking one wastes the slot.
 
 ### Attach the hero image only
 
 Click the paperclip icon and attach your hero image file from Prompt 18 if you generated one (10MB limit, free tier). That's the only image that needs to be in Bolt because it becomes content embedded in the HTML.
 
-Don't attach the 3 reference screenshots from Prompt 16. They cost input tokens on every message and the style spec already captures the visual direction in compressed text form.
+Don't attach the 3 reference screenshots from Prompt 16. They cost input tokens on every message and the vibe keyword already captures the visual direction.
 
 ### Paste and run
 
-Paste Claude's assembled prompt as your first message and click Build. Wait 60 to 120 seconds for the page to scaffold.
+Paste Claude's assembled prompt as your first message and click Build. Wait 60 to 120 seconds.
 
-After the scaffold, check Bolt's file sidebar. If it shows ONLY `index.html`, you're good. If you see `package.json`, `vite.config.js`, or any other files, send one follow-up: "Delete every file in the project except index.html. The project must contain exactly one file."
-
-Then check the preview pane. Don't prompt yet. Read the file, click around, decide what's actually wrong vs what just needs a tweak.
+After scaffold, check the file sidebar. If it shows ONLY `index.html`, you're good. If you see `package.json`, `vite.config.js`, etc., send one follow-up: "Delete every file in the project except index.html. The project must contain exactly one file."
 
 For copy edits, color tweaks, padding, image swaps, individual section content: open `index.html`, edit the line, save. Zero tokens. Most refinement happens here.
 
-Reserve Bolt re-prompts for restructures (new layout, feature touching multiple sections, bug you can't track down by editing). One change per prompt.
-
-Full vibecoding loop: [vibecoding workflow](/docs/vibecoding/workflow). When you hit the wall: [recovery section](/docs/vibecoding/workflow#when-you-hit-the-wall).
-
-## Path B. ChatGPT free + Netlify Drop (no token cost)
-
-Use this if your Bolt token cap is depleted, or you want the simplest possible flow with zero tokens spent.
-
-1. Open [free ChatGPT](https://chatgpt.com). Paste the same assembled prompt Claude generated above as a single message.
-2. ChatGPT outputs the full HTML in a code block. Click the copy button.
-3. Save the HTML locally as `index.html` in any folder. Use any text editor (TextEdit on Mac, Notepad on Windows, or VS Code free).
-4. Open [Netlify Drop](https://app.netlify.com/drop) in your browser. Drag the folder containing `index.html` (or just the file) onto the drop zone. You get an instant live URL. Free, no signup needed.
-5. To iterate: edit `index.html` in your text editor, drag onto Netlify Drop again to deploy a fresh version.
-
-Trade-off: no live preview while editing, no AI iteration loop in a UI. But for a static landing page where the spec is locked, ChatGPT generates working HTML first try in 99% of cases. Most of your iteration will be small text/color tweaks anyway.
-
-For a hybrid path: generate in ChatGPT, then paste the resulting HTML into a fresh Bolt project as the first message ("Use this exact HTML, no changes, just preview it: [paste]") to get Bolt's preview pane without burning tokens on generation.
+If you hit the daily cap, see [vibecoding workflow when you hit the wall](/docs/vibecoding/workflow#when-you-hit-the-wall). The hero comes with you in a Cursor migration.
 
 ## Need a hero image first?
 
-Use [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) to synthesize the image-gen prompt in Claude (same pattern as this one), then paste into Gemini Nano Banana, gpt-image-2, or Ideogram. Download the image file to disk, mention it when this synthesizer asks for input 5. You'll attach the file directly via the paperclip in Bolt, or reference it inline in your local index.html for Path B.
+Use [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) to synthesize the image-gen prompt in Claude (same pattern as this one), then paste into Gemini Nano Banana, gpt-image-2, or Ideogram. Download the image file to disk. For Path A: save next to your index.html. For Path C: attach via paperclip.
 
 ## What good looks like
 
 One Claude Project chat session, 5 turns, final assembled build prompt in one code block.
 
-Path A (Bolt): paste with hero image attached, Build directly (no Plan mode), full landing page in 90 to 120 seconds, file sidebar shows only index.html. The rest is direct edits in `index.html`. Token budget under 100K of the 300K daily cap. Live URL on `.bolt.host` by Friday night.
+Path A: paste into free ChatGPT, get HTML, save to disk, drag to Netlify Drop (with free account so it persists). Live URL in under 10 minutes, zero token cost. Iteration via text editor + redeploy.
 
-Path B (ChatGPT + Netlify Drop): paste, copy HTML, save locally, drag to Netlify Drop. Live URL in under 5 minutes, zero Bolt tokens spent. Iteration via text editor + redeploy.
+Path C: paste into Bolt with hero image attached, Build directly (no Plan mode), full landing page in 60 to 120 seconds, file sidebar shows only index.html. Direct edits in `index.html` for refinement. Token budget under 100K of 300K daily cap.
 
 ## What bad looks like
 
-Toggling Plan mode on with single-file HTML. Plan ingests the auto-scaffolded Vite tree and burns 200K+ tokens generating a plan you don't need. The assembled prompt already contains the plan.
+Path A: signing up for Netlify but forgetting to claim the deploy site, so the URL expires. Or trying to edit the HTML in a chat instead of a text editor and getting confused.
 
-Letting Bolt scaffold Next.js + Tailwind config + layout files instead of catching it in the FIRST INSTRUCTION block. If after Build you see `package.json` or `vite.config.js` in the sidebar, follow up with "delete every file except index.html" before doing anything else.
+Path C: toggling Plan mode on (Plan reads the Vite scaffold = 250K). Letting Bolt scaffold Next.js + config files and re-syncing them on every prompt. Using iframe embeds for forms (Tally embed renders blank too often).
 
-Asking for hero only and burning 5 follow-up prompts on adding sections one at a time. The single-file approach makes whole-page-in-one-prompt the cheaper path.
+Both paths: providing extracted hex codes from Prompt 16 (we dropped that, it produced muddy palettes). Asking for hero only and burning follow-ups on adding sections.
 
 ## Next
 

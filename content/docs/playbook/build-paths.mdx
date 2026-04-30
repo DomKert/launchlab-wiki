@@ -1,0 +1,124 @@
+---
+title: Pick your build path
+description: Three ways to ship a landing page in a 3-day sprint. Pick based on your comfort and tolerance for token cliffs.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="boss">DAY 1 PM</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">decide once, then build</span>
+</div>
+
+Three paths to a live landing page. Not all of them involve AI building the HTML. Pick the one that matches your comfort, your appetite for tokens, and what you actually want to learn this weekend.
+
+The Spellbook prompts upstream of the build (Prompts 1, 2, 3, 9, 14, 15, 16, 18) all run regardless of which path you pick. The path only changes what happens at build time.
+
+<div className="my-4 grid gap-3 sm:grid-cols-1 lg:grid-cols-3">
+  <a href="#path-a-chatgpt-plus-netlify-drop-default" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">default</span></div>
+    <div className="font-sans text-lg font-semibold">Path A. ChatGPT + Netlify Drop</div>
+    <p className="mt-2 text-sm text-fd-muted-foreground">AI generates HTML, you save it locally, drag onto Netlify Drop. Best output for static pages, zero token cliff. Recommended for most.</p>
+  </a>
+  <a href="#path-b-carrd-or-framer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">no AI</span></div>
+    <div className="font-sans text-lg font-semibold">Path B. Carrd or Framer</div>
+    <p className="mt-2 text-sm text-fd-muted-foreground">No AI build at all. Pick a template, paste in your copy, customize colors. Bulletproof, fast, lower ceiling.</p>
+  </a>
+  <a href="#path-c-bolt" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">advanced</span></div>
+    <div className="font-sans text-lg font-semibold">Path C. Bolt</div>
+    <p className="mt-2 text-sm text-fd-muted-foreground">AI iteration loop with preview pane. For students who want the vibecoding experience and accept the 300K daily token cap.</p>
+  </a>
+</div>
+
+## Decision tree
+
+If you've never written code and want zero risk: Path B (Carrd).
+
+If you want the cleanest output for least friction: Path A (ChatGPT + Netlify Drop).
+
+If you specifically want the AI vibecoding learning loop and accept token risk: Path C (Bolt).
+
+If you change your mind mid-sprint: Path A → Path B is easy (drag your text into a Carrd template). Path C → Path A is easy (download from Bolt, deploy on Netlify). Path B → A or C requires re-doing the build but the upstream prompts (copy, style direction, hero image) all transfer.
+
+## Path A. ChatGPT + Netlify Drop (default)
+
+The flow:
+
+1. Run [Prompt 17 Build prompt](/docs/prompts/bolt-build) in your Claude Project to synthesize a build prompt.
+2. Paste Claude's output into [free ChatGPT](https://chatgpt.com). Get the full HTML in a code block.
+3. Copy the HTML, save locally as `index.html`. Use any text editor.
+4. If you have a hero image file from [Prompt 18](/docs/prompts/hero-image-prompt), save it next to `index.html` and update the `<img src="...">` to match the local filename.
+5. Sign up for a free [Netlify](https://app.netlify.com/signup) account. Drag your folder onto [app.netlify.com/drop](https://app.netlify.com/drop). Get a live URL like `https://your-site-abc123.netlify.app`.
+6. Iterate: edit `index.html` in your text editor (or paste current HTML into a fresh ChatGPT chat for AI-assisted edits), redeploy by dragging to Netlify Drop again.
+
+The Netlify account is critical. Anonymous Netlify Drop deploys disappear after a few hours; signing up claims the site so it persists. Free tier covers everything you need for a launch.
+
+Strengths: ChatGPT's training is heavier on clean web design than Bolt's, so first-try output tends to be more polished. No daily token cap. Total cost zero.
+
+Weaknesses: no preview-while-editing UI. To see changes, save the file and open in a browser. Iteration is slower than Bolt's chat-driven loop.
+
+Best for: most undergrads, especially anyone who hit Bolt's token cap or hasn't started building yet. The default path.
+
+## Path B. Carrd or Framer
+
+No AI building. Pick a template, drop your copy in.
+
+[Carrd](https://carrd.co) is the simplest option. 10-minute one-pager builder, free for 3 sites, drag-and-drop, hard to make ugly. Pick a template, replace the copy with your bolt-copy.md content, update colors to match your style spec mood, drop in your Tally form URL as a button-link, hit publish. Done.
+
+[Framer](https://framer.com) is the more design-forward option. Free tier 1000 visits/month, polished templates, more design ceiling than Carrd. Same flow: pick template, fill copy, customize, publish.
+
+The flow with Carrd or Framer:
+
+1. Run upstream Spellbook prompts as usual (4-box, OMTM, copy, AI smell strip, visual direction).
+2. Skip Prompts 17 and 18. They're for AI build paths.
+3. Open Carrd or Framer. Pick a template that matches your vibe keyword from Prompt 16 (e.g. "hyper-minimalism" → editorial template, "brutalism" → bold/raw template).
+4. Replace template copy with your bolt-copy.md content section by section.
+5. Customize colors to match your mood adjectives. The template's defaults are usually fine; tweak the accent color if you want.
+6. CTA button: link directly to your Tally form URL (or Cal.com / Stripe / mailto). No iframe embeds.
+7. Publish. Carrd gives you a `your-site.carrd.co` URL; Framer gives `your-site.framer.website`.
+
+Strengths: bulletproof, fast, no token risk, output looks consistently good. Lowest learning curve.
+
+Weaknesses: less personalized than AI builds, harder to make truly distinctive without paying. Template constraints limit some ideas.
+
+Best for: students who want zero risk and zero code. Closest to what most non-technical founders use IRL.
+
+## Path C. Bolt
+
+For students who specifically want the AI iteration loop with a preview pane, and accept the 300K daily token cap risk.
+
+Detailed flow lives in [Prompt 17 Build prompt](/docs/prompts/bolt-build) under "Path C. Bolt". Short version:
+
+1. Run Prompt 17 in Claude Project to synthesize the build prompt.
+2. Open [bolt.new](https://bolt.new). Don't toggle Plan mode (it reads the auto-scaffolded Vite tree and burns 250K tokens). Skip Design System dropdown.
+3. Attach hero image file via paperclip if you have one.
+4. Paste assembled prompt, click Build now.
+5. After scaffold, verify file sidebar shows ONLY `index.html`. If extras present, follow up with delete-everything-except-index.html.
+6. Iterate via direct file edits in Bolt's editor (zero tokens) for most changes; re-prompt only for restructures.
+7. Publish via Bolt's one-click button to a `.bolt.host` URL.
+
+If you hit the daily cap mid-sprint, see [vibecoding workflow when you hit the wall](/docs/vibecoding/workflow#when-you-hit-the-wall) for the Cursor migration recovery (the hero comes with you).
+
+Strengths: AI chat iteration with live preview, fastest feedback loop when it works, the most "vibecoding" of the three paths.
+
+Weaknesses: 300K daily cap is real, single Plan-mode generation can burn it, the auto-scaffolded Vite tree adds re-sync cost on every prompt. Bolt's first-try output for static landing pages tends to be less polished than ChatGPT's.
+
+Best for: students who specifically want the AI iteration UX as a learning experience, or who have paid Bolt access.
+
+## Trade-off table
+
+| Path | Token cost | First-try quality | Iteration speed | Lowest learning curve |
+|------|-----------|-------------------|-----------------|----------------------|
+| A. ChatGPT + Netlify Drop | $0 | High | Medium (text editor + redeploy) | Yes for non-coders |
+| B. Carrd / Framer | $0 | Template-quality | Fast (drag and drop) | Highest |
+| C. Bolt | 300K daily cap | Variable | Fast when working (chat + preview) | Lowest |
+
+## Switching paths mid-sprint
+
+You're not locked in. If Path C bleeds tokens, switch to Path A: download your project from Bolt, paste the index.html into a free ChatGPT chat with "edit this HTML to fix X", deploy via Netlify Drop. If Path A's editor friction frustrates you, paste your HTML into a fresh Bolt project ("Use this exact HTML, just preview it") to get Bolt's preview pane without burning generation tokens. If Path B's template feels too constraining, copy your sections into a fresh ChatGPT prompt and switch to Path A.
+
+The upstream Spellbook work (copy, style direction, hero image, OMTM, distribution plan) all transfers across paths.
+
+## Next
+
+[Day 1](/docs/playbook/day-1) walks through the day with all three paths supported in the build step.
