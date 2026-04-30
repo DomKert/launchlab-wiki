@@ -20,20 +20,20 @@ End to end, from finished spec to live URL. Roughly 60 to 90 min on Day 1 PM if 
 
 Open these in tabs.
 
-1. The assembled Bolt prompt from [Prompt 17](/docs/prompts/bolt-build) (one code block Claude synthesized in your Project chat).
-2. Your folder with 3 reference screenshots from Prompt 16 + your hero image file from Prompt 18 if you generated one.
+1. The assembled Bolt prompt from [Prompt 17](/docs/prompts/bolt-build) (one code block Claude synthesized in your Project chat, asks for single-file HTML not Next.js).
+2. Your hero image file from Prompt 18 if you generated one (you'll attach this; reference screenshots stay in their folder as a fallback only).
 3. [bolt.new](https://bolt.new), signed in.
-4. Your Claude Project tab kept open so you can feed it back follow-up section prompts without burning Bolt tokens on planning.
+4. Your Claude Project tab kept open so you can feed back follow-up section prompts without burning Bolt tokens on planning.
 
 ## The 6-step sequence
 
-### 1. Pre-build setup. Design System + Plan mode + attach files.
+### 1. Pre-build setup. Plan mode + attach hero image only.
 
-On the [bolt.new](https://bolt.new) homepage, pick a Design System from the dropdown. Default is Shadcn for most shapes (waitlist, demo, e-com, newsletter, 1:1). See [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build) for the per-shape map.
+Skip the Design System dropdown on the bolt.new homepage. Those are Next.js component libraries (Shadcn, Material UI, etc.) and we're asking Bolt for a single static HTML file, not a Next.js project. Picking one wastes the slot.
 
-Turn on Plan mode using the toggle next to the Build now button. Plan mode makes Bolt write the build plan first that you review and edit before code generates. Cheapest place to catch bad assumptions.
+Turn on Plan mode using the toggle next to the Build now button. Plan mode makes Bolt write the build plan first that you review and edit before code generates. Cheapest place to catch bad assumptions, especially the "did Bolt understand single-file HTML, or is it about to scaffold Next.js" check.
 
-Click the paperclip and attach your 3 reference screenshots from Prompt 16, plus your hero image file from Prompt 18 if you have one (10MB per file).
+Click the paperclip and attach only your hero image file from Prompt 18, if you generated one (10MB limit, free tier). Don't attach the 3 reference screenshots; the style spec in Prompt 17 already captures the visual direction and image attachments cost tokens on every Bolt message.
 
 ### 2. First prompt. Paste the assembled prompt from Prompt 17.
 
@@ -67,7 +67,33 @@ A 60-min build. One initial prompt. 3 to 5 follow-up prompts max. The rest is co
 
 ## What bad looks like
 
-A 4-hour build. 30+ prompts. Every fix breaks two other things. Token budget gone before the page is even live. Migration to local on Day 2 instead of Day 1.
+A 4-hour build. 30+ prompts. Every fix breaks two other things. Token budget gone before the page is even live. Letting Bolt scaffold Next.js + Tailwind config + layout files instead of catching it in Plan mode and forcing single-file HTML.
+
+## When you hit the wall
+
+You see "You've used all your tokens" mid-build. Bolt's free tier daily cap is 300K tokens, monthly is 1M. A Next.js scaffold burns 50K+ per prompt because Bolt re-reads the entire project tree on every message. A single-file HTML build keeps re-syncs cheap, so most founders don't hit the cap in a day. If you do, three options.
+
+### Option 1. Wait for the daily reset (free, slow)
+
+Bolt's daily cap resets on its calendar day (UTC-based). If you hit the wall at 3pm, you're back at 0 tokens around midnight UTC the same day, or 24 hours later depending on usage start. Loses momentum. Only viable if you have time to wait.
+
+### Option 2. Migrate to Cursor (free, recommended)
+
+Cursor is a code editor with built-in AI (Claude, GPT) and a free tier with no per-message token cap for typical landing-page work. Migration takes 30 minutes once you know the steps.
+
+1. In Bolt, click your project name top-left, then Export, then Download. You get a zip of the project files.
+2. Unzip the folder somewhere you can find. Open it in [Cursor](https://cursor.com) (free download, sign up free).
+3. In Cursor's chat panel, toggle the **Agent** button on (most common newbie miss). Without Agent mode, Cursor won't edit files for you.
+4. Ask the Agent: "install dependencies and run the dev server" (only needed if Bolt scaffolded a framework; for single-file HTML you can just open `index.html` in a browser).
+5. Recreate any environment keys manually. Bolt does not export Supabase, Stripe, or other API secrets.
+6. Continue iterating in Cursor's chat with the same one-change-per-prompt discipline.
+7. Deploy: drag the folder onto [Netlify Drop](https://app.netlify.com/drop) for an instant free URL. Or push to GitHub and connect [Vercel](https://vercel.com) for a custom subdomain.
+
+The hero you already built comes with you. No rebuild.
+
+### Option 3. Pay for Bolt Pro (fast, costs money)
+
+$20/month for 33x more tokens. One month covers a full sprint with room to iterate freely. Cancellable. Pick this if you want to keep Bolt's UX and don't mind the spend.
 
 ## Next
 

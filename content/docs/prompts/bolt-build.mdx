@@ -1,6 +1,6 @@
 ---
 title: 17. Bolt build prompt
-description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a Bolt-ready first message.
+description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a Bolt-ready first message for a single-file HTML landing page.
 ---
 
 <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -18,13 +18,18 @@ description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a Bolt-read
   </div>
 </div>
 
+<div className="my-4 rounded-md border border-amber-500 bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="boss">TOKEN ECONOMY</Badge></div>
+  <p className="text-fd-muted-foreground">Bolt's free tier is 300K tokens per day. Bolt re-reads the entire project file tree on every message, so a Next.js + Tailwind scaffold (10+ config files) burns 50K+ per prompt and exhausts the cap in 2 to 3 messages. The fix is the stack: ask Bolt for a SINGLE static HTML file (no framework, no separate config files). Tailwind via CDN, Google Fonts via link tag, custom CSS inline. The whole project = one file, re-sync stays cheap, you get 10x more iteration before the cap.</p>
+</div>
+
 ## Why this works
 
 The Bolt prompt has a lot of moving parts: project name, palette, type, vibe keyword, hero copy, CTA destination, hero image plan, plus 3 reference screenshots to attach. Filling all of that into a static template by hand means missing one and hitting a wall mid-paste.
 
 Claude reads your Project knowledge (4-box, customer, one-liner, OMTM) and walks you through the missing pieces one at a time. If you're missing a prereq (no style spec, no Tally form, no headline yet), Claude stops and routes you back to the right Spellbook prompt or tool. Then it outputs the final Bolt prompt as one code block you copy straight into Bolt.
 
-This runs in Claude Project, not Bolt. The OUTPUT goes to Bolt.
+This runs in Claude Project, not Bolt. The OUTPUT goes to Bolt and asks for a single-file HTML landing page so the free tier survives a full sprint.
 
 ## Before you run this
 
@@ -38,9 +43,9 @@ Five things ready in your Project knowledge or available to paste:
 
 4. Hero image plan decided. Either an image file saved to disk (from [Gemini Nano Banana](https://gemini.google.com), [gpt-image-2](https://chatgpt.com), or [Unsplash](https://unsplash.com) download), or "use a placeholder for now", or "type-only, no image". You'll attach the file to Bolt alongside the 3 reference screenshots.
 
-5. The 3 reference screenshots from Prompt 16 saved to a folder you can find. You'll attach them to Bolt after Claude assembles the prompt.
+5. (Optional) Screenshots from Prompt 16 saved in a folder. You won't attach these to Bolt by default (the style spec in input 2 is the compressed text version, and image attachments cost Bolt tokens). Keep them on hand only as a fallback if Bolt's first scaffold is way off the vibe and you need a visual course-correct later.
 
-If any of these are missing, Claude will stop and tell you which to do first.
+If any of inputs 1 to 4 are missing, Claude will stop and tell you which to do first.
 
 ## Prompt
 
@@ -49,14 +54,15 @@ Run this in your Claude Project chat. Claude walks you through 6 inputs one at a
 ```txt
 I'm ready to build my landing page in Bolt. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus bolt-copy.md and style-spec.md if I've saved them) and synthesize the single Bolt build prompt I'll paste as Bolt's first message.
 
-Walk me through these inputs one at a time, in order. Don't ask all at once. Pull from Project knowledge first if the answer is already there. Only ask when the file isn't saved.
+The prompt MUST ask Bolt for a single-file static HTML landing page (one index.html only). Tailwind via CDN script tag in the head, Google Fonts via link tag, custom CSS in a single style block. No Next.js, no Vite, no framework, no separate config files, no Tailwind config file, no fonts as imported files. The whole project should be one file. This is non-negotiable: it's how the free tier survives the weekend.
+
+Walk me through these inputs one at a time, in order. Don't ask all at once. Pull from Project knowledge first if the answer is already there.
 
 1. Project name (the brand or product name as it appears on the site)
 2. Cleaned hero copy from Prompt 9: headline, subhead, CTA button text
-3. Style spec from Prompt 16: palette hex codes, type pairing, radius, shadow, spacing, vibe keyword, 3 mood adjectives
+3. Style spec from Prompt 16: palette hex codes, type pairing (Google Fonts names), radius, shadow, spacing, vibe keyword, 3 mood adjectives
 4. CTA destination URL: Tally form for waitlist, Cal.com link for demo, Stripe Payment Link for e-com, mailto: for 1:1
-5. Hero image plan: confirm I have a hero image file saved to disk (from Gemini Nano Banana, gpt-image-2, Unsplash, or my own), OR say "placeholder", OR say "no image". The file attaches to Bolt directly, no URL needed.
-6. Confirm I have the 3 reference screenshots saved to a folder ready to attach to Bolt alongside the hero image file
+5. Hero image plan: confirm I have a hero image file saved to disk (from Gemini Nano Banana, gpt-image-2, Unsplash, or my own), OR say "placeholder", OR say "no image". The file attaches to Bolt directly, no URL needed. This is the only image that gets attached to Bolt; reference screenshots stay out (the style spec in input 3 is the compressed text version, and image attachments cost tokens on every message).
 
 If I'm missing a prereq (no style spec because I haven't run Prompt 16, no CTA URL because I haven't set up Tally, no headline because Prompt 9 isn't done), STOP. Tell me which Spellbook prompt or tool I need to complete first. Don't fabricate values, don't move on without them.
 
@@ -64,22 +70,19 @@ When you have all six, output the final Bolt build prompt as ONE code block I ca
 
 ---
 
-[I will attach 3 reference screenshots via the paperclip in Bolt, plus the hero image file if I have one]
+[I will attach the hero image file via the paperclip in Bolt, if I have one. No reference screenshots attached, the style spec below carries the visual direction.]
 
-Build the HERO SECTION ONLY of a single-page landing page for [PROJECT NAME] as a Next.js + Tailwind app. Mobile-first, deploy-ready. Don't build the rest of the page yet, I'll add sections one at a time after I approve the hero.
+Build the HERO SECTION ONLY of a single-page landing page for [PROJECT NAME] as a single static HTML file (index.html). Mobile-first. No framework, no Vite, no Next.js. Tailwind via CDN script tag in the head, Google Fonts via link tag, custom CSS in one style block at the bottom of the head. The whole project is one file. Don't build the rest of the page yet, I'll add sections one at a time after I approve the hero.
 
 Vibe keyword: [vibe keyword from style spec]
 
 Brand
 Palette: bg [hex], ink [hex], accent [hex], muted [hex]. Use bg as page background, ink for primary text, accent for ONE primary CTA only.
-Type: headings in [font], body in [font]. [one sentence on weight and contrast from style spec]
+Type: headings in [Google Font name from style spec], body in [Google Font name]. [one sentence on weight and contrast from style spec]
 Radius: cards and buttons [px], images [px]
 Shadows: [from style spec]
 Spacing: section vertical padding [px], max content width [px]
 Mood: [3 adjectives from style spec]
-
-Reference vibes
-3 attached screenshots are pages whose FEEL I want to match. Don't copy their content. Copy their visual rhythm, density, type contrast, and color logic.
 
 Hero copy (use verbatim, don't rewrite)
 Headline: [headline]
@@ -88,7 +91,14 @@ CTA button text: [CTA text]
 CTA destination: button posts to [URL or mailto:]
 
 Hero image
-[Write the founder's choice as ONE line. If file: "I've attached the hero image file via the paperclip alongside the 3 reference screenshots. Use it as the hero, full-bleed or right-aligned per the vibe." If placeholder: "Use a placeholder.com gradient sized 1600x900 for the hero, I'll swap later." If no image: "No image. Type-only hero with a strong color block on the right 30%."]
+[Write the founder's choice as ONE line. If file: "I've attached the hero image file via the paperclip alongside the 3 reference screenshots. Embed it in the hero, full-bleed or right-aligned per the vibe." If placeholder: "Use a placeholder.com gradient sized 1600x900 for the hero, I'll swap later." If no image: "No image. Type-only hero with a strong color block on the right 30%."]
+
+Stack constraints
+- ONE file: index.html. No tailwind.config.js. No fonts as separate files. No package.json. No node_modules.
+- Tailwind: <script src="https://cdn.tailwindcss.com"></script> in head
+- Google Fonts: standard <link> tag in head pointing to fonts.googleapis.com
+- Custom palette: extend Tailwind via the inline tailwind.config object inside a <script> block (not a separate file)
+- Custom CSS: inline <style> block, only if Tailwind utilities aren't enough
 
 Constraints
 - No corporate stock photo people
@@ -106,44 +116,29 @@ Voice rules for the assembled prompt: don't add anything that's not in my Projec
 
 ## After Claude outputs the Bolt prompt
 
-The Bolt-side flow has three pre-build choices that matter: pick the Design System, turn on Plan mode, attach files. Then paste.
-
-### Pick the Design System
-
-On the [bolt.new](https://bolt.new) homepage, there's a Design System dropdown below the prompt input. The pre-loaded options are free. Custom systems need Team plan ($149/mo).
-
-For most LaunchLab shapes, default to Shadcn. It's the indie standard, Tailwind-based, and the easiest to override with the palette and type from your style spec. Pick something else only if your shape clearly fits.
-
-- Shadcn (default for most). Waitlist, demo, e-com, newsletter, 1:1 bespoke.
-- Material UI. B2B SaaS dashboard-heavy products.
-- Washington Post. Editorial, news, typography-first newsletters.
-- AWS Cloudscape. Enterprise, data-heavy products.
-- Porsche. Luxury or design-forward consumer brands.
-- Chakra. Accessible, friendly dashboards (less common for landing).
-
-If in doubt, pick Shadcn. Your vibe keyword and style spec do the heavy lifting on top.
+Three pre-build choices on Bolt's side: turn on Plan mode, attach files, paste. Skip the Design System picker on the homepage; it's for Next.js component libraries (Shadcn, Material UI, etc.) and doesn't apply to single-file HTML.
 
 ### Turn on Plan mode
 
-Click the Plan toggle in the prompt toolbar (next to the Build now button). Plan mode makes Bolt write a build plan first that you review and edit before any code generates. Always plan before build.
+Click the Plan toggle in the prompt toolbar (next to the Build now button). Plan mode makes Bolt write a build plan first that you review and edit before any code generates. Bolt's own docs flag this as the top token-saving tactic. The cheapest place to catch a bad assumption is in the plan, not after Bolt has scaffolded the wrong thing and burned tokens.
 
-The cheapest place to catch a bad assumption (wrong stack, missed CTA wiring, no mobile, an imagined extra section) is in the plan, not after Bolt has scaffolded the wrong thing and burned 10K tokens. Read the plan once, edit if needed, then click Build.
+### Attach files (only the hero image)
 
-### Attach files
+Click the paperclip icon and attach your hero image file from Prompt 18 if you generated one (10MB per file, free tier). That's the only image that needs to be in Bolt because it becomes content embedded in the HTML.
 
-Click the paperclip icon. Attach the 3 reference screenshots from Prompt 16, plus your hero image file from Prompt 18 if you generated one. 10MB per file, free tier.
+Don't attach the 3 reference screenshots from Prompt 16. They cost input tokens on every message and the style spec already captures the visual direction in compressed text form. Keep the screenshots in a folder as a fallback only: if Bolt's first scaffold is way off vibe, you can attach 1 to 2 of them in a follow-up prompt to course-correct visually.
 
 ### Paste and run
 
-Paste Claude's assembled prompt as your first message. Bolt writes the plan, you review and edit, then click Build. Wait 60 to 90 seconds for the hero scaffold.
+Paste Claude's assembled prompt as your first message. Bolt writes the plan, you review and edit (especially: confirm the plan says "one HTML file" and not "Next.js project"), then click Build. Wait 60 to 90 seconds for the hero scaffold.
 
-Don't prompt yet after the scaffold appears. Read it, click around, decide what's actually wrong vs what just needs a tweak.
+Don't prompt yet after the scaffold appears. Read the file, click around, decide what's actually wrong vs what just needs a tweak.
 
-For copy edits, color tweaks, padding, hero image swaps: open the file, edit the line, save. Zero tokens.
+For copy edits, color tweaks, padding, hero image swaps: open `index.html`, edit the line, save. Zero tokens.
 
-For new sections (problem block, what-you-offer, CTA, social proof): one prompt per section, referencing the established hero style. "Add the next section using the same palette, type, and radius as the hero. Section content: [paste cleaned copy from Prompt 9]."
+For new sections (problem block, what-you-offer, CTA, social proof): one prompt per section, referencing the established hero style. "Add the next section to index.html using the same palette, type, and radius as the hero. Section content: [paste cleaned copy from Prompt 9]."
 
-Full vibecoding loop and the keep / change / add pattern: [vibecoding workflow](/docs/vibecoding/workflow).
+Full vibecoding loop and the keep / change / add pattern: [vibecoding workflow](/docs/vibecoding/workflow). When you hit the wall: [recovery section](/docs/vibecoding/workflow#when-you-hit-the-wall).
 
 ## Need a hero image first?
 
@@ -151,13 +146,13 @@ Use [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) to synthesize
 
 ## What good looks like
 
-One Claude Project chat session, 5 to 6 turns, final assembled Bolt prompt in one code block. Paste into Bolt with screenshots attached, hero scaffold in 90 seconds. 3 to 5 follow-up Bolt prompts max for the rest of the page. The rest is direct code edits per [vibecoding workflow](/docs/vibecoding/workflow). Live URL in #launches by Friday night, token budget under 200K.
+One Claude Project chat session, 5 to 6 turns, final assembled Bolt prompt in one code block. Paste into Bolt with screenshots and hero image attached, hero scaffold in 90 seconds. 5 to 8 follow-up Bolt prompts max for the rest of the page (one per section, plus a few tweaks). The rest is direct edits in `index.html`. Live URL on `.bolt.host` by Friday night, token budget under 200K of the 300K daily cap.
 
 ## What bad looks like
 
-Skipping the synthesizer chat and trying to fill the Bolt template by hand. You miss a placeholder, paste broken syntax, Bolt scaffolds something off, and you spend 30 prompts trying to fix what should have been one prompt.
+Skipping the synthesizer and trying to fill the Bolt template by hand. Or letting Bolt default to Next.js + Tailwind scaffold ignoring the single-file constraint. Or skipping Plan mode and letting Bolt scaffold the wrong thing on first prompt. All three burn the daily cap before the page is live.
 
-Or showing up to the synthesizer with no style spec, no Tally form, no cleaned copy. The chat ends in turn 1 telling you to do upstream work first. Bring the prereqs, then run this.
+If you ever see Bolt's plan mention `tailwind.config.ts`, `app/layout.tsx`, `globals.css`, `package.json`, or `node_modules`, STOP. Tell Bolt: "Single index.html only, Tailwind via CDN script tag, no separate config files. Rewrite the plan." Catching this in plan mode costs nothing. Catching it after scaffold costs the daily cap.
 
 ## Next
 
