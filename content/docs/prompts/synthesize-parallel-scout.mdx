@@ -17,36 +17,35 @@ description: Execution. Day 1 morning. Gemini free. Step 4 of Recipe 4.
 
 ## Why this works
 
-You ran 3 scouts in parallel (Perplexity, Grok, Gemini) and you have 3 raw outputs sitting in 3 tabs. This prompt collapses them into one 500-word brief you upload to your Claude Project as `research-brief.md`. Forcing the synthesis to surface contradictions across the 3 sources is the whole point. Averaging the 3 outputs is what loses the signal. Disagreement is where weak claims expose themselves.
+You ran 3 scouts in parallel (Perplexity, Grok, Gemini) and now have 3 raw outputs. This prompt collapses them into one 500-word brief you upload to your Claude Project as `research-brief.md`. Forcing the synthesis to surface contradictions across the 3 sources is the whole point. Averaging the 3 outputs is what loses the signal. Disagreement is where weak claims expose themselves.
+
+## How to feed Gemini the 3 outputs
+
+Two equally good paths. Pick whichever feels faster.
+
+- **Attach a single .md file.** Copy-paste from each scout tab into one `research-dump.md` on your machine, attach to the Gemini chat, run the prompt. Source labels are optional. Gemini reads structure and citation style well enough to keep the 3 sources distinct.
+- **Paste inline.** Paste all 3 outputs directly into the chat under the prompt. Optionally label them with `--- PERPLEXITY ---` / `--- GROK ---` / `--- GEMINI ---` separators to make the contradictions step easier.
 
 ## Prompt
 
 ```txt
-I ran the same niche scout query through 3 AI tools in parallel (Perplexity, Grok DeepSearch, Gemini). Below are the 3 raw outputs.
+I ran the same niche scout query through 3 AI tools in parallel (Perplexity, Grok DeepSearch, Gemini). The 3 raw outputs are either pasted below or attached as a single research-dump.md. Source labels may or may not be visible inside the dump.
 
-Synthesize them into a single brief I'll upload to my Claude Project as research-brief.md. Output exactly these 3 sections, nothing else:
+Synthesize the 3 outputs into a single brief I'll upload to my Claude Project as research-brief.md. Output exactly these 3 sections, nothing else:
 
-1. COMPETITOR MAP. 5 to 8 entries, deduped across the 3 sources. For each: name, one-line positioning, who they target, one weakness, URL.
+1. COMPETITOR MAP. 5 to 8 entries, deduped across the dump. For each: name, one-line positioning, who they target, one weakness, URL.
 
-2. CONTRADICTIONS. Where do the 3 scouts disagree on facts, who's a real player, or what counts as a gap? Quote the disagreement directly. Don't smooth it over. If they all agree, say "no contradictions found" and move on.
+2. CONTRADICTIONS. Where does the dump contain conflicting claims about facts, real players, or what counts as a gap? Quote the disagreement directly. Don't smooth it over. If everything is consistent, say "no contradictions found" and move on.
 
-3. GAPS I COULD WIN. The 1 to 2 gaps in this market I could actually win as a first-time builder shipping in 3 days. For each: one sentence on the gap, evidence from at least 2 of the 3 scouts that supports it.
+3. GAPS I COULD WIN. The 1 to 2 gaps in this market I could actually win as a first-time builder shipping in 3 days. For each: one sentence on the gap, evidence from at least 2 distinct passages of the dump that supports it.
 
 Rules:
 - Keep the entire brief under 500 words.
 - No introduction, no closing, no sign-off. Plain markdown headings only.
-- If a scout output is missing or empty, ignore that source and proceed with the others.
+- If a section of the dump is empty or missing, ignore it and proceed with the others.
+- Treat distinct formatting or citation styles in the dump as a hint that the passages came from different scouts, even when source labels are missing.
 
-Here are the 3 scouts:
-
---- PERPLEXITY ---
-[PASTE PERPLEXITY OUTPUT]
-
---- GROK ---
-[PASTE GROK OUTPUT]
-
---- GEMINI ---
-[PASTE GEMINI OUTPUT]
+[ATTACH research-dump.md OR PASTE 3 SCOUT OUTPUTS BELOW]
 ```
 
 After Gemini outputs the brief, save the response as `research-brief.md` and upload it to your Claude Project knowledge (Files +). Every downstream prompt (the 4-box, landing-page spec, room scout) reads from this file.
