@@ -20,34 +20,42 @@ End to end, from finished spec to live URL. Roughly 60 to 90 min on Day 1 PM if 
 
 Open these in tabs.
 
-1. Your finished landing-page spec from [Prompt 4](/docs/prompts/landing-page-spec). Section 7 visual direction included.
-2. Your `4-box.md`, `customer.md`, `one-liner.md` from your Claude Project, in case Bolt needs more context.
+1. The assembled Bolt prompt from [Prompt 17](/docs/prompts/bolt-build) (one code block Claude synthesized in your Project chat).
+2. Your folder with 3 reference screenshots from Prompt 16 + your hero image file from Prompt 18 if you generated one.
 3. [bolt.new](https://bolt.new), signed in.
-4. Free Claude or ChatGPT in another tab for thinking and planning prompts that don't burn Bolt tokens.
+4. Your Claude Project tab kept open so you can feed it back follow-up section prompts without burning Bolt tokens on planning.
 
-## The 5-step sequence
+## The 6-step sequence
 
-### 1. First prompt. Paste the entire spec.
+### 1. Pre-build setup. Design System + Plan mode + attach files.
 
-One message. The whole spec from Prompt 4. Don't summarize, don't paraphrase. Bolt scaffolds the page based on what you give it, so give it everything.
+On the [bolt.new](https://bolt.new) homepage, pick a Design System from the dropdown. Default is Shadcn for most shapes (waitlist, demo, e-com, newsletter, 1:1). See [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build) for the per-shape map.
 
-Add at the top of the spec: "Build this as a single-page Next.js + Tailwind app. Mobile-responsive. Deploy-ready." Without this, Bolt may pick a heavier stack.
+Turn on Plan mode using the toggle next to the Build now button. Plan mode makes Bolt write the build plan first that you review and edit before code generates. Cheapest place to catch bad assumptions.
 
-### 2. Review the scaffold
+Click the paperclip and attach your 3 reference screenshots from Prompt 16, plus your hero image file from Prompt 18 if you have one (10MB per file).
+
+### 2. First prompt. Paste the assembled prompt from Prompt 17.
+
+One message. The full assembled prompt that Claude synthesized in [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build). Don't summarize, don't paraphrase, don't fill in placeholders by hand. Claude already did that.
+
+Bolt writes the plan in 30 to 60 seconds. Review it. Fix anything off (wrong stack, missed CTA wiring, no mobile, imagined extra sections) directly in the plan. Then click Build.
+
+### 3. Review the scaffold
 
 You'll get a working page in 60 to 90 seconds. Don't prompt yet. Read it. Click around. Check what's actually wrong vs. what just needs a tweak.
 
-### 3. Tweak via code edits, not prompts
+### 4. Tweak via code edits, not prompts
 
 For copy edits, hero image swaps, color tweaks, padding changes: open the file, edit the line, save. Zero tokens.
 
 For one-line code changes (rename a variable, change a className): same. Edit directly.
 
-### 4. Re-prompt only for restructures
+### 5. Re-prompt only for restructures
 
 If you need a new section, a different layout, or a feature that touches multiple files, prompt Bolt. One change per prompt. Use the keep / change / add pattern from [Principle 6](/docs/vibecoding/principles).
 
-### 5. Publish
+### 6. Publish
 
 Bolt's Publish button is one click. Your URL ends in `.bolt.host` (or you can connect a custom domain on a paid plan). For free tier, the bolt.host subdomain is fine for the weekend launch.
 

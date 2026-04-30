@@ -36,7 +36,7 @@ Five things ready in your Project knowledge or available to paste:
 
 3. CTA destination set up. [Tally form](https://tally.so) for waitlist, [Cal.com](https://cal.com) for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto: for 1:1. You need the actual URL or email.
 
-4. Hero image plan decided. Either a URL from [Gemini Nano Banana](https://gemini.google.com) or [gpt-image-2](https://chatgpt.com), or "use a placeholder for now", or "type-only, no image."
+4. Hero image plan decided. Either an image file saved to disk (from [Gemini Nano Banana](https://gemini.google.com), [gpt-image-2](https://chatgpt.com), or [Unsplash](https://unsplash.com) download), or "use a placeholder for now", or "type-only, no image". You'll attach the file to Bolt alongside the 3 reference screenshots.
 
 5. The 3 reference screenshots from Prompt 16 saved to a folder you can find. You'll attach them to Bolt after Claude assembles the prompt.
 
@@ -55,8 +55,8 @@ Walk me through these inputs one at a time, in order. Don't ask all at once. Pul
 2. Cleaned hero copy from Prompt 9: headline, subhead, CTA button text
 3. Style spec from Prompt 16: palette hex codes, type pairing, radius, shadow, spacing, vibe keyword, 3 mood adjectives
 4. CTA destination URL: Tally form for waitlist, Cal.com link for demo, Stripe Payment Link for e-com, mailto: for 1:1
-5. Hero image plan: paste a URL from Gemini Nano Banana or gpt-image-2 or Unsplash, OR say "placeholder", OR say "no image"
-6. Confirm I have 3 reference screenshots saved to a folder ready to attach to Bolt
+5. Hero image plan: confirm I have a hero image file saved to disk (from Gemini Nano Banana, gpt-image-2, Unsplash, or my own), OR say "placeholder", OR say "no image". The file attaches to Bolt directly, no URL needed.
+6. Confirm I have the 3 reference screenshots saved to a folder ready to attach to Bolt alongside the hero image file
 
 If I'm missing a prereq (no style spec because I haven't run Prompt 16, no CTA URL because I haven't set up Tally, no headline because Prompt 9 isn't done), STOP. Tell me which Spellbook prompt or tool I need to complete first. Don't fabricate values, don't move on without them.
 
@@ -64,7 +64,7 @@ When you have all six, output the final Bolt build prompt as ONE code block I ca
 
 ---
 
-[I will attach 3 reference screenshots via the paperclip in Bolt]
+[I will attach 3 reference screenshots via the paperclip in Bolt, plus the hero image file if I have one]
 
 Build the HERO SECTION ONLY of a single-page landing page for [PROJECT NAME] as a Next.js + Tailwind app. Mobile-first, deploy-ready. Don't build the rest of the page yet, I'll add sections one at a time after I approve the hero.
 
@@ -88,7 +88,7 @@ CTA button text: [CTA text]
 CTA destination: button posts to [URL or mailto:]
 
 Hero image
-[Write the founder's choice as ONE line: a URL line, OR a placeholder line, OR a "type-only hero with strong color block on the right 30%" line. Delete the other options.]
+[Write the founder's choice as ONE line. If file: "I've attached the hero image file via the paperclip alongside the 3 reference screenshots. Use it as the hero, full-bleed or right-aligned per the vibe." If placeholder: "Use a placeholder.com gradient sized 1600x900 for the hero, I'll swap later." If no image: "No image. Type-only hero with a strong color block on the right 30%."]
 
 Constraints
 - No corporate stock photo people
@@ -106,11 +106,38 @@ Voice rules for the assembled prompt: don't add anything that's not in my Projec
 
 ## After Claude outputs the Bolt prompt
 
-1. Open [bolt.new](https://bolt.new). Pick a pre-loaded Design System on the homepage card before you start (free tier supports the pre-loaded ones, custom design systems need Team plan).
-2. Click the paperclip and attach your 3 reference screenshots (10MB limit, free tier).
-3. Paste Claude's assembled prompt as your first message.
-4. Wait 60 to 90 seconds for the hero scaffold.
-5. Don't prompt yet. Read it, click around, decide what's actually wrong vs what just needs a tweak.
+The Bolt-side flow has three pre-build choices that matter: pick the Design System, turn on Plan mode, attach files. Then paste.
+
+### Pick the Design System
+
+On the [bolt.new](https://bolt.new) homepage, there's a Design System dropdown below the prompt input. The pre-loaded options are free. Custom systems need Team plan ($149/mo).
+
+For most LaunchLab shapes, default to Shadcn. It's the indie standard, Tailwind-based, and the easiest to override with the palette and type from your style spec. Pick something else only if your shape clearly fits.
+
+- Shadcn (default for most). Waitlist, demo, e-com, newsletter, 1:1 bespoke.
+- Material UI. B2B SaaS dashboard-heavy products.
+- Washington Post. Editorial, news, typography-first newsletters.
+- AWS Cloudscape. Enterprise, data-heavy products.
+- Porsche. Luxury or design-forward consumer brands.
+- Chakra. Accessible, friendly dashboards (less common for landing).
+
+If in doubt, pick Shadcn. Your vibe keyword and style spec do the heavy lifting on top.
+
+### Turn on Plan mode
+
+Click the Plan toggle in the prompt toolbar (next to the Build now button). Plan mode makes Bolt write a build plan first that you review and edit before any code generates. Always plan before build.
+
+The cheapest place to catch a bad assumption (wrong stack, missed CTA wiring, no mobile, an imagined extra section) is in the plan, not after Bolt has scaffolded the wrong thing and burned 10K tokens. Read the plan once, edit if needed, then click Build.
+
+### Attach files
+
+Click the paperclip icon. Attach the 3 reference screenshots from Prompt 16, plus your hero image file from Prompt 18 if you generated one. 10MB per file, free tier.
+
+### Paste and run
+
+Paste Claude's assembled prompt as your first message. Bolt writes the plan, you review and edit, then click Build. Wait 60 to 90 seconds for the hero scaffold.
+
+Don't prompt yet after the scaffold appears. Read it, click around, decide what's actually wrong vs what just needs a tweak.
 
 For copy edits, color tweaks, padding, hero image swaps: open the file, edit the line, save. Zero tokens.
 
@@ -120,7 +147,7 @@ Full vibecoding loop and the keep / change / add pattern: [vibecoding workflow](
 
 ## Need a hero image first?
 
-Use [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) to synthesize the image-gen prompt in Claude (same pattern as this one), then paste into Gemini Nano Banana, gpt-image-2, or Ideogram. Save the URL, drop it in when this synthesizer asks for input 5.
+Use [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) to synthesize the image-gen prompt in Claude (same pattern as this one), then paste into Gemini Nano Banana, gpt-image-2, or Ideogram. Download the image file to disk, mention it when this synthesizer asks for input 5. You'll attach the file to Bolt directly alongside the 3 reference screenshots.
 
 ## What good looks like
 
