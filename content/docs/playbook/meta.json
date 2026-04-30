@@ -1,0 +1,5 @@
+{
+  "title": "Playbooks",
+  "icon": "ScrollText",
+  "pages": ["distribution", "build-paths"]
+}
