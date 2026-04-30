@@ -1,5 +1,5 @@
 {
   "title": "Claude Project",
   "icon": "Crown",
-  "pages": ["index", "setup", "core-files"]
+  "pages": ["index", "setup"]
 }
