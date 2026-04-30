@@ -17,7 +17,7 @@ description: Distribution day. Get the page in front of strangers.
   <p className="mt-1 text-sm text-fd-muted-foreground">All 42 tactics with play-by-play, mapped to your business type.</p>
 </a>
 
-Yesterday you shipped. Today you distribute. Three jobs. Find your rooms and post, make and ship content, read signal and iterate.
+Yesterday you shipped. Today you distribute. Three jobs. Push it out, make and ship content, read signal and iterate.
 
 <blockquote className="my-4 border-l-4 border-amber-500 bg-amber-500/5 px-4 py-3 italic">
   Posted to 2 to 3 rooms, 3 to 5 short pieces of content shipped, one signal in hand to act on tomorrow.
@@ -32,19 +32,22 @@ Yesterday you shipped. Today you distribute. Three jobs. Find your rooms and pos
 </div>
 
 <div className="my-6">
-  <PersistentCheckbox id="day-2-distribute" label="1. Find your rooms and post" />
+  <PersistentCheckbox id="day-2-distribute" label="1. Push it out (warm network + public rooms)" />
   <div className="mt-2 grid gap-2 pl-6">
     <div className="flex items-stretch gap-2">
       <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-distribution-map" label="List 5 to 7 specific rooms where your customer hangs out (subreddits, FB groups, Discord servers, WhatsApp Communities)" /></div>
       <a href="/docs/prompts/where-customer-lives" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 10</a>
     </div>
-    <PersistentCheckbox id="day-2-circle-sent" label="Send Circle of 20 to your 20 names from yesterday" />
     <div className="flex items-stretch gap-2">
-      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-broadcast" label="Send first broadcast to your warm list" /></div>
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-circle-sent" label="DM each of your 20 names from yesterday with a personal 2-sentence ask (the Circle of 20)" /></div>
+      <a href="/docs/playbook/distribution#25-circle-of-20" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Tactic 25</a>
+    </div>
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-broadcast" label="Send first SMS + email to anyone who signed up on the page yesterday (skip if you have zero signups; do Circle of 20 first)" /></div>
       <a href="/docs/prompts/first-broadcast" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 7</a>
     </div>
     <div className="flex items-stretch gap-2">
-      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-community-post" label="Post community post live in 2 to 3 rooms" /></div>
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-community-post" label="Post in 2 to 3 specific rooms (one post per room, each tailored to the room's tone)" /></div>
       <a href="/docs/prompts/first-community-post" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 11</a>
     </div>
   </div>
@@ -73,8 +76,11 @@ Yesterday you shipped. Today you distribute. Three jobs. Find your rooms and pos
 <div className="my-6">
   <PersistentCheckbox id="day-2-read-iterate" label="3. Read signal and iterate" />
   <div className="mt-2 grid gap-2 pl-6">
-    <PersistentCheckbox id="day-2-peer-boost" label="Set 3 Cross-Cohort Peer Boost swaps with cohort peers" />
-    <PersistentCheckbox id="day-2-signal-logged" label="Log signal, one sentence per room" />
+    <div className="flex items-stretch gap-2">
+      <div className="min-w-0 flex-1"><PersistentCheckbox id="day-2-peer-boost" label="Trade 3 boost-swaps with cohort peers (each of you posts the other's link to your audience)" /></div>
+      <a href="/docs/playbook/distribution#26-cross-cohort-peer-boost" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Tactic 26</a>
+    </div>
+    <PersistentCheckbox id="day-2-signal-logged" label="Log what happened in each room (one sentence per room: clicks, comments, replies, or crickets)" />
     <PersistentCheckbox id="day-2-iteration" label="Run one iteration (sharper hook or different room)" />
   </div>
 </div>
