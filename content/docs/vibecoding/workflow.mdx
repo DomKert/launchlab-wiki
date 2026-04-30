@@ -33,7 +33,9 @@ Skip the Design System dropdown on the bolt.new homepage. Those are Next.js comp
 
 Skip Plan mode too. Bolt's docs flag Plan mode as a token-saver for complex builds, but for single-file static HTML it's the opposite. Bolt auto-scaffolds a Vite template the moment you arrive at bolt.new, and Plan mode reads that whole Vite tree as context before generating the plan. A single Plan generation can burn 250K+ of the 300K daily cap before any code is built. The assembled prompt from [Prompt 17](/docs/prompts/bolt-build) already contains the plan; Plan mode just adds an expensive turn that re-ingests the scaffold.
 
-Click the paperclip and attach only your hero image file from Prompt 18, if you generated one (10MB limit, free tier). Don't attach the 3 reference screenshots; the style spec in Prompt 17 already captures the visual direction and image attachments cost tokens on every Bolt message.
+Click the paperclip and attach your hero image file from Prompt 18, if you generated one (10MB limit, free tier). The hero image becomes content embedded in the HTML, so it earns its keep in Bolt.
+
+Reference screenshots are different. Bolt re-charges input tokens for attached images on every follow-up message, so a reference screenshot drains the 300K daily cap fast across 10+ iterations. If you want heavy reference-screenshot use, switch to Path A (free ChatGPT, no per-message image cost). For Path C, attach a reference to your FIRST build message only or rely on the vibe vocab fallback.
 
 ### 2. First prompt. Paste the assembled prompt from Prompt 17, click Build.
 
@@ -109,7 +111,5 @@ $20/month for 33x more tokens. One month covers a full sprint with room to itera
 ## Next
 
 If you hit a wall, see [When stuck](/docs/vibecoding/when-stuck).
-
-If your shape needs more than landing plus waitlist (preorders, checkout, SaaS signup), see [Beyond the landing page](/docs/vibecoding/beyond-landing).
 
 If you're rolling, keep going. Day 1 ends with a live URL.

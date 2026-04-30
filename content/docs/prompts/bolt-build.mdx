@@ -28,32 +28,69 @@ description: Execution. Day 1 PM. Run in Claude Project. Synthesizes a build-too
 
 The build prompt has a lot of moving parts: project name, all section copy, vibe keyword, mood, type, CTA destination, hero image plan. Filling it into a static template by hand means missing something.
 
-Claude reads your Project knowledge (4-box, customer, one-liner, OMTM, plus bolt-copy.md and style-spec.md if saved) and walks you through the missing pieces one at a time. If you're missing a prereq (no style spec, no Tally form, no cleaned copy), Claude stops and routes you back. Then it outputs the final build prompt as one code block.
+Claude reads your Project knowledge (4-box, customer, one-liner, OMTM, plus bolt-copy.md if saved) and walks you through the missing pieces one at a time. Style direction (vibe keyword + mood + Google Fonts pairing) gets picked inside this chat from the reference vocab below. If you're missing a prereq (no Tally form, no cleaned copy), Claude stops and routes you back. Then it outputs the final build prompt as one code block.
 
 This runs in Claude Project. The OUTPUT goes to ChatGPT (Path A) or Bolt (Path C).
 
 ## Before you run this
 
-Five things ready in your Project knowledge or available to paste:
+Three things ready in your Project knowledge or available to paste:
 
 1. Cleaned section-by-section copy from [Prompt 4](/docs/prompts/landing-page-spec) → [Prompt 9](/docs/prompts/strip-ai-smell). Save as `bolt-copy.md` in Project knowledge or be ready to paste. ALL sections of the page (hero + each subsequent section per OMTM shape), not just hero.
 
-2. Style spec from [Prompt 16](/docs/prompts/visual-direction). Save as `style-spec.md`. The simplified spec is just vibe keyword + 3 mood adjectives + Google Fonts pairing. No palette hex codes (we dropped that since it produces muddy output).
+2. CTA destination set up. [Tally form](https://tally.so) URL for waitlist, [Cal.com](https://cal.com) URL for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto: for 1:1.
 
-3. CTA destination set up. [Tally form](https://tally.so) URL for waitlist, [Cal.com](https://cal.com) URL for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto: for 1:1.
+3. Hero image plan decided. Either an image file saved to disk (from [Prompt 18](/docs/prompts/hero-image-prompt) → [Gemini Nano Banana](https://gemini.google.com), [gpt-image-2](https://chatgpt.com), or [Unsplash](https://unsplash.com) download), or "use a placeholder for now", or "no image, type-only".
 
-4. Hero image plan decided. Either an image file saved to disk (from [Gemini Nano Banana](https://gemini.google.com), [gpt-image-2](https://chatgpt.com), or [Unsplash](https://unsplash.com) download), or "use a placeholder for now", or "no image, type-only".
+If any of these are missing, Claude will stop and tell you which to do first.
 
-5. (Optional, fallback only) The 3 reference screenshots from Prompt 16 saved in a folder. Won't get attached to the build tool by default; vibe keyword in input 2 is the compressed version.
+## Pick your style direction
 
-If any of inputs 1 to 4 are missing, Claude will stop and tell you which to do first.
+Two ways. Reference screenshot is the strong path. Vibe vocab is the fallback if you can't find a reference page.
+
+### Primary path. Pick a reference page
+
+1. Browse [saaslandingpage.com](https://saaslandingpage.com), [lapa.ninja](https://lapa.ninja), or [landingfolio.com](https://landingfolio.com/inspiration/landing-page/saas). Find one page whose feel you'd be happy with for your own page.
+2. Open the page in Chrome. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows) inside Chrome DevTools (open with `Cmd+Option+I`). Type "screenshot". Two useful commands appear:
+   - "Capture full size screenshot" gives you the whole page.
+   - "Capture node screenshot" gives you just the element you have selected in the inspector. Use this for hero-only.
+3. Save the PNG. You'll attach it to ChatGPT later, alongside the master prompt.
+
+This is stronger than any text description because words like "minimalist" or "warm" mean different things to different ChatGPT runs. A specific screenshot can't be misinterpreted. Realistic output is a 70 to 80 percent replica of the visual feel, then chat iteration closes the rest.
+
+If you want stronger signal, capture two screenshots: one of the hero section, one of a content section that shows their type rhythm and decorative moves (rules, drop caps, bullet styling). Don't go past two; ChatGPT processes single sections more accurately than tall full-page images.
+
+### Fallback. Vibe vocab + mood + fonts
+
+If you can't find a reference page you like, give Claude these three picks instead and skip the screenshot.
+
+#### Vibe keyword (pick ONE based on your shape)
+
+- Waitlist → `brutalism` or `hyper-minimalism`
+- Demo or B2B → `glassmorphism` or `material-design`
+- E-com → `editorial` or `maximalism`
+- Newsletter → `editorial` or `hyper-minimalism`
+- SaaS-trial → `glassmorphism` or `material-design`
+- 1:1-bespoke → `hyper-minimalism` or `editorial`
+
+#### Mood adjectives (pick 3)
+
+warm, refined, calm, raw, technical, editorial, austere, considered, weighty, soft, sharp, lush, urgent, playful, confident, premium, rebellious, quiet, generous, energetic.
+
+#### Google Fonts pairing (pick ONE)
+
+1. `Inter` (UI) plus `Spectral` (display). Modern editorial.
+2. `Manrope` (UI) plus `Fraunces` (display). Warm refined.
+3. `DM Sans` (UI) plus `DM Serif Display` (display). Clean classic.
+4. `Inter` (UI) plus `Instrument Serif` (display). Editorial luxe.
+5. `Space Grotesk` (UI) plus `JetBrains Mono` (mono). Brutalist tech.
 
 ## Prompt
 
 Run this in your Claude Project chat. Claude walks you through 5 inputs one at a time, then outputs the final build prompt as one code block.
 
 ```txt
-I'm ready to build my landing page. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus bolt-copy.md and style-spec.md if I've saved them) and synthesize the single build prompt I'll paste as the first message in either ChatGPT (Path A, default) or Bolt (Path C).
+I'm ready to build my landing page. Read my Project knowledge (4-box.md, customer.md, one-liner.md, OMTM, plus bolt-copy.md if I've saved it) and synthesize the single build prompt I'll paste as the first message in either ChatGPT (Path A, default) or Bolt (Path C).
 
 The prompt MUST do three things to survive free tier limits and produce clean output:
 1. Ask for a single-file static HTML landing page (one index.html only, Tailwind via CDN script tag in the head, Google Fonts via link tag, custom CSS in a style block, no Next.js, no Vite, no framework, no separate config files)
@@ -64,11 +101,11 @@ Walk me through these inputs one at a time, in order. Don't ask all at once. Pul
 
 1. Project name (the brand or product name as it appears on the site)
 2. Cleaned section-by-section copy from Prompt 9 (ALL sections, not just hero): hero headline + subhead + CTA, plus every subsequent section's content per the OMTM shape (problem block, what-you-offer, social proof slot, final CTA, etc.)
-3. Style spec from Prompt 16: vibe keyword + 3 mood adjectives + Google Fonts pairing. NO palette hex codes (the build tool picks its own).
+3. Style direction. First ask: do I have a reference screenshot from a landing page whose feel I want to match? If YES, the assembled build prompt should say at the top "I'm attaching a reference screenshot from a landing page whose feel I want to match. Use it as the visual reference for layout, typography, color, spacing, and decorative moves. Don't try to clone it pixel-for-pixel. Match its aesthetic and apply my copy." If NO reference, ask me for: ONE vibe keyword (brutalism / hyper-minimalism / glassmorphism / material-design / editorial / maximalism, pick based on shape where waitlist favours brutalism or hyper-minimalism, demo or B2B favours glassmorphism or material-design, e-com favours editorial or maximalism, 1:1 favours hyper-minimalism or editorial), 3 mood adjectives from this bank (warm, refined, calm, raw, technical, editorial, austere, considered, weighty, soft, sharp, lush, urgent, playful, confident, premium, rebellious, quiet, generous, energetic), and ONE Google Fonts pairing from these five (Inter + Spectral, Manrope + Fraunces, DM Sans + DM Serif Display, Inter + Instrument Serif, Space Grotesk + JetBrains Mono). Help me pick if I'm stuck. NO palette hex codes (the build tool picks its own).
 4. CTA destination URL: Tally form for waitlist, Cal.com link for demo, Stripe Payment Link for e-com, mailto: for 1:1
 5. Hero image plan: confirm I have a hero image file saved to disk, OR say "placeholder", OR say "no image"
 
-If I'm missing a prereq (no style spec, no CTA URL, no cleaned copy), STOP. Tell me which Spellbook prompt or tool I need to complete first. Don't fabricate values.
+If I'm missing a prereq (no CTA URL, no cleaned copy), STOP. Tell me which Spellbook prompt or tool I need to complete first. Don't fabricate values.
 
 When you have all five, output the final build prompt as ONE code block I can copy and paste. Use this exact structure with my values substituted:
 
@@ -80,10 +117,12 @@ FIRST INSTRUCTION (token discipline, applies if you scaffold by default): This p
 
 Build the FULL landing page for [PROJECT NAME] inside that single index.html. Mobile-first. Tailwind via CDN script tag in the head, Google Fonts via link tag in the head, custom CSS in one style block in the head. Build all sections in one go.
 
-Style direction (light spec, let your defaults breathe)
-Vibe keyword: [vibe keyword from style spec]
-Mood: [3 mood adjectives from style spec]
-Type: headlines in [Google Font from spec], body in [Google Font from spec]. [one sentence on weight and contrast from spec]
+Style direction
+[If founder is attaching a reference screenshot, output ONLY this line: "I'm attaching a reference screenshot from a landing page whose feel I want to match. Use it as the visual reference for layout, typography, color, spacing, and decorative moves. Don't clone pixel-for-pixel. Match the aesthetic and apply my copy below."]
+[If founder picked vocab fallback, output these three lines instead:]
+Vibe keyword: [vibe keyword the founder picked]
+Mood: [3 mood adjectives the founder picked]
+Type: headlines in [Google Font from the founder's pairing], body in [Google Font from the founder's pairing]. Treat the display font as the headline workhorse; weight contrast between display and UI font carries the vibe.
 
 Pick a palette and detailed type sizing that match the vibe keyword and mood. Default to a clean off-white or warm cream background with high-contrast charcoal or near-black type. Use ONE accent color for the primary CTA only. No saturated full-page background colors. No alternating section backgrounds. Generous whitespace, type-driven layout.
 
@@ -127,14 +166,16 @@ Voice rules for the assembled prompt: don't add anything that's not in my Projec
 
 Best for most students. Better output than Bolt for static landing pages, zero token cliff.
 
-1. Open [free ChatGPT](https://chatgpt.com). Paste Claude's assembled prompt as a single message.
-2. ChatGPT outputs the full HTML in a code block (60 to 90 seconds). Click the copy button at the top of the code block.
-3. Save the HTML locally as `index.html` in any folder. Use any text editor (TextEdit on Mac, Notepad on Windows, or [VS Code free](https://code.visualstudio.com/)).
-4. If you have a hero image file from Prompt 18, save it in the SAME folder as `index.html` and reference it in the HTML as `<img src="hero.jpg">` (or whatever you named it). Edit the HTML to point at the local filename if ChatGPT used a placeholder.
-5. Sign up for a free [Netlify](https://app.netlify.com/signup) account. Drag your folder onto [app.netlify.com/drop](https://app.netlify.com/drop). Free, instant URL, signing up means the deploy persists. Without an account, anonymous Netlify Drop URLs disappear after a few hours.
-6. To iterate: edit `index.html` in your text editor (or paste the current HTML into a fresh ChatGPT chat with "change X please"), drag onto Netlify Drop again to deploy a fresh version.
+1. Open [free ChatGPT](https://chatgpt.com). Paste Claude's assembled prompt as a single message. If you picked the reference-screenshot path under style direction, attach your reference PNG to that same message via the paperclip icon. ChatGPT outputs the full HTML in a code block (60 to 90 seconds).
+2. Make a folder on your desktop (e.g. `my-landing/`). This whole folder is what deploys to Netlify in one drag, so anything inside it (HTML, image) will be live.
+3. Copy the HTML from ChatGPT's code block. Save it inside your folder as `index.html`. Any text editor works ([VS Code free](https://code.visualstudio.com/) is the easiest, TextEdit on Mac and Notepad on Windows also work).
+4. If you have a hero image file from [Prompt 18](/docs/prompts/hero-image-prompt), drop it into the same folder next to `index.html`. Then in the SAME ChatGPT chat where you got the HTML, say: "I saved the hero image as `hero.jpg` in the same folder. Update the `<img src=...>` to match." ChatGPT outputs the patched HTML. Copy it and overwrite `index.html`. No text editor needed for this step.
+5. Sign up for a free [Netlify](https://app.netlify.com/signup) account. Drag your folder onto [app.netlify.com/drop](https://app.netlify.com/drop). The whole folder deploys, image included. You get a live URL like `https://your-site-abc123.netlify.app`. Without a Netlify account, anonymous Drop URLs disappear after a few hours; signing up locks the URL.
+6. Rename the auto-generated subdomain so the URL doesn't look random. In your Netlify dashboard, open the site, go to Site settings → General → Change site name, set it to your brand (e.g. `back-room`). The URL becomes `back-room.netlify.app`. Free, 30 seconds, no extra service.
+7. Make a free [Dub.co](https://dub.co) account and create one short link per distribution channel pointing at your Netlify URL. So `dub.sh/back-room-tw` for Twitter, `dub.sh/back-room-rd` for Reddit, `dub.sh/back-room-dm` for cold DMs, etc. Dub.co free tier gives you 25 short links per month with per-link click analytics, so when traffic comes in you'll know which channel actually drove it. This is your OMTM tracking, not vanity.
+8. To iterate: paste the current HTML back into the ChatGPT chat with "change X", get patched HTML back, save over `index.html`, drag the folder onto Netlify Drop again. Each drag deploys a fresh version.
 
-Trade-off: no live preview while editing, no AI iteration UI in the same place. But for a static landing page where the spec is locked, ChatGPT generates working HTML first try in 99% of cases. Most iteration is small text/color tweaks anyway.
+Trade-off: no live preview while editing, no AI iteration UI in the same place. But for a static landing page where the spec is locked, ChatGPT generates working HTML first try in 99% of cases. Most iteration is small text or color tweaks anyway.
 
 ## Path C. Bolt (advanced, only if you want the AI iteration loop)
 
@@ -150,11 +191,16 @@ Click **Build now** directly. Don't toggle Plan.
 
 Those are Next.js component libraries (Shadcn, Material UI, etc.) and we're asking for single static HTML. Picking one wastes the slot.
 
-### Attach the hero image only
+### Attachments in Path C
 
 Click the paperclip icon and attach your hero image file from Prompt 18 if you generated one (10MB limit, free tier). That's the only image that needs to be in Bolt because it becomes content embedded in the HTML.
 
-Don't attach the 3 reference screenshots from Prompt 16. They cost input tokens on every message and the vibe keyword already captures the visual direction.
+Reference screenshots are a different story in Bolt. Bolt re-charges input tokens for attached images on EVERY follow-up message you send, not just the first one. Across 10 to 20 iterations that drains the 300K daily cap fast. Two options if you have a reference screenshot:
+
+- Attach it to your FIRST build message only, then iterate without it. Works if you keep iterations under 10.
+- Skip the screenshot and use the vibe vocab fallback for Path C.
+
+If you want heavy reference-screenshot use, switch to Path A. Free ChatGPT has no equivalent per-message image cost.
 
 ### Paste and run
 
@@ -174,17 +220,17 @@ Use [Prompt 18 Hero image prompt](/docs/prompts/hero-image-prompt) to synthesize
 
 One Claude Project chat session, 5 turns, final assembled build prompt in one code block.
 
-Path A: paste into free ChatGPT, get HTML, save to disk, drag to Netlify Drop (with free account so it persists). Live URL in under 10 minutes, zero token cost. Iteration via text editor + redeploy.
+Path A: paste into free ChatGPT, get HTML, save to disk, drag to Netlify Drop with a free account so it persists, rename the subdomain to your brand, create per-channel Dub.co tracking links. Live URL in under 10 minutes, zero token cost. Iteration via the same ChatGPT chat plus redeploy.
 
 Path C: paste into Bolt with hero image attached, Build directly (no Plan mode), full landing page in 60 to 120 seconds, file sidebar shows only index.html. Direct edits in `index.html` for refinement. Token budget under 100K of 300K daily cap.
 
 ## What bad looks like
 
-Path A: signing up for Netlify but forgetting to claim the deploy site, so the URL expires. Or trying to edit the HTML in a chat instead of a text editor and getting confused.
+Path A: dragging the folder onto Netlify Drop without signing up, so the URL expires after a few hours. Or shipping with the auto-generated `your-site-abc123.netlify.app` URL because you didn't rename the subdomain. Or sharing the bare Netlify URL across every channel and not knowing later which post drove the clicks.
 
 Path C: toggling Plan mode on (Plan reads the Vite scaffold = 250K). Letting Bolt scaffold Next.js + config files and re-syncing them on every prompt. Using iframe embeds for forms (Tally embed renders blank too often).
 
-Both paths: providing extracted hex codes from Prompt 16 (we dropped that, it produced muddy palettes). Asking for hero only and burning follow-ups on adding sections.
+Both paths: feeding the AI builder explicit palette hex codes. Vision-extracted palettes consistently produce muddy output because the builder follows the codes literally and loses what makes the reference work. Let the vibe keyword carry the palette decision. Also: asking for hero only and burning follow-ups on adding sections.
 
 ## Next
 

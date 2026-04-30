@@ -1,5 +1,5 @@
 {
   "title": "Vibecoding",
   "icon": "Bot",
-  "pages": ["index", "principles", "cost-spiral", "workflow", "beyond-landing", "when-stuck"]
+  "pages": ["index", "principles", "cost-spiral", "workflow", "when-stuck"]
 }

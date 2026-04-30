@@ -22,39 +22,61 @@ description: Execution. Day 1 PM. Run in Claude Project. Synthesizes an image-ge
 
 ## Why this works
 
-Image-gen prompts have a lot of moving parts (mood, palette, photo style, composition, subject, what to avoid) and most of those values are already in your style spec from [Prompt 16](/docs/prompts/visual-direction). Filling them in by hand means risking a mismatch with the rest of your visual direction.
+Image-gen prompts have a lot of moving parts (mood, palette, photo style, composition, subject, what to avoid) and getting any of them wrong produces SaaS-marketing slop (laptops, abstract gradients with floating UI cards, people pointing at screens). Filling the prompt by hand means risking a mismatch.
 
-Claude reads your Project knowledge, pulls mood / palette / style from `style-spec.md`, asks for the missing pieces (niche framing, subject choice, composition tweaks), then outputs the image-gen prompt as one code block. It also tells you which image tool to paste it into based on whether you need text in the image or just the hero shot.
+Claude walks you through the inputs one at a time using the picker vocab below, asks for the niche-specific pieces (subject choice, composition tweaks), then outputs the image-gen prompt as one code block. It also tells you which image tool to paste it into based on whether you need text in the image or just the hero shot.
 
 This runs in Claude Project, not Gemini. The OUTPUT goes to the image tool.
 
 ## Before you run this
 
-Two things ready in your Project knowledge or available to paste:
+One thing ready in your Project knowledge or available to paste:
 
-1. Style spec from [Prompt 16](/docs/prompts/visual-direction). Saved as `style-spec.md` in Project knowledge, or be ready to paste the code block.
+1. Your 4-box from [Prompt 2](/docs/prompts/four-box). Already in Project knowledge if you saved it there.
 
-2. Your 4-box from [Prompt 2](/docs/prompts/four-box). Already in Project knowledge if you saved it there.
+Style direction (mood + palette + photo style) gets picked inside this chat from the vocab below. No external style file needed.
 
-If style-spec is missing, Claude will stop and route you to Prompt 16 first.
+## Pick your image direction
+
+Glance at the vocab below before pasting. Claude will ask you to pick during the chat. 30 seconds of skim.
+
+#### Mood adjectives (pick 3)
+
+warm, refined, calm, raw, technical, editorial, austere, considered, weighty, soft, sharp, lush, urgent, playful, confident, premium, rebellious, quiet, generous, energetic.
+
+#### Palette (pick 3 hex codes)
+
+Easiest: pick a reference page, use Chrome DevTools color picker (open DevTools, click any element, color picker icon next to color values) or any web color picker browser extension to grab 3 hex codes from the reference. One background, one ink (text color), one accent.
+
+Or pick from these 5 curated palettes:
+
+1. `#F7F4ED` cream + `#1A1410` charcoal + `#C46A2B` terracotta. Editorial warm.
+2. `#F8F8F6` off-white + `#0F0F0F` near-black + `#2D5BFF` cobalt. Minimalist tech.
+3. `#EFEAE0` bone + `#1A1A1A` ink + `#6F8B6E` sage. Calm refined.
+4. `#0A0A0A` black + `#F2F0EA` warm white + `#C7E04E` chartreuse. Brutalist modern.
+5. `#F1ECDF` cream + `#3B2818` chocolate + `#D4A24A` soft gold. Luxe heritage.
+
+#### Photo style (pick ONE)
+
+`editorial still life`, `lifestyle scene`, `abstract texture`, `product close-up`, or `type-only with color blocks`.
 
 ## Prompt
 
 Run this in your Claude Project chat. Claude walks you through 4 to 6 inputs, then outputs the image-gen prompt as one code block plus a tool recommendation.
 
 ```txt
-I want a hero image for my landing page. Read my Project knowledge (4-box.md, style-spec.md from Prompt 16) and synthesize a single image-generation prompt I'll paste into Gemini Nano Banana or gpt-image-2.
+I want a hero image for my landing page. Read my Project knowledge (4-box.md) and synthesize a single image-generation prompt I'll paste into Gemini Nano Banana or gpt-image-2.
 
 Walk me through these inputs one at a time, in order. Pull from Project knowledge first if the answer is already there.
 
 1. Niche or product framing. One short phrase, e.g. "rare Italian knitwear curation" or "B2B legal AI for solo lawyers". Pull from 4-box if it's there.
-2. Mood. 3 adjectives. Pull from style-spec.
-3. Palette. 3 hex codes. Pull from style-spec.
-4. Photo style. Editorial still life / lifestyle scene / abstract texture / product close-up / type-only with color blocks. Ask if not in style-spec.
+2. Mood. 3 adjectives from this bank: warm, refined, calm, raw, technical, editorial, austere, considered, weighty, soft, sharp, lush, urgent, playful, confident, premium, rebellious, quiet, generous, energetic.
+3. Palette. 3 hex codes (background + ink + accent). Either picked from a reference page using a color picker, or one of the 5 curated palettes (warm editorial / minimalist tech / calm refined / brutalist modern / luxe heritage). Help me pick if I'm stuck.
+4. Photo style. ONE of: editorial still life, lifestyle scene, abstract texture, product close-up, or type-only with color blocks.
 5. Composition. Default is wide aspect (16:9 or 21:9) with 30% negative space on the right for headline overlay. Confirm or override.
 6. Subject. Object-only (no people), one model figure, lifestyle group, or no subject (abstract texture only).
 
-If style-spec is missing, STOP. Tell me to run Prompt 16 first. Don't fabricate a palette or mood.
+If a value is genuinely unclear, ask one focused question per turn. Don't fabricate a palette or mood.
 
 When you have all six, output the final image-gen prompt as ONE code block. Use this exact structure with my values substituted:
 
@@ -88,19 +110,19 @@ Voice rule: don't fabricate niche details, don't guess at palette, don't add sub
 1. Open the recommended tool ([Gemini](https://gemini.google.com), [ChatGPT](https://chatgpt.com), or [Ideogram](https://ideogram.ai)).
 2. Paste the code block.
 3. Generate the image.
-4. If it lands, download the file to disk. Save it next to your 3 reference screenshots.
-5. When you run [Prompt 17 Bolt build](/docs/prompts/bolt-build), tell the synthesizer chat you have a hero image file ready. You'll attach it to Bolt alongside the screenshots, no URL needed.
+4. If it lands, download the file to disk. Save it inside the same folder you'll use for your landing page (so it sits next to `index.html`).
+5. When you run [Prompt 17 Build prompt](/docs/prompts/bolt-build), tell the synthesizer chat you have a hero image file ready. For Path A (ChatGPT), you'll reference it as a relative path in the HTML. For Path C (Bolt), you'll attach it via the paperclip.
 
 If the image misses, change ONE input (subject, composition, or photo style) and re-run. Don't pile new adjectives on. See [Prompting AI tools](/docs/notes/prompting-ai-tools) on what never works.
 
 ## What good looks like
 
-One Claude chat, 4 to 6 turns, image-gen prompt in one code block. One Gemini run, image in hand under 5 minutes. File saved to disk, ready to attach to Bolt in Prompt 17.
+One Claude chat, 4 to 6 turns, image-gen prompt in one code block. One Gemini run, image in hand under 5 minutes. File saved to disk, ready to attach when you run Prompt 17.
 
 ## What bad looks like
 
-Skipping the synthesizer and writing the image prompt by hand, getting a generic stock-photo result, then burning 5 Nano Banana runs trying to fix it with adjective piles. The fix is upstream: tighten the style spec or change the photo-style input, don't pile descriptors.
+Skipping the synthesizer and writing the image prompt by hand, getting a generic stock-photo result, then burning 5 Nano Banana runs trying to fix it with adjective piles. The fix is upstream: change the photo-style input or the subject, don't pile descriptors.
 
 ## Next
 
-Hero image URL in hand, run [Prompt 17 Bolt build](/docs/prompts/bolt-build). Claude will ask for the URL when synthesizing the Bolt prompt.
+Hero image file saved to disk, run [Prompt 17 Build prompt](/docs/prompts/bolt-build). Claude will ask for it when synthesizing the build prompt.
