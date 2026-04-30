@@ -32,9 +32,11 @@ Tell the AI the exact shape of what you want before you tell it what to do. "Out
 
 Lead with what NOT to write. "No corporate verbs, no colons-then-lists, no marketing buzzwords" works harder than "write conversationally". Banning specific words and patterns gives the AI something concrete to filter against. See [Writing that doesn't sound AI](/docs/notes/writing-that-doesnt-sound-AI) for the full ban list.
 
-### 5. Hero-first, sections after
+### 5. Match build scope to file scope
 
-In Bolt and any visual builder, never ask for the whole page in one prompt. Build the hero, approve it, then add ONE section per follow-up referencing the established hero style. The full pattern lives in [Prompt 17 Bolt build](/docs/prompts/bolt-build).
+In multi-file scaffolds (Next.js, full-stack apps, anything where the AI manages a tree of files), build hero-first and add sections one at a time. Whole-page-in-one-prompt produces generic SaaS scaffolds and burns tokens because every follow-up re-reads all files.
+
+In single-file scaffolds (one `index.html`, what [Prompt 17](/docs/prompts/bolt-build) asks for), the rule reverses. Whole-page-in-one-prompt is cheaper because re-sync cost doesn't scale with page length, and one prompt beats five. Then most refinement happens via direct file edits, not re-prompts.
 
 ### 6. One concern per follow-up
 

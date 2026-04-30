@@ -37,23 +37,30 @@ Click the paperclip and attach only your hero image file from Prompt 18, if you 
 
 ### 2. First prompt. Paste the assembled prompt from Prompt 17.
 
-One message. The full assembled prompt that Claude synthesized in [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build). Don't summarize, don't paraphrase, don't fill in placeholders by hand. Claude already did that.
+One message. The full assembled prompt that Claude synthesized in [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build). Don't summarize, don't paraphrase, don't fill in placeholders by hand. Claude already did that. The prompt asks Bolt for the WHOLE page (all sections from your cleaned copy) as one `index.html` file, not hero-only.
 
-Bolt writes the plan in 30 to 60 seconds. Review it. Fix anything off (wrong stack, missed CTA wiring, no mobile, imagined extra sections) directly in the plan. Then click Build.
+Bolt writes the plan in 30 to 60 seconds. Review it. Two checks before clicking Build:
+
+1. Plan says "one HTML file" or "index.html only" and NOT "Next.js project", "Vite app", "tailwind.config.ts", or any separate config files.
+2. Plan covers ALL sections from your cleaned copy, not just the hero.
+
+If either fails, edit the plan inline and tell Bolt: "Single index.html only, Tailwind via CDN, build all sections in one go." Then click Build.
 
 ### 3. Review the scaffold
 
-You'll get a working page in 60 to 90 seconds. Don't prompt yet. Read it. Click around. Check what's actually wrong vs. what just needs a tweak.
+You'll get a full working page in 60 to 120 seconds. Don't prompt yet. Read it top to bottom. Click around. Check what's actually wrong vs. what just needs a tweak.
 
 ### 4. Tweak via code edits, not prompts
 
-For copy edits, hero image swaps, color tweaks, padding changes: open the file, edit the line, save. Zero tokens.
+For copy edits, hero image swaps, color tweaks, padding changes, individual section content: open `index.html`, edit the line, save. Zero tokens. Most refinement happens here.
 
 For one-line code changes (rename a variable, change a className): same. Edit directly.
 
 ### 5. Re-prompt only for restructures
 
-If you need a new section, a different layout, or a feature that touches multiple files, prompt Bolt. One change per prompt. Use the keep / change / add pattern from [Principle 6](/docs/vibecoding/principles).
+If you need a layout change that touches multiple sections, a feature you forgot to specify, or a bug you can't track down by editing: prompt Bolt. One change per prompt. Use the keep / change / add pattern from [Principle 6](/docs/vibecoding/principles).
+
+If a single section is wrong (copy off, layout broken), almost always faster to edit it directly in `index.html` than re-prompt.
 
 ### 6. Publish
 
@@ -63,7 +70,7 @@ Drop the URL in #launches before tonight's check-in.
 
 ## What good looks like
 
-A 60-min build. One initial prompt. 3 to 5 follow-up prompts max. The rest is code edits. Token budget under 200K. Live URL in #launches by Friday night.
+A 60-min build. One initial prompt that scaffolds the whole page in one go. 1 to 2 follow-up prompts max for restructures. The rest is direct code edits in `index.html`. Token budget under 100K of the 300K daily cap. Live URL in #launches by Friday night.
 
 ## What bad looks like
 
