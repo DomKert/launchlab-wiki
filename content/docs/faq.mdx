@@ -1,0 +1,76 @@
+---
+title: FAQ
+icon: HelpCircle
+description: Common questions from first-time founders going through the LaunchLab weekend.
+---
+
+<div className="mb-4 flex items-center gap-2">
+  <Badge variant="patch-notes">FAQ</Badge>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">common questions, fast answers</span>
+</div>
+
+Most of these come from "but what if" moments mid-weekend. Read once Friday morning so you don't lose 30 min Googling Saturday afternoon.
+
+## Setup and tools
+
+### Do I need a paid Claude account?
+
+No. Free tier handles the weekend. You will hit the message cap on Day 2 afternoon though, so save bigger asks for the morning when the daily quota resets.
+
+### What if Claude rate-limits me mid-weekend?
+
+Wait it out (caps reset every 5 hours on free tier) or improvise. Most planning prompts can run in ChatGPT free or Gemini free if you paste the same context. The prompts in this wiki are not Claude-specific.
+
+### Do I really need ChatGPT AND Claude, or just one?
+
+Both. Different jobs. Claude is the brain (planning, briefing, reviewing). ChatGPT is the executor (drafting copy, generating images, raw scouts). Trying to do everything in one tool burns the same daily quota twice on planning + execution.
+
+### Which build path should I pick?
+
+Default to Path A: ChatGPT writes the HTML, you drop it into Netlify Drop. Free, fast, no platform lock-in. Pick Path B (Bolt) if you want a richer interactive feel and don't mind the 300K daily token cap. Pick Path C (Carrd / Framer) if you'd rather start from a template than vibe-code.
+
+## Process and time
+
+### How long does this actually take per day?
+
+5 to 8 focused hours. Day 1 is heaviest (research + 4-box + One Metric + ship the page). Day 2 is distribution. Day 3 is the launch raid plus Demo Day prep. Plan for it like a sprint, not a hobby weekend.
+
+### What if I don't ship by Sunday night?
+
+Ship what you have. A landing page with placeholder copy and one screenshot still beats a perfect Notion doc nobody can find. Iterate next week.
+
+### Do I have to do all 42 distribution tactics?
+
+No. Pick 4 to 6 that fit your shape. Day 2 is for picking the right ones, not running all of them. The 42 are a menu, not a checklist.
+
+## Common stumbles
+
+### My copy sounds like AI. What now?
+
+Run [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) on it. Banned words, dead transitions, sentence shapes that read as AI. Then read it out loud. If you wouldn't say a word out loud at a coffee shop, rewrite it.
+
+### My hero image looks generic. What now?
+
+You probably ran one tool. The hero image flow fans out across Gemini Nano Banana, ChatGPT, and Ideogram in parallel; same prompt into all three, three options to compare. See [Prompt 18](/docs/prompts/hero-image-prompt). One tool is one perspective and one perspective produces stock-photo slop.
+
+### I can't pick a One Metric. What now?
+
+Pick the metric that judges whether this weekend worked, not the one that's easiest to count. Run [Prompt 14](/docs/prompts/pick-your-metric) with your 4-box; Claude will surface the upstream metric if two compete. If your 4-box is too vague to pick from, the prompt asks you one question and stops. That question is the answer.
+
+### My idea feels weak. Should I switch?
+
+Probably no. Day 1 is the wrong day to switch. The point of LaunchLab is shipping, not picking the perfect idea. Run the niche scout (Prompt 3) and the 4-box (Prompt 2); usually the friction is shape, not idea.
+
+## Logistics
+
+### Do I have to do Demo Day if I'm not enrolled at Tetr?
+
+No. LaunchLab is open to non-enrolled applicants too. Demo Day is the social proof loop for enrolled founders. If you're running solo, Sunday night is just "ship and post the link."
+
+### Can I keep using this wiki after the weekend?
+
+Yes. The wiki stays up. The prompts work for any 3-day sprint, not just LaunchLab. Bookmark it and run it again next time you have a weekend free.
+
+### Do I need to know how to code?
+
+No. That's the point. Path A (ChatGPT + Netlify Drop) is HTML you don't write. Path B (Bolt) is one-shot generation. Path C (Carrd / Framer) is templates. Pick the path with the least code if code intimidates you.
