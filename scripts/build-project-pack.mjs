@@ -9,7 +9,7 @@ const ROOT = path.resolve(SCRIPT_DIR, '..');
 const SOURCE = path.join(ROOT, 'scripts/source/core-files.md');
 const PROMPTS_DIR = path.join(ROOT, 'content/docs/prompts');
 const PROMPTS_META = path.join(PROMPTS_DIR, 'meta.json');
-const DISTRIBUTION_SOURCE = path.join(ROOT, 'content/docs/playbook/distribution.mdx');
+const DISTRIBUTION_SOURCE = path.join(ROOT, 'content/docs/distribution.mdx');
 const OUT_PARENT = path.join(ROOT, 'public/files');
 const OUT_DIR = path.join(OUT_PARENT, 'launchlab-pack');
 const OUT_ZIP = path.join(OUT_PARENT, 'launchlab-project-pack.zip');
@@ -55,7 +55,7 @@ async function buildDistributionDoctrine() {
     '',
     fm.description || '',
     '',
-    `Source: ${WIKI_BASE}/docs/playbook/distribution`,
+    `Source: ${WIKI_BASE}/docs/distribution`,
     '',
     '---',
     '',
