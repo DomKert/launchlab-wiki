@@ -112,9 +112,17 @@ WRITE (draft copy):
   research in the layer above, doubles as a drafter here.
 
 BUILD & SHIP (page, capture, image, attribution, launch reel):
-- Framer free (S). No-code landing page. 1000 visitors per month, SSL, subdomain hosting.
+
+Page build, three paths in Prompt 17 (founder picks one):
+- Path A, default: ChatGPT free outputs the static HTML, save as index.html, drag the folder to netlify.com/drop with a free Netlify account so the URL persists. Best output, simplest, no token cliff. Wiki: /docs/prompts/bolt-build (Path A).
+- Path B: Carrd or Framer. No AI, pick a template, drop your copy in. Wiki: /docs/build-paths.
+- Path C, advanced: Bolt.new free. Vibe-code with live preview pane. Use only if the founder specifically wants the AI iteration UI. Wiki: /docs/prompts/bolt-build (Path C).
+
+Other build and ship tools:
+- Netlify free + Drop (S). Drag-and-drop hosting for the landing page folder. Sign up for the free account so URLs persist (anonymous Drop URLs expire in hours). Rename subdomain: e.g. back-room.netlify.app.
 - Tally free (S). Waitlist forms. Unlimited submissions under 50K per month.
-- Bolt.new free (A). Vibe-coded page. 1M tokens per month. Do your full build in one 4-hour block.
+- Framer free (A). Path B alt. No-code landing page. 1000 visitors per month, SSL, subdomain hosting.
+- Bolt.new free (B, advanced). Path C in Prompt 17. Vibe-coded page. 1M tokens per month, but daily 300K token cap is the practical constraint.
 - Canva free (A). Templates only. AI image generation is 50 LIFETIME, not monthly. Route image
   work through gpt-image-2, Nano Banana, or Ideogram.
 - Gemini Nano Banana Standard free (A). Workhorse image. Gemini 2.5 Flash Image. 100 per day.
@@ -150,8 +158,9 @@ FREE-TIER TRAP:
 - ChatGPT silently downgrades after 10 messages per 5-hour window. Watch the output quality.
 - Canva AI is 50 LIFETIME image generations, Nano Banana Standard is 100 per day, Nano Banana
   Pro is 2 per day for hero shots only, Perplexity is 3 Pro Searches per day. Route accordingly.
-- Bolt is 1M tokens per MONTH, not per day. Evaporates on one complex build. Do all your Bolt
-  work in one focused 4-hour block on Day 1. After deploy, switch to manual edits.
+- Bolt: 300K daily token cap is the binding constraint, not the 1M monthly umbrella. Evaporates
+  on one complex build. Do all Bolt work in one focused 4-hour block on Day 1. After deploy,
+  switch to manual edits in the index.html file.
 - OpusClip free clips expire 3 days after generation. Download every Day 3 launch reel
   immediately or they vanish.
 ```
@@ -261,7 +270,7 @@ Don't:
 
 ## 5. Voice guide
 
-Paste as `voice-guide.md`. The brain-level review checklist. Full operator-level rules (banned shapes, vocab list, final-pass) live in Prompt 9 (strip-AI-smell), the prompt the founder pastes into ChatGPT alongside their draft. Deep reference: the Note "Writing that doesn't sound AI."
+Paste as `voice-guide.md`. The brain-level review checklist. Full operator-level rules (banned shapes, vocab list, final-pass) live in Prompt 9 (strip-AI-smell), the prompt the founder pastes into ChatGPT alongside their draft.
 
 ```txt
 WRITING REVIEW for drafts the founder brings back from executors.
@@ -286,7 +295,7 @@ WHAT GOOD COPY LOOKS LIKE:
 
 CATEGORIES OF AI TELLS TO FLAG:
 
-1. Vocabulary buzzwords. Full list in the Note "Writing that doesn't sound AI."
+1. Vocabulary buzzwords. Full list inside Prompt 9 (strip-AI-smell).
 2. Bloated verbs that pretend to be richer than IS or HAS.
 3. Dead openings. Throat-clearing intros that announce the topic instead of starting.
 4. Dead transitions. The fancy versions of "and" and "also".
