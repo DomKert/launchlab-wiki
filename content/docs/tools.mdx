@@ -237,14 +237,23 @@ Drafting burns tokens fast. Don't draft in Claude. Claude briefs the angle, the 
 
 ## Build
 
-These tools take a brief and produce a live artifact. Landing pages, forms, hero images, social graphics, short links, launch reels. Pick one per job. Don't switch mid-build.
+These tools take a brief and produce a live artifact. Landing pages, forms, hero images, social graphics, short links, launch reels. Pick one path for the page build, then layer the supporting tools below.
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">PAGE BUILD</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">three paths in <a href="/docs/prompts/bolt-build" className="underline">Prompt 17</a></span></div>
+  <ul className="ml-5 list-disc space-y-1">
+    <li><strong>Path A, default.</strong> ChatGPT free outputs the static HTML, save as <code>index.html</code>, drag the folder to <a href="https://app.netlify.com/drop" target="_blank" rel="noreferrer" className="underline">netlify.com/drop</a> with a free Netlify account so the URL persists. Best output, simplest, no token cliff.</li>
+    <li><strong>Path B.</strong> Carrd or Framer. No AI, pick a template, drop your copy in. See <a href="/docs/build-paths" className="underline">Build Path</a>.</li>
+    <li><strong>Path C, advanced.</strong> Bolt.new free. Live preview pane and AI iteration UI. 300K daily token cap. Use only if you specifically want the iteration loop.</li>
+  </ul>
+</div>
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
-  <a href="https://www.framer.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">landing</span></div>
-    <div className="font-sans font-semibold">Framer free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">No-code landing page. 1000 visitors per month, SSL, subdomain hosting, CMS. Best no-code pick for this weekend.</p>
-    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ framer.com</div>
+  <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">page build (Path A)</span></div>
+    <div className="font-sans font-semibold">ChatGPT free + Netlify Drop</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Default page build. ChatGPT renders the static HTML from your assembled prompt; Netlify Drop hosts the folder. Sign up for the free Netlify account so URLs persist (anonymous Drop URLs expire in hours). Rename the subdomain to your brand: e.g. back-room.netlify.app.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chatgpt.com + app.netlify.com/drop</div>
   </a>
   <a href="https://tally.so" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">capture</span></div>
@@ -252,10 +261,16 @@ These tools take a brief and produce a live artifact. Landing pages, forms, hero
     <p className="mt-1 text-sm text-fd-muted-foreground">Waitlist and intake forms. Unlimited submissions under 50K per month fair use. Embeds in Framer or Carrd.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ tally.so</div>
   </a>
-  <a href="https://bolt.new" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">vibe-code</span></div>
-    <div className="font-sans font-semibold">Bolt.new free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">1M tokens per month. Do your full build in one 4-hour block. Once deployed, switch to manual edits.</p>
+  <a href="https://www.framer.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">page build (Path B)</span></div>
+    <div className="font-sans font-semibold">Framer free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">No-code landing page. 1000 visitors per month, SSL, subdomain hosting, CMS. The polished no-code option for Path B.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ framer.com</div>
+  </a>
+  <a href="https://bolt.new" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">page build (Path C)</span></div>
+    <div className="font-sans font-semibold">Bolt.new free (advanced)</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">1M tokens per month, but daily 300K is the binding cap. Do your full build in one 4-hour block. Once deployed, switch to manual edits in <code>index.html</code>. Default is Path A unless you specifically want the live preview pane.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ bolt.new</div>
   </a>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
@@ -370,7 +385,7 @@ These tools take a brief and produce a live artifact. Landing pages, forms, hero
   <ul className="ml-5 list-disc space-y-1 text-fd-muted-foreground">
     <li>ChatGPT silently downgrades after 10 messages per 5-hour window. Watch the output quality.</li>
     <li>Canva AI is 50 LIFETIME image generations. Nano Banana Standard is 100 per day, Pro is 2 per day for hero shots only. Perplexity is 3 Pro Searches per day. Route accordingly.</li>
-    <li>Bolt is 1M tokens per MONTH, not per day. Evaporates on one complex build. Do all your Bolt work in one focused 4-hour block on Day 1. After deploy, switch to manual edits.</li>
+    <li>Bolt: daily 300K is the binding token cap, not the 1M monthly umbrella. Evaporates on one complex build. Do all Bolt work in one focused 4-hour block on Day 1. After deploy, switch to manual edits in the index.html file.</li>
     <li>OpusClip free clips expire 3 days after generation. Download every Day 3 launch reel immediately or they vanish.</li>
   </ul>
 </div>
