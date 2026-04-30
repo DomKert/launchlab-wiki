@@ -1,0 +1,126 @@
+---
+title: 17. Bolt build prompt
+description: Execution. Day 1 PM. Paste into Bolt as the first message.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-s">S</Badge>
+  <Badge variant="side-quest">EXECUTION</Badge>
+  <Badge variant="quest">DAY 1 PM</Badge>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary</span></div>
+  <a href="https://bolt.new" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Bolt.new free</a>
+  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Pairs with</div>
+  <div className="mt-1 flex flex-wrap gap-3">
+    <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ Gemini Nano Banana (hero gen)</a>
+    <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-fd-muted-foreground no-underline hover:text-emerald-600">→ gpt-image-2 (hero gen)</a>
+  </div>
+</div>
+
+## Why this works
+
+Cleaned copy alone gets you a generic SaaS scaffold every time. The brand block, vibe keyword, and reference screenshots are what make Bolt produce a distinctive page.
+
+This is the actual first message you paste into Bolt. Hero-first, then sections one at a time. One concern per follow-up prompt. Don't ask Bolt to build the whole page in one shot, and don't stack changes.
+
+## Before you run this
+
+Five things ready, in order:
+
+1. Cleaned section-by-section copy from [Prompt 4](/docs/prompts/landing-page-spec) → [Prompt 9](/docs/prompts/strip-ai-smell).
+
+2. Style spec from [Prompt 16](/docs/prompts/visual-direction): palette hex codes, type pairing, radius, shadow, spacing, vibe keyword, 3 mood adjectives.
+
+3. The 3 reference screenshots you fed Prompt 16. You'll attach the same 3 to Bolt.
+
+4. Your CTA destination set up separately. [Tally](https://tally.so) form for waitlist, [Cal.com](https://cal.com) for demos, [Stripe Payment Link](https://stripe.com/payments/payment-links) for e-com, mailto for 1:1.
+
+5. Pre-loaded Design System picked on the [bolt.new](https://bolt.new) homepage card before the first prompt. Match your shape: waitlist or e-com indie pages, B2B for demo, editorial for newsletter. Custom design systems need Team plan, the pre-loaded ones are free.
+
+If you want an AI-gen hero image, run the Gemini prompt at the bottom of this page first and save the URL.
+
+## The Bolt prompt
+
+Paste this as your first message in Bolt, with the 3 reference screenshots attached via the paperclip icon (10MB limit, free tier).
+
+```txt
+[Attach 3 reference screenshots via the paperclip]
+
+Build the HERO SECTION ONLY of a single-page landing page for [PROJECT NAME] as a Next.js + Tailwind app. Mobile-first, deploy-ready. Don't build the rest of the page yet, I'll add sections one at a time after I approve the hero.
+
+Vibe keyword
+[Paste from Prompt 16, one of: brutalism / glassmorphism / claymorphism / hyper-minimalism / flat-design / material-design / skeuomorphism / retro-vaporwave]
+
+Brand
+Palette: bg [hex], ink [hex], accent [hex], muted [hex]. Use bg as page background, ink for primary text, accent for ONE primary CTA only.
+Type: headings in [Inter / Geist / Fraunces / Söhne / IBM Plex Sans], body in [same list]. [one sentence on weight/contrast from style spec]
+Radius: cards and buttons [px], images [px].
+Shadows: [none / 1px solid border / soft glow / hard offset / Tailwind shadow-sm / shadow-md / shadow-lg].
+Spacing: section vertical padding [px], max content width [px].
+Mood: [3 adjectives from style spec, e.g. "rebellious, obsessive, editorial"].
+
+Reference vibes
+The 3 attached screenshots are pages whose FEEL I want to match. Don't copy their content, copy their visual rhythm, density, type contrast, and color logic.
+
+Hero copy (use verbatim, don't rewrite)
+Headline: [paste headline from Prompt 9 cleaned copy]
+Subhead: [paste subhead]
+CTA button text: [paste CTA text]
+CTA destination: button posts to [Tally form URL / Cal.com link / Stripe Payment Link / mailto:]
+
+Hero image
+[Pick ONE of these three and delete the other two]
+- Hero image URL: [paste from Gemini Nano Banana / gpt-image-2 / Unsplash]
+- Use a placeholder.com gradient sized 1600x900 for now, I'll swap later
+- No image. Type-only hero with a strong color block on the right 30%.
+
+Constraints
+- No corporate stock photo people
+- No "Trusted by 10,000+" social proof I haven't given you
+- No floating UI cards in the hero
+- Mobile must look right first, desktop second
+- Single page, no nav
+
+Build the hero only. Stop after.
+```
+
+## After Bolt scaffolds the hero
+
+Don't prompt yet. Read the hero. Click around, check what's wrong vs what just needs a tweak.
+
+For copy edits, color tweaks, padding changes, hero image swaps: open the file, edit the line, save. Zero tokens.
+
+For one new section at a time (problem block, what-you-offer, CTA, social proof): one prompt per section, referencing the established hero style. "Add the next section using the same palette, type, and radius as the hero. Section content: [paste cleaned copy from Prompt 9]."
+
+Full vibecoding loop: [vibecoding workflow](/docs/vibecoding/workflow).
+
+## Need a hero image first?
+
+Run this in [Gemini Nano Banana Standard](https://gemini.google.com) or [gpt-image-2 in ChatGPT](https://chatgpt.com) before the Bolt prompt. Save the URL, drop it into the Hero image block above.
+
+```txt
+Hero image for a [niche, e.g. "rare Italian knitwear curation"] landing page.
+
+Mood: [3 adjectives from Prompt 16 style spec]
+Palette: [hex codes from style spec]
+Style: [one sentence from style spec, or describe the photo style you want]
+Composition: wide aspect web hero (16:9 or 21:9), 30% negative space on the right for headline overlay text.
+
+No text in the image. No model faces unless I say "lifestyle". No SaaS-marketing cliches (laptops, abstract gradients with floating UI cards, people pointing at screens). Treat it like the cover image of an editorial magazine for this niche, not a stock-photo site.
+
+Generate 4 variations.
+```
+
+## What good looks like
+
+One Bolt prompt, hero scaffold in 90 seconds. 3 to 5 follow-up prompts max for the rest of the page. The rest is direct code edits per [vibecoding workflow](/docs/vibecoding/workflow). Live URL in #launches by Friday night, token budget under 200K.
+
+## What bad looks like
+
+Whole-page prompt, generic SaaS scaffold, 30 prompts trying to fix it, token budget gone before the page is live. The fix is upstream, not in Bolt. Get Prompts 4, 9, and 16 right before the first paste.
+
+## Next
+
+If you're on the waitlist shape, [Prompt 5 Invite-code waitlist flow](/docs/prompts/invite-waitlist-flow) is the email sequence next. Otherwise [Day 2](/docs/playbook/day-2) covers distribution.

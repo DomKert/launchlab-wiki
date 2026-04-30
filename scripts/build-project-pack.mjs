@@ -69,7 +69,7 @@ async function buildPromptIndex() {
     'LaunchLab Spellbook (canonical prompt text)',
     '===========================================',
     '',
-    '15 prompts you will use across the weekend, grouped by category. Full prompt text is embedded below each entry. Use these blocks verbatim. Do NOT improvise. Replace bracketed placeholders ([ONE-LINE DESCRIPTION], [CUSTOMER SENTENCE from Prompt 1], etc.) with the founder\'s actual one-liner.md and customer.md content from Project knowledge.',
+    '17 prompts you will use across the weekend, grouped by category. Full prompt text is embedded below each entry. Use these blocks verbatim. Do NOT improvise. Replace bracketed placeholders ([ONE-LINE DESCRIPTION], [CUSTOMER SENTENCE from Prompt 1], etc.) with the founder\'s actual one-liner.md and customer.md content from Project knowledge.',
     '',
   ];
 

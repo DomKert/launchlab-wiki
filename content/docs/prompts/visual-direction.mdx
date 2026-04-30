@@ -1,0 +1,97 @@
+---
+title: 16. Visual direction
+description: Execution. Day 1 PM. ChatGPT or Claude with vision. Extract a style spec from reference screenshots.
+---
+
+<div className="mb-4 flex flex-wrap items-center gap-2">
+  <Badge variant="tier-s">S</Badge>
+  <Badge variant="side-quest">EXECUTION</Badge>
+  <Badge variant="quest">DAY 1 PM</Badge>
+</div>
+
+<div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">TOOL</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary, either works</span></div>
+  <div className="flex flex-wrap gap-3">
+    <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ ChatGPT (vision)</a>
+    <a href="https://claude.ai" target="_blank" rel="noreferrer" className="font-sans font-semibold no-underline text-emerald-600 dark:text-emerald-400 hover:underline">→ Claude (vision)</a>
+  </div>
+  <div className="mt-3 text-xs uppercase font-mono tracking-wider text-fd-muted-foreground">Note</div>
+  <p className="mt-1 text-sm text-fd-muted-foreground">ChatGPT-4o leans conservative palettes, Claude leans more design-confident. Pick whichever you have open. Don't switch mid-session.</p>
+</div>
+
+## Why this works
+
+Bolt's pre-loaded Design Systems picker plus its 10 vibe keywords (brutalism, glassmorphism, claymorphism, hyper-minimalism, and friends) cover the high-level look. They don't cover your specific palette, type pairing, radius, or shadow style.
+
+Vision-based AI looks at 3 sites you actually like and gives you a Tailwind-shaped style spec: 3 hex colors, a type pairing, a radius scale, a shadow style, plus the right vibe keyword for your shape. Paste that into the [Bolt build prompt (Prompt 17)](/docs/prompts/bolt-build) and Bolt has enough to make your page distinctive instead of generic SaaS.
+
+## Before you run this
+
+Three things ready:
+
+1. Three reference screenshots, picked from one of these catalogs:
+   - [saaslandingpage.com](https://saaslandingpage.com), curated SaaS pages with conversion breakdowns
+   - [lapa.ninja](https://lapa.ninja), clean indie / waitlist / solo-founder pages with strong typography
+   - [landingfolio.com](https://landingfolio.com/inspiration/landing-page/saas), 340+ filterable pages
+
+   Pick exactly 3 sites you'd be happy if your page felt like. Cmd+Shift+4 on Mac, Win+Shift+S on Windows. Hero-only screenshots are fine.
+
+2. Your One Metric from [Prompt 14](/docs/prompts/pick-your-metric). The vibe keyword recommendation depends on shape (waitlist gets brutalism, demo gets glassmorphism, etc.).
+
+3. A new chat in [ChatGPT](https://chatgpt.com) or [Claude](https://claude.ai). Don't reuse your strip-AI-smell chat from Prompt 9.
+
+## Prompt
+
+```txt
+[Attach 3 reference screenshots above this message]
+
+I'm building a [WAITLIST / DEMO / E-COM / NEWSLETTER / SAAS-TRIAL / 1:1-BESPOKE] landing page in Bolt this weekend. The 3 attached screenshots are pages whose feel I want to match. I don't care about their content, just the look.
+
+Look at all 3 and extract a unified style spec for my page. Output exactly this format inside one code block I can paste into the next prompt:
+
+PALETTE
+bg: #
+ink: #
+accent: #
+muted: #
+
+TYPE
+heading: [Inter / Geist / Fraunces / Söhne / IBM Plex Sans / JetBrains Mono]
+body: [same list]
+notes: [one sentence on weight, contrast, sizing]
+
+RADIUS
+cards/buttons: [0 / 4 / 8 / 12 / 16 / fully rounded] px
+images: [px]
+
+SHADOWS
+[none / 1px solid border / soft glow / hard offset / Tailwind shadow-sm / shadow-md / shadow-lg]
+
+SPACING
+section vertical padding: [64 / 96 / 128] px
+max content width: [1120 / 1280] px
+
+VIBE KEYWORD
+Pick ONE from Bolt's vocabulary based on my shape, unless the screenshots clearly point elsewhere:
+- Waitlist: brutalism or hyper-minimalism
+- Demo / B2B: glassmorphism or material-design
+- E-com: claymorphism or skeuomorphism
+- Newsletter: hyper-minimalism or retro/vaporwave
+- SaaS trial: flat-design or material-design
+- 1:1 bespoke: hyper-minimalism
+
+Avoid neumorphism (low contrast, accessibility tax) and cyberpunk (too niche unless gaming or web3) unless the screenshots scream for them.
+
+MOOD ADJECTIVES
+Pick the 3 sharpest words to describe the unified feel of the references. No generic words like "modern", "clean", "professional". Use specific words like "rebellious", "obsessive", "warm", "sterile", "editorial", "playful", "raw", "luxe".
+
+After the spec code block, give me one sentence explaining the choice. No image generation. No alternative palettes. One spec, picked.
+```
+
+## Save the output
+
+Copy the spec code block. You'll paste it into [Prompt 17 Bolt build prompt](/docs/prompts/bolt-build) under the Brand section. The 3 screenshots also get attached to your Bolt prompt, so keep them in a folder you can find.
+
+## Next
+
+[Prompt 17 Bolt build prompt](/docs/prompts/bolt-build) wraps the cleaned copy + this style spec + screenshots into a single Bolt-ready first message.
