@@ -150,6 +150,53 @@ Three paths, cheapest first.
 - **Whole wiki as one file.** [`/llms.txt`](/llms.txt) is the entire wiki as plain text, designed for AI tools. Tight on Free Projects, fine on Pro.
 - **Repo with version history.** `git clone https://github.com/DomKert/launchlab-wiki.git`. Useful for Cursor, Codex, and Claude Code users who want every page locally.
 
+## 7. Backup brain: ChatGPT Project
+
+You will hit Claude's free-tier cap on Day 2. The fix is to mirror the Project on ChatGPT free and switch lanes when Claude locks you out.
+
+ChatGPT Projects mirror Claude's shape. Custom Instructions hold the system prompt. File uploads hold the knowledge. Each project runs multiple chats. The rate-limit pattern is different though (10 to 15 GPT-4o messages every 3 hours, then 4o-mini unlimited), so when Claude is dark, ChatGPT usually still has runway.
+
+One catch. Free-tier ChatGPT caps Project knowledge at 5 files. The Claude pack is 6. Solution is one merged context file plus 4 artifact slots, total 5.
+
+<a href="/files/launchlab-context.md" download className="my-3 inline-flex items-center gap-2 rounded-md border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 font-mono text-sm font-semibold text-emerald-600 no-underline transition hover:bg-emerald-500/20 dark:text-emerald-400">
+  ↓ Download launchlab-context.md (single merged file for ChatGPT)
+</a>
+
+### The rotation
+
+Claude is primary brain. ChatGPT is primary executor (drafting, image gen, raw scout). When Claude rate-limits, flip:
+
+- Open your ChatGPT Project. ChatGPT is now the backup brain.
+- Run planning and synthesis there until Claude resets.
+- Push execution work to Gemini free (drafts, captions, image gen) or wait for Claude.
+- When Claude resets, switch back. ChatGPT returns to executor role.
+
+Don't run brain work and executor work in the same ChatGPT account at the same time. You burn the same daily quota twice.
+
+### 5-min mirror setup
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="chatgpt-mirror-1" label="Free ChatGPT account at chat.openai.com if you don't have one" />
+</div>
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="chatgpt-mirror-2" label="Projects, New Project. Name it the same as the Claude one" />
+</div>
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="chatgpt-mirror-3" label="Paste the Meta guide (Step 2 above) into Custom Instructions. Same prompt, both brains" />
+</div>
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="chatgpt-mirror-4" label="Upload launchlab-context.md to project files (slot 1 of 5)" />
+</div>
+
+<div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
+  <PersistentCheckbox id="chatgpt-mirror-5" label="As you produce artifacts (research-brief.md, customer.md, 4-box.md, landing-copy.md), upload to BOTH Projects" />
+</div>
+
+The 30 sec of double-uploading per artifact is what keeps both brains in sync. Skip it and they drift.
+
 <div className="my-4 flex items-center gap-2">
   <Badge variant="achievement">ACHIEVEMENT</Badge>
   <span className="text-sm">Home base online. Now go pick your stack at <a href="/docs/tools" className="underline">Tools</a>.</span>
