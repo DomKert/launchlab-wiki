@@ -28,11 +28,26 @@ A figma mockup. A Notion doc. A "coming soon" page with no CTA. A page hosted on
 
 If a stranger can't land on the URL, click the CTA, and have something happen, it didn't ship.
 
+### My idea is a SaaS, an app, an e-commerce shop, something bigger than a landing page. What's my final product?
+
+Same as everyone else's. A landing page about the idea, five distribution tactics run, one public post, Demo Day. The page sells the idea or captures interest. You're not shipping the SaaS in 3 days; you're testing whether anyone wants it. The CTA is a waitlist, an email signup, a "book a call," whatever moves your One Metric.
+
+If your idea needs heavy explanation, the page works harder for you, not less. Treat the constraint as a forcing function: if you can't get a stranger to want it from one page, the underlying idea has work to do.
+
 ## Setup and tools
 
 ### Do I need a paid Claude account?
 
 No. Free tier handles the weekend. You will hit the message cap at some point though, so save bigger asks for the morning when the daily quota resets.
+
+### Claude is asking me to subscribe when I open the Project. What now?
+
+Claude free tier supports Projects, Custom Instructions, and Sonnet 4.6. No paywall on any of that. If you're hitting a subscribe prompt, two likely culprits:
+
+1. **You pasted the system prompt into the chat box, not into Custom Instructions.** Custom Instructions is a separate field on the Project (gear icon or "Edit project"). Pasting the Meta guide into a regular chat just sends a 2K-token message and can trigger a quota nudge.
+2. **You toggled Opus or Deep Research.** Both are paid. Leave the model on Sonnet 4.6 with Adaptive Thinking on. That combination is free and handles the weekend.
+
+If you've done neither and still see the prompt, screenshot it and ask Domen in Discord.
 
 ### What if Claude rate-limits me mid-weekend?
 
@@ -49,6 +64,10 @@ Both. Different jobs. Claude is the brain (planning, briefing, reviewing). ChatG
 ### Which build path should I pick?
 
 Default to Path A: ChatGPT writes the HTML, you drop it into Netlify Drop. Free, fast, no platform lock-in. Pick Path B (Carrd / Framer) if you want to start from a template instead of writing prompts. Pick Path C (Bolt) if you want a richer interactive feel and don't mind the 300K daily token cap.
+
+### Do I have to use Path A, B, or C? Can I use another tool?
+
+Use whatever you want. The three paths are starting points for students who want a recommendation. If you already use Webflow, Squarespace, Cursor, Lovable, v0, or anything else, use it. The deliverable is a live URL with a working CTA tied to your One Metric. The path doesn't matter; the live page does.
 
 ## Process and time
 
