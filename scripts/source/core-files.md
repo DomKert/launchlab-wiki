@@ -143,9 +143,10 @@ INDIA REGIONAL UNLOCK (optional):
 - ChatGPT Go free 12 months for +91 SIM holders. Verifies via UPI or card with a small refunded
   charge. Unlocks GPT-5.3 Instant, image gen, file uploads, extended memory. Auto-renews at
   ₹399/month after 12 months unless cancelled. Set a phone reminder for month 11.
-- Razorpay test mode (India only). Free UPI sandbox for any demo that needs a "click to pay"
-  flow. Optional, only relevant if your business is transactional. Stripe test mode if you're
-  US/global.
+- Razorpay (India only). Hosted checkout with UPI, cards, netbanking. Payment Pages for a
+  production CTA link tied to your One Metric, or test mode for a demo "click to pay" flow
+  without real charges. Optional, only relevant if your business is transactional. Stripe
+  Payment Link if you're US/global.
 
 AVOID:
 - Webflow (learning curve), Wix, v0.dev (credits die in hours), Replit Agent (trial expires),
