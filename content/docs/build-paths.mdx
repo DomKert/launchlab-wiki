@@ -108,6 +108,24 @@ Weaknesses: 300K daily cap is real, single Plan-mode generation can burn it, the
 
 Best for: students who specifically want the AI iteration UX as a learning experience, or who have paid Bolt access.
 
+## Multi-AI relay
+
+A workflow that beats single-AI builds: don't use one AI for everything. Sequence:
+
+1. Scaffold with Gemini, ChatGPT, or Claude. Explain what you want and ask the AI to mark placeholders as HTML comments where you'll fill in real content. You get back base HTML with structural placeholders like `<!-- HERO HEADLINE HERE -->`, `<!-- SUBHEAD -->`, `<!-- CTA BUTTON TEXT -->`.
+
+2. Hand-edit at marked spots. Open `index.html` in any text editor. Wherever the scaffold AI left a placeholder comment, replace it with plain text. No coding needed; you're typing your hero headline, subhead, CTA copy directly into the file at marked positions.
+
+3. Polish with Claude. Paste the edited HTML into a fresh Claude chat. Ask it to add animations, smooth scroll, fix rendering bugs, tighten responsive layout. Claude is the polish layer.
+
+Why it works:
+
+- Different models have different strengths. Gemini is fast at structural HTML; Claude has a stronger polish and refactor instinct (animations, edge cases, bugs); ChatGPT sits in between.
+- Contributing plain text at marked spots means body copy is yours, not AI-generated voice. Less work for [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) later.
+- Each AI has one job. Don't ask one model to scaffold and polish; you burn tokens and get worse output on both ends.
+
+Stacks on top of Path A (deploy via Netlify Drop) and Path C (deploy via Bolt). Path B (Carrd or Framer) is template-driven and doesn't need it.
+
 ## Trade-off table
 
 | Path | Token cost | First-try quality | Iteration speed | Lowest learning curve |
