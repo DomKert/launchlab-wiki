@@ -854,8 +854,8 @@
 
     async function renderCertBlob() {
       const r = window.__certRecipient;
-      const res = await fetch(`./assets/certs/${r.slug}-launchlab-cert.png`);
-      if (!res.ok) throw new Error(`Cert PNG fetch failed: ${res.status}`);
+      const res = await fetch(`./assets/certs/${r.slug}-launchlab-cert.webp`);
+      if (!res.ok) throw new Error(`Cert fetch failed: ${res.status}`);
       return await res.blob();
     }
 
@@ -863,7 +863,7 @@
       const r = window.__certRecipient;
       const blob = await renderCertBlob();
       const link = document.createElement('a');
-      link.download = `${r.slug}-launchlab-cert.png`;
+      link.download = `${r.slug}-launchlab-cert.webp`;
       link.href = URL.createObjectURL(blob);
       link.click();
     });
@@ -871,7 +871,7 @@
     document.getElementById('dl-share').addEventListener('click', async () => {
       const r = window.__certRecipient;
       const blob = await renderCertBlob();
-      const file = new File([blob], `${r.slug}-launchlab-cert.png`, { type: 'image/png' });
+      const file = new File([blob], `${r.slug}-launchlab-cert.webp`, { type: 'image/webp' });
       const shareData = {
         title: 'Tetr LaunchLab Certificate',
         text: 'Cohort I complete. I built and shipped a startup in 72 hours at Tetr LaunchLab.',
