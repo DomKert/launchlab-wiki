@@ -802,7 +802,6 @@
   <button id="dl-png" class="action-secondary">Download</button>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js"></script>
 <script>
   (async () => {
     const NAME_SCALE_THRESHOLDS = [
@@ -854,26 +853,10 @@
     });
 
     async function renderCertBlob() {
-      await document.fonts.ready;
-      const clone = cert.cloneNode(true);
-      clone.style.transform = 'scale(1)';
-      clone.style.position = 'fixed';
-      clone.style.top = '0';
-      clone.style.left = '-99999px';
-      clone.style.zIndex = '-1';
-      clone.style.display = 'block';
-      document.body.appendChild(clone);
-      try {
-        return await htmlToImage.toBlob(clone, {
-          pixelRatio: 2,
-          width: CERT_NATIVE_W,
-          height: 8.5 * 96,
-          cacheBust: true,
-          backgroundColor: '#131C12'
-        });
-      } finally {
-        document.body.removeChild(clone);
-      }
+      const r = window.__certRecipient;
+      const res = await fetch(`./assets/certs/${r.slug}-launchlab-cert.png`);
+      if (!res.ok) throw new Error(`Cert PNG fetch failed: ${res.status}`);
+      return await res.blob();
     }
 
     document.getElementById('dl-png').addEventListener('click', async () => {
