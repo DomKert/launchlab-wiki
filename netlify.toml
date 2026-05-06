@@ -1,3 +1,15 @@
 [build]
   command = "npm run build"
   publish = ".next"
+
+[[redirects]]
+  from = "/certificate"
+  to = "https://tetr-launchlab.netlify.app/certificate/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/certificate/*"
+  to = "https://tetr-launchlab.netlify.app/certificate/:splat"
+  status = 301
+  force = true
