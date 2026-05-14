@@ -1,6 +1,6 @@
 ---
-title: 12. Demo Day 30-second pitch
-description: Planning. Day 3 midday. Claude Project.
+title: 12. Demo Day 3-minute pitch
+description: Planning. Day 3 midday. Your brain.
 ---
 
 <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -21,28 +21,28 @@ description: Planning. Day 3 midday. Claude Project.
 
 ## Why this works
 
-Demo Day is 10 squads by 6 minutes each, peer voting across 4 categories (Most Traction, Most Creative Business, Best Pivot, Best Distribution Hustle). You need a 30-second pitch you can say on camera without reading. This gives you three variants tuned to different voting categories, so you pick the one that matches what actually happened to you this weekend.
+Demo Day is around 25 founders presenting their own work, 3 minutes each, peer voting across 4 categories (Most Traction, Most Creative Business, Best Pivot, Best Distribution Hustle). You need a 3-minute pitch you can say on camera without reading. This gives you three variants tuned to different voting categories, so you pick the one that matches what actually happened to you this weekend.
 
 ## Prompt
 
 ```txt
 I built [PRODUCT] in 3 days at TETR LaunchLab. My customer is [ONE LINE]. My launch happened [WHAT HAPPENED: signups, sales, feedback, crickets, pivots, anything real, be honest].
 
-Write me a 30-second Demo Day pitch (roughly 75 words, 150 max) I can deliver on camera in a 6-minute squad slot. Voting categories are Most Traction, Most Creative Business, Best Pivot, Best Distribution Hustle. Aim for whichever of those I actually have a shot at.
+Write me a 3-minute Demo Day pitch (roughly 450 words, 500 max) I can deliver on camera in my own slot. Voting categories are Most Traction, Most Creative Business, Best Pivot, Best Distribution Hustle. Aim for whichever of those I actually have a shot at.
 
 Output 3 variants:
 1. The "traction" version (numbers, sales, signups, engagement)
 2. The "story" version (why I picked this, what broke, what I learned)
 3. The "distribution hustle" version (where I posted, what worked, what died)
 
-Each variant has a clear open, one concrete specific in the middle, and an ask at the end (vote, sign up, DM me).
+Each variant has a clear open (30s on what you built and who it's for), a middle (90s on what moved your One Metric and what didn't), a learning bullet (30s on your single biggest lesson), and a closer (30s buffer for the room). Total 3 minutes.
 
-Voice rule: these are going to be watched by 49 other first-time builders and their families. No corporate. No "excited to share." Lead with the thing you're most proud of that actually happened.
+Voice rule: this is going to be watched by other first-time builders and their families. No corporate. No "excited to share." Lead with the thing you're most proud of that actually happened.
 
 Tell me which of the 3 is strongest given what I told you, and which voting category it fits.
 ```
 
-## After Claude outputs the 3 variants
+## After your brain outputs the 3 variants
 
 <div className="my-4 space-y-3">
   <div>
@@ -51,18 +51,18 @@ Tell me which of the 3 is strongest given what I told you, and which voting cate
   </div>
   <div>
     <PersistentCheckbox id="demo-day-after-2" label="Step 2. Pick the strongest variant" />
-    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Claude recommends one at the end of its output. Trust the rec unless you have a stronger gut feeling about which one matches what actually happened to you this weekend.</p>
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Your brain recommends one at the end of its output. Trust the rec unless you have a stronger gut feeling about which one matches what actually happened to you this weekend.</p>
   </div>
   <div>
     <PersistentCheckbox id="demo-day-after-3" label="Step 3. Edit the voice to sound like you, not a chatbot" />
-    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Swap any phrase that doesn't sound like something you'd say. Be specific where Claude was vague. Drop hedges (kinda, sorta, just trying to).</p>
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Swap any phrase that doesn't sound like something you'd say. Be specific where your brain was vague. Drop hedges (kinda, sorta, just trying to).</p>
   </div>
   <div>
     <PersistentCheckbox id="demo-day-after-4" label="Step 4. Practice saying it on camera 3 times" />
     <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Phone selfie camera is fine. The point is to hear yourself say it before the live slot, not to record a take.</p>
   </div>
   <div>
-    <PersistentCheckbox id="demo-day-after-5" label="Step 5. Time it. Target 30 seconds, hard ceiling 45" />
-    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Going over your slot kills the room rhythm and the squad after you. If you're at 50 seconds, cut, don't speed up.</p>
+    <PersistentCheckbox id="demo-day-after-5" label="Step 5. Time it. Target 3 minutes, hard ceiling 3:30" />
+    <p className="ml-7 mt-1 text-sm text-fd-muted-foreground">Going over your slot kills the room rhythm and the founder after you. If you're at 3:30, cut, don't speed up.</p>
   </div>
 </div>
