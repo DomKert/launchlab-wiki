@@ -6,142 +6,27 @@ import { fileURLToPath } from 'node:url';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, '..');
-const SOURCE = path.join(ROOT, 'scripts/source/core-files.md');
-const PROMPTS_DIR = path.join(ROOT, 'content/docs/prompts');
-const PROMPTS_META = path.join(PROMPTS_DIR, 'meta.json');
-const DISTRIBUTION_SOURCE = path.join(ROOT, 'content/docs/distribution.mdx');
+const SOURCE_DIR = path.join(ROOT, 'scripts/source');
 const OUT_PARENT = path.join(ROOT, 'public/files');
 const OUT_DIR = path.join(OUT_PARENT, 'launchlab-pack');
 const OUT_ZIP = path.join(OUT_PARENT, 'launchlab-project-pack.zip');
-const WIKI_BASE = 'https://launchlab-wiki.netlify.app';
 
-// Meta guide intentionally excluded. It's pasted as the Custom Instructions
-// system prompt in Step 2, not uploaded as a knowledge file.
-const FILES = [
-  { heading: '## 2. Tool matrix (abridged)', filename: 'tool-matrix.md' },
-  { heading: '## 3. Program overview', filename: 'program-overview.md' },
-  { heading: '## 4. Day checklist', filename: 'day-checklist.md' },
-  { heading: '## 5. Voice guide', filename: 'voice-guide.md' },
-];
-
-function parseFrontmatter(mdx) {
-  const match = mdx.match(/^---\n([\s\S]+?)\n---/);
-  if (!match) return {};
-  const out = {};
-  for (const line of match[1].split('\n')) {
-    const m = line.match(/^(\w+):\s*(.*)$/);
-    if (m) out[m[1]] = m[2].replace(/^["']|["']$/g, '');
-  }
-  return out;
-}
-
-function stripJsx(mdx) {
-  return mdx
-    .replace(/^---[\s\S]+?---\n/, '')
-    .replace(/{`[^`]*`}/g, '')
-    .replace(/{['"][^'"]*['"]}/g, '')
-    .replace(/<\/?[A-Za-z][^>]*\/?>/g, '')
-    .replace(/[ \t]+\n/g, '\n')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
-
-async function buildDistributionDoctrine() {
-  const mdx = await fs.readFile(DISTRIBUTION_SOURCE, 'utf8');
-  const fm = parseFrontmatter(mdx);
-  const body = stripJsx(mdx);
-  const header = [
-    `# ${fm.title || 'Distribution'}`,
-    '',
-    fm.description || '',
-    '',
-    `Source: ${WIKI_BASE}/docs/distribution`,
-    '',
-    '---',
-    '',
-  ].join('\n');
-  return header + body + '\n';
-}
-
-async function buildPromptIndex() {
-  const meta = JSON.parse(await fs.readFile(PROMPTS_META, 'utf8'));
-  const lines = [
-    'LaunchLab Spellbook (canonical prompt text)',
-    '===========================================',
-    '',
-    '17 prompts you will use across the weekend, grouped by category. Full prompt text is embedded below each entry. Use these blocks verbatim. Do NOT improvise. Replace bracketed placeholders ([ONE-LINE DESCRIPTION], [CUSTOMER SENTENCE from Prompt 1], etc.) with the founder\'s actual one-liner.md and customer.md content from Project knowledge.',
-    '',
-  ];
-
-  for (const slug of meta.pages) {
-    if (slug === 'index') continue;
-    const categoryMatch = slug.match(/^---(.+?)---$/);
-    if (categoryMatch) {
-      const category = categoryMatch[1].trim().toUpperCase();
-      lines.push('');
-      lines.push(category);
-      lines.push('-'.repeat(category.length));
-      continue;
-    }
-    const file = path.join(PROMPTS_DIR, `${slug}.mdx`);
-    const mdx = await fs.readFile(file, 'utf8');
-    const fm = parseFrontmatter(mdx);
-    const promptMatch = mdx.match(/```txt\n([\s\S]+?)\n```/);
-    const promptBody = promptMatch ? promptMatch[1] : '';
-
-    lines.push('');
-    lines.push(`### ${fm.title || slug}`);
-    if (fm.description) lines.push(fm.description);
-    lines.push(`Wiki: ${WIKI_BASE}/docs/prompts/${slug}`);
-    if (promptBody) {
-      lines.push('');
-      lines.push('PROMPT (verbatim):');
-      lines.push('```');
-      lines.push(promptBody);
-      lines.push('```');
-    } else {
-      lines.push('');
-      lines.push('(No txt code block found in source; see the wiki URL above.)');
-    }
-  }
-  lines.push('');
-  return lines.join('\n');
-}
+// Three canonical context files. Drop into a Claude Project, ChatGPT Project,
+// or Codex working directory as knowledge files. Fits ChatGPT free's 5-file
+// Project cap with two slots free for files the founder builds during the weekend.
+const FILES = ['context.md', 'prompts.md', 'tactics.md'];
 
 async function main() {
-  const source = await fs.readFile(SOURCE, 'utf8');
-
   await fs.rm(OUT_DIR, { recursive: true, force: true });
   await fs.mkdir(OUT_DIR, { recursive: true });
 
-  for (let i = 0; i < FILES.length; i++) {
-    const { heading, filename } = FILES[i];
-    const nextHeading = FILES[i + 1]?.heading;
-
-    const startIdx = source.indexOf(heading);
-    if (startIdx === -1) {
-      throw new Error(`Heading not found in scripts/source/core-files.md: ${heading}`);
-    }
-    const endIdx = nextHeading ? source.indexOf(nextHeading) : source.length;
-    const section = source.slice(startIdx, endIdx);
-
-    const codeMatch = section.match(/```txt\n([\s\S]+?)\n```/);
-    if (!codeMatch) {
-      throw new Error(`No txt code block in section: ${heading}`);
-    }
-
-    const content = codeMatch[1] + '\n';
-    await fs.writeFile(path.join(OUT_DIR, filename), content, 'utf8');
+  for (const filename of FILES) {
+    const src = path.join(SOURCE_DIR, filename);
+    const dst = path.join(OUT_DIR, filename);
+    const content = await fs.readFile(src, 'utf8');
+    await fs.writeFile(dst, content, 'utf8');
     console.log(`  ${filename} (${content.length} chars)`);
   }
-
-  const promptIndex = await buildPromptIndex();
-  await fs.writeFile(path.join(OUT_DIR, 'prompt-index.md'), promptIndex, 'utf8');
-  console.log(`  prompt-index.md (${promptIndex.length} chars)`);
-
-  const distribution = await buildDistributionDoctrine();
-  await fs.writeFile(path.join(OUT_DIR, 'distribution.md'), distribution, 'utf8');
-  console.log(`  distribution.md (${distribution.length} chars)`);
 
   await fs.rm(OUT_ZIP, { force: true });
   execSync(

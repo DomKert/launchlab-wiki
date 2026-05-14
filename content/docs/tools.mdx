@@ -23,12 +23,12 @@ You'll hit a rate limit on every tool this weekend. The workaround is routing, n
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <div className="mb-2 flex items-center gap-2"><Badge variant="loot">USE SEVERAL</Badge></div>
-  <p>Don't pick one tool per job and stop. Run the same scout query through 2 to 3 AIs (Perplexity, Grok, Gemini) and let NotebookLM stitch the outputs into one cited brief. Prototype the same page in 2 builders (Bolt and Framer) and ship the one that feels right. Different tools surface different angles. Fold the outputs together, paste the synthesis back into Claude as a Project knowledge file. Full fan-out flow in <a href="/docs/prompts/synthesize-parallel-scout" className="underline">Prompt 15 Synthesize the parallel scout</a>.</p>
+  <p>Don't pick one tool per job and stop. Run the same scout query through 2 to 3 AIs (Perplexity, Grok, Gemini) and let NotebookLM stitch the outputs into one cited brief. Prototype the same page in 2 builders (Bolt and Lovable) and ship the one that feels right. Different tools surface different angles. Fold the outputs together, paste the synthesis back into your brain as a knowledge file. Full fan-out flow in <a href="/docs/prompts/synthesize-parallel-scout" className="underline">Prompt 15 Synthesize the parallel scout</a>.</p>
 </div>
 
 ## Think
 
-The Claude Project holds your context, plans each session, and reviews outputs from every other tool. Everything else routes through it. If you haven't set it up yet, start at [Claude Project](/docs/claude-project).
+Your brain (Claude Project, ChatGPT Project, or Codex) holds your context, plans each session, and reviews outputs from every other tool. Everything else routes through it. If you haven't set it up yet, start at [Brain](/docs/brain).
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
   <Badge variant="patch-notes">RULE</Badge>
@@ -217,16 +217,28 @@ Drafting burns tokens fast. Don't draft in Claude. Claude briefs the angle, the 
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">primary drafter</span></div>
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafter</span></div>
     <div className="font-sans font-semibold">ChatGPT free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">Copy drafter. GPT-5.3 for 10 messages per 5-hour window, then silent drop to GPT-5.3-mini. Spend the GPT-5.3 window on hero copy and landing body.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chatgpt.com</div>
   </a>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">fallback drafter</span></div>
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">drafter</span></div>
     <div className="font-sans font-semibold">Gemini 2.5 Flash free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Primary role is 1M-context compression (see Research above), but it doubles as a fallback drafter when ChatGPT degrades after the 10-message window.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Co-equal drafter alongside ChatGPT. 1M context window doubles as the long-context compressor (see Research above). Rotate when ChatGPT degrades after the 10-message window.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ gemini.google.com</div>
+  </a>
+  <a href="https://chat.deepseek.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">public-content drafter</span></div>
+    <div className="font-sans font-semibold">DeepSeek free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">R1 reasoning drafter when ChatGPT, Claude, and Gemini all burn. Public content only: conversations are stored in China. Fine for landing page copy, not for your customer notes.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chat.deepseek.com</div>
+  </a>
+  <a href="https://kimi.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">long-context drafter</span></div>
+    <div className="font-sans font-semibold">Kimi free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">2M context window. Useful when you want to feed the full Spellbook outputs plus your research-brief.md as context for one long drafting pass. Same public-content caveat as DeepSeek.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ kimi.com</div>
   </a>
 </div>
 
@@ -240,39 +252,51 @@ Drafting burns tokens fast. Don't draft in Claude. Claude briefs the angle, the 
 These tools take a brief and produce a live artifact. Landing pages, forms, hero images, social graphics, short links, launch reels. Pick one path for the page build, then layer the supporting tools below.
 
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">PAGE BUILD</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">three suggested paths in <a href="/docs/prompts/bolt-build" className="underline">Prompt 17</a></span></div>
+  <div className="mb-2 flex items-center gap-2"><Badge variant="loot">PAGE BUILD</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">three recipes in <a href="/docs/build-paths" className="underline">Build Path</a></span></div>
   <ul className="ml-5 list-disc space-y-1">
-    <li><strong>Path A, default.</strong> ChatGPT free outputs the static HTML, save as <code>index.html</code>, drag the folder to <a href="https://app.netlify.com/drop" target="_blank" rel="noreferrer" className="underline">netlify.com/drop</a> with a free Netlify account so the URL persists. Best output, simplest, no token cliff.</li>
-    <li><strong>Path B.</strong> Carrd or Framer. No AI, pick a template, drop your copy in. See <a href="/docs/build-paths" className="underline">Build Path</a>.</li>
-    <li><strong>Path C, advanced.</strong> Bolt.new free. Live preview pane and AI iteration UI. 300K daily token cap. Use only if you specifically want the iteration loop.</li>
+    <li><strong>Recipe Chat, default.</strong> Chat model (ChatGPT, Claude, Gemini, DeepSeek, or Kimi) outputs the static HTML, save as <code>index.html</code>, drag the folder to <a href="https://app.netlify.com/drop" target="_blank" rel="noreferrer" className="underline">netlify.com/drop</a> with a free Netlify account so the URL persists. Best output, simplest, no token cliff.</li>
+    <li><strong>Recipe Builder.</strong> Bolt or Lovable. Chat-driven build environment with live preview pane. Daily token cap on both. Pick whichever feels right.</li>
+    <li><strong>Recipe Agent.</strong> Claude Code or Codex in your terminal. The coding agent reads your context files and writes the build. Free with the India ChatGPT Go 12-month unlock for Codex.</li>
   </ul>
-  <p className="mt-3 text-xs text-fd-muted-foreground">Already use Webflow, Squarespace, Cursor, Lovable, or another builder? Use it. The deliverable is a live URL with a working CTA tied to your One Metric, not a specific path.</p>
+  <p className="mt-3 text-xs text-fd-muted-foreground">Already use Webflow, Squarespace, Cursor, v0, or another builder? Use it. The deliverable is a live URL with a working CTA tied to your One Metric, not a specific recipe.</p>
 </div>
 
 <div className="my-4 grid gap-3 sm:grid-cols-2">
   <a href="https://chatgpt.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">page build (Path A)</span></div>
-    <div className="font-sans font-semibold">ChatGPT free + Netlify Drop</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Default page build. ChatGPT renders the static HTML from your assembled prompt; Netlify Drop hosts the folder. Sign up for the free Netlify account so URLs persist (anonymous Drop URLs expire in hours). Rename the subdomain to your brand: e.g. back-room.netlify.app.</p>
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Recipe Chat</span></div>
+    <div className="font-sans font-semibold">Chat model + Netlify Drop</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Default page build. ChatGPT, Claude, Gemini, DeepSeek, or Kimi renders the static HTML from your assembled prompt; Netlify Drop hosts the folder. Sign up for the free Netlify account so URLs persist (anonymous Drop URLs expire in hours). Rename the subdomain to your brand: e.g. back-room.netlify.app.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chatgpt.com + app.netlify.com/drop</div>
   </a>
   <a href="https://tally.so" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">capture</span></div>
     <div className="font-sans font-semibold">Tally free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">Waitlist and intake forms. Unlimited submissions under 50K per month fair use. Embeds in Framer or Carrd.</p>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Waitlist and intake forms. Unlimited submissions under 50K per month fair use. Button-link from any Netlify or Bolt host.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ tally.so</div>
   </a>
-  <a href="https://www.framer.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">page build (Path B)</span></div>
-    <div className="font-sans font-semibold">Framer free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">No-code landing page. 1000 visitors per month, SSL, subdomain hosting, CMS. The polished no-code option for Path B.</p>
-    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ framer.com</div>
-  </a>
-  <a href="https://bolt.new" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">page build (Path C)</span></div>
-    <div className="font-sans font-semibold">Bolt.new free (advanced)</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">1M tokens per month, but daily 300K is the binding cap. Do your full build in one 4-hour block. Once deployed, switch to manual edits in <code>index.html</code>. Default is Path A unless you specifically want the live preview pane.</p>
+  <a href="https://bolt.new" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Recipe Builder</span></div>
+    <div className="font-sans font-semibold">Bolt.new free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Chat-driven build environment with live preview pane. 1M tokens per month, daily 300K is the binding cap. Do your full build in one focused block. Once deployed, switch to manual edits in <code>index.html</code>. Co-equal with Lovable.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ bolt.new</div>
+  </a>
+  <a href="https://lovable.dev" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Recipe Builder</span></div>
+    <div className="font-sans font-semibold">Lovable free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Chat-driven React and Supabase build environment with live preview. 5 credits per day, 30 per month. Roughly 2 to 3 prompts per day. Co-equal with Bolt; pick by feel.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ lovable.dev</div>
+  </a>
+  <a href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Recipe Agent</span></div>
+    <div className="font-sans font-semibold">Claude Code</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Anthropic's terminal-based coding agent. Reads your context files from the working directory, writes <code>index.html</code>, iterates on request. Requires Anthropic Pro+ for sustained use; free during the trial credits window.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ docs.claude.com/claude-code</div>
+  </a>
+  <a href="https://chatgpt.com/codex" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Recipe Agent</span></div>
+    <div className="font-sans font-semibold">Codex</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">OpenAI's CLI coding agent. Free with a limited trial allowance, sustained access via ChatGPT Plus, or the India ChatGPT Go 12-month unlock (which gives Codex access free for a year for +91 SIM holders). Same flow as Claude Code.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ chatgpt.com/codex</div>
   </a>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">image workhorse</span></div>
@@ -322,23 +346,17 @@ These tools take a brief and produce a live artifact. Landing pages, forms, hero
     <p className="mt-1 text-sm text-fd-muted-foreground">Branded shr.pn short links plus a one-page bio router (IG DM, WhatsApp, CTA, multiple destinations). 5-day trial then $15/month. Pick over Dub if you want a single launch link that fans out to several CTAs. Cancel before day 6 if you only need shorteners.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ shr.pn</div>
   </a>
-  <a href="https://carrd.co" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">escape hatch</span></div>
-    <div className="font-sans font-semibold">Carrd free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">10-minute one-pager. 3 sites on carrd.co. Use if Framer feels too heavy.</p>
-    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ carrd.co</div>
+  <a href="https://www.tella.tv" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">build update</span></div>
+    <div className="font-sans font-semibold">Tella free</div>
+    <p className="mt-1 text-sm text-fd-muted-foreground">Screen-and-camera recorder with branded UI. Free tier records up to 25 minutes per clip. Use for async build updates during the weekend and Demo Day pre-records. Pair with Loom (5-min clips) and CapCut for editing.</p>
+    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ tella.tv</div>
   </a>
   <a href="https://www.opus.pro" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">launch reel auto</span></div>
     <div className="font-sans font-semibold">OpusClip free</div>
     <p className="mt-1 text-sm text-fd-muted-foreground">60 minutes per month. 15 to 60 second launch clips from a screen recording. Skip if your launch post is text plus image.</p>
     <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ opus.pro</div>
-  </a>
-  <a href="https://lovable.dev" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">vibe-code alt</span></div>
-    <div className="font-sans font-semibold">Lovable free</div>
-    <p className="mt-1 text-sm text-fd-muted-foreground">5 credits per day, 30 per month cap. Roughly 2 to 3 prompts per day. Mid-tier if you want chat-driven React and Supabase.</p>
-    <div className="mt-3 font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">→ lovable.dev</div>
   </a>
   <a href="https://stripe.com/payments/payment-links" target="_blank" rel="noreferrer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">checkout</span></div>

@@ -1,140 +1,87 @@
----
-title: Distribution
-icon: Megaphone
-description: Channel-clustered playbook. 43 free-tier tactics. Pin 5 to your shortlist.
----
+# Distribution Tactics
 
-<div className="mb-4 flex items-center gap-2">
-  <Badge variant="main-quest">DISTRIBUTION</Badge>
-</div>
+Channel-clustered playbook. 43 free-tier tactics. Pin 5 to your shortlist.
+
+Drop this file into your brain (Claude Project, ChatGPT Project, or Codex) as a knowledge file alongside `context.md` and `prompts.md`.
+
+Source: https://launchlab-wiki.netlify.app/docs/distribution
+
+---
+DISTRIBUTION
 
 Check your business type. Pin 5 tactics to your shortlist. Then read the deep guides for the ones you picked.
 
-<TacticShortlist />
+    EMERGING MARKETS PLAY
 
-<div className="my-6">
-  <PersistentCheckbox id="dist-prep" label="Prep distribution" />
-  <div className="mt-2 grid gap-2 pl-6">
-    <PersistentCheckbox id="dist-business-type" label="Identify your business type (E-com / SaaS / Marketplace / Creator / Consumer App / Service)" />
-    <PersistentCheckbox id="dist-tactics-picked" label="Pin 5 tactics from your row below" />
-    <PersistentCheckbox id="dist-always-on-circle" label="Send Circle of 20 (Tactic 25, always-on)" />
-    <PersistentCheckbox id="dist-always-on-peer-boost" label="Initiate Cross-Cohort Peer Boost with 3 cohort peers (Tactic 26, always-on)" />
-  </div>
-</div>
+  This cohort is heavy India, Africa, LATAM. WhatsApp Status, Cross-Cohort Peer Boost, and Non-Member Drop Ask outperform Reddit, IH, and X for these markets. If your audience is Gen Z, IG Reels and IG comment bursts beat LinkedIn every time.
 
-<ChannelNav />
+      E-COMMERCE / D2C
+      physical product, apparel, food, lifestyle, invite-only like Back Room
 
-<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4">
-  <div className="mb-2 flex items-center gap-2">
-    <Badge variant="quest">EMERGING MARKETS PLAY</Badge>
-  </div>
-  <p>This cohort is heavy India, Africa, LATAM. WhatsApp Status, Cross-Cohort Peer Boost, and Non-Member Drop Ask outperform Reddit, IH, and X for these markets. If your audience is Gen Z, IG Reels and IG comment bursts beat LinkedIn every time.</p>
-</div>
+      ↗ Bump-Set-Spike
+      ↗ Buy-Sell Listing
+      ↗ Single-Item Reel
+      ↗ Micro-Influencer Story Swap
+      ↗ WhatsApp Status Mini-Series
+      ↗ Three-Email Welcome Sequence
 
-<div className="my-6 space-y-3">
-  <div className="rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-amber-500">
-    <div className="mb-2 flex flex-wrap items-center gap-2">
-      <Badge variant="main-quest">E-COMMERCE / D2C</Badge>
-      <span className="text-xs text-fd-muted-foreground">physical product, apparel, food, lifestyle, invite-only like Back Room</span>
-    </div>
-    <div className="mt-3 flex flex-wrap gap-2">
-      <a href="#6-bump-set-spike-group-sequence" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Bump-Set-Spike</a>
-      <a href="#7-buy-sell-listing-with-comment-cta" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Buy-Sell Listing</a>
-      <a href="#23-single-item-reel-with-pinned-cta" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Single-Item Reel</a>
-      <a href="#24-micro-influencer-story-swap" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Micro-Influencer Story Swap</a>
-      <a href="#11-status-mini-series" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> WhatsApp Status Mini-Series</a>
-      <a href="#31-three-email-welcome-sequence" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Three-Email Welcome Sequence</a>
-    </div>
-  </div>
+      SAAS / SOFTWARE
+      SaaS, dev tools, infrastructure, technical products
 
-  <div className="rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-emerald-500">
-    <div className="mb-2 flex flex-wrap items-center gap-2">
-      <Badge variant="tier-a">SAAS / SOFTWARE</Badge>
-      <span className="text-xs text-fd-muted-foreground">SaaS, dev tools, infrastructure, technical products</span>
-    </div>
-    <div className="mt-3 flex flex-wrap gap-2">
-      <a href="#2-lessons-post" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Lessons Post</a>
-      <a href="#17-ten-comment-run" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Ten-Comment Run</a>
-      <a href="#18-roast-my-landing-page" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Roast My Landing Page</a>
-      <a href="#19-golden-hour-reply" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Golden Hour Reply</a>
-      <a href="#14-ship-upcoming-page" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Ship Upcoming Page</a>
-    </div>
-  </div>
+      ↗ Lessons Post
+      ↗ Ten-Comment Run
+      ↗ Roast My Landing Page
+      ↗ Golden Hour Reply
+      ↗ Ship Upcoming Page
 
-  <div className="rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-violet-500">
-    <div className="mb-2 flex flex-wrap items-center gap-2">
-      <Badge variant="side-quest">MARKETPLACE / TWO-SIDED</Badge>
-      <span className="text-xs text-fd-muted-foreground">platform, two-sided market, supply plus demand</span>
-    </div>
-    <div className="mt-3 flex flex-wrap gap-2">
-      <a href="#2-lessons-post" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Lessons Post</a>
-      <a href="#21-engage-connect-dm-sequence" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Engage-Connect-DM</a>
-      <a href="#29-customer-zero-coffee-with-filmed-testimonial" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Customer-Zero Coffee</a>
-      <a href="#26-cross-cohort-peer-boost" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Cross-Cohort Peer Boost</a>
-      <a href="#13-non-member-drop-ask" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Non-Member Drop Ask</a>
-    </div>
-  </div>
+      MARKETPLACE / TWO-SIDED
+      platform, two-sided market, supply plus demand
 
-  <div className="rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-rose-500">
-    <div className="mb-2 flex flex-wrap items-center gap-2">
-      <Badge variant="boss">CONTENT / CREATOR</Badge>
-      <span className="text-xs text-fd-muted-foreground">Substack, YouTube, course, newsletter, creator tool</span>
-    </div>
-    <div className="mt-3 flex flex-wrap gap-2">
-      <a href="#19-golden-hour-reply" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Golden Hour Reply</a>
-      <a href="#22-poll-to-dm-funnel" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Poll-to-DM Funnel</a>
-      <a href="#24-micro-influencer-story-swap" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Micro-Influencer Story Swap</a>
-      <a href="#11-status-mini-series" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> WhatsApp Status Mini-Series</a>
-      <a href="#31-three-email-welcome-sequence" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Three-Email Welcome Sequence</a>
-    </div>
-  </div>
+      ↗ Lessons Post
+      ↗ Engage-Connect-DM
+      ↗ Customer-Zero Coffee
+      ↗ Cross-Cohort Peer Boost
+      ↗ Non-Member Drop Ask
 
-  <div className="rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-sky-500">
-    <div className="mb-2 flex flex-wrap items-center gap-2">
-      <Badge variant="quest">CONSUMER APP</Badge>
-      <span className="text-xs text-fd-muted-foreground">mass-market mobile or web app</span>
-    </div>
-    <div className="mt-3 flex flex-wrap gap-2">
-      <a href="#23-single-item-reel-with-pinned-cta" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Single-Item Reel</a>
-      <a href="#30-golden-hour-comment-burst" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Golden Hour Comment Burst</a>
-      <a href="#2-lessons-post" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Lessons Post</a>
-      <a href="#11-status-mini-series" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> WhatsApp Status Mini-Series</a>
-      <a href="#31-three-email-welcome-sequence" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Three-Email Welcome Sequence</a>
-    </div>
-  </div>
+      CONTENT / CREATOR
+      Substack, YouTube, course, newsletter, creator tool
 
-  <div className="rounded-md border border-fd-border bg-fd-card p-4 transition hover:border-yellow-500">
-    <div className="mb-2 flex flex-wrap items-center gap-2">
-      <Badge variant="achievement">SERVICE / AGENCY</Badge>
-      <span className="text-xs text-fd-muted-foreground">consulting, agency, expertise-based service</span>
-    </div>
-    <div className="mt-3 flex flex-wrap gap-2">
-      <a href="#21-engage-connect-dm-sequence" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Engage-Connect-DM</a>
-      <a href="#22-poll-to-dm-funnel" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Poll-to-DM Funnel</a>
-      <a href="#29-customer-zero-coffee-with-filmed-testimonial" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Customer-Zero Coffee</a>
-      <a href="#25-circle-of-20" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> Circle of 20</a>
-      <a href="#11-status-mini-series" className="inline-flex items-center gap-1.5 rounded-md border border-fd-border px-3 py-1.5 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400"><span className="text-amber-500">↗</span> WhatsApp Status Mini-Series</a>
-    </div>
-  </div>
-</div>
-<div className="my-6 rounded-md border border-fd-border bg-fd-card p-4">
-  <div className="mb-2 flex items-center gap-2">
-    <Badge variant="achievement">DAY 2 REALITY</Badge>
-  </div>
-  <p>You have 24 hours for distribution. Many of these tactics need warm-up windows, account approval, or 48 to 72 hour reply waits. Some will not close this weekend. That's the lesson.</p>
-  <p className="mt-2">Plant the seeds today. Pick what fits Day 2 (the "Day 2 play" line on each tactic), queue what does not, and keep running these after the bootcamp. Distribution is a habit, not a sprint.</p>
-</div>
+      ↗ Golden Hour Reply
+      ↗ Poll-to-DM Funnel
+      ↗ Micro-Influencer Story Swap
+      ↗ WhatsApp Status Mini-Series
+      ↗ Three-Email Welcome Sequence
+
+      CONSUMER APP
+      mass-market mobile or web app
+
+      ↗ Single-Item Reel
+      ↗ Golden Hour Comment Burst
+      ↗ Lessons Post
+      ↗ WhatsApp Status Mini-Series
+      ↗ Three-Email Welcome Sequence
+
+      SERVICE / AGENCY
+      consulting, agency, expertise-based service
+
+      ↗ Engage-Connect-DM
+      ↗ Poll-to-DM Funnel
+      ↗ Customer-Zero Coffee
+      ↗ Circle of 20
+      ↗ WhatsApp Status Mini-Series
+
+    DAY 2 REALITY
+
+  You have 24 hours for distribution. Many of these tactics need warm-up windows, account approval, or 48 to 72 hour reply waits. Some will not close this weekend. That's the lesson.
+  Plant the seeds today. Pick what fits Day 2 (the "Day 2 play" line on each tactic), queue what does not, and keep running these after the bootcamp. Distribution is a habit, not a sprint.
 
 ## Reddit
 
-<div className="my-4 rounded-md border border-fd-border bg-fd-card p-3 text-sm">
-  <Badge variant="patch-notes">INDIA SUBS</Badge>
-  <span className="ml-2">If your audience is India-heavy, prioritize r/IndianStartups, r/IndiaTech, r/IndiaInvestments, and r/StartupIndia alongside r/SideProject. Same tactic shapes (Lessons Post, Comment-First, Megathread Share). Different rooms, faster reply rate, 1.5 to 2x engagement on India-specific framing.</span>
-</div>
+  INDIA SUBS
+  If your audience is India-heavy, prioritize r/IndianStartups, r/IndiaTech, r/IndiaInvestments, and r/StartupIndia alongside r/SideProject. Same tactic shapes (Lessons Post, Comment-First, Megathread Share). Different rooms, faster reply rate, 1.5 to 2x engagement on India-specific framing.
 
 ### 1. Warm Account Prep
 
-<TacticPin id="1" slug="1-warm-account-prep" name="Warm Account Prep" />
 - What. 30-minute pre-flight that earns karma and post-age so your first post does not get auto-filtered.
 - How. Spend 20 min upvoting and leaving 3 to 5 substantive comments on r/SideProject, r/indie_makers, r/SaaS. Target +30 karma and a filled-in bio before you post anything linking to your project.
 - Room. Strict-automod subs like r/startups, r/smallbusiness, r/malefashionadvice.
@@ -143,7 +90,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 2. Lessons Post
 
-<TacticPin id="2" slug="2-lessons-post" name="Lessons Post" />
 - What. Long-form first-person post titled "I built X, here's what I learned." Frames your build as lessons, not a pitch. Link goes in a top comment, not the OP.
 - How. Draft 5 sections: problem, what I built, timeline plus 2 metrics, 3 lessons, one-line CTA inviting DM or comment requests. Post to r/SideProject or r/indie_makers first. Reply to every comment in the first hour to keep the post visible.
 - Room. r/SideProject, r/indie_makers, r/SaaS. Avoid r/startups and r/smallbusiness unless posting in their weekly Promote threads.
@@ -151,7 +97,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 3. Comment-First Funnel
 
-<TacticPin id="3" slug="3-comment-first-funnel" name="Comment-First Funnel" />
 - What. Find active question threads, leave 2 to 3 substantive help comments, close with "If you want the template I used, reply 'link'." Link-on-request beats OP link every time.
 - How. Open r/SideProject, r/SaaS, r/Entrepreneur new-filter, skim the last 6 hours for 3 threads asking a question you can answer. Post a 4 to 6 sentence helpful comment. Drop the link only when asked, in a single reply. Capture DMs in a spreadsheet.
 - Room. Permissive Reddit subs.
@@ -159,7 +104,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 4. Megathread Share
 
-<TacticPin id="4" slug="4-megathread-share" name="Megathread Share" />
 - What. Post your project into the pinned weekly "Promote your project" thread. Permissive by design, no karma risk.
 - How. Find the pinned thread on the sub front page. Post a 4-paragraph share: hook, value, one metric or tangible benefit, single line CTA to comment for the link. Post when the megathread is fresh (first 12 hours). Reply to comments for 60 min.
 - Room. r/SideProject megathreads, r/Entrepreneur "First Saturday", r/SaaS share threads.
@@ -169,7 +113,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 5. Approval-First Join
 
-<TacticPin id="5" slug="5-approval-first-join" name="Approval-First Join" />
 - What. Join 3 to 5 high-signal FB groups, answer screening questions honestly, wait out the approval queue while you prep content.
 - How. Polish profile first: real name, photo, 1-line bio with student plus interest, fill Education and Location. Comment on 5 public posts. Then search groups by exact-phrase plus location filter. Submit, keep moving on other tactics while admins review.
 - Room. Facebook Groups. Interest, buy-sell, or local-area groups with active admins.
@@ -178,7 +121,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 6. Bump-Set-Spike Group Sequence
 
-<TacticPin id="6" slug="6-bump-set-spike-group-sequence" name="Bump-Set-Spike Group Sequence" />
 - What. A 3-post warmup pattern inside one FB group. Post 1 asks an engagement question, Post 2 shares a quick-win tip, Post 3 invites DMs for a resource ("If 5 people want X, I will DM it"). Soft CTA only, never drop links in the OP.
 - How. Draft all three posts in Claude Project before posting. Keep each under 150 words. Space them 3 to 4 days apart so the group does not feel marketed at. When Post 3 hits the 5-request bar, DM the resource plus a one-sentence waitlist invite.
 - Room. Small to medium interest groups (1k to 10k members) with an active admin.
@@ -187,7 +129,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 7. Buy-Sell Listing with Comment CTA
 
-<TacticPin id="7" slug="7-buy-sell-listing-with-comment-cta" name="Buy-Sell Listing with Comment CTA" />
 - What. Post your item as a proper buy-sell listing per the group's rules, then write "DM for a size guide or more pieces like this" in the first comment. Route interested buyers into DMs, then to the waitlist.
 - How. Shoot 3 clean photos, write a 3 to 5 line description with size, fabric, era. Post as a standard listing. Do NOT paste a landing page URL in the OP. Comment "DM me for a short size guide I made, or if you want more like this." DM the link when asked.
 - Room. FB buy-sell groups aligned with your ICP.
@@ -197,7 +138,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 8. Disboard Vertical Scout
 
-<TacticPin id="8" slug="8-disboard-vertical-scout" name="Disboard Vertical Scout" />
 - What. Use [Disboard](https://disboard.org), [Discadia](https://discadia.com), or [Top.gg](https://top.gg) directory search by vertical tag to find 5 active Discord servers for your niche.
 - How. Search tags like vintage, art-community, sustainability, creator-hub, startup. Sort by member count. For each candidate, check member count, last activity, description, pinned rules, and whether the server is listed on a second directory. Join 3, skip the other 2. Read rules and pinned posts before typing anything.
 - Room. [Disboard](https://disboard.org), [Top.gg](https://top.gg), [Discadia](https://discadia.com) directories.
@@ -205,7 +145,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 9. Mod DM for Permission
 
-<TacticPin id="9" slug="9-mod-dm-for-permission" name="Mod DM for Permission" />
 - What. Before dropping a link in a new server, DM a mod with a one-paragraph request and a pre-written blurb they can paste. Asking for permission turns a risky post into a sanctioned one.
 - How. Write the blurb first: 1-line hook, 1-line value, 1 link, under 280 characters. DM a moderator. "Hi, I'm launching X for [audience]. Is it OK to share a single link in #self-promo or #launches? Blurb ready if you want to vet it." If granted, post and stay in-channel for 30 to 60 min.
 - Room. Any Discord server with a #self-promo channel and active mods.
@@ -213,7 +152,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 10. React-to-Role Niche Post
 
-<TacticPin id="10" slug="10-react-to-role-niche-post" name="React-to-Role Niche Post" />
 - What. In big Discord servers (5k+), use the #roles reaction-role message to unlock a niche subchannel, then introduce yourself there instead of in #general. Concentrated audience, zero noise.
 - How. Find the #roles message, react to 1 to 3 emoji that map to your niche (e.g. "DTC-sellers", "vintage-fashion"). Open the unlocked subchannel, read the last 20 messages to catch the tone, post a 2 to 3 sentence intro with a question, not a pitch.
 - Room. Discord servers with MEE6 or Carl-bot reaction-role setups.
@@ -221,7 +159,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 34. Indian College Discord Drop
 
-<TacticPin id="34" slug="34-indian-college-discord-drop" name="Indian College Discord Drop" />
 - What. 100xDevs, IIT and NIT and BITS Discord servers, Coding Ninjas Community, and college-specific dev Discords are thriving (10k to 100k members, 40 to 80 eyeballs per substantive post). Where Indian Gen Z dev-adjacent students actually hang out.
 - How. Join 1 to 3 servers if not already in. Read pinned rules. Find the right channel (#projects, #show-and-tell, #self-promo if it exists). Post a 4-sentence build update with a Loom link or screenshot. Stay in-channel for 30 to 60 min to reply.
 - Room. 100xDevs Discord, IIT and NIT and BITS Discords, Coding Ninjas Community, college dev Discords.
@@ -232,7 +169,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 11. Status Mini-Series
 
-<TacticPin id="11" slug="11-status-mini-series" name="Status Mini-Series" />
 - What. Seed your project via your own WhatsApp Status across 200+ saved contacts. India-specific superpower.
 - How. Check saved-contact count. If under 200, spend 15 min adding classmates, hostelmates, family. Plan a 5-post mini-series: Day 1 teaser image, Day 2 behind-the-scenes, Day 3 15s video demo, Day 4 1-line customer quote, Day 5 CTA with waitlist link. Reply fast to every viewer DM.
 - Room. WhatsApp Status.
@@ -240,7 +176,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 12. Broadcast List Launch Blast
 
-<TacticPin id="12" slug="12-broadcast-list-launch-blast" name="Broadcast List Launch Blast" />
 - What. A 256-contact WhatsApp Broadcast List sent as a conversational, question-ended message. Replies reset WhatsApp's engagement caps under the 2025 to 2026 anti-spam rules.
 - How. Ask 30 to 50 close contacts to save your number. "Saving me back makes WhatsApp treat me as not-spam. 10 seconds." Create a Broadcast List, add up to 256 saved contacts. Write a single message ending in a question. Send, handle replies one-to-one.
 - Room. WhatsApp Broadcast.
@@ -248,7 +183,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 13. Non-Member Drop Ask
 
-<TacticPin id="13" slug="13-non-member-drop-ask" name="Non-Member Drop Ask" />
 - What. For groups you are NOT in, ask a trusted member or admin to post your link on your behalf. Frame as community-benefit, never transactional.
 - How. Identify one engaged member or admin per target group. DM the script. "Hi [name], I'm building [project] and it might help [group]. Could you share this one-line blurb plus link if it fits? Totally OK if not. Blurb: [blurb]." If approved, provide a ready-to-paste short message.
 - Room. Any WhatsApp, FB, or Discord group you cannot access but your first-degree network is in.
@@ -256,7 +190,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 32. WhatsApp Communities Pin
 
-<TacticPin id="32" slug="32-whatsapp-communities-pin" name="WhatsApp Communities Pin" />
 - What. WhatsApp Communities (the threaded-discussion feature launched mid-2025) is distinct from Status (#11) and Broadcast (#12). Threaded replies, pinned content, sub-channels. Higher signal than Status when the audience is your peers and they expect a thread, not a feed item.
 - How. Open WhatsApp, find a Community you are already in (college club, hobby, alumni). Post a 3-line build update in the General announcement channel if admins allow, or in the most relevant subgroup. Pin if you have permission. Reply to every comment in the first hour.
 - Room. WhatsApp Communities. Indian college clubs, alumni networks, hobby Communities.
@@ -267,7 +200,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 40. Telegram Channel Drop
 
-<TacticPin id="40" slug="40-telegram-channel-drop" name="Telegram Channel Drop" />
 - What. Public Telegram channels for indie makers, AI tools, college dev communities, and India-specific startup channels are an under-used distribution surface. Indian college students use Telegram heavily (study groups, internship channels, college-specific channels). One drop in the right channel is 200 to 500 eyeballs.
 - How. Search Telegram for 3 to 5 channels by keyword (your niche, "indie hackers," "AI tools," your college name, "startup india"). Read the last 20 messages to catch the tone. DM the channel admin with a one-line ask before posting (most channels have a posting policy). Post a 3 to 4 line update with screenshot + link. Stay subscribed for 24 to 48 hours to reply to any comments.
 - Room. Telegram channels (search via @SearchInlineBot or the in-app search). Indian college study groups, indie maker channels, AI tool channels.
@@ -278,7 +210,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 33. Threads Community Drop
 
-<TacticPin id="33" slug="33-threads-community-drop" name="Threads Community Drop" />
 - What. Threads (Meta's app, linked to your IG) shipped Communities in October 2025 plus algorithmic feed customization. Topic-based Communities give organic reach without follower count. Indian Gen Z usage growing fast since the IG link.
 - How. Open the Threads app, link to your IG, find 2 to 3 Communities aligned with your niche (build-in-public, ecommerce, AI tools, founder, your specific vertical). Post a 1 to 2 sentence build update with a screenshot from yesterday. Reply to other Community posts for 20 minutes after to feed the algorithm.
 - Room. Threads Communities. Global, India and Tier 1 metros stronger than Tier 2/3.
@@ -289,7 +220,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 14. Ship Upcoming Page
 
-<TacticPin id="14" slug="14-ship-upcoming-page" name="Ship Upcoming Page" />
 - What. Spin up a [Product Hunt Ship](https://www.producthunt.com/ship) upcoming page and embed the signup widget on your landing page. Day 3 or post-cohort launch picks up subscriber notifications automatically.
 - How. Sign in to Product Hunt, request Ship access. If instant, create an Upcoming page with tagline, 60-char hook, 3 screenshots, "Join waitlist" CTA. Copy the Ship widget code into your Netlify-hosted or Bolt-hosted landing page. Paste the Ship URL in your X and IH bios.
 - Room. [Product Hunt Ship](https://www.producthunt.com/ship).
@@ -298,7 +228,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 15. Hunter Outreach with Launch Kit
 
-<TacticPin id="15" slug="15-hunter-outreach-with-launch-kit" name="Hunter Outreach with Launch Kit" />
 - What. Send a 60-word DM to 3 to 5 Product Hunt hunters who recently hunted consumer B2C products. Include a launch kit so they can hunt you with one tap.
 - How. Scan recent consumer B2C launches, click "hunted by" on each to find active hunters. Send via PH DM or X DM. 1-line personal opener, 1-line about your project, launch ETA, link to launch kit (Google Drive folder with images and 30s demo). No follow-up spam.
 - Room. Product Hunt and X DMs.
@@ -308,7 +237,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 16. Profile Sprint with Pinned Milestone
 
-<TacticPin id="16" slug="16-profile-sprint-with-pinned-milestone" name="Profile Sprint with Pinned Milestone" />
 - What. Polish your Indie Hackers profile so every visitor clicks through to your landing page.
 - How. Headline: one-line niche statement (e.g. "Building an invite-only vintage brand for women 35-59"). Bio: 2 to 3 sentences with one credibility hook (student at Tetr, one early result if you have one). Profile link goes directly to the landing page, not another IH post. Post one milestone pinned to the top.
 - Room. Indie Hackers profile page.
@@ -316,7 +244,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 17. Ten-Comment Run
 
-<TacticPin id="17" slug="17-ten-comment-run" name="Ten-Comment Run" />
 - What. Leave 10 substantive comments on trending IH posts over 1 hour. Each comment adds a metric, micro-case, or question. Profile clicks follow.
 - How. Open IH Top, Week. Pick 10 posts where you can add something real. Comment 2 to 4 sentences per post. Concrete example, one question that invites reply. Do NOT link your product. Return 1 hour later to reply to any replies.
 - Room. Indie Hackers Top, Milestones, Case Studies.
@@ -324,7 +251,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 18. Roast My Landing Page
 
-<TacticPin id="18" slug="18-roast-my-landing-page" name="Roast My Landing Page" />
 - What. Post "Roast my landing page" with a screenshot and one specific question. Honest ask gets honest engagement plus profile clicks.
 - How. Take a clean full-page mobile screenshot. Write 2 sentences of context and 1 ask. "Roast my headline" or "Is the value prop clear in 3 seconds?" Post to IH Milestones with the live URL. Reply to every comment for 30 to 45 min with a specific fix.
 - Room. Indie Hackers Milestones, #roast-my-landing-page tag.
@@ -332,7 +258,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 42. LLM SEO Technical Build Post
 
-<TacticPin id="42" slug="42-llm-seo-technical-build-post" name="LLM SEO Technical Build Post" />
 - What. A 600 to 900 word technical build-process post on Indie Hackers titled "I built X with [stack] in 24 hours, here's what worked." Six months from now, when someone asks Perplexity, ChatGPT, or Claude "how to build a landing page with Bolt" or "tools for first-time AI founders," your post gets cited. Sleeper longevity tactic.
 - How. Structure: opening hook (1 line), the stack you used (Bolt + ChatGPT + Nano Banana etc.), the prompt that broke and how you fixed it (the most cite-worthy section), 3 specific learnings, one screenshot of metrics, link to the live page. Post to Indie Hackers Milestones with a clean technical title. Republish a 60% version on [dev.to](https://dev.to) and [Medium](https://medium.com) 48 hours later for backlink diversity.
 - Room. Indie Hackers Milestones primary, [dev.to](https://dev.to) and [Medium](https://medium.com) for backlinks.
@@ -344,7 +269,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 19. Golden Hour Reply
 
-<TacticPin id="19" slug="19-golden-hour-reply" name="Golden Hour Reply" />
 - What. Find 3 to 5 mid-tier creators (10k to 50k followers) in your niche. Within 30 to 60 min of their posts, leave 8 to 12 substantive replies across them. Profile visits follow when your bio has a clear CTA.
 - How. Build a list of 5 creators via X search and Lists. Turn on notifications. When they post, reply within the Golden Hour with a 1 to 2 sentence add. Concrete example, counter-example, or one sharp question. Pin one tweet with a landing-page link on your own profile.
 - Room. X timeline plus targeted creator replies.
@@ -352,7 +276,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 20. Warm-Then-DM
 
-<TacticPin id="20" slug="20-warm-then-dm" name="Warm-Then-DM" />
 - What. 10 to 20 warmed, personalized DMs to stranger targets. Warm-up step (like or reply to their recent post) before the DM doubles response rate vs pure cold.
 - How. Build a list of 15 relevant targets. On each target's last tweet, leave a 1-line meaningful reply. Wait 60 min. DM each with a 40-word message. Opener referencing their post, 1-line value, 1 question, 1 link. Space sends 2 to 5 min apart. Cap at 20 per day on a new account.
 - Room. X DMs.
@@ -362,7 +285,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 21. Engage-Connect-DM Sequence
 
-<TacticPin id="21" slug="21-engage-connect-dm-sequence" name="Engage-Connect-DM Sequence" />
 - What. Three-step warm outreach. Comment, wait, connect, then DM once they accept.
 - How. Find 8 targets via LinkedIn Boolean search (e.g. "vintage curator" OR "sustainable fashion" plus location filter). Comment 20 to 30 words on one of their posts, personal not generic. After 24 to 72 hours, send a connection request note (200 chars max) referencing your comment. On accept, send a value-first DM with 1 question plus 1 link.
 - Room. LinkedIn feed, connection requests, DMs.
@@ -371,7 +293,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 22. Poll-to-DM Funnel
 
-<TacticPin id="22" slug="22-poll-to-dm-funnel" name="Poll-to-DM Funnel" />
 - What. Post a 2 to 4 option poll asking a real question about your audience's preference. Everyone who comments is high-intent. DM commenters a follow-up tied to their answer.
 - How. Draft a poll with a genuine question, not a thinly-disguised pitch. Post midweek morning. Spend 30 to 60 min replying to comments with real engagement. DM each commenter. "You said [X]. Here's how we're fixing that. Want an invite?" One short link.
 - Room. LinkedIn Polls or Instagram Story Polls.
@@ -382,7 +303,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 23. Single-Item Reel with Pinned CTA
 
-<TacticPin id="23" slug="23-single-item-reel-with-pinned-cta" name="Single-Item Reel with Pinned CTA" />
 - What. A 20 to 40s vertical Reel showing one product with a 1 to 2 second hook, captions, and a pinned-comment CTA.
 - How. Shoot. 2s hook (surprising stat, bold claim, or visual tease), 15 to 30s demo or try-on, 3s CTA frame. Post with captions burned in (40% of viewers watch muted). 3 niche plus 1 broad hashtag. Immediately pin a comment with the CTA. Reply to first 5 comments within 15 min.
 - Room. Instagram Reels (primary in India), YouTube Shorts, TikTok where available.
@@ -390,7 +310,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 24. Micro-Influencer Story Swap
 
-<TacticPin id="24" slug="24-micro-influencer-story-swap" name="Micro-Influencer Story Swap" />
 - What. Trade a Story takeover with a 1k to 5k follower creator in your niche. You feature them in 3 Story slides, they feature you. Low friction, high context.
 - How. Find 5 micro-creators via hashtag browsing. Look for 5 to 10% engagement rate and aesthetic alignment. DM each. "Loved [specific post]. I'm launching [project], your aesthetic fits. Want to swap 3 Story slides? We each feature the other for a day." Prepare your 3 Story assets per swap partner.
 - Room. Instagram Stories with micro-creators.
@@ -399,7 +318,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 43. Influencer Ask
 
-<TacticPin id="43" slug="43-influencer-ask" name="Influencer Ask" />
 - What. Get someone with an audience to post about your project. Three flavors by relationship: warm (a friend or first-degree contact who happens to have 1k+ followers in your niche), cold reciprocal (the swap shape, see Tactic 24), cold paid (small fee for one Story or Reel slot).
 - How. Build one 3-frame Story asset first. Hero image, one-liner, tracked link. That asset works for all three flavors. Then pick by relationship. Warm: list 5 to 10 friends who post regularly in your niche; send a 2-sentence DM with the asset attached and ask them to post. Cold reciprocal: follow Tactic 24's swap script. Cold paid: DM 1k to 10k creators in your niche with $20 to $50 per Story slot, tracked link mandatory. The asset matters more than the ask, so put 30 minutes into it.
 - Room. Instagram Stories or Reels primarily. LinkedIn for B2B. TikTok where available.
@@ -408,7 +326,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 30. Golden Hour Comment Burst
 
-<TacticPin id="30" slug="30-golden-hour-comment-burst" name="Golden Hour Comment Burst" />
 - What. 10 to 15 substantive comments on mid-size creators (10k to 100k followers) in your niche within 30 to 60 min of their posts. Comments that add a concrete take, counter-example, or sharp question earn profile clicks.
 - How. Build a list of 5 creators via hashtag browsing. Turn on post notifications. Within the Golden Hour after their new post, leave a 15+ word comment adding something real. "Love this. When I tried [specific thing], [specific detail] broke this way. Is [question]?" Do NOT link your product in the comment.
 - Room. Instagram feed plus Reels comments, TikTok video comments.
@@ -418,7 +335,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 35. Vernacular Reel for Tier 2 / Tier 3
 
-<TacticPin id="35" slug="35-vernacular-reel-for-tier-2--tier-3" name="Vernacular Reel for Tier 2 / Tier 3" />
 - What. Moj, Josh, and ShareChat are the Indian short-video stack for non-English Gen Z audiences in Tier 2 and Tier 3 cities. Reels in English alone misses 40 to 50 percent of your potential Indian reach. Post a 30 to 60 second clip in Hindi, Tamil, Bengali, or Marathi (whichever your audience uses).
 - How. Take the Loom recording from Tactic 36 or the single-product clip from Tactic 23. Add a caption track in your target language using CapCut auto-translate. Post natively to Moj or Josh (don't just cross-post the IG Reel, the algorithms penalize cross-posts). Use one local hashtag plus a regional tag.
 - Room. Moj, Josh, ShareChat. Skip if your ICP is global English only.
@@ -429,7 +345,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 25. Circle of 20
 
-<TacticPin id="25" slug="25-circle-of-20" name="Circle of 20" />
 - What. The single most under-used tactic. Message 20 first-degree contacts (classmates, hostelmates, family friends, mentors, one former manager) with a personal ask, not a broadcast. First 10 customers almost always come from here.
 - How. Build a list of 20 people who might care, might share, or might know one person who does. For each, a 2-sentence personalized message. "Hi [name], building [project] for [audience]. Would you take 60 seconds to look at [link] and tell me if it would be dumb to share with [specific friend]?" Track replies. Follow up once after 72 hours.
 - Room. WhatsApp, iMessage, FB Messenger, whichever your first-degree network uses.
@@ -440,7 +355,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 26. Cross-Cohort Peer Boost
 
-<TacticPin id="26" slug="26-cross-cohort-peer-boost" name="Cross-Cohort Peer Boost" />
 - What. The single highest-impact cohort mechanic. 50 LaunchLab students mean 50 potential first audiences. Trade signal boosts 1-to-1 with 3 peers before Work Block 2 starts.
 - How. Day 2 morning, scan the cohort Discord. Pick 3 peers whose audience shape overlaps yours enough to share but not so tightly they cannibalize. DM the reciprocity script. Actually try their product before you post. Three sentences of real reaction beat a generic share. Tag each other, use the cohort hashtag.
 - Room. LaunchLab cohort Discord or WhatsApp group, plus your own socials.
@@ -450,7 +364,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 27. Student-Board Blitz
 
-<TacticPin id="27" slug="27-student-board-blitz" name="Student-Board Blitz" />
 - What. QR-coded A4 poster or A6 postcard drop on student-run bulletin boards. Permission from the student who manages each board, not university admin.
 - How. Design one A4 poster plus 25 A6 postcards in Canva. One value line, one CTA, one QR pointing at a UTM-tagged short link. Walk to 3 to 6 student-managed boards. Ask the club officer or RA for verbal OK before pinning. Snap a photo of each poster in-situ and post to your WhatsApp Status with "spotted on campus" copy.
 - Room. Department boards, student union, hostel common-room, club boards.
@@ -458,7 +371,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 28. Café Consignment Cold-Walk
 
-<TacticPin id="28" slug="28-café-consignment-cold-walk" name="Café Consignment Cold-Walk" />
 - What. A 30-second in-person pitch to a local café, boutique, or consignment shop asking to leave branded postcards or, for physical products, a small trial display.
 - How. Pre-target 5 shops within 2 to 5 km that match your aesthetic. Walk in during off-peak hours. 30-second pitch. Who you are, who your customer is, one-line benefit to them, one clear ask (postcard on counter, or 3-piece trial consignment with clear terms). Leave a postcard with a QR to a shop-specific URL. Follow up in 7 days.
 - Room. Local cafés, independent boutiques, tailor shops, consignment shops, neighborhood co-work spaces.
@@ -466,7 +378,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 29. Customer-Zero Coffee with Filmed Testimonial
 
-<TacticPin id="29" slug="29-customer-zero-coffee-with-filmed-testimonial" name="Customer-Zero Coffee with Filmed Testimonial" />
 - What. Invite ONE person who matches your persona for a 30 to 45 minute coffee. They try your product live, you record a 30 to 60 second permissioned testimonial. That clip becomes the hero social asset for the rest of the sprint.
 - How. Identify the one best match (classmate, hostelmate, neighbor, family friend in ICP). DM asking for 30 min and offer to pay for the coffee. Bring a 10-question guide. At the end, ask if you can record 30 seconds of their reaction. Edit on phone (CapCut), post to IG Story, WhatsApp Status, X, and the cohort channel.
 - Room. A café, library, or co-work in your city.
@@ -476,7 +387,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 31. Three-Email Welcome Sequence
 
-<TacticPin id="31" slug="31-three-email-welcome-sequence" name="Three-Email Welcome Sequence" />
 - What. A 3-email follow-up sequence that turns a Day 2 waitlist signup into a Day 3 launch viewer or first paying customer. Without this, Day 2 signups go stale overnight.
 - How. Draft all three in Claude Project. Email 1 (instant). "You're in. Here's what to expect." One-line reminder of the promise, one-line preview, personal sign-off, no hard CTA. Email 2 (24 to 48h). "Why I'm building this." One concrete proof point and a single-question reply prompt. Email 3 (Day 3 launch morning). "It's live. Be the first in." Direct link, one-line urgency, one-line closer.
 - Room. Your Day 2 waitlist. Even 10 to 20 signups earn the sequence.
@@ -487,7 +397,6 @@ Check your business type. Pin 5 tactics to your shortlist. Then read the deep gu
 
 ### 41. Public Roadmap Voting
 
-<TacticPin id="41" slug="41-public-roadmap-voting" name="Public Roadmap Voting" />
 - What. A public "vote which feature I build next" board on [Canny](https://canny.io) or [Frill](https://frill.co) (free tiers, both work). Adds 10 to 15 percent return-visit conversion lift to Day 3 launch traffic. Visitors who vote feel ownership; voters who reply to the email Day 7 convert at 2 to 3x baseline.
 - How. Create a [Canny](https://canny.io) or [Frill](https://frill.co) board (15 min setup). Seed with 4 to 6 feature ideas you have in mind, each as a separate item. Embed the board link or button on your landing page near the bottom ("Help shape v1"). After Day 3 launch, email everyone who signed up on Day 2 with a link: "What should I build first? Vote here." One reply request, one link.
 - Room. [Canny](https://canny.io) free tier (50 voters limit, fine for first month) or [Frill](https://frill.co) free tier (similar caps).
@@ -500,7 +409,6 @@ The asset cluster that feeds every other channel. One Loom recording on Saturday
 
 ### 36. Build Loom Recording
 
-<TacticPin id="36" slug="36-build-loom-recording" name="Build Loom Recording" />
 - What. The master asset everything else cuts from. A raw 2 to 3 minute [Loom](https://loom.com) or [Tella](https://tella.tv) recording of yesterday's build, narrated. Show the AI prompts that worked, the ones that broke, the iteration that fixed it. Unpolished beats polished here.
 - How. Open [Loom](https://loom.com) (free, browser extension) or [Tella](https://tella.tv) (free, branded). Hit record, share screen, talk through your build for 2 to 3 minutes. One take, no editing. Save the link. This becomes the source for Tactics 37 and 38 plus the Reels and Stories you post elsewhere. Free Loom records 5 minutes max per clip; Tella free records up to 25 minutes.
 - Room. [Loom](https://loom.com) or [Tella](https://tella.tv). Public unlisted link.
@@ -509,7 +417,6 @@ The asset cluster that feeds every other channel. One Loom recording on Saturday
 
 ### 37. Process Reel Auto-Cut
 
-<TacticPin id="37" slug="37-process-reel-auto-cut" name="Process Reel Auto-Cut" />
 - What. Auto-generate a 30 to 60 second Reel from your Loom (Tactic 36). [OpusClip](https://opus.pro) cuts and captions automatically. [CapCut](https://capcut.com) needs 5 to 10 min of manual trimming but gives more control.
 - How. OpusClip path: paste Loom link, pick "social shorts," auto-caption on, vertical, 30 to 60 sec. Download. Post to IG Reels with 3 niche plus 1 broad hashtag. Pin a comment with the landing-page link. CapCut path: download Loom MP4, drop into CapCut, cut to the 30 best seconds, burn captions, export vertical.
 - Room. Instagram Reels (primary in India), YouTube Shorts, TikTok where available.
@@ -518,7 +425,6 @@ The asset cluster that feeds every other channel. One Loom recording on Saturday
 
 ### 38. LinkedIn Build-Update Carousel
 
-<TacticPin id="38" slug="38-linkedin-build-update-carousel" name="LinkedIn Build-Update Carousel" />
 - What. A 3-paragraph build-in-public LinkedIn post or a 4 to 6 slide carousel doc. Carousel doc beats text-only by 2 to 3x reach in the 2025 to 2026 algorithm. Async voice note is a third option for founders comfortable on audio.
 - How. Text post path: 3 short paragraphs (tried, broke, shipped), one screenshot from yesterday, one-line CTA at the end (link in comments, never in post). Carousel doc path: build 4 to 6 1080x1080 slides in Canva (free template, "LinkedIn Carousel"), upload as PDF, write 3-paragraph caption. Voice note path: 60 to 90 sec native voice memo, no edit, link in comments.
 - Room. LinkedIn feed.
@@ -529,7 +435,6 @@ The asset cluster that feeds every other channel. One Loom recording on Saturday
 
 ### 39. Directory Submission Sweep
 
-<TacticPin id="39" slug="39-directory-submission-sweep" name="Directory Submission Sweep" />
 - What. [There's An AI For That (TAAFT)](https://theresanaiforthat.com), [Futurepedia](https://futurepedia.io), [Toolify](https://toolify.ai), [Aixploria](https://aixploria.com). AI tool directories that get cited by Perplexity, ChatGPT, and Claude when users search for tools. One submission gets you indexed for 6 to 12 months. Free tier on all four accepts standard product listings.
 - How. Have ready: landing page URL, 50-word description, 3 screenshots, your category, one founder line. TAAFT first (highest LLM citation weight), then Futurepedia, then Toolify, then Aixploria. 15 min per directory if your assets are ready.
 - Room. [theresanaiforthat.com](https://theresanaiforthat.com), [futurepedia.io](https://futurepedia.io), [toolify.ai](https://toolify.ai), [aixploria.com](https://aixploria.com).
@@ -541,7 +446,5 @@ The asset cluster that feeds every other channel. One Loom recording on Saturday
 
 Use → Prompt 10 to map your venues. Then → Prompt 11 to draft the post.
 
-<div className="my-6 flex flex-wrap gap-2">
-  <a href="/docs/prompts/where-customer-lives" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 py-2 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 10 · Where your customer lives</a>
-  <a href="/docs/prompts/first-community-post" className="flex shrink-0 items-center rounded-md border border-fd-border bg-fd-card px-3 py-2 font-mono text-xs text-emerald-600 no-underline transition hover:border-amber-500 hover:bg-fd-muted dark:text-emerald-400">→ Prompt 11 · First community post</a>
-</div>
+  → Prompt 10 · Where your customer lives
+  → Prompt 11 · First community post

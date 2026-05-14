@@ -1,7 +1,7 @@
 ---
-title: Claude Project
+title: Brain
 icon: Crown
-description: Your home base for the weekend. Spin up the Project, paste the Meta guide as the system prompt, upload the six context files.
+description: Your home base for the weekend. Spin up a Project (Claude, ChatGPT, or Codex), paste the system prompt, upload three context files.
 ---
 
 <div className="mb-4 flex items-center gap-2">
@@ -9,25 +9,31 @@ description: Your home base for the weekend. Spin up the Project, paste the Meta
   <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">Day 1 morning, 5 to 10 min</span>
 </div>
 
-Your Claude Project is the party leader. It plans your day and reviews work that comes back from other tools. Free tier handles the weekend (5 Projects, 20 files per chat, 30MB total).
+Your brain is the planner. It plans your day and reviews work that comes back from other tools. Three free routes carry the weekend: **Claude Project**, **ChatGPT Project**, or **Codex** (CLI). Pick one and stick with it.
 
-<Video src="https://pub-74b8da28349b401c9aa3ad27925941be.r2.dev/launchlab-zoom-2026-04-30-3.mp4" title="Claude Project setup walkthrough" />
+<Video src="https://pub-74b8da28349b401c9aa3ad27925941be.r2.dev/launchlab-zoom-2026-04-30-3.mp4" title="Brain setup walkthrough" />
 
-Your first move of the weekend. Do this before anything else on Day 1. Everything downstream routes through this Project.
+Your first move of the weekend. Do this before anything else on Day 1. Everything downstream routes through this.
 
-## 1. Create the Project
+## 1. Create your brain
+
+Three free routes. Pick one.
+
+- **Claude Project** at claude.ai. Free tier supports Projects, Custom Instructions, and Sonnet 4.6 with Adaptive Thinking. 5 Projects, 20 files per chat, 30MB total.
+- **ChatGPT Project** at chatgpt.com. Free tier supports Projects with Custom Instructions. 5 files per Project on free.
+- **Codex** at chatgpt.com/codex. CLI. Free with a limited trial allowance, sustained use via ChatGPT Plus, or the India ChatGPT Go 12-month unlock. Reads files from the local working directory.
 
 <div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <PersistentCheckbox id="setup-step-1" label="Created a free Claude account at claude.ai" />
+  <PersistentCheckbox id="setup-step-1" label="Created a free account on Claude, ChatGPT, or Codex" />
 </div>
 
 <div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <PersistentCheckbox id="setup-step-2" label="Clicked Projects, then New Project. Named it LaunchLab [your business]" />
+  <PersistentCheckbox id="setup-step-2" label="Created a new Project (Claude or ChatGPT) or a working directory (Codex). Named it LaunchLab [your business]" />
 </div>
 
 ## 2. Paste the system prompt
 
-Copy the Meta guide below and paste it into the Project's Custom Instructions field. This is what makes the Project behave like your party leader instead of a generic chat.
+Copy the Meta guide below. Paste it into your Project's Custom Instructions field (Claude Project or ChatGPT Project), or save it as `AGENTS.md` in your Codex working directory. This is what turns the Project into a planner instead of a generic chat.
 
 ```txt
 You are the LaunchLab Party Leader, the planning brain for a first-time founder doing
@@ -47,7 +53,7 @@ Your job across the weekend:
 Rules:
 - Founder, not coder. Ship, launch, sell. No terminal slang, no vibe-code framing.
 - Distribution-first. The page is the front door. Distribution is the weekend.
-- Free-tier only. No Claude Pro. No paid tools. Assume rate limits hit.
+- Free-tier only. No paid tools. Assume rate limits hit.
 - Voice stays human. No filler verbs. No bold-colon lists. No rule-of-three
   adjective stacks. Contractions in every sentence that fits.
 - One metric. Pick the one number that defines whether this weekend worked. Signups,
@@ -56,14 +62,14 @@ Rules:
   (Perplexity + Grok + Gemini in 3 parallel tabs running Prompt 3, then a 4th fresh
   Gemini chat running Prompt 15 to synthesize all 3 raw outputs into a 500-word
   research-brief.md). Only the finished research-brief.md comes back to this Project
-  as a knowledge file (Files +). Never hand the founder a single-tool scout prompt
+  as a knowledge file. Never hand the founder a single-tool scout prompt
   for niche research. Never offer to stitch, synthesize, compress, or pull gaps from
   raw scout outputs inside this chat. That's Prompt 15's job in a Gemini tab, not
   yours.
-- Use Spellbook prompts verbatim. The 17 numbered prompts live in prompt-index.md
+- Use Spellbook prompts verbatim. The 17 numbered prompts live in prompts.md
   with full canonical text embedded under each entry. When the founder asks for a
   prompt or you need to route them to one, output the PROMPT block from
-  prompt-index.md unchanged. Replace bracketed placeholders
+  prompts.md unchanged. Replace bracketed placeholders
   ([ONE-LINE DESCRIPTION], [CUSTOMER SENTENCE from Prompt 1], etc.) with the
   founder's actual one-liner.md and customer.md content. Never rewrite, condense,
   or "improve" a Spellbook prompt. The prompts are tested for downstream
@@ -85,29 +91,41 @@ next move.
 ```
 
 <div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <PersistentCheckbox id="setup-step-3" label="Pasted the Meta guide as the system prompt" />
+  <PersistentCheckbox id="setup-step-3" label="Pasted the Meta guide as the system prompt (Custom Instructions or AGENTS.md)" />
 </div>
 
 ## 3. Upload the context files
 
-Download the project pack, unzip, drag all 6 files into Files + on your Project.
+Download the project pack and unzip. Three files:
+
+- `context.md` (voice rules, program overview, day-by-day pass criteria, tool matrix)
+- `prompts.md` (the 17-prompt Spellbook with full canonical prompt text)
+- `tactics.md` (43 distribution tactics)
+
+Add all 3 as knowledge files. Claude Project: Files +, Add files. ChatGPT Project: Project Files. Codex: drop them in your working directory.
 
 <a href="/files/launchlab-project-pack.zip" download className="my-3 inline-flex items-center gap-2 rounded-md border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 font-mono text-sm font-semibold text-emerald-600 no-underline transition hover:bg-emerald-500/20 dark:text-emerald-400">
   ↓ Download launchlab-project-pack.zip
 </a>
 
-Files in the pack: `tool-matrix.md`, `program-overview.md`, `day-checklist.md`, `voice-guide.md`, `prompt-index.md` (lean reference of all 17 prompts), `distribution.md` (Day 2 PM doctrine: Circle of 20, room ranking, posting voice). The Meta guide is NOT in the zip on purpose. It's the system prompt (Step 2), not a knowledge file.
+Why three. ChatGPT free Projects cap at 5 files. Three knowledge files leave two slots free for files you'll build during the weekend (`one-liner.md`, `customer.md`, `research-brief.md`, `4-box.md`, `landing-copy.md`). The Meta guide stays in Custom Instructions, not in a file.
 
 <div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <PersistentCheckbox id="setup-step-4" label="Uploaded all 6 core files to the Project knowledge" />
+  <PersistentCheckbox id="setup-step-4" label="Uploaded all 3 context files to the Project knowledge" />
 </div>
 
 ## 4. Start your first chat
 
-Open a new chat inside the Project. In the model picker at the top, turn on Adaptive Thinking. The Project's whole job is synthesis and review, both improve with extended reasoning, and free-tier Sonnet 4.6 supports it.
+Open a new chat inside the Project.
+
+On Claude Project, turn on **Adaptive Thinking** in the model picker. The Project's whole job is synthesis and review; both improve with extended reasoning, and free-tier Sonnet 4.6 supports it.
+
+On ChatGPT Project, leave the model on default GPT-5.3 for now. ChatGPT free silently drops to GPT-5.3-mini after 10 messages per 5-hour window. Save your early-window messages for the heavier planning prompts.
+
+On Codex, run from the working directory that holds your context files. Codex reads them on each turn, no upload needed.
 
 <div className="my-3 rounded-md border border-fd-border bg-fd-card p-4 text-sm">
-  <PersistentCheckbox id="setup-step-thinking" label="Turned on Adaptive Thinking in the model picker" />
+  <PersistentCheckbox id="setup-step-thinking" label="Picked the right model setup for your brain" />
 </div>
 
 Paste [Prompt 1, Define your customer](/docs/prompts/define-customer). Fill in the business-idea placeholder. Run it.
@@ -121,15 +139,16 @@ Paste [Prompt 1, Define your customer](/docs/prompts/define-customer). Fill in t
 <div className="my-4 rounded-md border border-fd-border bg-fd-card p-4 text-sm font-mono">
   <div className="mb-2 flex items-center gap-2"><Badge variant="patch-notes">CAPS</Badge></div>
   <ul className="list-disc space-y-1 pl-5 font-sans">
-    <li>Claude free: 30 to 100 messages per day depending on load.</li>
-    <li>5 Projects per account max. 20 files per chat. 30MB total.</li>
-    <li>No shared Project links on free tier. You rebuild the template manually from the project pack.</li>
+    <li>Claude free: 30 to 100 messages per day depending on load. 5 Projects, 20 files per chat, 30MB total.</li>
+    <li>ChatGPT free: 10 GPT-5.3 messages per 5-hour window before silent drop to GPT-5.3-mini. 5 files per Project on free tier.</li>
+    <li>Codex free: limited trial allowance, then ChatGPT Plus or the India ChatGPT Go 12-month unlock for sustained use.</li>
+    <li>No shared Project links on free tier (Claude or ChatGPT). You rebuild the template manually from the project pack.</li>
   </ul>
 </div>
 
-## 6. What goes in Project knowledge (and what doesn't)
+## 6. What goes in knowledge (and what doesn't)
 
-Project knowledge has limits (20 files per chat, 30MB total on free tier). Be deliberate about what gets in.
+Project knowledge has limits. Be deliberate about what gets in.
 
 **Add as you build.** Five artifacts each S-tier prompt prints as a code block ready to save.
 
@@ -139,19 +158,19 @@ Project knowledge has limits (20 files per chat, 30MB total on free tier). Be de
 - `4-box.md` from [Prompt 2 The 4-box](/docs/prompts/four-box)
 - `landing-copy.md` from [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) (the cleaned version of your Prompt 4 output)
 
-Every downstream prompt reads from these. Add them via Files +, Add text content as you build.
+Every downstream prompt reads from these. Add them to knowledge as you build.
 
-**Don't dump the wiki itself.** The full wiki is 40 to 80K tokens. As a knowledge file it dilutes Claude's focus and may bust free-tier limits. Keep the wiki as a tab open instead. When you run a prompt from the Spellbook, the prompt itself carries the context Claude needs.
+**Don't dump the wiki itself.** The full wiki is 40 to 80K tokens. As a knowledge file it dilutes focus and may bust free-tier limits. Keep the wiki as a tab open instead. When you run a prompt from the Spellbook, the prompt itself carries the context the brain needs.
 
 ### If you really want the wiki as context
 
 Three paths, cheapest first.
 
 - **Single page on demand.** Each wiki page has a "Copy Markdown" button at the top. Copy, paste, done.
-- **Whole wiki as one file.** [`/llms.txt`](/llms.txt) is the entire wiki as plain text, designed for AI tools. Tight on Free Projects, fine on Pro.
-- **Repo with version history.** `git clone https://github.com/DomKert/launchlab-wiki.git`. Useful for Cursor, Codex, and Claude Code users who want every page locally.
+- **Whole wiki as one file.** [`/llms.txt`](/llms.txt) is the entire wiki as plain text, designed for AI tools. Tight on ChatGPT free, fine on Claude Pro and Codex.
+- **Repo with version history.** `git clone https://github.com/DomKert/launchlab-wiki.git`. Useful for Codex, Claude Code, and Cursor users who want every page locally.
 
 <div className="my-4 flex items-center gap-2">
   <Badge variant="achievement">ACHIEVEMENT</Badge>
-  <span className="text-sm">Home base online. Now go pick your stack at <a href="/docs/tools" className="underline">Tools</a>.</span>
+  <span className="text-sm">Brain online. Now go pick your stack at <a href="/docs/tools" className="underline">Tools</a>.</span>
 </div>

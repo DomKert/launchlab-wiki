@@ -1,120 +1,136 @@
 ---
 title: Build Path
 icon: Route
-description: Three suggested ways to ship a landing page in a 3-day sprint. Use any tool that gets you to a live URL.
+description: Three recipes for shipping a landing page in a 3-day sprint. Chat, Builder, or Agent. Use any tool that gets you to a live URL.
 ---
 
 <div className="mb-4 flex items-center gap-2">
   <Badge variant="boss">DAY 1 PM</Badge>
-  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">decide once, then build</span>
+  <span className="font-mono text-xs uppercase tracking-wider text-fd-muted-foreground">pick a recipe, then build</span>
 </div>
 
-Three suggested paths to a live landing page. Pick the one that matches your comfort, your appetite for tokens, and what you actually want to learn this weekend.
+Three recipes to a live landing page. Pick the one that matches your comfort, your appetite for tokens, and what you actually want to learn this weekend.
 
-These are starting points, not requirements. If you already use Webflow, Squarespace, Cursor, Lovable, or anything else, use it. The deliverable is a live URL with a working CTA, not the path.
+These are starting points, not requirements. If you already use Webflow, Squarespace, Cursor, v0, or anything else, use it. The deliverable is a live URL with a working CTA, not the recipe.
 
-The Spellbook prompts upstream of the build (Prompts 1, 2, 3, 9, 14, 15, 16, 18) all run regardless of which path you pick. The path only changes what happens at build time.
+The Spellbook prompts upstream of the build (Prompts 1, 2, 3, 9, 14, 15, 16, 18) all run regardless of which recipe you pick. The recipe only changes what happens at build time.
 
 <div className="my-4 grid gap-3 sm:grid-cols-1 lg:grid-cols-3">
-  <a href="#path-a-chatgpt-plus-netlify-drop-default" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
+  <a href="#recipe-chat" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-emerald-500 hover:bg-fd-muted">
     <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">default</span></div>
-    <div className="font-sans text-lg font-semibold">Path A. ChatGPT + Netlify Drop</div>
-    <p className="mt-2 text-sm text-fd-muted-foreground">AI generates HTML, you save it locally, drag onto Netlify Drop. Best output for static pages, zero token cliff. Recommended for most.</p>
+    <div className="font-sans text-lg font-semibold">Recipe Chat</div>
+    <p className="mt-2 text-sm text-fd-muted-foreground">Talk to a chat model (ChatGPT, Claude, Gemini, DeepSeek, or Kimi). It outputs HTML. You save it and drop the folder onto Netlify. Zero token cliff, cleanest output.</p>
   </a>
-  <a href="#path-b-carrd-or-framer" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-a">A</Badge><span className="font-mono text-xs uppercase tracking-wider">no AI</span></div>
-    <div className="font-sans text-lg font-semibold">Path B. Carrd or Framer</div>
-    <p className="mt-2 text-sm text-fd-muted-foreground">No AI build at all. Pick a template, paste in your copy, customize colors. Bulletproof, fast, lower ceiling.</p>
+  <a href="#recipe-builder" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-amber-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">live preview</span></div>
+    <div className="font-sans text-lg font-semibold">Recipe Builder</div>
+    <p className="mt-2 text-sm text-fd-muted-foreground">Bolt or Lovable, your pick. Chat-driven build environment with a live preview pane. Daily cap on each, manage tokens.</p>
   </a>
-  <a href="#path-c-bolt" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
-    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-b">B</Badge><span className="font-mono text-xs uppercase tracking-wider">advanced</span></div>
-    <div className="font-sans text-lg font-semibold">Path C. Bolt</div>
-    <p className="mt-2 text-sm text-fd-muted-foreground">AI iteration loop with preview pane. For students who want the vibecoding experience and accept the 300K daily token cap.</p>
+  <a href="#recipe-agent" className="block rounded-md border border-fd-border bg-fd-card p-4 no-underline transition hover:border-sky-500 hover:bg-fd-muted">
+    <div className="mb-2 flex items-center gap-2"><Badge variant="tier-s">S</Badge><span className="font-mono text-xs uppercase tracking-wider">terminal</span></div>
+    <div className="font-sans text-lg font-semibold">Recipe Agent</div>
+    <p className="mt-2 text-sm text-fd-muted-foreground">Claude Code or Codex in your terminal. The coding agent reads your context files, writes index.html, you commit and deploy. Powerful, free with the India ChatGPT Go unlock.</p>
   </a>
 </div>
 
 ## Decision tree
 
-If you've never written code and want zero risk: Path B (Carrd).
+If you want the cleanest output for the least friction: **Recipe Chat**.
 
-If you want the cleanest output for least friction: Path A (ChatGPT + Netlify Drop).
+If you specifically want a chat-driven build environment with a live preview pane and accept the daily token cap: **Recipe Builder**.
 
-If you specifically want the AI vibecoding learning loop and accept token risk: Path C (Bolt).
+If you want to learn how coding agents run a build, or you're already on Claude Code or Codex: **Recipe Agent**.
 
-If you change your mind mid-sprint: Path A → Path B is easy (drag your text into a Carrd template). Path C → Path A is easy (download from Bolt, deploy on Netlify). Path B → A or C requires re-doing the build but the upstream prompts (copy, style direction, hero image) all transfer.
+If you change your mind mid-sprint: any recipe can hand off to any other. Copy your `index.html` and your hero image, paste into a fresh chat or builder, keep going. The upstream Spellbook work (copy, style, hero image, OMTM, distribution plan) all transfers.
 
-## Path A. ChatGPT + Netlify Drop (default)
+## Recipe Chat
+
+Talk to a chat model. It writes the full HTML. You save the file, drag the folder to Netlify Drop. Live URL in under 10 minutes.
+
+Tools that fit Recipe Chat (any one is fine, free tier on all):
+
+- **ChatGPT free.** GPT-5.3 for 10 messages per 5-hour window, then silent drop to GPT-5.3-mini. Spend the GPT-5.3 window on hero copy and the build prompt.
+- **Claude free.** Sonnet 4.6 with Adaptive Thinking. 30 to 100 messages per day.
+- **Gemini 2.5 Flash free.** 1M context window. Good when you want to feed the full Spellbook outputs as context.
+- **DeepSeek free.** R1 reasoning. Public content only (conversations are stored in China, heads-up not a block for a landing page).
+- **Kimi free.** 2M context window. Same public-content caveat.
 
 The flow:
 
-1. Run [Prompt 17 Build prompt](/docs/prompts/bolt-build) in your Claude Project to synthesize a build prompt.
-2. Paste Claude's output into [free ChatGPT](https://chatgpt.com). Get the full HTML in a code block.
-3. Copy the HTML, save locally as `index.html`. Use any text editor.
+1. Run [Prompt 17 Build prompt](/docs/prompts/bolt-build) in your brain (Claude Project, ChatGPT Project, or Codex) to synthesize a build prompt.
+2. Paste Claude's output into a fresh chat in your chosen tool. Get the full HTML in a code block.
+3. Copy the HTML, save locally as `index.html`. Any text editor works.
 4. If you have a hero image file from [Prompt 18](/docs/prompts/hero-image-prompt), save it next to `index.html` and update the `<img src="...">` to match the local filename.
-5. Sign up for a free [Netlify](https://app.netlify.com/signup) account. Drag your folder onto [app.netlify.com/drop](https://app.netlify.com/drop). Get a live URL like `https://your-site-abc123.netlify.app`.
-6. Iterate: edit `index.html` in your text editor (or paste current HTML into a fresh ChatGPT chat for AI-assisted edits), redeploy by dragging to Netlify Drop again.
+5. Sign up for a free [Netlify](https://app.netlify.com/signup) account. Drag your folder onto [app.netlify.com/drop](https://app.netlify.com/drop). Live URL like `https://your-site-abc123.netlify.app`.
+6. Iterate: edit `index.html` directly, or paste the current HTML into a fresh chat with "change X", get patched HTML back, redeploy.
 
-The Netlify account is critical. Anonymous Netlify Drop deploys disappear after a few hours; signing up claims the site so it persists. Free tier covers everything you need for a launch.
+The Netlify account matters. Anonymous Drop deploys disappear after a few hours; signing up claims the site.
 
-Strengths: ChatGPT's training is heavier on clean web design than Bolt's, so first-try output tends to be more polished. No daily token cap. Total cost zero.
+Strengths: chat models are heavy on clean web design, first-try output tends to be polished. No daily token cap on most. Total cost zero.
 
-Weaknesses: no preview-while-editing UI. To see changes, save the file and open in a browser. Iteration is slower than Bolt's chat-driven loop.
+Weaknesses: no live preview while editing. To see changes, save and open in a browser. Iteration is slower than a builder's chat-driven loop.
 
-Best for: most undergrads, especially anyone who hit Bolt's token cap or hasn't started building yet. The default path.
+Best for: most students, especially anyone who wants the cleanest path with no platform lock-in.
 
-## Path B. Carrd or Framer
+## Recipe Builder
 
-No AI building. Pick a template, drop your copy in.
+Chat-driven build environment with a live preview pane. Two free options. You pick one.
 
-[Carrd](https://carrd.co) is the simplest option. 10-minute one-pager builder, free for 3 sites, drag-and-drop, hard to make ugly. Pick a template, replace the copy with your landing-copy.md content, tweak the accent color to match the mood you want, drop in your Tally form URL as a button-link, hit publish. Done.
+- **[Bolt.new](https://bolt.new) free.** 1M tokens per month, daily 300K is the binding cap. Live preview pane, file editor, one-click publish to a `.bolt.host` URL.
+- **[Lovable.dev](https://lovable.dev) free.** 5 credits per day, 30 per month. Roughly 2 to 3 prompts per day. Chat-driven React and Supabase build environment.
 
-[Framer](https://framer.com) is the more design-forward option. Free tier 1000 visits/month, polished templates, more design ceiling than Carrd. Same flow: pick template, fill copy, customize, publish.
+Both have similar shapes. Both have daily caps. Students pick by feel.
 
-The flow with Carrd or Framer:
+The flow with Bolt or Lovable:
 
 1. Run upstream Spellbook prompts as usual (4-box, OMTM, copy, AI smell strip).
-2. Skip Prompts 17 and 18. They're for AI build paths.
-3. Open Carrd or Framer. Browse templates and pick one whose layout and type feel match a reference page you like (saaslandingpage.com, lapa.ninja, landingfolio.com).
-4. Replace template copy with your landing-copy.md content section by section.
-5. Customize colors to match the mood you want. The template's defaults are usually fine; tweak the accent color if you want.
-6. CTA button: link directly to your Tally form URL (or Cal.com / Stripe / mailto). No iframe embeds.
-7. Publish. Carrd gives you a `your-site.carrd.co` URL; Framer gives `your-site.framer.website`.
+2. Run [Prompt 17 Build prompt](/docs/prompts/bolt-build) in your brain to synthesize the build prompt.
+3. Open Bolt or Lovable. Paste the assembled build prompt as your first message.
+4. Bolt: don't toggle Plan mode (it reads the auto-scaffolded Vite tree and burns 250K tokens). Skip the Design System dropdown.
+5. After scaffold, verify the file sidebar shows ONLY `index.html`. If extras present, follow up with a delete-everything-except-index.html message.
+6. Iterate via direct file edits in the builder's editor (zero tokens) for most changes; re-prompt only for restructures.
+7. Publish via the one-click button.
 
-Strengths: bulletproof, fast, no token risk, output looks consistently good. Lowest learning curve.
+If you hit the daily cap mid-sprint, switch to Recipe Chat: paste your `index.html` into a fresh ChatGPT or Claude chat, keep iterating, redeploy via Netlify Drop.
 
-Weaknesses: less personalized than AI builds, harder to make truly distinctive without paying. Template constraints limit some ideas.
+Strengths: AI chat iteration with live preview, fastest feedback loop when it works, the most "vibecoding" of the three recipes.
 
-Best for: students who want zero risk and zero code. Closest to what most non-technical founders use IRL.
+Weaknesses: daily token cap is real on both. Bolt's auto-scaffolded Vite tree adds re-sync cost on every prompt.
 
-## Path C. Bolt
+Best for: students who specifically want the AI iteration UX as a learning experience.
 
-For students who specifically want the AI iteration loop with a preview pane, and accept the 300K daily token cap risk.
+## Recipe Agent
 
-Detailed flow lives in [Prompt 17 Build prompt](/docs/prompts/bolt-build) under "Path C. Bolt". Short version:
+A coding agent in your terminal reads your context files and writes the build. The newest of the three. Requires comfort with a terminal but not actual code knowledge. The agent does the typing.
 
-1. Run Prompt 17 in Claude Project to synthesize the build prompt.
-2. Open [bolt.new](https://bolt.new). Don't toggle Plan mode (it reads the auto-scaffolded Vite tree and burns 250K tokens). Skip Design System dropdown.
-3. Attach hero image file via paperclip if you have one.
-4. Paste assembled prompt, click Build now.
-5. After scaffold, verify file sidebar shows ONLY `index.html`. If extras present, follow up with delete-everything-except-index.html.
-6. Iterate via direct file edits in Bolt's editor (zero tokens) for most changes; re-prompt only for restructures.
-7. Publish via Bolt's one-click button to a `.bolt.host` URL.
+Two free options:
 
-If you hit the daily cap mid-sprint, migrate to [Cursor](https://cursor.sh) free tier and continue iteration there. Open the Bolt project files, copy `index.html` (and the hero image) into a fresh Cursor project, paste the latest prompt that worked into Cursor's chat, keep going. The hero comes with you.
+- **[Claude Code](https://docs.claude.com/en/docs/claude-code/overview).** Anthropic's terminal agent. Requires Anthropic Pro+ for sustained use. Free with the Anthropic free credits during the trial.
+- **[Codex](https://chatgpt.com/codex).** OpenAI's CLI. Free with a limited trial allowance, sustained access via ChatGPT Plus, or **the India ChatGPT Go 12-month unlock**, which gives Codex sustained access free for a year for +91 SIM holders.
 
-Strengths: AI chat iteration with live preview, fastest feedback loop when it works, the most "vibecoding" of the three paths.
+The flow with Claude Code or Codex:
 
-Weaknesses: 300K daily cap is real, single Plan-mode generation can burn it, the auto-scaffolded Vite tree adds re-sync cost on every prompt. Bolt's first-try output for static landing pages tends to be less polished than ChatGPT's.
+1. Run upstream Spellbook prompts as usual. Save your context files (`one-liner.md`, `customer.md`, `research-brief.md`, `4-box.md`, `landing-copy.md`) to a working directory on your machine.
+2. Open a terminal in that working directory. Launch `claude` (Claude Code) or `codex`.
+3. Tell the agent: "Read my context files. Build a single-file static HTML landing page (`index.html`) for [PROJECT NAME] using the cleaned copy in `landing-copy.md`. Tailwind via CDN, Google Fonts via link tag, button-links for CTAs, no iframes, no build step."
+4. The agent writes `index.html`. You can ask it to iterate ("the hero feels heavy, lighten the background").
+5. When it looks right, drag the folder to Netlify Drop or push to a GitHub repo with Netlify auto-deploy.
 
-Best for: students who specifically want the AI iteration UX as a learning experience, or who have paid Bolt access.
+India unlock note: ChatGPT Go is free for 12 months for +91 SIM holders. Activates via UPI or card with a small refunded charge. Unlocks Codex sustained access plus GPT-5.3 Instant, image gen, file uploads. Auto-renews at ₹399/month after 12 months unless cancelled. Set a phone reminder for month 11.
+
+Strengths: the agent reads your full context on every turn. No copy-paste between tools. Versionable via git. Closest to how shipped software is built in 2026.
+
+Weaknesses: terminal UX is unfamiliar to first-time founders. Less visual feedback than Recipe Builder during iteration. Codex on free needs the India unlock or a Plus subscription for sustained use after the trial.
+
+Best for: students who want to learn how coding agents work, or who are on the India ChatGPT Go unlock and want to spend their Codex access.
 
 ## Multi-AI relay
 
-A workflow that beats single-AI builds: don't use one AI for everything. Sequence:
+A workflow that beats single-tool builds: don't use one tool for everything. Sequence:
 
-1. Scaffold with Gemini, ChatGPT, or Claude. Explain what you want and ask the AI to mark placeholders as HTML comments where you'll fill in real content. You get back base HTML with structural placeholders like `<!-- HERO HEADLINE HERE -->`, `<!-- SUBHEAD -->`, `<!-- CTA BUTTON TEXT -->`.
+1. Scaffold with Gemini, ChatGPT, or Claude. Explain what you want and ask for HTML with placeholders as HTML comments where you'll fill in real content. You get back base HTML with structural placeholders like `<!-- HERO HEADLINE HERE -->`, `<!-- SUBHEAD -->`, `<!-- CTA BUTTON TEXT -->`.
 
-2. Hand-edit at marked spots. Open `index.html` in any text editor. Wherever the scaffold AI left a placeholder comment, replace it with plain text. No coding needed; you're typing your hero headline, subhead, CTA copy directly into the file at marked positions.
+2. Hand-edit at marked spots. Open `index.html` in any text editor. Wherever the scaffold left a placeholder comment, replace it with plain text. No coding needed; you're typing your hero headline, subhead, CTA copy directly into the file at marked positions.
 
 3. Polish with Claude. Paste the edited HTML into a fresh Claude chat. Ask it to add animations, smooth scroll, fix rendering bugs, tighten responsive layout. Claude is the polish layer.
 
@@ -122,24 +138,24 @@ Why it works:
 
 - Different models have different strengths. Gemini is fast at structural HTML; Claude has a stronger polish and refactor instinct (animations, edge cases, bugs); ChatGPT sits in between.
 - Contributing plain text at marked spots means body copy is yours, not AI-generated voice. Less work for [Prompt 9 Strip AI smell](/docs/prompts/strip-ai-smell) later.
-- Each AI has one job. Don't ask one model to scaffold and polish; you burn tokens and get worse output on both ends.
+- Each model has one job. Don't ask one model to scaffold and polish; you burn tokens and get worse output on both ends.
 
-Stacks on top of Path A (deploy via Netlify Drop) and Path C (deploy via Bolt). Path B (Carrd or Framer) is template-driven and doesn't need it.
+Stacks on top of Recipe Chat (deploy via Netlify Drop) and Recipe Agent (commit, deploy). Recipe Builder runs inside its own preview environment so the relay there is between Bolt and Lovable.
 
 ## Trade-off table
 
-| Path | Token cost | First-try quality | Iteration speed | Lowest learning curve |
+| Recipe | Token cost | First-try quality | Iteration speed | Best for |
 |------|-----------|-------------------|-----------------|----------------------|
-| A. ChatGPT + Netlify Drop | $0 | High | Medium (text editor + redeploy) | Yes for non-coders |
-| B. Carrd / Framer | $0 | Template-quality | Fast (drag and drop) | Highest |
-| C. Bolt | 300K daily cap | Variable | Fast when working (chat + preview) | Lowest |
+| Chat | $0 | High | Medium (text editor + redeploy) | Default, no platform lock-in |
+| Builder | Daily cap | Variable | Fast (chat + preview) | Learning the chat-driven build UX |
+| Agent | Trial cap (free) | High when context-fed | Fast (terminal + commit) | India unlock holders, terminal-comfortable |
 
-## Switching paths mid-sprint
+## Switching recipes mid-sprint
 
-You're not locked in. If Path C bleeds tokens, switch to Path A: download your project from Bolt, paste the index.html into a free ChatGPT chat with "edit this HTML to fix X", deploy via Netlify Drop. If Path A's editor friction frustrates you, paste your HTML into a fresh Bolt project ("Use this exact HTML, just preview it") to get Bolt's preview pane without burning generation tokens. If Path B's template feels too constraining, copy your sections into a fresh ChatGPT prompt and switch to Path A.
+You're not locked in. Each recipe outputs the same artifact: a single `index.html` plus any hero image. Copy those two files into a fresh chat, builder, or terminal and pick up where you left off.
 
-The upstream Spellbook work (copy, style direction, hero image, OMTM, distribution plan) all transfers across paths.
+The upstream Spellbook work (copy, style direction, hero image, OMTM, distribution plan) all transfers across recipes.
 
 ## Next
 
-[Day 1](/docs/quests/day-1) walks through the day with all three paths supported in the build step.
+[Day 1](/docs/quests/day-1) walks through the day with all three recipes supported in the build step.
